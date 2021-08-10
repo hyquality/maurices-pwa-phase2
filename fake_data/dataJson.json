@@ -1,0 +1,20 @@
+{
+  "MainContent": [
+    {}
+  ],
+  "HeaderContent":
+    {
+      "announcement": {
+        "text": "ONLINE ONLY — Get $25 off every $75 you spend!",
+        "link": {
+          "text": "Read More",
+          "url": "#"
+        }
+      }
+    },
+  "FooterContent": [
+    {
+
+    }
+  ]
+}
