@@ -10,8 +10,23 @@ export default function Home({pageData }) {
 
 }
 
-export async function getStaticProps() {
+/*export async function getStaticProps() {
     const { data } = (await getHomePageData()) || {};
+    return {
+        props: {
+            pageData: data
+        }
+    }
+}*/
+
+export async function getServerSideProps(context) {
+    const { data } = (await getHomePageData()) || {};
+    if (!data) {
+        return {
+            notFound: true,
+        }
+    }
+
     return {
         props: {
             pageData: data
