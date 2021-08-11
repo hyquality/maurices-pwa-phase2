@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Head from 'next/head'
-import Nav from "@components/navigation/Nav";
+import Nav from "@components/header/Nav";
 
 class FirstPost extends Component {
     render() {

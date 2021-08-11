@@ -9,6 +9,10 @@
     "export": "next export"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
     "axios": "^0.21.1",
     "next": "10.0.7",
     "next-pwa": "^5.0.5",
@@ -20,6 +24,8 @@
   "devDependencies": {
     "autoprefixer": "^10.2.4",
     "babel-plugin-superjson-next": "^0.3.0",
-    "postcss": "^8.2.6"
+    "postcss": "^8.2.6",
+    "tailwindcss": "^2.2.7",
+    "url-loader": "^4.1.1"
   }
 }

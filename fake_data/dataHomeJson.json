@@ -6,12 +6,94 @@
   "data": {
     "HeaderContent": {
       "announcement": {
-        "text": "ONLINE ONLY3 — Get $25 off every $75 you spend!",
+        "text": "ONLINE ONLY — Get $25 off every $75 you spend!",
         "link": {
           "text": "Read More",
           "url": "#"
         }
-      }
+      },
+      "top_bar": {
+      },
+      "nav": [
+        {
+          "id": 0,
+          "text": "NEW",
+          "url": "#"
+        },
+        {
+          "id": 1,
+          "text": "CLOTHING",
+          "url": "#"
+        },
+        {
+          "id": 2,
+          "text": "PLUS",
+          "url": "#"
+        },
+        {
+          "id": 3,
+          "text": "SHOES & ACCESSORIES",
+          "url": "#"
+        },
+        {
+          "id": 4,
+          "text": "SALE",
+          "url": "#"
+        }
+      ]
+    },
+    "footerContent": {
+      "calloutItems": [
+        {
+          "id": 0,
+          "title": "MyMaurices Rewards",
+          "text": "Earn points every time you shop!",
+          "icon": "assets/images/cell_1.png",
+          "nav": [
+            {
+              "id": 0,
+              "text": "Learn More",
+              "url": "#"
+            },
+            {
+              "id": 1,
+              "text": "Sign Up Free",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "title": "Maurices Credit Card",
+          "text": "Free shipping & 10% off every order!",
+          "icon": "assets/images/cell_2.png",
+          "nav": [
+            {
+              "id": 0,
+              "text": "Learn More",
+              "url": "#"
+            },
+            {
+              "id": 1,
+              "text": "Apply Now",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "Refer a Friend",
+          "text": "Get $10 off when you share the love!",
+          "icon": "assets/images/cell_3.png",
+          "nav": [
+            {
+              "id": 0,
+              "text": "Learn More",
+              "url": "#"
+            }
+          ]
+        }
+      ]
     }
   },
   "support": {

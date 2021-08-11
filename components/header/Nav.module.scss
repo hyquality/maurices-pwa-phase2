@@ -1,8 +1,10 @@
 ul.nav {
-  display: flex;
   li {
     padding-right: 10px;
     list-style: none;
     font-size: 18px;
+    a{
+      @apply uppercase text-gray_2 text-sm tracking-menu;
+    }
   }
 }

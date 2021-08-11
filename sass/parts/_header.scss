@@ -1,0 +1,10 @@
+header.mar-header{
+  .middle-bar-menu{
+    li{
+      @apply ml-7;
+      a{
+        @apply flex items-center;
+      }
+    }
+  }
+}
