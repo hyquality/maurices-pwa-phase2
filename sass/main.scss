@@ -1,5 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import "parts/icons";
 @import "parts/header";
+@import "parts/footer";
 body {
   @apply text-main;
+}
+
+.tralala_test_3{
+  display: none;
 }

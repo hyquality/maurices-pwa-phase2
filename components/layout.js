@@ -9,7 +9,7 @@ export default function Layout({preview, data, children}) {
             <Meta/>
             <div className="pt-40">
                 <Header data={data.HeaderContent}/>
-                <div className="min-h-screen">
+                <div className="">
                     <main>{children}</main>
                 </div>
                 <Footer data={data.footerContent}/>

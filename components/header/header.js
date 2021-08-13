@@ -2,7 +2,6 @@ import Nav from "@components/header/Nav";
 import AnnouncementBar from "@components/header/announcement-bar";
 import React, {Component} from "react";
 import TopBar from "@components/header/top-bar";
-import Container from "@components/container";
 import MiddleBar from "@components/header/middle-bar";
 
 export class Header extends Component {

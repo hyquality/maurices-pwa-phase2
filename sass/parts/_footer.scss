@@ -1,0 +1,22 @@
+footer {
+  .columns-footer{
+    .social-nav{
+      span.icon{
+        svg{
+          @apply h-full w-auto m-auto;
+        }
+      }
+    }
+  }
+  .sub-footer {
+    ul {
+      li {
+        &:last-child {
+          a{
+           @apply border-0;
+          }
+        }
+      }
+    }
+  }
+}
