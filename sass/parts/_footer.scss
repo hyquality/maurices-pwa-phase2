@@ -7,6 +7,23 @@ footer {
         }
       }
     }
+    h4{
+      & + ul.small{
+        @apply hidden md:block;
+      }
+      &.on{
+        @apply bg-gray_1;
+        & + ul.small{
+          @apply block bg-gray_1;
+        }
+        .icon-down{
+          @apply hidden;
+        }
+        .icon-up{
+          @apply block;
+        }
+      }
+    }
   }
   .sub-footer {
     ul {

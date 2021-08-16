@@ -13,7 +13,7 @@ module.exports = {
             // default breakpoints but with 40px removed
             screens: {
                 sm: '600px',
-                md: '728px',
+                md: '768px',
                 lg: '984px',
                 xl: '1240px',
                 '2xl': '1440px',
@@ -24,6 +24,7 @@ module.exports = {
             maxWidth: {
                 'logo-width': '18rem',
                 'cellout-width': '4.5rem',
+                'cellout-width-small': '3.5rem',
             },
             colors: {
                 'main': '#5D5D5D',
