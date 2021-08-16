@@ -1,8 +1,8 @@
 header.mar-header{
   .middle-bar-menu{
-    li{
+    & > li{
       @apply ml-7;
-      a{
+      & > a{
         @apply flex items-center;
       }
     }

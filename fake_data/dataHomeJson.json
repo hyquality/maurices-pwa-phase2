@@ -5,6 +5,16 @@
   "total_pages": 2,
   "data": {
     "HeaderContent": {
+      "store1": {
+        "title": "Set Your Store"
+      },
+      "store": {
+        "title": "Maurices Shoppes at Richland",
+        "address": " 3553 Richland Ave W <br/>\n                                    Suite 120 <br/>\n                                    Aiken, SC   29801",
+        "phone": "(803) 642-2257",
+        "timeOpening": "open until 9pm",
+        "time": "  Mon-Sat: 10am &mdash; 9pm <br/>\n                                    Sun: 1pm &mdash; 6pm"
+      },
       "announcement": {
         "text": "ONLINE ONLY — Get $25 off every $75 you spend!",
         "link": {
@@ -13,6 +23,56 @@
         }
       },
       "top_bar": {
+      },
+      "middle_bar": {
+        "customer1": {
+          "title": "Sign In"
+        },
+        "customer": {
+          "title": "Hi, Christina",
+          "button": {
+            "title": "",
+            "url": "#"
+          },
+          "nav": [
+            {
+              "id": 0,
+              "text": "My Profile",
+              "url": "#",
+              "caption": "Name, Password, etc."
+            },
+            {
+              "id": 1,
+              "text": "My Orders",
+              "url": "#",
+              "caption": "Track & Manage"
+            },
+            {
+              "id": 2,
+              "text": "My Payments",
+              "url": "#",
+              "caption": "Mastercard 2630"
+            },
+            {
+              "id": 3,
+              "text": "My Addresses",
+              "url": "#",
+              "caption": "18 Harrison Avenue"
+            },
+            {
+              "id": 4,
+              "text": "My Favorites",
+              "url": "#",
+              "caption": "5 items"
+            },
+            {
+              "id": 5,
+              "text": "MyMaurices Rewards",
+              "url": "#",
+              "caption": "200 pts"
+            }
+          ]
+        }
       },
       "nav": [
         {
@@ -94,38 +154,53 @@
           ]
         }
       ],
-      "columnFooter":{
-        "columns":[
+      "columnFooter": {
+        "columns": [
           {
             "id": 0,
             "nav": [
               {
                 "id": 0,
-                "icon": ["fa","truck"],
+                "icon": [
+                  "fa",
+                  "truck"
+                ],
                 "text": "Track an Order",
                 "url": "#"
               },
               {
                 "id": 1,
-                "icon": ["fas","search-location"],
+                "icon": [
+                  "fas",
+                  "search-location"
+                ],
                 "text": "Find a Store",
                 "url": "#"
               },
               {
                 "id": 2,
-                "icon": ["fas","book-open"],
+                "icon": [
+                  "fas",
+                  "book-open"
+                ],
                 "text": " Shop the Catalog",
                 "url": "#"
               },
               {
                 "id": 3,
-                "icon": ["fas","gift"],
+                "icon": [
+                  "fas",
+                  "gift"
+                ],
                 "text": "Give a Gift Card",
                 "url": "#"
               },
               {
                 "id": 4,
-                "icon": ["far","comment-dots"],
+                "icon": [
+                  "far",
+                  "comment-dots"
+                ],
                 "text": "Live Chat with Us",
                 "url": "#"
               }
@@ -199,19 +274,28 @@
             "nav": [
               {
                 "id": 0,
-                "icon": ["fas","comment"],
+                "icon": [
+                  "fas",
+                  "comment"
+                ],
                 "text": "Live Chat",
                 "url": "#"
               },
               {
                 "id": 1,
-                "icon": ["fas","envelope"],
+                "icon": [
+                  "fas",
+                  "envelope"
+                ],
                 "text": "Email Us",
                 "url": "#"
               },
               {
                 "id": 2,
-                "icon": ["fas","phone-alt"],
+                "icon": [
+                  "fas",
+                  "phone-alt"
+                ],
                 "text": "1.866.977.1542",
                 "url": "#"
               }
@@ -224,38 +308,52 @@
           "socialNav": [
             {
               "id": 0,
-              "icon": ["fab","facebook-f"],
+              "icon": [
+                "fab",
+                "facebook-f"
+              ],
               "text": "Facebook",
               "url": "#"
             },
             {
               "id": 1,
-              "icon": ["fab","twitter"],
+              "icon": [
+                "fab",
+                "twitter"
+              ],
               "text": "Twitter",
               "url": "#"
             },
             {
               "id": 2,
-              "icon": ["fab","instagram-square"],
+              "icon": [
+                "fab",
+                "instagram-square"
+              ],
               "text": "Instagram",
               "url": "#"
             },
             {
               "id": 1,
-              "icon": ["fab","pinterest-p"],
+              "icon": [
+                "fab",
+                "pinterest-p"
+              ],
               "text": "Pinterest",
               "url": "#"
             },
             {
               "id": 1,
-              "icon": ["fab","youtube"],
+              "icon": [
+                "fab",
+                "youtube"
+              ],
               "text": "Youtube",
               "url": "#"
             }
           ]
         }
       },
-
       "subfooter": {
         "copy": "© 2019 Maurices, Inc. All rights reserved.",
         "nav": [

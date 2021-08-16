@@ -1,0 +1,5 @@
+button{
+  &.btn{
+    @apply block mt-5 text-gray_2 uppercase tracking-wider border border-gray_3 p-2 text-center w-full rounded-md;
+  }
+}

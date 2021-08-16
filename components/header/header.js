@@ -23,7 +23,7 @@ export class Header extends Component {
                 <header className="mar-header fixed w-full top-0">
                     <AnnouncementBar data={this.state.data.announcement}/>
                     <TopBar/>
-                    <MiddleBar/>
+                    <MiddleBar data={this.state.data.store} customer={this.state.data.middle_bar.customer}/>
                 </header>
                 <Nav data={this.state.data.nav}/>
             </>

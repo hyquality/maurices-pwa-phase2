@@ -21,6 +21,10 @@ module.exports = {
         },
 
         extend: {
+            minWidth: {
+                'min352': '22rem',
+
+            },
             maxWidth: {
                 'logo-width': '18rem',
                 'cellout-width': '4.5rem',
@@ -33,6 +37,7 @@ module.exports = {
                 'gray_1': '#F6F8F8',
                 'gray_2': '#4B5666',
                 'gray_3': '#D4D5D5',
+                'gray_4': '#333333',
                 'gray_border': '#E8EBEB',
                 'green': '#58B7B1',
                 success: '#0070f3',
