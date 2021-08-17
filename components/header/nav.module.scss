@@ -1,0 +1,44 @@
+ul.nav {
+  & > li {
+    @apply pr-5 list-none text-lg;
+
+    & > a {
+      @apply uppercase text-gray_2 text-sm tracking-menu py-4 block;
+    }
+    & > div {
+      @apply border-t border-gray_border border-solid;
+      & > div{
+        & > div{
+          @apply max-w-max-13 pr-7 box-content;
+          a {
+            @apply pb-2.5 text-sm;
+          }
+           &:last-child{
+            @apply pr-0;
+          }
+        }
+      }
+    }
+    &:hover {
+      & > a{
+        @apply relative z-20 border-b-2 border-solid border-green -mb-0.5;
+        text-shadow: 0 0 0 black, 0 0 0 black;
+      }
+
+      & > div {
+        @apply block;
+      }
+
+    }
+    &:last-child {
+      & > a {
+        @apply text-red_2;
+      }
+      &:hover {
+        & > a{
+          text-shadow: 0 0 0 #FF5353, 0 0 0 #FF5353;
+        }
+      }
+    }
+  }
+}

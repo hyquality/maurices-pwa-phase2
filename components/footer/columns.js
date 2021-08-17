@@ -7,6 +7,8 @@ import {far} from '@fortawesome/free-regular-svg-icons';
 import {faChevronDown, faChevronUp, fas} from "@fortawesome/free-solid-svg-icons";
 import Icon from "@components/icon";
 import React, {useState} from "react";
+import NavList from "@components/templates/nav-list";
+import Nav from "@components/header/nav";
 
 library.add(fab);
 library.add(far);
@@ -46,45 +48,7 @@ export default function Columns({data, signup}) {
                             {
                                 column.nav
                                     ? (
-                                        <ul className={"md:block "+(column.id === 0 ? "flex flex-wrap justify-center" : "text-center small py-3 md:py-0")}>
-                                            {
-                                                column.nav.map((link) => (
-                                                    column.id === 0 ?
-                                                        (
-                                                            <li key={"footer-column-link-" + column.id + "_" + link.id}
-                                                                className="pb-8 w-1/3 md:w-full content-center text-center md:text-left">
-                                                                {
-                                                                    link.icon ?
-                                                                        (
-                                                                            <Icon icon={link.icon} className="w-5 pr-0 md:pr-2.5 "/>
-                                                                        ) :
-                                                                        null
-                                                                }
-                                                                <Link href={link.url}>
-                                                                    <a className={"text-xs md:text-xl leading-5 block md:inline-block "+(column.id === 0 ? "text-xs md:text-xl" : "text-xs md:text-xl")}>{link.text}</a>
-                                                                </Link>
-                                                            </li>
-                                                        )
-                                                        : (
-                                                            <li key={"footer-column-link-" + column.id + "_" + link.id}
-                                                                className="pb-2.5 text-center md:text-left">
-                                                                {
-                                                                    link.icon ?
-                                                                        (
-                                                                            <Icon icon={link.icon} className="pr-1.5"/>
-                                                                        ) :
-                                                                        null
-                                                                }
-                                                                <Link href={link.url}>
-                                                                    <a className="text-xs leading-5">{link.text}</a>
-                                                                </Link>
-                                                            </li>
-                                                        )
-
-                                                ))
-                                            }
-
-                                        </ul>
+                                        <NavList data={column.nav} className={"footer-column-nav  footer-column-link-"+column.id+" "+(column.id === 0 ? "first-column" : "next-column small")}/>
                                     )
                                     : null
                             }
@@ -112,17 +76,7 @@ export default function Columns({data, signup}) {
                         {
                             signup.socialNav
                                 ? (
-                                    <ul className="social-nav flex justify-center items-center">
-                                        {
-                                            signup.socialNav.map((link) => (
-                                                <li className="m-3 ">
-                                                    <Link href={link.url}>
-                                                        <a className=""><Icon icon={link.icon} className="w-5 h-5 p-3 border border-gray_3 rounded-full"/></a>
-                                                    </Link>
-                                                </li>
-                                            ))
-                                        }
-                                    </ul>
+                                    <NavList data={signup.socialNav} className={"social-nav"}/>
 
                                 )
                                 : null

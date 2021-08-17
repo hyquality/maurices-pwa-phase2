@@ -1,36 +1,77 @@
 footer {
-  .columns-footer{
-    .social-nav{
-      span.icon{
-        svg{
-          @apply h-full w-auto m-auto;
+  .columns-footer {
+    .social-nav {
+      @apply flex justify-center items-center;
+      li {
+        @apply m-3;
+        a {
+          span {
+            @apply hidden;
+            &.icon {
+              @apply w-5 h-5 p-3 border border-gray_3 rounded-full block ;
+              svg {
+                @apply h-full w-auto m-auto;
+              }
+            }
+          }
         }
       }
     }
-    h4{
-      & + ul.small{
+
+    h4 {
+      & + ul.small {
         @apply hidden md:block;
       }
-      &.on{
+
+      &.on {
         @apply bg-gray_1;
-        & + ul.small{
+        & + ul.small {
           @apply block bg-gray_1;
         }
-        .icon-down{
+
+        .icon-down {
           @apply hidden;
         }
-        .icon-up{
+
+        .icon-up {
           @apply block;
         }
       }
     }
+
+    .footer-column-nav {
+      @apply md:block;
+      &.first-column {
+        @apply flex flex-wrap justify-center;
+        li{
+          @apply pb-8 w-1/3 md:w-full content-center text-center md:text-left;
+          span.icon{
+            @apply w-5 pr-0 md:pr-2.5;
+          }
+          a{
+            @apply text-xs md:text-xl leading-5 block md:inline-block text-xs md:text-xl;
+          }
+        }
+      }
+
+      &.next-column {
+        @apply text-center py-3 md:py-0;
+        li{
+          @apply pb-2.5 text-center md:text-left;
+          a{
+            @apply text-xs leading-5 ;
+          }
+        }
+      }
+    }
   }
+
   .sub-footer {
     ul {
       li {
         &:last-child {
-          a{
-           @apply border-0;
+          a {
+            @apply border-0;
           }
         }
       }

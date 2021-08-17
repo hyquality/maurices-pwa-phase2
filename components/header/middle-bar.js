@@ -15,6 +15,8 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import Icon from "@components/icon";
 import Link from "next/link";
+import Templates from "@components/templates/templates";
+import NavList from "@components/templates/nav-list";
 
 export default function MiddleBar({data, customer}) {
     const [isHovering, setIsHovered] = useState(false);
@@ -123,16 +125,16 @@ export default function MiddleBar({data, customer}) {
                                             }
                                         </a>
                                         {isCustomerHovering ? (
-                                            <ul className="absolute left-0 border border-gray_border border-solid bg-white min-w-min352 p-5 top-full">
-                                                {customer.nav.map((link) => (
-                                                    <li key={"nav-" + link.id} className="ml-0 pb-2.5">
-                                                        <Link href={link.url}>
-                                                            <a className="text-xl text-gray_2 flex justify-center">{link.text} {link.caption ? (
-                                                                <span className="text-sm text-main ml-auto">{link.caption}</span>) : ("")}</a>
-                                                        </Link>
-                                                    </li>
-                                                ))}
-                                            </ul>
+
+                                            <div  className="absolute left-0 border border-gray_border border-solid bg-white min-w-min352 p-5 top-full">
+                                                <NavList data={customer.nav} className={"customer-header-menu left-0"}/>
+
+                                                {customer.templates ? (
+                                                   <Templates templates={customer.templates}/>
+                                                ) : ("")}
+                                                <button className="btn">SIGN OUT</button>
+                                            </div>
+
                                         ) : ("")}
                                     </>
                                 ) : (

@@ -1,14 +1,14 @@
-import {getHomePageData} from "../lib/api";
+import {getHomePageData, getNavData} from "../lib/api";
 import Layout from "@components/layout";
 import Head from 'next/head'
 import Container from "@components/container";
 
-export default function Home({pageData, preview}) {
+export default function Home({pageData, mainNav, preview}) {
     return (
         <>
-            <Layout preview={preview} data={pageData.data}>
+            <Layout preview={preview} data={pageData.data} nav={mainNav}>
                 <Head>
-                    <title>test</title>
+                    <title>Maurices React App</title>
                 </Head>
                 <Container>
                     123
@@ -28,8 +28,9 @@ export default function Home({pageData, preview}) {
 }*/
 
 export async function getServerSideProps({preview = false}) {
-    const {data} = (await getHomePageData()) || {};
-    if (!data) {
+    const data1 = (await getHomePageData()) || {};
+    const data2 = (await getNavData()) || {};
+    if (!data1.data || !data2.data ) {
         return {
             notFound: true,
         }
@@ -37,7 +38,8 @@ export async function getServerSideProps({preview = false}) {
 
     return {
         props: {
-            pageData: data,
+            pageData: data1.data,
+            mainNav: data2.data,
             preview
         }
     }

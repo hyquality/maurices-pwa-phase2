@@ -27,6 +27,7 @@ module.exports = {
             },
             maxWidth: {
                 'logo-width': '18rem',
+                'max-13': '13rem',
                 'cellout-width': '4.5rem',
                 'cellout-width-small': '3.5rem',
             },

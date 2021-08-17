@@ -71,6 +71,18 @@
               "url": "#",
               "caption": "200 pts"
             }
+          ],
+          "templates":[
+            {
+              "path": "./callout/callout-item",
+              "class": "customer-menu-callout",
+              "data": {
+                "id": 0,
+                "title": "Get Rewarded!",
+                "text": "Earn 1 point for every dollar you spend. 100 pts = $5 reward.",
+                "icon": "assets/images/cell_1.png"
+              }
+            }
           ]
         }
       },
@@ -334,7 +346,7 @@
               "url": "#"
             },
             {
-              "id": 1,
+              "id": 3,
               "icon": [
                 "fab",
                 "pinterest-p"
@@ -343,7 +355,7 @@
               "url": "#"
             },
             {
-              "id": 1,
+              "id": 4,
               "icon": [
                 "fab",
                 "youtube"
