@@ -8,6 +8,27 @@
 @import "parts/footer";
 body {
   @apply text-main;
+  &:after{
+    content: "";
+    @apply fixed opacity-0 block left-full bg-balck_7 z-0 transition-opacity;
+
+  }
+  &.on{
+    .sticky-wrapper{
+      &.stickyHeader {
+        .main-navigation-wrapper{
+          @apply border-none;
+          &:after{
+            @apply z-10 inset-0 opacity-100;
+          }
+        }
+      }
+    }
+    &:after{
+      @apply z-10 inset-0 opacity-100;
+    }
+  }
+
 }
 
 .tralala_test_3{

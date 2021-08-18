@@ -1,6 +1,6 @@
 export default function AnnouncementBar({data}) {
     return (
-        <div className="bg-red text-center text-white text-xs py-2.5">
+        <div className="announcement-bar bg-red text-center text-white text-xs py-2.5">
             {data.text}
             {
                 data.link

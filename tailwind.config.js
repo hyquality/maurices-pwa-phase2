@@ -1,3 +1,4 @@
+const {toRgba} = require("tailwindcss/lib/util/withAlphaVariable");
 module.exports = {
    // mode: 'jit',
     purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
@@ -23,7 +24,6 @@ module.exports = {
         extend: {
             minWidth: {
                 'min352': '22rem',
-
             },
             maxWidth: {
                 'logo-width': '18rem',
@@ -41,11 +41,13 @@ module.exports = {
                 'gray_4': '#333333',
                 'gray_border': '#E8EBEB',
                 'green': '#58B7B1',
+                'balck_7': 'rgba(0,0,0,0.7)',
                 success: '#0070f3',
                 cyan: '#79FFE1',
             },
             spacing: {
                 28: '7rem',
+                '30px': '1.875rem'
             },
             letterSpacing: {
                 menu: '0.094rem',
@@ -61,7 +63,7 @@ module.exports = {
                 '8xl': '6.25rem',
             },
             boxShadow: {
-                small: '0 5px 10px rgba(0, 0, 0, 0.12)',
+                small: '0 1px 5px rgba(0, 0, 0, 0.12)',
                 medium: '0 8px 30px rgba(0, 0, 0, 0.12)',
             },
         },

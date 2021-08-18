@@ -1,25 +1,56 @@
-header.mar-header {
-  .middle-bar-menu {
-    & > li {
-      @apply ml-7;
-      & > a {
-        @apply flex items-center;
-      }
-    }
-
-    .customer-header-menu {
+.sticky-wrapper{
+  header.mar-header {
+    .middle-bar-menu {
       & > li {
-        @apply ml-0 pb-2.5;
-        a {
-          @apply text-xl text-gray_2 flex justify-center;
-          span {
-            &.caption {
-              @apply text-sm text-main ml-auto;
+        @apply ml-7;
+        & > a {
+          @apply flex items-center;
+        }
+      }
+
+      .customer-header-menu {
+        & > li {
+          @apply ml-0 pb-2.5;
+          a {
+            @apply text-xl text-gray_2 flex justify-center;
+            span {
+              &.caption {
+                @apply text-sm text-main ml-auto;
+              }
             }
           }
         }
       }
     }
+
   }
 
+  .main-navigation-wrapper{
+    &:after{
+      content: "";
+      @apply absolute opacity-0 block left-full bg-balck_7 z-0 transition-opacity;
+    }
+  }
+  &.stickyHeader {
+    animation: smoothScroll 1s forwards;
+    @apply fixed top-0 w-full transition-all duration-500 ease-in z-20 shadow-small;
+    .announcement-bar{
+      @apply hidden;
+    }
+    .top-bar{
+      @apply hidden;
+    }
+
+  }
+}
+
+
+@keyframes smoothScroll {
+  0% {
+    transform: translateY(-142px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }

@@ -11,7 +11,7 @@ export default function Home({pageData, mainNav, preview}) {
                     <title>Maurices React App</title>
                 </Head>
                 <Container>
-                    123
+                    <div className="min-h-screen">123</div>
                 </Container>
             </Layout>
         </>

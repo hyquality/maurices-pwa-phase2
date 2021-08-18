@@ -12,7 +12,7 @@ export default function Templates({templates, context=""}) {
                     CalloutItem = dynamic(import(template.path+ ''))
                     return (
                         <div className={template.class?template.class+"":""} key={"dyn-template-"+context+"-"+template.path}>
-                            <CalloutItem data={template.data} key={"dynamic-template-"+template.path}/>
+                            <CalloutItem data={template.data} />
                         </div>
 
                     )

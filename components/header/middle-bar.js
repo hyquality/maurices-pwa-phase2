@@ -17,15 +17,28 @@ import Icon from "@components/icon";
 import Link from "next/link";
 import Templates from "@components/templates/templates";
 import NavList from "@components/templates/nav-list";
+import {bodyOverlay} from "../../lib/helpers";
 
 export default function MiddleBar({data, customer}) {
     const [isHovering, setIsHovered] = useState(false);
-    const onMouseEnter = () => setIsHovered(true);
-    const onMouseLeave = () => setIsHovered(false);
+    const onMouseEnter = () => {
+        bodyOverlay().then(r => {})
+        setIsHovered(true)
+    }
+    const onMouseLeave = () => {
+        bodyOverlay().then(r => {})
+        setIsHovered(false)
+    }
 
     const [isCustomerHovering, setIsCustomerHovering] = useState(false);
-    const onCustomerMouseEnter = () => setIsCustomerHovering(true);
-    const onCustomerMouseLeave = () => setIsCustomerHovering(false);
+    const onCustomerMouseEnter = () => {
+        bodyOverlay().then(r => {})
+        setIsCustomerHovering(true)
+    }
+    const onCustomerMouseLeave = () => {
+        bodyOverlay().then(r => {})
+        setIsCustomerHovering(false)
+    }
     return (
         <div className="text-sm py-5 bg-white">
             <Container>
@@ -59,7 +72,7 @@ export default function MiddleBar({data, customer}) {
                         {data.address ? (
                             isHovering ? (
                                 <div
-                                    className="text-xs absolute border border-gray_border border-solid bg-white w-full min-w-min352 p-5 top-full">
+                                    className="overlay-fade text-xs absolute border border-gray_border border-solid bg-white w-full min-w-min352 p-5 top-full">
                                     <h3 className="text-xl text-gray_4 font-bold  pb-2.5">{data.title}</h3>
                                     {
                                         data.address ? (
@@ -101,17 +114,22 @@ export default function MiddleBar({data, customer}) {
                             <a><img src="assets/images/logo.png"/></a>
                         </Link>
                     </div>
-                    <ul className="middle-bar-menu flex ml-auto relative  -mb-5">
-                        <li>
+                    <ul className="middle-bar-menu flex ml-auto relative">
+                        <li className="relative py-5 -mt-30px -mb-10">
                             <a href="#"> <Icon icon={faSearch} className="pr-1.5"/>Search</a>
                         </li>
                         <li
                             onMouseEnter={onCustomerMouseEnter}
                             onMouseLeave={onCustomerMouseLeave}
 
-                            className="pb-5"
+                            className="relative py-5 -mt-30px -mb-10"
                         >
+
                             {
+                                /*                      padding: 20px 0 20px;
+                                            margin-top: -30px;
+                                            margin-bottom: -40px;
+                                            position: relative;*/
                                 customer.nav ? (
                                     <>
                                         <a href="#"
@@ -126,7 +144,7 @@ export default function MiddleBar({data, customer}) {
                                         </a>
                                         {isCustomerHovering ? (
 
-                                            <div  className="absolute left-0 border border-gray_border border-solid bg-white min-w-min352 p-5 top-full">
+                                            <div  className="overlay-fade absolute left-0 border border-gray_border border-solid bg-white min-w-min352 p-5 top-full">
                                                 <NavList data={customer.nav} className={"customer-header-menu left-0"}/>
 
                                                 {customer.templates ? (
@@ -145,7 +163,7 @@ export default function MiddleBar({data, customer}) {
 
 
                         </li>
-                        <li>
+                        <li className="relative py-5 -mt-30px -mb-10">
                             <a href="#"><Icon icon={faShoppingBag} className="pr-1.5"/>5</a>
                         </li>
                     </ul>

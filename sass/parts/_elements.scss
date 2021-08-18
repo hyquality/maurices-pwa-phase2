@@ -6,3 +6,12 @@ button{
 .customer-menu-callout{
   @apply mt-4 -mx-5 px-5 py-4 bg-gray_1;
 }
+.overlay-fade{
+  @apply opacity-0 transition-opacity duration-500;
+}
+body.on{
+  .overlay-fade{
+    @apply opacity-100;
+  }
+}
+
