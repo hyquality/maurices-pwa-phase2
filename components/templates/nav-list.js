@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import Icon from "@components/icon";
 import React from "react";
-import styles from "@components/header/nav.module.scss";
 import SimpleBanner from "@components/templates/banner/simple-banner";
+import Template from "@components/templates/template";
 
 export default function NavList({data, className}) {
     return (
@@ -43,6 +43,11 @@ export default function NavList({data, className}) {
                                                                 </div>
                                                             ) : ("")
                                                         }
+                                                        {item.template ? (
+                                                            <div className="flex-1">
+                                                                <Template template={item.template}/>
+                                                            </div>
+                                                        ) : ("")}
                                                     </>
 
                                                 ))

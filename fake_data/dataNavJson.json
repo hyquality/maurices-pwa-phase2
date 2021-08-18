@@ -519,18 +519,58 @@
         },
         {
           "id": 2,
-          "banner": {
-            "title": "Shop Shoes",
-            "image": "assets/images/banners/banner_4_1.png",
-            "url": "#"
+          "template": {
+            "path": "./banner/simple-text-banner",
+            "class": "simple-text-banner",
+            "data": {
+              "label": "IN STORE + ONLINE",
+              "title": "30% OFF",
+              "subtite": "all dresses",
+              "notation": "*exclusions apply",
+              "color": "#E0F3F2",
+              "textColor": "#58B7B1",
+              "url": "#",
+              "nav": [
+                {
+                  "id": 0,
+                  "text": "Shop Now",
+                  "url": "#"
+                },
+                {
+                  "id": 1,
+                  "text": "Shop Plus",
+                  "url": "#"
+                }
+              ]
+            }
           }
         },
         {
           "id": 3,
-          "banner": {
-            "title": "Shop Scarves",
-            "image": "assets/images/banners/banner_4_2.png",
-            "url": "#"
+          "template": {
+            "path": "./banner/simple-text-banner",
+            "class": "simple-text-banner",
+            "data": {
+              "label": "IN STORE + ONLINE",
+              "title": "30% OFF",
+              "subtite": "new markdowns",
+              "notation": "*exclusions apply",
+              "color": "#FFEAE6",
+              "textColor": "#C26E60",
+              "url": "#",
+              "nav": [
+                {
+                  "id": 0,
+                  "text": "Shop Now",
+                  "url": "#"
+                },
+                {
+                  "id": 1,
+                  "text": "Shop Plus",
+                  "url": "#"
+                }
+              ]
+            }
           }
         }
       ]

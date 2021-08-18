@@ -30,10 +30,13 @@
       content: "";
       @apply absolute opacity-0 block left-full bg-balck_7 z-0 transition-opacity;
     }
+    .megamenu{
+      @apply shadow-small;
+    }
   }
   &.stickyHeader {
-    animation: smoothScroll 1s forwards;
-    @apply fixed top-0 w-full transition-all duration-500 ease-in z-20 shadow-small;
+    animation: smoothScroll 200ms forwards;
+    @apply fixed top-0 w-full z-20 shadow-small;
     .announcement-bar{
       @apply hidden;
     }

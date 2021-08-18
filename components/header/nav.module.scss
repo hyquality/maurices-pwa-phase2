@@ -10,7 +10,7 @@ ul.nav {
       & > div{
         & > div{
           @apply max-w-max-13 pr-7 box-content;
-          a {
+          & > a {
             @apply pb-2.5 text-sm;
           }
            &:last-child{

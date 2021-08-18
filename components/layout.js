@@ -6,15 +6,21 @@ import React, { useState, useRef, useEffect } from 'react';
 
 
 export default function Layout({preview, data, nav, children}) {
-    const [stickyHeader, setStickyHeader] = useState({ isStickyHeader: false, offsetCompensation: 0 });
+    const [stickyHeader, setStickyHeader] = useState(false);
+    const [offsetCompensation, setOffsetCompensation] = useState(0);
     const headerRef = useRef(null);
 
     // handle scroll event
     const handleScroll = (elTopOffset, elHeight) => {
+
         if (window.pageYOffset > (elTopOffset + elHeight)) {
-            setStickyHeader({ isStickyHeader: true, offsetCompensation: elHeight });
+            console.log(elHeight);
+            setStickyHeader(true);
+            setOffsetCompensation(elHeight)
+
         } else {
-            setStickyHeader({ isStickyHeader: false, offsetCompensation: 0 });
+            setStickyHeader(false);
+            setOffsetCompensation(0)
         }
     };
 
@@ -35,8 +41,8 @@ export default function Layout({preview, data, nav, children}) {
     return (
         <>
             <Meta/>
-            <div style={{ marginTop: stickyHeader.offsetCompensation }}>
-                <div  className={`sticky-wrapper${stickyHeader.isStickyHeader ? ' stickyHeader' : ''}`} ref={headerRef}>
+            <div style={{ marginTop: offsetCompensation }}>
+                <div  className={`sticky-wrapper${stickyHeader ? ' stickyHeader' : ''}`} ref={headerRef}>
                     {
                         data.HeaderContent ? (
                             <Header data={data.HeaderContent}/>
