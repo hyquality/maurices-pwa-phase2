@@ -120,8 +120,8 @@ export default function MiddleBar({data, customer}) {
                         </Link>
                     </div>
                     <ul className="middle-bar-menu flex ml-auto relative py-30px -my-5">
-                        <li><SearchField/></li>
-                        <li
+                        <li className="py-30px -my-30px"><SearchField/></li>
+                        <li className="py-30px -my-30px"
                             onMouseEnter={onCustomerMouseEnter}
                             onMouseLeave={onCustomerMouseLeave}
                         >
@@ -161,7 +161,7 @@ export default function MiddleBar({data, customer}) {
 
 
                         </li>
-                        <li>
+                        <li className="py-30px -my-30px">
                             <a href="#"><Icon icon={faShoppingBag} className="pr-1.5"/>5</a>
                         </li>
                     </ul>
