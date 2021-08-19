@@ -17,6 +17,7 @@ import Templates from "@components/templates/templates";
 import NavList from "@components/templates/nav-list";
 import {bodyOverlay} from "../../lib/helpers";
 import SearchField from "@components/header/search/search-field";
+import InstantSearch from "@components/header/search/instant-search";
 
 export default function MiddleBar({data, customer}) {
     const [isHovering, setIsHovered] = useState(false);
@@ -42,6 +43,12 @@ export default function MiddleBar({data, customer}) {
         })
         setIsCustomerHovering(false)
     }
+
+    const [instantSearchState, setInstantSearchState] = useState({
+        value: '',
+        mouseOn: false,
+        searchResult: false
+    });
 
 
     return (
@@ -120,7 +127,7 @@ export default function MiddleBar({data, customer}) {
                         </Link>
                     </div>
                     <ul className="middle-bar-menu flex ml-auto relative py-30px -my-5">
-                        <li className="py-30px -my-30px"><SearchField/></li>
+                        <li className="py-30px -my-30px"><SearchField instantSearchState={instantSearchState} setInstantSearchState={setInstantSearchState}/></li>
                         <li className="py-30px -my-30px"
                             onMouseEnter={onCustomerMouseEnter}
                             onMouseLeave={onCustomerMouseLeave}
@@ -166,6 +173,7 @@ export default function MiddleBar({data, customer}) {
                         </li>
                     </ul>
                 </div>
+                <InstantSearch data={[]} instantSearchState={instantSearchState} setInstantSearchState={setInstantSearchState}/>
             </Container>
 
         </div>

@@ -22,6 +22,9 @@ module.exports = {
         },
 
         extend: {
+            minHeight:{
+                'instant': '10rem',
+            },
             minWidth: {
                 'min352': '22rem',
             },

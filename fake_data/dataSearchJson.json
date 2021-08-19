@@ -1,0 +1,177 @@
+{
+  "data": {
+    "result": [
+      {
+        "id": 0,
+        "text": "Solid Button Down Blouse",
+        "image": "assets/images/search/s1.png",
+        "url": "#"
+      },
+      {
+        "id": 1,
+        "text": "Solid Embroidered Lace-up Top",
+        "image": "assets/images/search/s2.png",
+        "url": "#"
+      },
+      {
+        "id": 2,
+        "text": "Solid Swiss Dot Peasant Top",
+        "image": "assets/images/search/s3.png",
+        "url": "#"
+      },
+      {
+        "id": 3,
+        "text": "Floral Button Down High Low Top",
+        "image": "assets/images/search/s4.png",
+        "url": "#"
+      },
+      {
+        "id": 4,
+        "text": "Metallic Floral Smocked Top",
+        "image": "assets/images/search/s5.png",
+        "url": "#"
+      },
+      {
+        "id": 5,
+        "text": "Floral Button Down Blouse",
+        "image": "assets/images/search/s6.png",
+        "url": "#"
+      }
+    ],
+    "suggestions": [
+      {
+        "id": 0,
+        "text": "Blouse",
+        "url": "#"
+      },
+      {
+        "id": 1,
+        "text": "Button Down Blouse",
+        "url": "#"
+      },
+      {
+        "id": 2,
+        "text": "Down Blouse",
+        "url": "#"
+      },
+      {
+        "id": 3,
+        "text": "Sleeve Blouse",
+        "url": "#"
+      },
+      {
+        "id": 4,
+        "text": "Neck Blouse",
+        "url": "#"
+      },
+      {
+        "id": 5,
+        "text": "Peasant Blouse",
+        "url": "#"
+      },
+      {
+        "id": 6,
+        "text": "Tunic Blouse",
+        "url": "#"
+      },
+      {
+        "id": 7,
+        "text": "Button Shoulder Blouse",
+        "url": "#"
+      }
+    ],
+    "categories": [
+      {
+        "id": 0,
+        "text": "Shirts & Blouses",
+        "url": "#"
+      },
+      {
+        "id": 1,
+        "text": "Plus Size Shirts & Blouses",
+        "url": "#"
+      }
+    ]
+  },
+  "data2": {
+    "result": [
+      {
+        "id": 0,
+        "text": "Solid Button Down Blouse",
+        "image": "assets/images/search/s1.png",
+        "url": "#"
+      },
+      {
+        "id": 1,
+        "text": "Solid Embroidered Lace-up Top",
+        "image": "assets/images/search/s2.png",
+        "url": "#"
+      },
+      {
+        "id": 5,
+        "text": "Floral Button Down Blouse",
+        "image": "assets/images/search/s6.png",
+        "url": "#"
+      }
+    ],
+    "suggestions": [
+      {
+        "id": 0,
+        "text": "Blouse",
+        "url": "#"
+      },
+      {
+        "id": 6,
+        "text": "Tunic Blouse",
+        "url": "#"
+      },
+      {
+        "id": 7,
+        "text": "Button Shoulder Blouse",
+        "url": "#"
+      }
+    ],
+    "categories": [
+      {
+        "id": 1,
+        "text": "Plus Size Shirts & Blouses",
+        "url": "#"
+      }
+    ]
+  },
+  "data3": {
+    "result": [
+      {
+        "id": 4,
+        "text": "Metallic Floral Smocked Top",
+        "image": "assets/images/search/s5.png",
+        "url": "#"
+      },
+      {
+        "id": 5,
+        "text": "Floral Button Down Blouse",
+        "image": "assets/images/search/s6.png",
+        "url": "#"
+      }
+    ],
+    "suggestions": [
+      {
+        "id": 6,
+        "text": "Tunic Blouse",
+        "url": "#"
+      },
+      {
+        "id": 7,
+        "text": "Button Shoulder Blouse",
+        "url": "#"
+      }
+    ],
+    "categories": [
+      {
+        "id": 1,
+        "text": "Plus Size Shirts & Blouses",
+        "url": "#"
+      }
+    ]
+  }
+}
