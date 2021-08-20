@@ -26,7 +26,7 @@ export default function NavList({data, className}) {
                     data.map((link) => (
                         <li key={className + "-" + link.id}>
                             <Link href={link.url}>
-                                <a onClick={onNavRootElementClick}>
+                                <a onClick={onNavRootElementClick} onTouchStart={onNavRootElementClick}>
                                     {
                                         link.icon ? (
                                             <Icon icon={link.icon}/>
@@ -44,7 +44,7 @@ export default function NavList({data, className}) {
                             {link.mega ? (
                                 <div className="megamenu">
                                     <div className="top">
-                                        <a href="#" onClick={onNavCloseMegaElementClick}>
+                                        <a href="#" onClick={onNavCloseMegaElementClick} onTouchStart={onNavCloseMegaElementClick}>
                                             <Icon icon={["fas","chevron-left"]} className="block"/>
                                         </a>
                                         <span> {link.text}</span>
