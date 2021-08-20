@@ -1,52 +1,68 @@
-.sticky-wrapper{
-  header.mar-header {
-    .middle-bar-menu {
-      & > li {
-        @apply ml-7;
-        & > a {
-          @apply flex items-center;
+body {
+  .sticky-wrapper{
+    header.mar-header {
+      .middle-bar-menu {
+        & > li {
+          @apply ml-5 md:ml-7;
+          & > a {
+            @apply flex items-center;
+          }
+        }
+
+        .customer-header-menu {
+          & > li {
+            @apply ml-0 pb-2.5;
+            a {
+              @apply text-xl text-gray_2 flex justify-center;
+              span {
+                &.caption {
+                  @apply text-sm text-main ml-auto;
+                }
+              }
+            }
+          }
         }
       }
 
-      .customer-header-menu {
-        & > li {
-          @apply ml-0 pb-2.5;
-          a {
-            @apply text-xl text-gray_2 flex justify-center;
-            span {
-              &.caption {
-                @apply text-sm text-main ml-auto;
-              }
-            }
+    }
+
+
+    &.stickyHeader {
+      animation: smoothScroll 200ms forwards;
+      @apply fixed top-0 w-full z-20 shadow-small;
+      .announcement-bar{
+        @apply hidden;
+      }
+      .top-bar{
+        @apply hidden;
+      }
+
+    }
+  }
+
+  &.on{
+    .sticky-wrapper{
+      &.stickyHeader {
+        .main-navigation-wrapper{
+          @apply border-none;
+          &:after{
+            @apply z-10 inset-0 opacity-100;
           }
         }
       }
     }
 
   }
-
-  .main-navigation-wrapper{
-    &:after{
-      content: "";
-      @apply absolute opacity-0 block left-full bg-balck_7 z-0 transition-opacity;
+  &.menu-opened{
+    overflow: hidden;
+    .sticky-wrapper {
+      &.stickyHeader {
+        position: relative;
+        animation: none;
+      }
     }
-    .megamenu{
-      @apply shadow-small;
-    }
-  }
-  &.stickyHeader {
-    animation: smoothScroll 200ms forwards;
-    @apply fixed top-0 w-full z-20 shadow-small;
-    .announcement-bar{
-      @apply hidden;
-    }
-    .top-bar{
-      @apply hidden;
-    }
-
   }
 }
-
 
 @keyframes smoothScroll {
   0% {

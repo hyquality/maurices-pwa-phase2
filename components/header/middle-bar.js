@@ -4,7 +4,6 @@ import {
     faChevronUp,
     faChevronDown,
     faMapMarkerAlt,
-    faSearch,
     faUserCircle,
     faShoppingBag
 } from "@fortawesome/free-solid-svg-icons";
@@ -15,12 +14,11 @@ import Icon from "@components/icon";
 import Link from "next/link";
 import Templates from "@components/templates/templates";
 import NavList from "@components/templates/nav-list";
-import {bodyOverlay, useCurrentWidth} from "../../lib/helpers";
+import {bodyOverlay, openMainMenu} from "../../lib/helpers";
 import SearchField from "@components/header/search/search-field";
 import InstantSearch from "@components/header/search/instant-search";
 
 export default function MiddleBar({data, customer}) {
-    let width = useCurrentWidth();
 
     const [isHovering, setIsHovered] = useState(false);
     const onMouseEnter = () => {
@@ -47,22 +45,29 @@ export default function MiddleBar({data, customer}) {
     }
 
     const [instantSearchState, setInstantSearchState] = useState({
-        value: '',
+        value: false,
         mouseOn: false,
         searchResult: false
     });
 
-
+    const onMobileMenuButtonClick = () => {
+        openMainMenu(1).then(r => "");
+    }
     return (
         <div className="text-sm py-5 bg-white">
             <Container>
                 <div className="flex items-center">
-                    <div className="address-item relative md:pb-5 md:-mb-5"
+                    <div className="block md:hidden pr-5">
+                        <a href="#" onClick={onMobileMenuButtonClick}>
+                            <Icon icon={["fas", "bars"]} className="w-5"/>
+                        </a>
+                    </div>
+                    <div className="address-item relative pr-5 md:pb-5 md:-mb-5"
                          onMouseEnter={onMouseEnter}
                          onMouseLeave={onMouseLeave}>
-                        <a href="#" className="block relative pl-5">
+                        <a href="#" className="block relative md:pl-5">
                             <Icon icon={faMapMarkerAlt}
-                                  className={"absolute left-0 pr-2.5 transform " + (data.address ? "translate-y-2/4" : "top-1/2 -translate-y-2/4")}/>
+                                  className={"w-5 md:w-4 md:absolute md:left-0 md:pr-2.5 md:transform " + (data.address ? "translate-y-2/4" : "top-1/2 -translate-y-2/4")}/>
 
                             <span className="hidden md:inline">
 
@@ -127,20 +132,16 @@ export default function MiddleBar({data, customer}) {
 
 
                     </div>
-                    <div className="logo absolute left-1/2 transform -translate-x-2/4 max-w-logo-width">
+                    <div className="logo text-center flex-grow">
                         <Link href="/">
-                            <a><img src="assets/images/logo.png" className="w-5/6 max-w-logo-width"/></a>
+                            <a><img src="assets/images/logo.png" className="w-5/6 max-w-logo-width inline"/></a>
                         </Link>
                     </div>
-                    <ul className="middle-bar-menu flex ml-auto relative md:py-30px md:-my-5">
-                        {
-                            width > 768 ? (
-                                <li className="py-30px -my-30px"><SearchField instantSearchState={instantSearchState}
-                                                                              setInstantSearchState={setInstantSearchState}/>
-                                </li>
-                            ) : ("")
-                        }
-
+                    <ul className="middle-bar-menu flex items-center ml-auto relative md:py-30px md:-my-5">
+                        <li className="hidden md:block py-30px -my-30px">
+                            <SearchField instantSearchState={instantSearchState}
+                                         setInstantSearchState={setInstantSearchState}/>
+                        </li>
                         <li className="md:py-30px md:-my-30px"
                             onMouseEnter={onCustomerMouseEnter}
                             onMouseLeave={onCustomerMouseLeave}
@@ -148,9 +149,9 @@ export default function MiddleBar({data, customer}) {
 
                             {
                                 customer.nav ? (
-                                    <>
-                                        <a href="#"
-                                        ><Icon icon={faUserCircle} className="pr-1.5"/>
+                                    <div>
+                                        <a href="#" className="flex items-center">
+                                            <Icon icon={faUserCircle} className="md:pr-1.5 w-5 md:w-4"/>
                                             <span className="hidden md:inline">
                                                 {customer.title}
                                                 {
@@ -168,7 +169,8 @@ export default function MiddleBar({data, customer}) {
 
                                                 <div
                                                     className="overlay-fade absolute left-0 border border-gray_border border-solid bg-white min-w-min352 p-5 top-full">
-                                                    <NavList data={customer.nav} className={"customer-header-menu left-0"}/>
+                                                    <NavList data={customer.nav}
+                                                             className={"customer-header-menu left-0"}/>
 
                                                     {customer.templates ? (
                                                         <Templates templates={customer.templates}/>
@@ -179,9 +181,10 @@ export default function MiddleBar({data, customer}) {
                                             ) : ("")}
                                         </div>
 
-                                    </>
+                                    </div>
                                 ) : (
-                                    <a href="#"><Icon icon={farUserCircle} className="pr-1.5"/>{customer.title}<Icon
+                                    <a href="#"><Icon icon={farUserCircle}
+                                                      className="md:pr-1.5 w-5 md:w-4"/>{customer.title}<Icon
                                         icon={faChevronDown} className="pl-1.5"/></a>
                                 )
                             }
@@ -189,7 +192,10 @@ export default function MiddleBar({data, customer}) {
 
                         </li>
                         <li className="md:py-30px md:-my-30px">
-                            <a href="#"><Icon icon={faShoppingBag} className="pr-1.5"/>5</a>
+                            <a href="#" className="relative">
+                                <Icon icon={faShoppingBag} className="w-5 md:w-4"/>
+                                <span className="block absolute">5</span>
+                            </a>
                         </li>
                     </ul>
                 </div>

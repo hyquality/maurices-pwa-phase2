@@ -1,0 +1,152 @@
+body {
+  .main-navigation-wrapper {
+    @apply relative transition-all duration-500;
+    @apply absolute top-0 -left-full bottom-0 w-11/12 z-20;
+    @apply md:relative md:left-auto md:w-full md:z-10;
+    @apply border-gray_border border-solid bg-white;
+    @apply md:border-t md:border-b;
+
+    ul.main-navigation {
+      @apply relative block ;
+      @apply md:flex justify-center ;
+      & > li {
+        @apply pr-5 list-none text-lg;
+
+        & > a {
+          @apply uppercase text-gray_2 text-sm tracking-menu py-4 block;
+          span.icon {
+            @apply inline-block md:hidden;
+          }
+        }
+
+        & > div {
+          @apply border-t border-gray_border border-solid;
+          & > div {
+            & > div {
+              @apply max-w-max-13 pr-7 box-content;
+              & > a {
+                @apply pb-2.5 text-sm;
+              }
+
+              &:last-child {
+                @apply pr-0;
+              }
+            }
+          }
+        }
+
+        &:hover {
+          & > a {
+            @apply relative z-20 border-b-2 border-solid border-green -mb-0.5;
+            text-shadow: 0 0 0 black, 0 0 0 black;
+          }
+
+          & > div {
+            @apply block;
+          }
+
+        }
+
+        &:last-child {
+          & > a {
+            @apply text-red_2;
+          }
+
+          &:hover {
+            & > a {
+              text-shadow: 0 0 0 #FF5353, 0 0 0 #FF5353;
+            }
+          }
+        }
+      }
+    }
+
+    &:after {
+      content: "";
+      @apply absolute opacity-0 block left-full bg-balck_7 z-0 transition-opacity;
+    }
+
+    .megamenu {
+      @apply absolute hidden bg-white w-full left-0 top-full z-10 p-5 shadow-small;
+      .top {
+        @apply hidden;
+      }
+      & > div {
+        @apply flex justify-center mx-auto;
+        .nav-megamenu-wrapper {
+          & > div {
+            @apply flex-1;
+          }
+        }
+      }
+    }
+  }
+
+  &.menu-opened {
+    .main-navigation-wrapper {
+      @apply left-0 z-30 bg-gray_1 overflow-hidden;
+      ul.main-navigation {
+        @apply bg-white;
+        position: initial;
+
+        & > li {
+          @apply pr-0 border-b border-gray_border;
+          & > a {
+            @apply py-4 px-5 font-extrabold tracking-widest text-gray_2 flex items-center;
+            span.icon {
+              @apply ml-auto;
+            }
+
+            & + .megamenu {
+              @apply absolute block overflow-auto w-full px-5 pt-0 ;
+              @apply -right-full top-0 bottom-0 left-auto z-20;
+              @apply transition-all duration-500;
+              .top {
+                @apply block py-4 px-0 text-gray_2 sticky top-0 bg-white;
+                & > a{
+                  @apply absolute left-0 top-1/2 transform -translate-y-2/4;
+                  span{
+                    @apply block;
+                  }
+                }
+                & > span{
+                  @apply block text-center;
+                }
+              }
+              .megamenu-content{
+                display: block;
+                .nav-megamenu-wrapper {
+                  @apply max-w-none pr-0 ;
+                  & > div{
+                    @apply hidden;
+                    &.nav-megamenu-wrapper-submenu {
+                      @apply block border-t border-gray_border pb-10;
+                      a{
+                        @apply block text-sm py-2.5 border-b border-gray_border;
+                      }
+                    }
+                  }
+
+                }
+              }
+
+            }
+
+            &.active {
+              & + .megamenu {
+                @apply right-0;
+              }
+            }
+          }
+
+          &:hover {
+            & > a {
+              @apply border-b-0;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}

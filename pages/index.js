@@ -11,7 +11,7 @@ export default function Home({pageData, mainNav, preview}) {
                     <title>Maurices React App</title>
                 </Head>
                 <Container>
-                    <div className="min-h-screen">
+                    <div className="min-h-screen pt-20">
 
                         <div>
                             <h2>What is Lorem Ipsum?</h2>

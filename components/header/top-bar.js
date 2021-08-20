@@ -3,7 +3,7 @@ import React from "react";
 
 export default function TopBar({data}) {
     return (
-        <div className="top-bar bg-gray_1 text-xs py-2.5">
+        <div className="top-bar hidden md:block bg-gray_1 text-xs py-2.5">
             <Container>
                 <div className="flex">
                     <div>Get $10 when you share the love! <a href="#">Learn More</a></div>

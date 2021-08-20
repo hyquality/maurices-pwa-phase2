@@ -6,27 +6,24 @@
 @import "parts/animations";
 @import "parts/elements";
 @import "parts/header";
+@import "parts/main_nav";
 @import "parts/footer";
 body {
   @apply text-main;
   &:after{
     content: "";
-    @apply fixed opacity-0 block left-full bg-balck_7 z-0 transition-opacity;
+    @apply fixed opacity-0 block left-full bg-balck_7 z-0 transition-opacity duration-500;
 
   }
+
   &.on{
-    .sticky-wrapper{
-      &.stickyHeader {
-        .main-navigation-wrapper{
-          @apply border-none;
-          &:after{
-            @apply z-10 inset-0 opacity-100;
-          }
-        }
-      }
-    }
     &:after{
       @apply z-10 inset-0 opacity-100;
+    }
+  }
+  &.menu-opened{
+    &:after{
+      @apply z-20 inset-0 opacity-100;
     }
   }
 

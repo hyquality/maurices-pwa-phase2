@@ -1,8 +1,7 @@
 import React, {useState} from "react";
 import Icon from "@components/icon";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
-import {getHomePageData, getSearchData} from "../../../lib/api";
-import {DOMAIN_URL} from "../../../lib/constants";
+import {getSearchData} from "../../../lib/api";
 
 export default function SearchField({data, instantSearchState, setInstantSearchState}) {
 
