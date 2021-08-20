@@ -50,7 +50,6 @@ export default function InstantSearch({data, instantSearchState, setInstantSearc
         setSearchInputValue("");
         updateInstantSearchState("");
     };
-    console.log(instantSearchState);
     return (
         <div
             onMouseEnter={onSearchResultMouseEnter}
