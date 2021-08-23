@@ -7,15 +7,21 @@ import Template from "@components/templates/template";
 
 export default function NavList({data, className}) {
     const [activeElement, setActiveElement] = useState(false);
-    const onNavRootElementClick = async (event) => {
-        event.target.className="active";
-        setActiveElement(event.target);
-        //console.log(event);
+    const onNavRootElementClick = (event) => {
+        //event.preventDefault()
+        let element = event.target;
+        if(element.tagName==="SPAN"){
+            element = element.parentNode;
+        }
+        console.log(element.tagName)
+        element.className="active"
+        setActiveElement(element)
+
     }
-    const onNavCloseMegaElementClick = async (event) => {
-        if(setActiveElement){
-            activeElement.className="";
-            setActiveElement(false);
+    const onNavCloseMegaElementClick =  (event) => {
+        if(activeElement){
+            activeElement.className=""
+            setActiveElement(false)
         }
 
     }
@@ -25,8 +31,25 @@ export default function NavList({data, className}) {
                 data ? (
                     data.map((link) => (
                         <li key={className + "-" + link.id}>
-                            <Link href={link.url}>
-                                <a onClick={onNavRootElementClick} onTouchStart={onNavRootElementClick}>
+                            {link.url?(
+                                <Link href={link.url}>
+                                    <a>
+                                        {
+                                            link.icon ? (
+                                                <Icon icon={link.icon}/>
+                                            ) : ("")
+                                        }
+                                        <span> {link.text}</span>
+                                        {link.caption ? (
+                                            <span className="caption">{link.caption}</span>) : ("")}
+
+                                        {link.mega ? (
+                                            <Icon icon={["fas","chevron-right"]}/>
+                                        ) : ("")}
+                                    </a>
+                                </Link>
+                            ):(
+                                <a onTouchStart={onNavRootElementClick}  className="cursor-pointer" >
                                     {
                                         link.icon ? (
                                             <Icon icon={link.icon}/>
@@ -38,9 +61,12 @@ export default function NavList({data, className}) {
 
                                     {link.mega ? (
                                         <Icon icon={["fas","chevron-right"]}/>
-                                        ) : ("")}
+                                    ) : ("")}
                                 </a>
-                            </Link>
+                            )
+
+                            }
+
                             {link.mega ? (
                                 <div className="megamenu">
                                     <div className="top">
