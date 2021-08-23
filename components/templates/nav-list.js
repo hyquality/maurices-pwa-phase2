@@ -49,7 +49,7 @@ export default function NavList({data, className}) {
                                     </a>
                                 </Link>
                             ):(
-                                <a onTouchStart={onNavRootElementClick}  className="cursor-pointer" >
+                                <a onClick={onNavRootElementClick} onTouchStart={onNavRootElementClick}  className="cursor-pointer" >
                                     {
                                         link.icon ? (
                                             <Icon icon={link.icon}/>

@@ -42,6 +42,7 @@ module.exports = {
                 'gray_2': '#4B5666',
                 'gray_3': '#D4D5D5',
                 'gray_4': '#333333',
+                'gray_5': '#8E9191',
                 'gray_border': '#E8EBEB',
                 'green': '#58B7B1',
                 'balck_7': 'rgba(0,0,0,0.7)',

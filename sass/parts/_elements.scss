@@ -1,6 +1,9 @@
 button {
   &.btn {
     @apply block mt-5 text-gray_2 uppercase tracking-wider border border-gray_3 p-2 text-center w-full rounded-md;
+    &.btn-mobile {
+      @apply text-xs;
+    }
   }
 }
 
@@ -24,8 +27,9 @@ ul.link-list-border {
     a {
       @apply text-sm border-l border-gray_3 px-3 pb-0;
     }
-    &:first-child{
-      a{
+
+    &:first-child {
+      a {
         @apply border-0;
       }
     }

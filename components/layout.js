@@ -51,7 +51,7 @@ export default function Layout({preview, data, nav, children}) {
 
                     {
                         nav.data ? (
-                            <Nav data={nav.data}/>
+                            <Nav data={nav.data} store={data.HeaderContent.store?data.HeaderContent.store:{}} customer={data.HeaderContent.middle_bar.customer?data.HeaderContent.middle_bar.customer:{}}/>
                         ) : ("")
                     }
                 </div>
