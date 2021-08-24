@@ -8,7 +8,6 @@ import {faChevronDown, faChevronUp, fas} from "@fortawesome/free-solid-svg-icons
 import Icon from "@components/icon";
 import React, {useState} from "react";
 import NavList from "@components/templates/nav-list";
-import Nav from "@components/header/nav";
 
 library.add(fab);
 library.add(far);

@@ -3,9 +3,13 @@ body {
     header.mar-header {
       .middle-bar-menu {
         & > li {
-          @apply ml-5 md:ml-7;
+          @apply ml-5 md:ml-7 min-h-0 md:min-h-min80;
           & > a {
             @apply flex items-center;
+          }
+
+          &:last-child{
+            @apply ml-0 pl-5;
           }
         }
 

@@ -14,34 +14,58 @@ import Icon from "@components/icon";
 import Link from "next/link";
 import Templates from "@components/templates/templates";
 import NavList from "@components/templates/nav-list";
-import {bodyOverlay, openMainMenu} from "../../lib/helpers";
+import {bodyOverlay, getCurrentWidth, openMainMenu} from "../../lib/helpers";
 import SearchField from "@components/header/search/search-field";
 import InstantSearch from "@components/header/search/instant-search";
+import CustomerMenu from "@components/header/main-nav/customer-menu";
+import MiniCart from "@components/header/mini-cart";
+import {MOBILE_BREAKPOINT} from "@lib/constants";
 
-export default function MiddleBar({data, customer}) {
+export default function MiddleBar({data, customer, minicart}) {
 
     const [isHovering, setIsHovered] = useState(false);
     const onMouseEnter = () => {
-        bodyOverlay().then(r => {
-        })
-        setIsHovered(true)
+        if(getCurrentWidth() > MOBILE_BREAKPOINT){
+            bodyOverlay(1).then(r => {
+            })
+            setIsHovered(true)
+        }
+
     }
     const onMouseLeave = () => {
-        bodyOverlay().then(r => {
+        bodyOverlay(2).then(r => {
         })
         setIsHovered(false)
     }
 
     const [isCustomerHovering, setIsCustomerHovering] = useState(false);
     const onCustomerMouseEnter = () => {
-        bodyOverlay().then(r => {
-        })
-        setIsCustomerHovering(true)
+        if(getCurrentWidth() > MOBILE_BREAKPOINT){
+            bodyOverlay(1).then(r => {
+            })
+            setIsCustomerHovering(true)
+        }
+
     }
     const onCustomerMouseLeave = () => {
-        bodyOverlay().then(r => {
+        bodyOverlay(2).then(r => {
         })
         setIsCustomerHovering(false)
+    }
+
+    const [isMiniCartHovering, setIsMiniCartHovering] = useState(false);
+    const onMiniCartMouseEnter = () => {
+        if(getCurrentWidth() > MOBILE_BREAKPOINT){
+            bodyOverlay(1).then(r => {
+            })
+            setIsMiniCartHovering(true)
+        }
+
+    }
+    const onMiniCartMouseLeave = () => {
+        bodyOverlay(2).then(r => {
+        })
+        setIsMiniCartHovering(false)
     }
 
     const [instantSearchState, setInstantSearchState] = useState({
@@ -90,45 +114,49 @@ export default function MiddleBar({data, customer}) {
                                 )}
                             </span>
                         </a>
-                        <div className="hidden md:block">
-                            {data.address ? (
-                                isHovering ? (
-                                    <div
-                                        className="overlay-fade text-xs absolute border border-gray_border border-solid bg-white w-full min-w-min352 p-5 top-full">
-                                        <h3 className="text-xl text-gray_4 font-bold  pb-2.5">{data.title}</h3>
-                                        {
-                                            data.address ? (
-                                                <p className="pb-2.5" dangerouslySetInnerHTML={{__html: data.address}}/>
-                                            ) : (
-                                                ""
-                                            )
-                                        }
+                        {
+                            getCurrentWidth() > MOBILE_BREAKPOINT ? (
+                                <div className="hidden md:block">
+                                    {data.address ? (
+                                        isHovering ? (
+                                            <div
+                                                className="overlay-fade text-xs absolute border border-gray_border border-solid bg-white w-full min-w-min352 p-5 top-full">
+                                                <h3 className="text-xl text-gray_4 font-bold  pb-2.5">{data.title}</h3>
+                                                {
+                                                    data.address ? (
+                                                        <p className="pb-2.5" dangerouslySetInnerHTML={{__html: data.address}}/>
+                                                    ) : (
+                                                        ""
+                                                    )
+                                                }
 
-                                        {
-                                            data.phone ? (
-                                                <p className="phone pb-2.5">{data.phone}</p>
+                                                {
+                                                    data.phone ? (
+                                                        <p className="phone pb-2.5">{data.phone}</p>
 
-                                            ) : (
-                                                ""
-                                            )
-                                        }
+                                                    ) : (
+                                                        ""
+                                                    )
+                                                }
 
-                                        {
-                                            data.time ? (
-                                                <time className="pb-2.5" dangerouslySetInnerHTML={{__html: data.time}}/>
-                                            ) : (
-                                                ""
-                                            )
-                                        }
-                                        <button className="btn">Change Your Store</button>
-                                    </div>
-                                ) : (
-                                    ""
-                                )
-                            ) : (
-                                ""
-                            )}
-                        </div>
+                                                {
+                                                    data.time ? (
+                                                        <time className="pb-2.5" dangerouslySetInnerHTML={{__html: data.time}}/>
+                                                    ) : (
+                                                        ""
+                                                    )
+                                                }
+                                                <button className="btn mt-5">Change Your Store</button>
+                                            </div>
+                                        ) : (
+                                            ""
+                                        )
+                                    ) : (
+                                        ""
+                                    )}
+                                </div>
+                            ):("")
+                        }
 
 
                     </div>
@@ -169,13 +197,7 @@ export default function MiddleBar({data, customer}) {
 
                                                 <div
                                                     className="overlay-fade absolute left-0 border border-gray_border border-solid bg-white min-w-min352 p-5 top-full">
-                                                    <NavList data={customer.nav}
-                                                             className={"customer-header-menu left-0"}/>
-
-                                                    {customer.templates ? (
-                                                        <Templates templates={customer.templates}/>
-                                                    ) : ("")}
-                                                    <button className="btn">SIGN OUT</button>
+                                                    <CustomerMenu customer={customer}/>
                                                 </div>
 
                                             ) : ("")}
@@ -191,11 +213,26 @@ export default function MiddleBar({data, customer}) {
 
 
                         </li>
-                        <li className="md:py-30px md:-my-30px">
+                        <li className="md:py-30px md:-my-30px md:ml-0"
+
+                            onMouseEnter={onMiniCartMouseEnter}
+                            onMouseLeave={onMiniCartMouseLeave}>
                             <a href="#" className="relative">
                                 <Icon icon={faShoppingBag} className="w-5 md:w-4"/>
                                 <span className="block absolute">5</span>
                             </a>
+                            {
+                                getCurrentWidth() > MOBILE_BREAKPOINT ? (
+                                    <div className="hidden md:block">
+                                        {minicart ? (
+                                            isMiniCartHovering ? (
+                                                <MiniCart data={minicart}/>
+                                            ) : ("")
+                                        ) : ("")}
+                                    </div>
+                                ):("")
+                            }
+
                         </li>
                     </ul>
                 </div>

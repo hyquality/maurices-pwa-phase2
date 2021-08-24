@@ -1,7 +1,8 @@
-import Footer from '../components/footer/footer'
-import Meta from '../components/meta'
+import Footer from '@components/footer/footer'
+import Meta from '@components/meta'
 import Header from "@components/header/header";
-import Nav from "@components/header/nav";
+import Nav from "@components/header/main-nav/nav";
+
 import React, { useState, useRef, useEffect } from 'react';
 
 

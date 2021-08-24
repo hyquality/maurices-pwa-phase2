@@ -24,6 +24,7 @@ module.exports = {
         extend: {
             minHeight:{
                 'instant': '10rem',
+                'min80': '5rem',
             },
             minWidth: {
                 'min352': '22rem',
@@ -33,6 +34,9 @@ module.exports = {
                 'max-13': '13rem',
                 'cellout-width': '4.5rem',
                 'cellout-width-small': '3.5rem',
+            },
+            maxHeight:{
+                'max384': '24rem'
             },
             colors: {
                 'main': '#5D5D5D',
@@ -71,10 +75,13 @@ module.exports = {
                 small: '0 1px 5px rgba(0, 0, 0, 0.12)',
                 medium: '0 8px 30px rgba(0, 0, 0, 0.12)',
             },
+
         },
     },
     variants: {
-        extend: {},
+        extend: {
+            borderWidth: ['last'],
+        },
     },
     plugins: [],
 }

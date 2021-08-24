@@ -21,7 +21,7 @@ export class Header extends Component {
             <header className="relative mar-header w-full top-0 z-20 border-b border-gray_border border-solid md:border-b-0">
                 <AnnouncementBar data={this.state.data.announcement}/>
                 <TopBar/>
-                <MiddleBar data={this.state.data.store} customer={this.state.data.middle_bar.customer}/>
+                <MiddleBar minicart={this.state.data.minicart} data={this.state.data.store} customer={this.state.data.middle_bar.customer}/>
             </header>
         )
     }

@@ -112,7 +112,72 @@
           "text": "SALE",
           "url": "#"
         }
-      ]
+      ],
+      "minicart": {
+        "subtotal": "$188.66",
+        "items": [
+          {
+            "id": 0,
+            "title": "Kimono Cowl Neck Poncho",
+            "price": "$34.00",
+            "qty": 1,
+            "image": "assets/images/search/s1.png",
+            "url": "#",
+            "options": [
+              {
+                "id": 0,
+                "name": "Color",
+                "value": "OFF-WHITE"
+              },
+              {
+                "id": 1,
+                "name": "Size",
+                "value": "S/M"
+              }
+            ]
+          },
+          {
+            "id": 1,
+            "title": "Button-down Corduroy Skirt",
+            "price": "$68.00",
+            "qty": 2,
+            "image": "assets/images/search/s2.png",
+            "url": "#",
+            "options": [
+              {
+                "id": 0,
+                "name": "Color",
+                "value": "Rust"
+              },
+              {
+                "id": 1,
+                "name": "Size",
+                "value": "6"
+              }
+            ]
+          },
+          {
+            "id": 2,
+            "title": "DenimFlex™ Dark Wash Utility Jegging",
+            "price": "$39.00",
+            "qty": 3,
+            "image": "assets/images/search/s3.png",
+            "url": "#",
+            "options": [
+              {
+                "id": 0,
+                "name": "Color",
+                "value": "Green"
+              },
+              {
+                "id": 1,
+                "name": "Size",
+                "value": "Xl"
+              }
+            ]
+          }
+        ]
+      }
     },
     "footerContent": {
       "calloutItems": [

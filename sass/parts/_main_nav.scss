@@ -138,7 +138,22 @@ body {
               }
             }
           }
-
+          &.customer-menu{
+            .nav-megamenu-wrapper-submenu{
+              .customer-header-menu{
+                li{
+                  a{
+                    @apply flex;
+                  }
+                }
+              }
+              .customer-menu-callout{
+                & > div{
+                  @apply pb-0;
+                }
+              }
+            }
+          }
           &:hover {
             & > a {
               @apply border-b-0;

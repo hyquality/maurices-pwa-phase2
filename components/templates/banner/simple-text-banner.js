@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import Template from "@components/templates/template";
 import NavList from "@components/templates/nav-list";
 
 export default function SimpleTextBanner({data, className = ""}) {
