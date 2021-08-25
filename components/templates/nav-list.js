@@ -29,8 +29,8 @@ export default function NavList({data, className}) {
         <ul className={className ? className + "" : ""}>
             {
                 data ? (
-                    data.map((link) => (
-                        <li key={className + "-" + link.id}>
+                    data.map((link,index) => (
+                        <li key={className + "-" + index}>
                             {link.url?(
                                 <Link href={link.url}>
                                     <a>
@@ -77,11 +77,11 @@ export default function NavList({data, className}) {
                                     </div>
                                     <div className="megamenu-content">
                                         {
-                                            link.mega.map((item) => (
-                                                <div className={"nav-megamenu-wrapper"} key={"nav-megamenu-wrapper" + item.id}>
+                                            link.mega.map((item,itemIndex) => (
+                                                <div className={"nav-megamenu-wrapper"} key={"nav-megamenu-wrapper" + itemIndex}>
                                                     {
                                                         item.nav ? (
-                                                            <div className="nav-megamenu-wrapper-submenu" key={"nav-megamenu-nav" + item.id}>
+                                                            <div className="nav-megamenu-wrapper-submenu" key={"nav-megamenu-nav" + itemIndex}>
                                                                 <NavList data={item.nav}
                                                                          className={"nav-megamenu-nav-submenu-" + item.id}/>
                                                             </div>
@@ -89,7 +89,7 @@ export default function NavList({data, className}) {
                                                     }
                                                     {
                                                         item.banner ? (
-                                                            <div key={"nav-megamenu-banner" + item.id}>
+                                                            <div key={"nav-megamenu-banner" + itemIndex}>
                                                                 <SimpleBanner data={item.banner}/>
                                                             </div>
                                                         ) : ("")

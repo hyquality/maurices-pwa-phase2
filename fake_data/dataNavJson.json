@@ -11,7 +11,7 @@
             {
               "id": 0,
               "text": "New Tops",
-              "url": "/collection/mew-tops"
+              "url": "#"
             },
             {
               "id": 1,
@@ -94,7 +94,7 @@
             {
               "id": 1,
               "text": "Tops",
-              "url": "#"
+              "url": "/clothing/tops"
             },
             {
               "id": 2,

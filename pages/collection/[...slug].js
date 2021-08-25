@@ -9,31 +9,43 @@ import staticCollectionJson from "../../fake_data/dataCollectionJson.json"
 
 export default function Post({data, collection, preview}) {
     const router = useRouter()
-    if(collection) console.log(collection);
+    if (collection) console.log(collection);
     if (!router.isFallback && !collection?.slug) {
         return <ErrorPage statusCode={404}/>
     }
 
     return (
         <>
-            {data?(
+            {data ? (
                 <Layout data={data}>
                     <Head>
                         <title>{getTheTitle(`${collection.title}`)}</title>
                     </Head>
                     <Container>
-                        <div>
-                            {collection?collection.slug:""}
+                        <div className="flex">
+                            <div className="filter w-1/4">collection</div>
+                            <div className="w-3/4">
+
+                                {
+                                    collection.desc ? (
+                                        <div>
+                                            <h3>{collection.desc.title}</h3>
+                                            <p>{collection.desc.text}</p>
+                                        </div>
+                                    ) : ("")
+                                }
+
+                            </div>
                         </div>
                     </Container>
                 </Layout>
-            ):("")}
+            ) : ("")}
 
         </>
     )
 }
 
-export async function getStaticProps({params,preview = false,previewData }) {
+export async function getStaticProps({params, preview = false, previewData}) {
     const data = await getStaticPageData();
     //const collection = await getCollection(params.slug, preview, previewData)
     //const collection = await getCollection(params.slug, preview, previewData)

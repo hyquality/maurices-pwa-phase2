@@ -1,4 +1,22 @@
 {
   "title": "Top",
-  "slug": "mew-tops2"
+  "slug": "mew-tops2",
+  "desc": {
+    "title": "Discover Ladies Tops",
+    "text": "When it comes to fashion finds, our fashion tops are where it’s at. From cozy cardigans and comfy sweaters to top rated graphic tees and pretty tunics, our tops come in a variety of colors, styles, and sizes perfect for outfitting casual weekends, morning work meetings and everything in between."
+  },
+  "subcategories": [
+    {
+      "title": "Shirts & Blouses",
+      "qty": "123",
+      "image": "/assets/images/search/s1.png",
+      "url": "/clothing/tops/shirts-blouses"
+    },
+    {
+      "title": "Tees",
+      "qty": "191",
+      "image": "/assets/images/search/s2.png",
+      "url": "/clothing/tops/tees"
+    }
+  ]
 }
