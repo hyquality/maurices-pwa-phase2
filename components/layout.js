@@ -3,10 +3,11 @@ import Meta from '@components/meta'
 import Header from "@components/header/header";
 import Nav from "@components/header/main-nav/nav";
 
-import React, { useState, useRef, useEffect } from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 
 
-export default function Layout({preview, data, nav, children}) {
+export default function Layout({data, nav, children}) {
+    const {header, footer, store, customer, minicart, mainNav} = data
     const [stickyHeader, setStickyHeader] = useState(false);
     const [offsetCompensation, setOffsetCompensation] = useState(0);
     const headerRef = useRef(null);
@@ -15,7 +16,6 @@ export default function Layout({preview, data, nav, children}) {
     const handleScroll = (elTopOffset, elHeight) => {
 
         if (window.pageYOffset > (elTopOffset + elHeight)) {
-            console.log(elHeight);
             setStickyHeader(true);
             setOffsetCompensation(elHeight)
 
@@ -42,17 +42,19 @@ export default function Layout({preview, data, nav, children}) {
     return (
         <>
             <Meta/>
-            <div style={{ marginTop: offsetCompensation }}>
-                <div  className={`sticky-wrapper${stickyHeader ? ' stickyHeader' : ''}`} ref={headerRef}>
+            <div style={{marginTop: offsetCompensation}}>
+                <div className={`sticky-wrapper${stickyHeader ? ' stickyHeader' : ''}`} ref={headerRef}>
                     {
-                        data.HeaderContent ? (
-                            <Header data={data.HeaderContent}/>
+                        header ? (
+                            <Header data={header} customer={customer} store={store} minicart={minicart}/>
                         ) : ("")
                     }
 
                     {
-                        nav.data ? (
-                            <Nav data={nav.data} store={data.HeaderContent.store?data.HeaderContent.store:{}} customer={data.HeaderContent.middle_bar.customer?data.HeaderContent.middle_bar.customer:{}}/>
+                        mainNav ? (
+                            <Nav data={mainNav}
+                                 store={store ? store : {}}
+                                 customer={customer ? customer : {}}/>
                         ) : ("")
                     }
                 </div>
@@ -61,8 +63,8 @@ export default function Layout({preview, data, nav, children}) {
                     <main>{children}</main>
                 </div>
                 {
-                    data.footerContent ? (
-                        <Footer data={data.footerContent}/>
+                    footer ? (
+                        <Footer data={footer}/>
                     ) : ("")
                 }
 

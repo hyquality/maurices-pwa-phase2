@@ -4,17 +4,142 @@
   "total": 12,
   "total_pages": 2,
   "data": {
+    "customer1": {
+      "title": "Sign In"
+    },
+    "customer": {
+      "title": "Hi, Christina",
+      "button": {
+        "title": "",
+        "url": "#"
+      },
+      "nav": [
+        {
+          "id": 0,
+          "text": "My Profile",
+          "url": "#",
+          "caption": "Name, Password, etc."
+        },
+        {
+          "id": 1,
+          "text": "My Orders",
+          "url": "#",
+          "caption": "Track & Manage"
+        },
+        {
+          "id": 2,
+          "text": "My Payments",
+          "url": "#",
+          "caption": "Mastercard 2630"
+        },
+        {
+          "id": 3,
+          "text": "My Addresses",
+          "url": "#",
+          "caption": "18 Harrison Avenue"
+        },
+        {
+          "id": 4,
+          "text": "My Favorites",
+          "url": "#",
+          "caption": "5 items"
+        },
+        {
+          "id": 5,
+          "text": "MyMaurices Rewards",
+          "url": "#",
+          "caption": "200 pts"
+        }
+      ],
+      "templates":[
+        {
+          "path": "./callout/callout-item",
+          "class": "customer-menu-callout",
+          "data": {
+            "id": 0,
+            "title": "Get Rewarded!",
+            "text": "Earn 1 point for every dollar you spend. 100 pts = $5 reward.",
+            "icon": "/assets/images/cell_1.png"
+          }
+        }
+      ]
+    },
+    "minicart": {
+      "subtotal": "$188.66",
+      "items": [
+        {
+          "id": 0,
+          "title": "Kimono Cowl Neck Poncho",
+          "price": "$34.00",
+          "qty": 1,
+          "image": "/assets/images/search/s1.png",
+          "url": "#",
+          "options": [
+            {
+              "id": 0,
+              "name": "Color",
+              "value": "OFF-WHITE"
+            },
+            {
+              "id": 1,
+              "name": "Size",
+              "value": "S/M"
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "title": "Button-down Corduroy Skirt",
+          "price": "$68.00",
+          "qty": 2,
+          "image": "/assets/images/search/s2.png",
+          "url": "#",
+          "options": [
+            {
+              "id": 0,
+              "name": "Color",
+              "value": "Rust"
+            },
+            {
+              "id": 1,
+              "name": "Size",
+              "value": "6"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "title": "DenimFlex™ Dark Wash Utility Jegging",
+          "price": "$39.00",
+          "qty": 3,
+          "image": "/assets/images/search/s3.png",
+          "url": "#",
+          "options": [
+            {
+              "id": 0,
+              "name": "Color",
+              "value": "Green"
+            },
+            {
+              "id": 1,
+              "name": "Size",
+              "value": "Xl"
+            }
+          ]
+        }
+      ]
+    },
+    "store1": {
+      "title": "Set Your Store"
+    },
+    "store": {
+      "title": "Maurices Shoppes at Richland",
+      "address": " 3553 Richland Ave W <br/>\n                                    Suite 120 <br/>\n                                    Aiken, SC   29801",
+      "phone": "(803) 642-2257",
+      "timeOpening": "open until 9pm",
+      "time": "  Mon-Sat: 10am &mdash; 9pm <br/>\n                                    Sun: 1pm &mdash; 6pm"
+    },
     "HeaderContent": {
-      "store1": {
-        "title": "Set Your Store"
-      },
-      "store": {
-        "title": "Maurices Shoppes at Richland",
-        "address": " 3553 Richland Ave W <br/>\n                                    Suite 120 <br/>\n                                    Aiken, SC   29801",
-        "phone": "(803) 642-2257",
-        "timeOpening": "open until 9pm",
-        "time": "  Mon-Sat: 10am &mdash; 9pm <br/>\n                                    Sun: 1pm &mdash; 6pm"
-      },
       "announcement": {
         "text": "ONLINE ONLY — Get $25 off every $75 you spend!",
         "link": {
@@ -25,158 +150,6 @@
       "top_bar": {
       },
       "middle_bar": {
-        "customer1": {
-          "title": "Sign In"
-        },
-        "customer": {
-          "title": "Hi, Christina",
-          "button": {
-            "title": "",
-            "url": "#"
-          },
-          "nav": [
-            {
-              "id": 0,
-              "text": "My Profile",
-              "url": "#",
-              "caption": "Name, Password, etc."
-            },
-            {
-              "id": 1,
-              "text": "My Orders",
-              "url": "#",
-              "caption": "Track & Manage"
-            },
-            {
-              "id": 2,
-              "text": "My Payments",
-              "url": "#",
-              "caption": "Mastercard 2630"
-            },
-            {
-              "id": 3,
-              "text": "My Addresses",
-              "url": "#",
-              "caption": "18 Harrison Avenue"
-            },
-            {
-              "id": 4,
-              "text": "My Favorites",
-              "url": "#",
-              "caption": "5 items"
-            },
-            {
-              "id": 5,
-              "text": "MyMaurices Rewards",
-              "url": "#",
-              "caption": "200 pts"
-            }
-          ],
-          "templates":[
-            {
-              "path": "./callout/callout-item",
-              "class": "customer-menu-callout",
-              "data": {
-                "id": 0,
-                "title": "Get Rewarded!",
-                "text": "Earn 1 point for every dollar you spend. 100 pts = $5 reward.",
-                "icon": "assets/images/cell_1.png"
-              }
-            }
-          ]
-        }
-      },
-      "nav": [
-        {
-          "id": 0,
-          "text": "NEW",
-          "url": "#"
-        },
-        {
-          "id": 1,
-          "text": "CLOTHING",
-          "url": "#"
-        },
-        {
-          "id": 2,
-          "text": "PLUS",
-          "url": "#"
-        },
-        {
-          "id": 3,
-          "text": "SHOES & ACCESSORIES",
-          "url": "#"
-        },
-        {
-          "id": 4,
-          "text": "SALE",
-          "url": "#"
-        }
-      ],
-      "minicart": {
-        "subtotal": "$188.66",
-        "items": [
-          {
-            "id": 0,
-            "title": "Kimono Cowl Neck Poncho",
-            "price": "$34.00",
-            "qty": 1,
-            "image": "assets/images/search/s1.png",
-            "url": "#",
-            "options": [
-              {
-                "id": 0,
-                "name": "Color",
-                "value": "OFF-WHITE"
-              },
-              {
-                "id": 1,
-                "name": "Size",
-                "value": "S/M"
-              }
-            ]
-          },
-          {
-            "id": 1,
-            "title": "Button-down Corduroy Skirt",
-            "price": "$68.00",
-            "qty": 2,
-            "image": "assets/images/search/s2.png",
-            "url": "#",
-            "options": [
-              {
-                "id": 0,
-                "name": "Color",
-                "value": "Rust"
-              },
-              {
-                "id": 1,
-                "name": "Size",
-                "value": "6"
-              }
-            ]
-          },
-          {
-            "id": 2,
-            "title": "DenimFlex™ Dark Wash Utility Jegging",
-            "price": "$39.00",
-            "qty": 3,
-            "image": "assets/images/search/s3.png",
-            "url": "#",
-            "options": [
-              {
-                "id": 0,
-                "name": "Color",
-                "value": "Green"
-              },
-              {
-                "id": 1,
-                "name": "Size",
-                "value": "Xl"
-              }
-            ]
-          }
-        ]
       }
     },
     "footerContent": {
@@ -185,7 +158,7 @@
           "id": 0,
           "title": "MyMaurices Rewards",
           "text": "Earn points every time you shop!",
-          "icon": "assets/images/cell_1.png",
+          "icon": "/assets/images/cell_1.png",
           "nav": [
             {
               "id": 0,
@@ -203,7 +176,7 @@
           "id": 1,
           "title": "Maurices Credit Card",
           "text": "Free shipping & 10% off every order!",
-          "icon": "assets/images/cell_2.png",
+          "icon": "/assets/images/cell_2.png",
           "nav": [
             {
               "id": 0,
@@ -221,7 +194,7 @@
           "id": 2,
           "title": "Refer a Friend",
           "text": "Get $10 off when you share the love!",
-          "icon": "assets/images/cell_3.png",
+          "icon": "/assets/images/cell_3.png",
           "nav": [
             {
               "id": 0,

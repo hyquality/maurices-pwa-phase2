@@ -11,7 +11,7 @@
             {
               "id": 0,
               "text": "New Tops",
-              "url": "#"
+              "url": "/collection/mew-tops"
             },
             {
               "id": 1,
@@ -64,7 +64,7 @@
           "id": 2,
           "banner": {
             "title": "Shop New Clothing",
-            "image": "assets/images/banners/banner_1_1.png",
+            "image": "/assets/images/banners/banner_1_1.png",
             "url": "#"
           }
         },
@@ -72,7 +72,7 @@
           "id": 3,
           "banner": {
             "title": "Shop New Plus",
-            "image": "assets/images/banners/banner_1_2.png",
+            "image": "/assets/images/banners/banner_1_2.png",
             "url": "#"
           }
         }
@@ -202,7 +202,7 @@
           "id": 3,
           "banner": {
             "title": "Shop Jeans",
-            "image": "assets/images/banners/banner_2_1.png",
+            "image": "/assets/images/banners/banner_2_1.png",
             "url": "#"
           }
         },
@@ -210,7 +210,7 @@
           "id": 4,
           "banner": {
             "title": "Shop Fall Looks",
-            "image": "assets/images/banners/banner_2_2.png",
+            "image": "/assets/images/banners/banner_2_2.png",
             "url": "#"
           }
         }
@@ -340,7 +340,7 @@
           "id": 3,
           "banner": {
             "title": "Shop Plus Jeans",
-            "image": "assets/images/banners/banner_3_1.png",
+            "image": "/assets/images/banners/banner_3_1.png",
             "url": "#"
           }
         },
@@ -348,7 +348,7 @@
           "id": 4,
           "banner": {
             "title": "Shop Fall Looks",
-            "image": "assets/images/banners/banner_3_2.png",
+            "image": "/assets/images/banners/banner_3_2.png",
             "url": "#"
           }
         }
@@ -443,7 +443,7 @@
           "id": 2,
           "banner": {
             "title": "Shop Shoes",
-            "image": "assets/images/banners/banner_4_1.png",
+            "image": "/assets/images/banners/banner_4_1.png",
             "url": "#"
           }
         },
@@ -451,7 +451,7 @@
           "id": 3,
           "banner": {
             "title": "Shop Scarves",
-            "image": "assets/images/banners/banner_4_2.png",
+            "image": "/assets/images/banners/banner_4_2.png",
             "url": "#"
           }
         }

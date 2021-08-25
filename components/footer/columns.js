@@ -71,7 +71,7 @@ export default function Columns({data, signup}) {
                                 )
                                 : null
                         }
-                        <div className="brand py-10"><img src="assets/images/logo.png"/></div>
+                        <div className="brand py-10"><img src="/assets/images/logo.png"/></div>
                         {
                             signup.socialNav
                                 ? (

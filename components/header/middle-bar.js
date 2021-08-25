@@ -21,7 +21,7 @@ import CustomerMenu from "@components/header/main-nav/customer-menu";
 import MiniCart from "@components/header/mini-cart";
 import {MOBILE_BREAKPOINT} from "@lib/constants";
 
-export default function MiddleBar({data, customer, minicart}) {
+export default function MiddleBar({store, customer, minicart}) {
 
     const [isHovering, setIsHovered] = useState(false);
     const onMouseEnter = () => {
@@ -91,12 +91,12 @@ export default function MiddleBar({data, customer, minicart}) {
                          onMouseLeave={onMouseLeave}>
                         <a href="#" className="block relative md:pl-5">
                             <Icon icon={faMapMarkerAlt}
-                                  className={"w-5 md:w-4 md:absolute md:left-0 md:pr-2.5 md:transform " + (data.address ? "translate-y-2/4" : "top-1/2 -translate-y-2/4")}/>
+                                  className={"w-5 md:w-4 md:absolute md:left-0 md:pr-2.5 md:transform " + (store.address ? "translate-y-2/4" : "top-1/2 -translate-y-2/4")}/>
 
                             <span className="hidden md:inline">
 
-                                {data.title}
-                                {data.address ? (
+                                {store.title}
+                                {store.address ? (
                                     isHovering ? (
                                         <Icon icon={faChevronUp} className="pl-2.5"/>
                                     ) : (
@@ -105,9 +105,9 @@ export default function MiddleBar({data, customer, minicart}) {
                                 ) : (
                                     ""
                                 )}
-                                {data.timeOpening ? (
+                                {store.timeOpening ? (
                                     <time className="time block flex items-center"><span
-                                        className="w-2 h-2 rounded-xl inline-block bg-green box-content text-xs  mr-2.5"/>{data.timeOpening}
+                                        className="w-2 h-2 rounded-xl inline-block bg-green box-content text-xs  mr-2.5"/>{store.timeOpening}
                                     </time>
                                 ) : (
                                     ""
@@ -117,22 +117,22 @@ export default function MiddleBar({data, customer, minicart}) {
                         {
                             getCurrentWidth() > MOBILE_BREAKPOINT ? (
                                 <div className="hidden md:block">
-                                    {data.address ? (
+                                    {store.address ? (
                                         isHovering ? (
                                             <div
                                                 className="overlay-fade text-xs absolute border border-gray_border border-solid bg-white w-full min-w-min352 p-5 top-full">
-                                                <h3 className="text-xl text-gray_4 font-bold  pb-2.5">{data.title}</h3>
+                                                <h3 className="text-xl text-gray_4 font-bold  pb-2.5">{store.title}</h3>
                                                 {
-                                                    data.address ? (
-                                                        <p className="pb-2.5" dangerouslySetInnerHTML={{__html: data.address}}/>
+                                                    store.address ? (
+                                                        <p className="pb-2.5" dangerouslySetInnerHTML={{__html: store.address}}/>
                                                     ) : (
                                                         ""
                                                     )
                                                 }
 
                                                 {
-                                                    data.phone ? (
-                                                        <p className="phone pb-2.5">{data.phone}</p>
+                                                    store.phone ? (
+                                                        <p className="phone pb-2.5">{store.phone}</p>
 
                                                     ) : (
                                                         ""
@@ -140,8 +140,8 @@ export default function MiddleBar({data, customer, minicart}) {
                                                 }
 
                                                 {
-                                                    data.time ? (
-                                                        <time className="pb-2.5" dangerouslySetInnerHTML={{__html: data.time}}/>
+                                                    store.time ? (
+                                                        <time className="pb-2.5" dangerouslySetInnerHTML={{__html: store.time}}/>
                                                     ) : (
                                                         ""
                                                     )
@@ -162,7 +162,7 @@ export default function MiddleBar({data, customer, minicart}) {
                     </div>
                     <div className="logo text-center flex-grow">
                         <Link href="/">
-                            <a><img src="assets/images/logo.png" className="w-5/6 max-w-logo-width inline"/></a>
+                            <a><img src="/assets/images/logo.png" className="w-5/6 max-w-logo-width inline"/></a>
                         </Link>
                     </div>
                     <ul className="middle-bar-menu flex items-center ml-auto relative md:py-30px md:-my-5">

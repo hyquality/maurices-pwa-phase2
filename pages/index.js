@@ -1,14 +1,15 @@
-import {getHomePageData, getNavData} from "../lib/api";
+import {getStaticPageData} from "@lib/api";
 import Layout from "@components/layout";
 import Head from 'next/head'
 import Container from "@components/container";
+import {getTheTitle} from "@lib/helpers";
 
-export default function Home({pageData, mainNav, preview}) {
+export default function Home({data}) {
     return (
         <>
-            <Layout preview={preview} data={pageData.data} nav={mainNav}>
+            <Layout data={data}>
                 <Head>
-                    <title>Maurices React App</title>
+                    <title>{getTheTitle("Home")}</title>
                 </Head>
                 <Container>
                     <div className="min-h-screen pt-20">
@@ -40,28 +41,16 @@ export default function Home({pageData, mainNav, preview}) {
     )
 }
 
-/*export async function getStaticProps() {
-    const { data } = (await getHomePageData()) || {};
-    return {
-        props: {
-            pageData: data
-        }
-    }
-}*/
-
-export async function getServerSideProps({preview = false}) {
-    const data1 = (await getHomePageData()) || {};
-    const data2 = (await getNavData()) || {};
-    if (!data1.data || !data2.data ) {
+export async function getStaticProps({preview = false}) {
+    const data = (await getStaticPageData()) || {};
+    if (!data) {
         return {
             notFound: true,
         }
     }
-
     return {
         props: {
-            pageData: data1.data,
-            mainNav: data2.data,
+            data: data,
             preview
         }
     }
