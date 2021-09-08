@@ -1,5 +1,5 @@
 {
-  "title": "Top",
+  "title": "Tops",
   "slug": "mew-tops2",
   "desc": {
     "title": "Discover Ladies Tops",
@@ -17,6 +17,36 @@
       "qty": "191",
       "image": "/assets/images/search/s2.png",
       "url": "/clothing/tops/tees"
+    },
+    {
+      "title": "Thanks & Camis",
+      "qty": "178",
+      "image": "/assets/images/search/s3.png",
+      "url": "/clothing/tops/thanks-camis"
+    },
+    {
+      "title": "Sweatshirts",
+      "qty": "86",
+      "image": "/assets/images/search/s4.png",
+      "url": "/clothing/tops/sweatshirts"
+    },
+    {
+      "title": "Sweaters & Cardigans",
+      "qty": "41",
+      "image": "/assets/images/search/s5.png",
+      "url": "/clothing/tops/sweaters-cardigans"
+    },
+    {
+      "title": "Plaid & Button Downs",
+      "qty": "37",
+      "image": "/assets/images/search/s6.png",
+      "url": "/clothing/tops/plaid-button-downs"
+    },
+    {
+      "title": "Kimonos",
+      "qty": "17",
+      "image": "/assets/images/search/s1.png",
+      "url": "/clothing/tops/kimonos"
     }
   ]
 }

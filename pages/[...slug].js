@@ -1,25 +1,26 @@
 import {useRouter} from 'next/router'
+import Image from 'next/image'
 import ErrorPage from 'next/error'
 import Container from '../components/container'
 import Layout from '../components/layout'
 import Head from 'next/head'
-import {getCollection, getNavData, getStaticPageData} from "@lib/api";
+import { getStaticPageData} from "@lib/api";
 import {getTheTitle} from "@lib/helpers";
 import staticCollectionJson from "../fake_data/dataCollectionJson.json"
 import Link from "next/link";
-import Icon from "@components/icon";
-import SimpleBanner from "@components/templates/banner/simple-banner";
-import Template from "@components/templates/template";
+import { useTranslation } from 'next-i18next';
+
 import React from "react";
 
 export default function Post({data, collection, preview}) {
+    const { t } = useTranslation('common');
     const router = useRouter()
-    if (collection) console.log(collection);
+
     if (!router.isFallback && !collection?.slug) {
         return <ErrorPage statusCode={404}/>
     }
-
     return (
+
         <>
             {data ? (
                 <Layout data={data}>
@@ -27,19 +28,26 @@ export default function Post({data, collection, preview}) {
                         <title>{getTheTitle(`${collection.title}`)}</title>
                     </Head>
                     <Container>
-                        <h1>{collection.title}</h1>
+
+                        <Breadcrumbs t={t}/>
+                        <h1 className="text-center pb-8 text-4xl  font-utopia">{collection.title}</h1>
                         <div>
                             {
                                 collection.subcategories ? (
-                                    <ul className="flex">
+                                    <ul className="flex justify-between flex-wrap border-b border-gray_border py-8 mb-8">
                                         {
                                             collection.subcategories.map((cat, index) => (
-                                                <li className=""
+                                                <li className="w-1/8"
                                                     key={"subcategory-" + collection.slug + "-" + index}>
 
                                                     <Link href={cat.url}>
-                                                        <a>{index}
-                                                            <img className="hidden md:block pb-2.5" src={cat.image}/>
+                                                        <a className="block relative">
+                                                            <Image
+                                                                src={cat.image}
+                                                                alt={cat.title}
+                                                                width={200}
+                                                                height={300}
+                                                            />
                                                             <h4 className="text-sm md:text-xs text-gray_2 md:text-main">{cat.title}</h4>
                                                         </a>
                                                     </Link>
@@ -94,7 +102,9 @@ export default function Post({data, collection, preview}) {
     )
 }
 
-export async function getStaticProps({params, preview = false, previewData}) {
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Breadcrumbs from "@components/breadcrumbs";
+export async function getStaticProps({params, preview = false, previewData,locale}) {
     const data = await getStaticPageData();
     //const collection = await getCollection(params.slug, preview, previewData)
     //const collection = await getCollection(params.slug, preview, previewData)
@@ -107,6 +117,7 @@ export async function getStaticProps({params, preview = false, previewData}) {
     }
     return {
         props: {
+            ...(await serverSideTranslations(locale, ['common'])),
             data: data,
             preview,
             collection: staticCollectionJson
