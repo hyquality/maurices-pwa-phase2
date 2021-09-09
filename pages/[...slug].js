@@ -30,7 +30,7 @@ export default function Post({data, collection, preview}) {
                     <Container>
 
                         <Breadcrumbs t={t}/>
-                        <h1 className="text-center pb-8 text-4xl  font-utopia">{collection.title}</h1>
+                        <h1 className="text-center pb-8 text-4xl font-semibold font-utopia">{collection.title}</h1>
                         <div>
                             {
                                 collection.subcategories ? (
@@ -82,11 +82,43 @@ export default function Post({data, collection, preview}) {
                                 }
                             </div>
                             <div className="w-3/4">
+                                {
+                                    collection.products ? (
+                                        <ul className="flex justify-between flex-wrap border-b border-gray_border py-8 mb-8">
+                                            {
+                                                collection.products.map((product, index) => (
+                                                    <li className="w-1/3"
+                                                        key={"product-" + product.slug + "-" + index}>
+                                                       <div className="block">
+                                                           <Image
+                                                               src={product.image}
+                                                               alt={product.title}
+                                                               width={286}
+                                                               height={412}
+                                                               className="block"
+                                                           />
+                                                       </div>
+                                                        <span>
+                                                             {
+                                                                 product.highlights.map((cat, index) => (
+                                                                     <span>{cat.title}</span>
+                                                                 ))
+                                                             }
+                                                        </span>
+                                                        <Link href={"/product/"+product.slug}>
+                                                            <a>{product.title} </a>
+                                                        </Link>
+                                                    </li>
+                                                ))
+                                            }
+                                        </ul>
 
+                                    ) : ("")
+                                }
                                 {
                                     collection.desc ? (
                                         <div>
-                                            <h3>{collection.desc.title}</h3>
+                                            <h3 className="text-2xl  pb-8">{collection.desc.title}</h3>
                                             <p>{collection.desc.text}</p>
                                         </div>
                                     ) : ("")
@@ -128,7 +160,11 @@ export async function getStaticProps({params, preview = false, previewData,local
 export async function getStaticPaths() {
 
     return {
-        paths: [],
+        paths: [
+            { params: { slug: ['clothing', 'tops'] } },
+            { params: { slug: ['clothing', 'new'] } },
+            { params: { slug: ['clothing', 'sweaters'] } }
+        ],
         fallback: true,
     }
 }

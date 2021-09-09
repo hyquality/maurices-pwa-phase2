@@ -3,7 +3,8 @@ const withPWA = require("next-pwa");
 const path = require('path')
 module.exports = withPWA({
     i18n,
-    target: "serverless",
+    //target: "serverless",
+    target: "experimental-serverless-trace",
     pwa: {
         dest: "public",
     },

@@ -10,7 +10,7 @@
 @import "parts/main_nav";
 @import "parts/footer";
 body {
-  @apply text-main font-gibson;
+  @apply text-main font-gibson font-light;
   &:after{
     content: "";
     @apply fixed opacity-0 block left-full bg-balck_7 z-0 transition-opacity duration-500;

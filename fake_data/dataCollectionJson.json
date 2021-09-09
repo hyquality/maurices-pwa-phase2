@@ -9,44 +9,64 @@
     {
       "title": "Shirts & Blouses",
       "qty": "123",
-      "image": "/assets/images/search/s1.png",
+      "image": "/assets/images/plp/catHead_01.jpg",
       "url": "/clothing/tops/shirts-blouses"
     },
     {
       "title": "Tees",
       "qty": "191",
-      "image": "/assets/images/search/s2.png",
+      "image": "/assets/images/plp/catHead_02.jpg",
       "url": "/clothing/tops/tees"
     },
     {
       "title": "Thanks & Camis",
       "qty": "178",
-      "image": "/assets/images/search/s3.png",
+      "image": "/assets/images/plp/catHead_03.jpg",
       "url": "/clothing/tops/thanks-camis"
     },
     {
       "title": "Sweatshirts",
       "qty": "86",
-      "image": "/assets/images/search/s4.png",
+      "image": "/assets/images/plp/catHead_04.jpg",
       "url": "/clothing/tops/sweatshirts"
     },
     {
       "title": "Sweaters & Cardigans",
       "qty": "41",
-      "image": "/assets/images/search/s5.png",
+      "image": "/assets/images/plp/catHead_05.jpg",
       "url": "/clothing/tops/sweaters-cardigans"
     },
     {
       "title": "Plaid & Button Downs",
       "qty": "37",
-      "image": "/assets/images/search/s6.png",
+      "image": "/assets/images/plp/catHead_06.jpg",
       "url": "/clothing/tops/plaid-button-downs"
     },
     {
       "title": "Kimonos",
       "qty": "17",
-      "image": "/assets/images/search/s1.png",
+      "image": "/assets/images/plp/catHead_07.jpg",
       "url": "/clothing/tops/kimonos"
+    }
+  ],
+  "products": [
+    {
+      "title": "Kimono Cowl Neck Poncho",
+      "slug": "kimono-cowl-neck-poncho",
+      "highlights": [
+        {
+          "title": "New"
+        },
+        {
+          "title": "Online Exclusive"
+        }
+      ],
+      "image": "/assets/images/plp/43394_C7978.jpeg",
+      "reviews": {
+        "total": 4,
+        "avg": 5
+      }
+
     }
   ]
 }

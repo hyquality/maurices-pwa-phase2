@@ -89,7 +89,7 @@
             {
               "id": 0,
               "text": "New Arrivals",
-              "url": "#"
+              "url": "/clothing/new"
             },
             {
               "id": 1,
@@ -104,12 +104,12 @@
             {
               "id": 3,
               "text": "Sweaters",
-              "url": "#"
+              "url": "/clothing/sweaters"
             },
             {
               "id": 4,
               "text": "Dresses & Jumpsuits",
-              "url": "#"
+              "url": "/clothing/dresses-jumpsuits"
             },
             {
               "id": 5,
