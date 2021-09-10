@@ -12,8 +12,6 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import Icon from "@components/icon";
 import Link from "next/link";
-import Templates from "@components/templates/templates";
-import NavList from "@components/templates/nav-list";
 import {bodyOverlay, getCurrentWidth, openMainMenu} from "../../lib/helpers";
 import SearchField from "@components/header/search/search-field";
 import InstantSearch from "@components/header/search/instant-search";
