@@ -28,7 +28,6 @@ export default function PlpCard({data}) {
         }
     );
     const onColorSwatchClick = (e, data) => {
-        console.log(data);
         e.stopPropagation();
         e.nativeEvent.stopImmediatePropagation();
         setCardPrice(getProductCardPrice(data.prices))
@@ -119,20 +118,25 @@ export default function PlpCard({data}) {
                 <div className="product-review flex items-center">
                     {
                         product.reviews ? (
-                            <>
+                            <div>
                                 {
                                     reviews.map((r, index) => (
-                                        r > product.reviews.avg ? (
-                                            <span><Icon icon={["far", "star"]} className="w-3 h-3 px-0.5"/></span>
-                                        ) : (
-                                            <span> <Icon icon={["fas", "star"]} className="w-3 h-3 px-0.5"/></span>
-                                        )
+                                        <span  key={"review-" + product.slug + index}>
+                                            {
+                                                r > product.reviews.avg ? (
+                                                    <span><Icon icon={["far", "star"]} className="w-3 h-3 px-0.5"/></span>
+                                                ) : (
+                                                    <span> <Icon icon={["fas", "star"]} className="w-3 h-3 px-0.5"/></span>
+                                                )
+                                            }
+                                        </span>
+
 
                                     ))
                                 }
                                 <span className="text-xs pl-1.5">({product.reviews.total})</span>
 
-                            </>
+                            </div>
                             ):("")
 
                     }

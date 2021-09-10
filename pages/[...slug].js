@@ -8,12 +8,12 @@ import {getStaticPageData} from "@lib/api";
 import {getTheTitle} from "@lib/helpers";
 import staticCollectionJson from "../fake_data/dataCollectionJson.json"
 import Link from "next/link";
-import {useTranslation} from 'next-i18next';
+//import {useTranslation} from 'next-i18next';
 
 import React from "react";
 
 export default function Post({data, collection, preview}) {
-    const {t} = useTranslation('common');
+    //const {t} = useTranslation('common');
     const router = useRouter()
 
     if (!router.isFallback && !collection?.slug) {
@@ -29,7 +29,7 @@ export default function Post({data, collection, preview}) {
                     </Head>
                     <Container>
 
-                        <Breadcrumbs t={t}/>
+                        <Breadcrumbs/>
                         <h1 className="text-center pb-8 text-4xl font-semibold font-utopia">{collection.title}</h1>
                         <div>
                             {
@@ -83,7 +83,7 @@ export default function Post({data, collection, preview}) {
                             </div>
                             <div className="w-3/4">
 
-                                <PlpList data={collection.products} t={t}/>
+                                <PlpList data={collection.products}/>
                                 {
                                     collection.desc ? (
                                         <div>
@@ -103,7 +103,7 @@ export default function Post({data, collection, preview}) {
     )
 }
 
-import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
+//import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import Breadcrumbs from "@components/breadcrumbs";
 import PlpList from "@components/templates/plp/plp-list";
 
@@ -120,7 +120,7 @@ export async function getStaticProps({params, preview = false, previewData, loca
     }
     return {
         props: {
-            ...(await serverSideTranslations(locale, ['common'])),
+           // ...(await serverSideTranslations(locale, ['common'])),
             data: data,
             preview,
             collection: staticCollectionJson

@@ -1,10 +1,10 @@
-const {i18n} = require('./next-i18next.config');
+//const {i18n} = require('./next-i18next.config');
 const withPWA = require("next-pwa");
 const path = require('path')
 module.exports = withPWA({
-    i18n,
-    //target: "serverless",
-    target: "experimental-serverless-trace",
+   // i18n,
+    target: "serverless",
+    //target: "experimental-serverless-trace",
     pwa: {
         dest: "public",
     },
