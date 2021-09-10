@@ -1,0 +1,8 @@
+[build]
+  command = "yarn build"
+  publish   = "out"
+
+[functions]
+  node_bundler = "esbuild"
+	external_node_modules = ["@ampproject/toolbox-optimizer", "sharp"]
+  included_files = ["public/locales/en/*.json", "/var/task/next-i18next.config.js"]
