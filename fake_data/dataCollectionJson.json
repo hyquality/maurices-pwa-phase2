@@ -61,11 +61,174 @@
           "title": "Online Exclusive"
         }
       ],
-      "image": "/assets/images/plp/43394_C7978.jpeg",
+      "image": {
+        "main": "/assets/images/plp/43394_C7978.jpeg",
+        "hover": "/assets/images/plp/118676_C7453.jpeg"
+      },
       "reviews": {
         "total": 4,
-        "avg": 5
-      }
+        "avg": 3
+      },
+      "variants": [
+        {
+          "title": "",
+          "color": {
+            "title": "Red",
+            "short": "red"
+          },
+          "size": {
+            "title": "Small",
+            "short": "S"
+          },
+          "image": {
+            "main": "/assets/images/plp/43394_C7978.jpeg",
+            "hover": "/assets/images/plp/118676_C7453.jpeg"
+          },
+          "price": {
+            "main":  34.00
+          }
+        },
+        {
+          "title": "",
+          "color": {
+            "title": "Red",
+            "short": "red"
+          },
+          "size": {
+            "title": "Medium",
+            "short": "M"
+          },
+          "image": {
+            "main": "/assets/images/plp/43394_C7978.jpeg",
+            "hover": "/assets/images/plp/118676_C7453.jpeg"
+          },
+          "price": {
+            "main":  39.00
+          }
+        },
+        {
+          "title": "",
+          "color": {
+            "title": "Green",
+            "short": "green"
+          },
+          "size": {
+            "title": "Small",
+            "short": "S"
+          },
+          "image": {
+            "main": "/assets/images/plp/48615_C1756.jpeg",
+            "hover": "/assets/images/plp/118676_C7453.jpeg"
+          },
+          "price": {
+            "main":  25.00
+          }
+        },
+        {
+          "title": "",
+          "color": {
+            "title": "Green",
+            "short": "green"
+          },
+          "size": {
+            "title": "Medium",
+            "short": "M"
+          },
+          "image": {
+            "main": "/assets/images/plp/48615_C1756.jpeg",
+            "hover": "/assets/images/plp/118676_C7453.jpeg"
+          },
+          "price": {
+            "main":  36.00
+          }
+        },
+        {
+          "title": "",
+          "color": {
+            "title": "Blue",
+            "short": "blue",
+            "swatch": "/assets/images/plp/cs1.png"
+          },
+          "size": {
+            "title": "Large",
+            "short": "L"
+          },
+          "image": {
+            "main": "/assets/images/plp/115961_C5426.jpeg",
+            "hover": "/assets/images/plp/118676_C7453.jpeg"
+          },
+          "price": {
+            "main":  25.00,
+            "old": 27.00,
+            "msg": "Limited Time! Now 30% Off"
+          }
+        }
+      ]
+
+    },
+    {
+      "title": "Solid Tie Waist Long Sleeve Tunic Blouse",
+      "slug": "solid-tie-waist-long-sleeve-tunic-blouse",
+      "image": {
+        "main": "/assets/images/plp/116303_C4360.jpeg",
+        "hover": "/assets/images/plp/118676_C7453.jpeg"
+      },
+      "variants": [
+        {
+          "title": "",
+          "color": {
+            "title": "Blue",
+            "short": "blue",
+            "swatch": "/assets/images/plp/cs1.png"
+          },
+          "size": {
+            "title": "Large",
+            "short": "L"
+          },
+          "image": {
+            "main": "/assets/images/plp/116303_C4360.jpeg",
+            "hover": "/assets/images/plp/118676_C7453.jpeg"
+          },
+          "price": {
+            "main":  25.00,
+            "old": 27.00,
+            "msg": "Limited Time! Now 30% Off"
+          }
+        }
+      ]
+
+    },
+    {
+      "title": "Wide Rib Circle Hem Open Front Cardigan",
+      "slug": "wide-rib-circle-hem-open-front-cardigan",
+      "image": {
+        "main": "/assets/images/plp/118358_C1756.jpeg",
+        "hover": "/assets/images/plp/118676_C7453.jpeg"
+      },
+      "reviews": {
+        "total": 10,
+        "avg": 1
+      },
+      "variants": [
+        {
+          "title": "",
+          "color": {
+            "title": "orange",
+            "short": "orange"
+          },
+          "size": {
+            "title": "Large",
+            "short": "L"
+          },
+          "image": {
+            "main": "/assets/images/plp/118358_C1756.jpeg",
+            "hover": "/assets/images/plp/118676_C7453.jpeg"
+          },
+          "price": {
+            "main":  17.00
+          }
+        }
+      ]
 
     }
   ]

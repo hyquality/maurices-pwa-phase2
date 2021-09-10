@@ -4,16 +4,16 @@ import ErrorPage from 'next/error'
 import Container from '../components/container'
 import Layout from '../components/layout'
 import Head from 'next/head'
-import { getStaticPageData} from "@lib/api";
+import {getStaticPageData} from "@lib/api";
 import {getTheTitle} from "@lib/helpers";
 import staticCollectionJson from "../fake_data/dataCollectionJson.json"
 import Link from "next/link";
-import { useTranslation } from 'next-i18next';
+import {useTranslation} from 'next-i18next';
 
 import React from "react";
 
 export default function Post({data, collection, preview}) {
-    const { t } = useTranslation('common');
+    const {t} = useTranslation('common');
     const router = useRouter()
 
     if (!router.isFallback && !collection?.slug) {
@@ -82,39 +82,8 @@ export default function Post({data, collection, preview}) {
                                 }
                             </div>
                             <div className="w-3/4">
-                                {
-                                    collection.products ? (
-                                        <ul className="flex justify-between flex-wrap border-b border-gray_border py-8 mb-8">
-                                            {
-                                                collection.products.map((product, index) => (
-                                                    <li className="w-1/3"
-                                                        key={"product-" + product.slug + "-" + index}>
-                                                       <div className="block">
-                                                           <Image
-                                                               src={product.image}
-                                                               alt={product.title}
-                                                               width={286}
-                                                               height={412}
-                                                               className="block"
-                                                           />
-                                                       </div>
-                                                        <span>
-                                                             {
-                                                                 product.highlights.map((cat, index) => (
-                                                                     <span>{cat.title}</span>
-                                                                 ))
-                                                             }
-                                                        </span>
-                                                        <Link href={"/product/"+product.slug}>
-                                                            <a>{product.title} </a>
-                                                        </Link>
-                                                    </li>
-                                                ))
-                                            }
-                                        </ul>
 
-                                    ) : ("")
-                                }
+                                <PlpList data={collection.products} t={t}/>
                                 {
                                     collection.desc ? (
                                         <div>
@@ -134,9 +103,11 @@ export default function Post({data, collection, preview}) {
     )
 }
 
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
 import Breadcrumbs from "@components/breadcrumbs";
-export async function getStaticProps({params, preview = false, previewData,locale}) {
+import PlpList from "@components/templates/plp/plp-list";
+
+export async function getStaticProps({params, preview = false, previewData, locale}) {
     const data = await getStaticPageData();
     //const collection = await getCollection(params.slug, preview, previewData)
     //const collection = await getCollection(params.slug, preview, previewData)
@@ -161,9 +132,9 @@ export async function getStaticPaths() {
 
     return {
         paths: [
-            { params: { slug: ['clothing', 'tops'] } },
-            { params: { slug: ['clothing', 'new'] } },
-            { params: { slug: ['clothing', 'sweaters'] } }
+            {params: {slug: ['clothing', 'tops']}},
+            {params: {slug: ['clothing', 'new']}},
+            {params: {slug: ['clothing', 'sweaters']}}
         ],
         fallback: true,
     }

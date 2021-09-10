@@ -32,6 +32,7 @@ module.exports = {
             },
             minWidth: {
                 'min352': '22rem',
+                'min230': '13.75rem',
             },
             maxWidth: {
                 'logo-width': '18rem',
@@ -40,6 +41,7 @@ module.exports = {
                 'cellout-width-small': '3.5rem',
             },
             width: {
+                '30': '30%',
                 '1/8': '12.5%',
                 '1/7': '14.2857143%',
                 '2/7': '28.5714286%',
