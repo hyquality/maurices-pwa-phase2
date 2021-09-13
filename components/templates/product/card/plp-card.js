@@ -1,9 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import {bodyOverlay, getCurrentWidth, getProductCardData, getProductCardPrice, openMainMenu} from "@lib/helpers";
+import {getProductCardData, getProductCardPrice} from "@lib/helpers";
 import React, {useState} from "react";
-import {MOBILE_BREAKPOINT} from "@lib/constants";
 import Icon from "@components/icon";
+import ColorSwatch from "@components/templates/product/color-swatch";
+import Button from "@components/button";
+import Reviews from "@components/templates/product/reviews";
 
 export default function PlpCard({data}) {
     const product = data;
@@ -27,7 +29,7 @@ export default function PlpCard({data}) {
             hover: productData.colors[0].image.hover ? productData.colors[0].image.hover : product.image.hover,
         }
     );
-    const onColorSwatchClick = (e, data) => {
+    const onColorSwatchClickMouseEnter = (e, data) => {
         e.stopPropagation();
         e.nativeEvent.stopImmediatePropagation();
         setCardPrice(getProductCardPrice(data.prices))
@@ -40,7 +42,7 @@ export default function PlpCard({data}) {
 
     }
     return (
-        <div>
+        <div className={"card-item"}>
             <div className="flex mb-2.5">
                 <Link href={"/product/" + product.slug}>
                     <a
@@ -52,8 +54,9 @@ export default function PlpCard({data}) {
                             isHovering ? (
                                 <>
                                     <a className="absolute w-4 z-10 top-5 right-5">
-                                        <Icon icon={["far", "heart"]} className="w-5"/>
+                                        <Icon icon={["far", "heart"]} size={"medium"}/>
                                     </a>
+
                                     <Image
                                         src={cardImage.hover}
                                         alt={product.title}
@@ -62,10 +65,10 @@ export default function PlpCard({data}) {
                                         layout="responsive"
                                         className="block rounded z-0"
                                     />
-                                    <button
-                                        className="absolute text-sm font-black uppercase tracking-widest bottom-6 w-11/12 bg-white rounded py-4 text-center left-1/2 transform -translate-x-1/2 z-10">QUICK
-                                        VIEW
-                                    </button>
+
+                                    <Button label={"QUICK VIEW"} color="white" size="medium"
+                                            className="absolute-x-center bottom-6 w-11/12  z-10"/>
+
                                 </>
 
 
@@ -88,64 +91,23 @@ export default function PlpCard({data}) {
             <div className="mb-2.5 flex justify-between">
                 {
                     productData.colors ? (
-
-                        <div className="">
-                            {
-
-                                productData.colors.map((color, index) => (
-
-                                    <a className={`mr-1.5 inline-block cursor-pointer border border-gray_2 rounded-full ${index === 0 ? " active" : ""}`}
-
-                                       onMouseEnter={((e) => onColorSwatchClick(e, color))}
-                                       data-color={color.prices}
-                                       key={"color-" + product.slug + index}>
-                                        {
-                                            color.swatch ? (
-                                                <span className="block w-5 h-5 rounded-full border-2 border-white"
-                                                      style={{backgroundImage: `url('${color.swatch}')`}}/>
-                                            ) : (
-                                                <span className="block w-5 h-5 rounded-full border-2 border-white"
-                                                      style={{backgroundColor: color.short}}/>
-                                            )
-                                        }
-
-                                    </a>
-                                ))
-                            }
-                        </div>
+                        <ColorSwatch colors={productData.colors} productSlug={product.slug}
+                                     onColorSwatchClickMouseEnter={onColorSwatchClickMouseEnter}/>
                     ) : ("")
                 }
-                <div className="product-review flex items-center">
-                    {
-                        product.reviews ? (
-                            <div>
-                                {
-                                    reviews.map((r, index) => (
-                                        <span  key={"review-" + product.slug + index}>
-                                            {
-                                                r > product.reviews.avg ? (
-                                                    <span><Icon icon={["far", "star"]} className="w-3 h-3 px-0.5"/></span>
-                                                ) : (
-                                                    <span> <Icon icon={["fas", "star"]} className="w-3 h-3 px-0.5"/></span>
-                                                )
-                                            }
-                                        </span>
+
+                {
+                    product.reviews ? (
+                        <Reviews reviews={product.reviews} productSlug={product.slug} showReviewNumber={true}/>
+                    ) : ("")
+
+                }
 
 
-                                    ))
-                                }
-                                <span className="text-xs pl-1.5">({product.reviews.total})</span>
-
-                            </div>
-                            ):("")
-
-                    }
-
-                </div>
             </div>
             <div className="text-sm font-black mb-1.5">
                 {
-                    product.highlights?(
+                    product.highlights ? (
                         product.highlights.map((cat, index) => (
                             <span key={"highlights-" + product.slug + index}>
                              <span>{cat.title}</span>
@@ -158,7 +120,7 @@ export default function PlpCard({data}) {
 
 
                         ))
-                    ):("")
+                    ) : ("")
 
                 }
             </div>

@@ -18,6 +18,7 @@ import InstantSearch from "@components/header/search/instant-search";
 import CustomerMenu from "@components/header/main-nav/customer-menu";
 import MiniCart from "@components/header/mini-cart";
 import {MOBILE_BREAKPOINT} from "@lib/constants";
+import Button from "@components/button";
 
 export default function MiddleBar({store, customer, minicart}) {
 
@@ -89,16 +90,16 @@ export default function MiddleBar({store, customer, minicart}) {
                          onMouseLeave={onMouseLeave}>
                         <a href="#" className="block relative md:pl-5">
                             <Icon icon={faMapMarkerAlt}
-                                  className={"w-5 md:w-4 md:absolute md:left-0 md:pr-2.5 md:transform " + (store.address ? "translate-y-2/4" : "top-1/2 -translate-y-2/4")}/>
+                                  className={"md:absolute md:left-0 md:pr-2.5 md:transform " + (store.address ? "translate-y-2/4" : "top-1/2 -translate-y-2/4")} size={"medium"}/>
 
                             <span className="hidden md:inline">
 
                                 {store.title}
                                 {store.address ? (
                                     isHovering ? (
-                                        <Icon icon={faChevronUp} className="pl-2.5"/>
+                                        <Icon icon={faChevronUp} className="pl-2.5" size={"small"}/>
                                     ) : (
-                                        <Icon icon={faChevronDown} className="pl-2.5"/>
+                                        <Icon icon={faChevronDown} className="pl-2.5" size={"small"}/>
                                     )
                                 ) : (
                                     ""
@@ -144,7 +145,7 @@ export default function MiddleBar({store, customer, minicart}) {
                                                         ""
                                                     )
                                                 }
-                                                <button className="btn mt-5">Change Your Store</button>
+                                                <Button label={"Change Your Store"} size="small" className="mt-5 w-full"/>
                                             </div>
                                         ) : (
                                             ""
@@ -177,7 +178,7 @@ export default function MiddleBar({store, customer, minicart}) {
                                 customer.nav ? (
                                     <div>
                                         <a href="#" className="flex items-center">
-                                            <Icon icon={faUserCircle} className="md:pr-1.5 w-5 md:w-4"/>
+                                            <Icon icon={faUserCircle} className="md:pr-1.5" size={"medium"}/>
                                             <span className="hidden md:inline">
                                                 {customer.title}
                                                 {
@@ -203,8 +204,9 @@ export default function MiddleBar({store, customer, minicart}) {
 
                                     </div>
                                 ) : (
-                                    <a href="#"><Icon icon={farUserCircle}
-                                                      className="md:pr-1.5 w-5 md:w-4"/>{customer.title}<Icon
+                                    <a href="#">
+                                        <Icon icon={farUserCircle}
+                                                      className="md:pr-1.5" size={"medium"}/>{customer.title}<Icon
                                         icon={faChevronDown} className="pl-1.5"/></a>
                                 )
                             }
@@ -216,7 +218,7 @@ export default function MiddleBar({store, customer, minicart}) {
                             onMouseEnter={onMiniCartMouseEnter}
                             onMouseLeave={onMiniCartMouseLeave}>
                             <a href="#" className="relative">
-                                <Icon icon={faShoppingBag} className="w-5 md:w-4"/>
+                                <Icon icon={faShoppingBag} size={"medium"}/>
                                 <span className="block absolute">5</span>
                             </a>
                             {

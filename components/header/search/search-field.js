@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Icon from "@components/icon";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
 import {getSearchData} from "@lib/api";
+import Button from "@components/button";
 
 export default function SearchField({data, instantSearchState, setInstantSearchState}) {
 
@@ -79,7 +80,7 @@ export default function SearchField({data, instantSearchState, setInstantSearchS
                 (isSearchHovered || isSearchFocus || instantSearchState.mouseOn) ? (
 
                     <div className="relative w-full ">
-                        <Icon icon={faSearch} className="absolute top-1/2 transform -translate-y-1/2 "/>
+                        <Icon icon={faSearch} className="absolute-y-center"/>
                         <input
                             className="pl-5 text-sm text-gray_4 focus:outline-none  w-full"
                             onFocus={onSearchFocus}
@@ -88,9 +89,17 @@ export default function SearchField({data, instantSearchState, setInstantSearchS
                             value={searchInputValue}
                             placeholder="Search"
                            />
-                        <button onClick={closeSearch} className="absolute top-1/2 transform -translate-y-1/2 right-0">
+
+                        <Button
+                            className="absolute-y-center right-0"
+                            showBorder={false}
+                            onClick={closeSearch}
+                        >
                             <Icon icon={["fas", "times"]}/>
-                        </button>
+                        </Button>
+{/*                        <button onClick={closeSearch} className="absolute top-1/2 transform -translate-y-1/2 right-0">
+
+                        </button>*/}
                     </div>
                 ) : (
                     <a href="#" className="relative border-b border-white">

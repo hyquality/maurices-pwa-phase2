@@ -1,4 +1,4 @@
-import PlpCard from "@components/templates/plp/plp-card";
+import PlpCard from "@components/templates/product/card/plp-card";
 
 export default function PlpList({data}) {
     return (

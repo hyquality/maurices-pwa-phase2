@@ -1,9 +1,39 @@
 button {
   &.btn {
-    @apply block text-gray_2 text-center text-xs md:text-sm uppercase tracking-wider border border-gray_3 p-2  w-full rounded-md;
-    &.btn-fill{
+    @apply block text-gray_2 text-center text-xs md:text-sm uppercase tracking-wider border border-gray_3 rounded-md;
+
+
+    &.small {
+      @apply p-2;
+    }
+
+    &.medium {
+      @apply font-black p-4;
+    }
+
+    &.large {
+
+    }
+
+    &.gray {
+      @apply bg-gray_1;
+    }
+    &.green {
       @apply bg-green border-green text-white;
     }
+
+    &.red {
+      @apply bg-red border-red text-white;
+    }
+
+    &.white {
+      @apply bg-white;
+    }
+
+    &.no-border{
+      @apply border-0;
+    }
+
   }
 }
 
@@ -33,5 +63,17 @@ ul.link-list-border {
         @apply border-0;
       }
     }
+  }
+}
+
+span.icon{
+  &.small{
+    @apply w-3;
+  }
+  &.medium{
+    @apply w-5 md:w-4;
+  }
+  &.large{
+    @apply w-5;
   }
 }

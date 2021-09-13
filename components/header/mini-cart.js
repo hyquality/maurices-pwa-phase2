@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Icon from "@components/icon";
+import Button from "@components/button";
 
 export default function MiniCart({data}) {
     return (
@@ -63,10 +64,11 @@ export default function MiniCart({data}) {
                         </div>
                     ) : ("")
                 }
+
                 <span className="text-xs text-gray_5">*before shipping and sale tax</span>
                 <div className="flex">
-                    <button className="btn mr-1.5 mt-1.5">View Bag</button>
-                    <button className="btn btn-fill ml-1.5 mt-1.5">Checkout</button>
+                    <Button label={"View Bag"} size="small" className="mr-1.5 mt-1.5 w-full"/>
+                    <Button label={"Checkout"} size="small" color={"green"} className="mr-1.5 mt-1.5 w-full"/>
                 </div>
             </div>
         </div>
