@@ -10,7 +10,8 @@
     "cache-result": "node scripts/cache.js",
     "test": "next test",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token=d4bbaf589182"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -42,6 +43,7 @@
     "autoprefixer": "^10.3.4",
     "babel-loader": "^8.2.2",
     "babel-plugin-superjson-next": "^0.3.1",
+    "chromatic": "^5.9.2",
     "postcss": "^8.3.6",
     "postcss-loader": "^6.1.1",
     "prop-types": "^15.7.2",
