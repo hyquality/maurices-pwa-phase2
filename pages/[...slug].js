@@ -26,7 +26,6 @@ export default function Post({data, collection, preview}) {
         return <ErrorPage statusCode={404}/>
     }
     return (
-
         <>
             {data ? (
                 <Layout data={data}>
