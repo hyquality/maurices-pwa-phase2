@@ -1,4 +1,5 @@
-export default (req, res) => {
+export default function Preview({req, res}) {
+//export default (req, res) => {
   // Get the ID to redirect to
   const { query } = req;
   const { id } = query;

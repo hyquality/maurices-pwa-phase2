@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
+    "lint": "next lint",
     "cache-result": "node scripts/cache.js",
     "test": "next test",
     "storybook": "start-storybook -p 6006",
@@ -44,11 +45,25 @@
     "babel-loader": "^8.2.2",
     "babel-plugin-superjson-next": "^0.3.1",
     "chromatic": "^5.9.2",
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2",
     "postcss": "^8.3.6",
     "postcss-loader": "^6.1.1",
     "prop-types": "^15.7.2",
     "sass-loader": "^12.1.0",
     "tailwindcss": "^2.2.15",
     "url-loader": "^4.1.1"
+  },
+  "eslintConfig": {
+    "overrides": [
+      {
+        "files": [
+          "components/**/*.stories.js"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
   }
 }

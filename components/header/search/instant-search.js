@@ -3,6 +3,8 @@ import Link from "next/link";
 import {bodyOverlay, isMobile,isDescktop} from "@lib/helpers";
 import {getSearchData} from "@lib/api";
 import Icon from "@components/icon";
+import Image from "next/image";
+import logo from "@public/assets/images/logo.png";
 export default function InstantSearch({data, instantSearchState, setInstantSearchState}) {
     const [searchInputValue, setSearchInputValue] = useState('');
     const onSearchResultMouseEnter = () => {
@@ -96,7 +98,14 @@ export default function InstantSearch({data, instantSearchState, setInstantSearc
 
                                             <Link href={link.url}>
                                                 <a>
-                                                    <img className="hidden md:block pb-2.5" src={link.image}/>
+                                                    <Image
+                                                        alt={link.text}
+                                                        src={link.image}
+                                                        width={125}
+                                                        height={190}
+                                                        quality={100}
+                                                        className="hidden md:block pb-2.5"
+                                                    />
                                                     <h4 className="text-sm md:text-xs text-gray_2 md:text-main">{link.text}</h4>
                                                 </a>
                                             </Link>

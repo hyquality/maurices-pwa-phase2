@@ -37,6 +37,47 @@ button {
   }
 }
 
+.header-title{
+  @apply pb-8;
+  &.utopia {
+    @apply font-utopia;
+  }
+  &.small {
+    @apply text-2xl;
+  }
+
+  &.medium {
+    @apply text-3xl;
+  }
+  &.large {
+    @apply text-4xl;
+  }
+  &.gray {
+    @apply text-gray_1;
+  }
+  &.green {
+    @apply text-green;
+  }
+
+  &.red {
+    @apply text-red;
+  }
+  &.white {
+    @apply text-white;
+  }
+  &.bold{
+    @apply font-semibold;
+  }
+  &.left{
+    @apply text-left;
+  }
+  &.right{
+    @apply text-right;
+  }
+  &.center{
+    @apply text-center;
+  }
+}
 .customer-menu-callout {
   @apply mt-4 -mx-5 px-5 py-4 bg-gray_1;
 }

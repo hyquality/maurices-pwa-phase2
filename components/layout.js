@@ -47,7 +47,7 @@ export default function Layout({data, nav, children}) {
                     {
                         header ? (
                             <Header data={header} customer={customer} store={store} minicart={minicart}/>
-                        ) : ("")
+                        ) : null
                     }
 
                     {
@@ -55,7 +55,7 @@ export default function Layout({data, nav, children}) {
                             <Nav data={mainNav}
                                  store={store ? store : {}}
                                  customer={customer ? customer : {}}/>
-                        ) : ("")
+                        ) : null
                     }
                 </div>
 
@@ -65,7 +65,7 @@ export default function Layout({data, nav, children}) {
                 {
                     footer ? (
                         <Footer data={footer}/>
-                    ) : ("")
+                    ) : null
                 }
 
             </div>

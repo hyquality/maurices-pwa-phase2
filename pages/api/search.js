@@ -1,3 +1,3 @@
-export default (req, res)=>{
+export default function Search({req, res}) {
     res.statusCode = 200
 }

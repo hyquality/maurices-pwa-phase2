@@ -8,12 +8,19 @@ import {getStaticPageData} from "@lib/api";
 import {getTheTitle} from "@lib/helpers";
 import staticCollectionJson from "../fake_data/dataCollectionJson.json"
 import Link from "next/link";
+import Breadcrumbs from "@components/breadcrumbs";
+import PlpList from "@components/templates/plp/plp-list";
 //import {useTranslation} from 'next-i18next';
 
 import React from "react";
+import PlpDescription from "@components/templates/plp/plp-description";
+import PlpFilter from "@components/templates/plp/plp-filter";
+import PlpSubcategotyList from "@components/templates/plp/plp-subcategoty-list";
+import HeaderTitle from "@components/templates/header-title";
 
 export default function Post({data, collection, preview}) {
     //const {t} = useTranslation('common');
+    const {title,slug,products,desc} = collection
     const router = useRouter()
 
     if (!router.isFallback && !collection?.slug) {
@@ -25,87 +32,37 @@ export default function Post({data, collection, preview}) {
             {data ? (
                 <Layout data={data}>
                     <Head>
-                        <title>{getTheTitle(`${collection.title}`)}</title>
+                        <title>{getTheTitle(`${title}`)}</title>
                     </Head>
                     <Container>
-
                         <Breadcrumbs/>
-                        <h1 className="text-center pb-8 text-4xl font-semibold font-utopia">{collection.title}</h1>
-                        <div>
-                            {
-                                collection.subcategories ? (
-                                    <ul className="flex justify-between flex-wrap border-b border-gray_border py-8 mb-8">
-                                        {
-                                            collection.subcategories.map((cat, index) => (
-                                                <li className="w-1/8"
-                                                    key={"subcategory-" + collection.slug + "-" + index}>
-
-                                                    <Link href={cat.url}>
-                                                        <a className="block relative">
-                                                            <Image
-                                                                src={cat.image}
-                                                                alt={cat.title}
-                                                                width={200}
-                                                                height={300}
-                                                            />
-                                                            <h4 className="text-sm md:text-xs text-gray_2 md:text-main">{cat.title}</h4>
-                                                        </a>
-                                                    </Link>
-                                                </li>
-                                            ))
-                                        }
-                                    </ul>
-
-                                ) : ("")
-                            }
-                        </div>
+                        <HeaderTitle weight={"bold"} size={"large"} tag={"h1"} style={"utopia"}>{title}</HeaderTitle>
+                        <PlpSubcategotyList collection={collection}/>
                         <div className="flex">
                             <div className="filter w-1/4">
-                                <h2>{collection.title}</h2>
-                                {
-                                    collection.subcategories ? (
-                                        <ul>
-                                            {
-                                                collection.subcategories.map((cat, index) => (
-                                                    <li className=""
-                                                        key={"subcategory-filter-" + collection.slug + "-" + index}>
-
-                                                        <Link href={cat.url}>
-                                                            <a>{cat.title} <span>({cat.qty})</span> </a>
-                                                        </Link>
-                                                    </li>
-                                                ))
-                                            }
-                                        </ul>
-
-                                    ) : ("")
-                                }
+                                <PlpFilter collection={collection}/>
                             </div>
-                            <div className="w-3/4">
+                            <div className="w-3/4 pb-28">
 
-                                <PlpList data={collection.products}/>
+                                <PlpList data={products}/>
                                 {
                                     collection.desc ? (
-                                        <div>
-                                            <h3 className="text-2xl  pb-8">{collection.desc.title}</h3>
-                                            <p>{collection.desc.text}</p>
-                                        </div>
-                                    ) : ("")
+                                        <PlpDescription data={desc}/>
+                                    ) : null
                                 }
 
                             </div>
                         </div>
                     </Container>
                 </Layout>
-            ) : ("")}
+            ) : null}
 
         </>
     )
 }
 
 //import {serverSideTranslations} from 'next-i18next/serverSideTranslations';
-import Breadcrumbs from "@components/breadcrumbs";
-import PlpList from "@components/templates/plp/plp-list";
+
 
 export async function getStaticProps({params, preview = false, previewData, locale}) {
     const data = await getStaticPageData();

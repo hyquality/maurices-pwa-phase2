@@ -1,11 +1,19 @@
 import Link from "next/link";
+import Image from "next/image";
+import React from "react";
 export default function CalloutItem({data}) {
     const cell = data;
     return (
         <div  className="flex pb-9 md:pb-0">
             <div>
-                <img src={cell.icon}
-                     className="max-w-cellout-width-small lg:max-w-cellout-width h-auto mr-6"/>
+                <Image
+                    alt={cell.title}
+                    src={cell.icon}
+                    width={72}
+                    height={64}
+                    quality={100}
+                    className="max-w-cellout-width-small lg:max-w-cellout-width h-auto mr-6"
+                />
             </div>
             <div>
                 <h4 className="text-sm font-bold">{cell.title}</h4>

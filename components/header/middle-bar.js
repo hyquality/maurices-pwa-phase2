@@ -19,6 +19,8 @@ import CustomerMenu from "@components/header/main-nav/customer-menu";
 import MiniCart from "@components/header/mini-cart";
 import {MOBILE_BREAKPOINT} from "@lib/constants";
 import Button from "@components/button";
+import logo from "@public/assets/images/logo.png"
+import Image from "next/image";
 
 export default function MiddleBar({store, customer, minicart}) {
 
@@ -161,7 +163,15 @@ export default function MiddleBar({store, customer, minicart}) {
                     </div>
                     <div className="logo text-center flex-grow">
                         <Link href="/">
-                            <a><img src="/assets/images/logo.png" className="w-5/6 max-w-logo-width inline"/></a>
+                            <a>
+                                <Image
+                                    alt=""
+                                    src={logo}
+                                    width={288}
+                                    height={40}
+                                    quality={100}
+                                />
+                            </a>
                         </Link>
                     </div>
                     <ul className="middle-bar-menu flex items-center ml-auto relative md:py-30px md:-my-5">

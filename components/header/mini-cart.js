@@ -2,6 +2,8 @@ import Link from "next/link";
 import React from "react";
 import Icon from "@components/icon";
 import Button from "@components/button";
+import Image from "next/image";
+import logo from "@public/assets/images/logo.png";
 
 export default function MiniCart({data}) {
     return (
@@ -17,7 +19,13 @@ export default function MiniCart({data}) {
                                     <li className="flex px-5 pb-5 mb-5 border-b border-gray_border last:border-0" key={"mini-cart-item-" + item.id}>
                                         <Link href={item.url}>
                                             <a className="w-20 pr-5 box-content">
-                                                <img src={item.image}/>
+                                                <Image
+                                                    alt={item.title}
+                                                    src={item.image}
+                                                    width={72}
+                                                    height={106}
+                                                    quality={100}
+                                                />
                                             </a>
                                         </Link>
                                         <div className="flex-grow relative">

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Image from 'next/image'
 import Container from "@components/container";
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {fab} from '@fortawesome/free-brands-svg-icons';
@@ -6,8 +6,9 @@ import {far} from '@fortawesome/free-regular-svg-icons';
 
 import {faChevronDown, faChevronUp, fas} from "@fortawesome/free-solid-svg-icons";
 import Icon from "@components/icon";
-import React, {useState} from "react";
+import React from "react";
 import NavList from "@components/templates/nav-list";
+import logo from "@public/assets/images/logo.png"
 
 library.add(fab);
 library.add(far);
@@ -71,7 +72,15 @@ export default function Columns({data, signup}) {
                                 )
                                 : null
                         }
-                        <div className="brand py-10"><img src="/assets/images/logo.png"/></div>
+                        <div className="brand py-10">
+                            <Image
+                                alt=""
+                                src={logo}
+                                width={350}
+                                height={47}
+                                quality={100}
+                            />
+                        </div>
                         {
                             signup.socialNav
                                 ? (
