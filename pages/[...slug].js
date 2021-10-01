@@ -7,7 +7,6 @@ import Head from 'next/head'
 import {getStaticPageData} from "@lib/api";
 import {getTheTitle} from "@lib/helpers";
 import staticCollectionJson from "../fake_data/dataCollectionJson.json"
-import Link from "next/link";
 import Breadcrumbs from "@components/breadcrumbs";
 import PlpList from "@components/templates/plp/plp-list";
 //import {useTranslation} from 'next-i18next';
@@ -20,7 +19,7 @@ import HeaderTitle from "@components/templates/header-title";
 
 export default function Post({data, collection, preview}) {
     //const {t} = useTranslation('common');
-    const {title,slug,products,desc} = collection
+    const {title, slug, products, desc} = collection || {}
     const router = useRouter()
 
     if (!router.isFallback && !collection?.slug) {
@@ -77,7 +76,7 @@ export async function getStaticProps({params, preview = false, previewData, loca
     }
     return {
         props: {
-           // ...(await serverSideTranslations(locale, ['common'])),
+            // ...(await serverSideTranslations(locale, ['common'])),
             data: data,
             preview,
             collection: staticCollectionJson
