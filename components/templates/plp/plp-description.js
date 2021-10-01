@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import HeaderTitle from "@components/templates/header-title";
+import HeaderTitle from "../header-title";
 export default function PlpDescription({data}) {
     const {title,text} = data;
     return (
