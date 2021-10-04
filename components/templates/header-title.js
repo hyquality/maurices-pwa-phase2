@@ -17,9 +17,9 @@ HeaderTitle.propTypes = {
     children: PropTypes.string.isRequired,
     weight: PropTypes.oneOf(['regular', 'bold']),
     className: PropTypes.string,
-    size: PropTypes.oneOf(['small', 'medium', 'large']),
+    size: PropTypes.oneOf(['extra-small', 'small', 'medium', 'large']),
     position: PropTypes.oneOf(['left', 'right', 'center']),
-    color: PropTypes.oneOf([undefined, 'gray', 'green', 'red', 'white'])
+    color: PropTypes.oneOf([undefined, 'dark-gray','gray', 'green', 'red', 'white'])
 }
 HeaderTitle.defaultProps = {
     tag: "h1",

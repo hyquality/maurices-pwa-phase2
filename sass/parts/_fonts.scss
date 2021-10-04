@@ -75,3 +75,9 @@
 .tk-utopia-std-headline { font-family: "utopia-std-headline",serif; }
 .tk-utopia-std-subhead { font-family: "utopia-std-subhead",serif; }
 .tk-canada-type-gibson { font-family: "canada-type-gibson",sans-serif; }
+
+.icon{
+  .svg-inline--fa {
+    @apply w-full h-auto;
+  }
+}

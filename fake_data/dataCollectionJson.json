@@ -65,6 +65,14 @@
         "main": "/assets/images/plp/43394_C7978.jpeg",
         "hover": "/assets/images/plp/118676_C7453.jpeg"
       },
+      "gallery": [
+        {
+          "image": "/assets/images/plp/43394_C7978.jpeg"
+        },
+        {
+          "image": "/assets/images/plp/118676_C7453.jpeg"
+        }
+      ],
       "reviews": {
         "total": 4,
         "avg": 3
@@ -84,6 +92,14 @@
             "main": "/assets/images/plp/43394_C7978.jpeg",
             "hover": "/assets/images/plp/118676_C7453.jpeg"
           },
+          "gallery": [
+            {
+              "image": "/assets/images/plp/43394_C7978.jpeg"
+            },
+            {
+              "image": "/assets/images/plp/118676_C7453.jpeg"
+            }
+          ],
           "price": {
             "main":  34.00
           }
@@ -102,6 +118,14 @@
             "main": "/assets/images/plp/43394_C7978.jpeg",
             "hover": "/assets/images/plp/118676_C7453.jpeg"
           },
+          "gallery": [
+            {
+              "image": "/assets/images/plp/43394_C7978.jpeg"
+            },
+            {
+              "image": "/assets/images/plp/118676_C7453.jpeg"
+            }
+          ],
           "price": {
             "main":  39.00
           }
@@ -120,6 +144,14 @@
             "main": "/assets/images/plp/48615_C1756.jpeg",
             "hover": "/assets/images/plp/118676_C7453.jpeg"
           },
+          "gallery": [
+            {
+              "image": "/assets/images/plp/48615_C1756.jpeg"
+            },
+            {
+              "image": "/assets/images/plp/118676_C7453.jpeg"
+            }
+          ],
           "price": {
             "main":  25.00
           }
@@ -138,6 +170,14 @@
             "main": "/assets/images/plp/48615_C1756.jpeg",
             "hover": "/assets/images/plp/118676_C7453.jpeg"
           },
+          "gallery": [
+            {
+              "image": "/assets/images/plp/48615_C1756.jpeg"
+            },
+            {
+              "image": "/assets/images/plp/118676_C7453.jpeg"
+            }
+          ],
           "price": {
             "main":  36.00
           }
@@ -157,6 +197,14 @@
             "main": "/assets/images/plp/115961_C5426.jpeg",
             "hover": "/assets/images/plp/118676_C7453.jpeg"
           },
+          "gallery": [
+            {
+              "image": "/assets/images/plp/115961_C5426.jpeg"
+            },
+            {
+              "image": "/assets/images/plp/118676_C7453.jpeg"
+            }
+          ],
           "price": {
             "main":  25.00,
             "old": 27.00,
@@ -173,6 +221,14 @@
         "main": "/assets/images/plp/116303_C4360.jpeg",
         "hover": "/assets/images/plp/118676_C7453.jpeg"
       },
+      "gallery": [
+        {
+          "image": "/assets/images/plp/116303_C4360.jpeg"
+        },
+        {
+          "image": "/assets/images/plp/118676_C7453.jpeg"
+        }
+      ],
       "variants": [
         {
           "title": "",
@@ -189,6 +245,14 @@
             "main": "/assets/images/plp/116303_C4360.jpeg",
             "hover": "/assets/images/plp/118676_C7453.jpeg"
           },
+          "gallery": [
+            {
+              "image": "/assets/images/plp/116303_C4360.jpeg"
+            },
+            {
+              "image": "/assets/images/plp/118676_C7453.jpeg"
+            }
+          ],
           "price": {
             "main":  25.00,
             "old": 27.00,
@@ -205,6 +269,14 @@
         "main": "/assets/images/plp/118358_C1756.jpeg",
         "hover": "/assets/images/plp/118676_C7453.jpeg"
       },
+      "gallery": [
+        {
+          "image": "/assets/images/plp/118358_C1756.jpeg"
+        },
+        {
+          "image": "/assets/images/plp/118676_C7453.jpeg"
+        }
+      ],
       "reviews": {
         "total": 10,
         "avg": 1
@@ -224,6 +296,14 @@
             "main": "/assets/images/plp/118358_C1756.jpeg",
             "hover": "/assets/images/plp/118676_C7453.jpeg"
           },
+          "gallery": [
+            {
+              "image": "/assets/images/plp/118358_C1756.jpeg"
+            },
+            {
+              "image": "/assets/images/plp/118676_C7453.jpeg"
+            }
+          ],
           "price": {
             "main":  17.00
           }

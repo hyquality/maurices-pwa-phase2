@@ -6,8 +6,9 @@ import Icon from "@components/icon";
 import ColorSwatch from "@components/templates/product/color-swatch";
 import Button from "@components/button";
 import Reviews from "@components/templates/product/reviews";
+import Highlights from "@components/templates/product/highlights";
 
-export default function PlpCard({data}) {
+export default function PlpCard({data, openPopup}) {
     const product = data;
     const productData = getProductCardData(data)
 
@@ -45,7 +46,7 @@ export default function PlpCard({data}) {
         <div className={"card-item"}>
             <div className="flex mb-2.5">
                 <Link href={"/product/" + product.slug}>
-                    <a
+                    <div
                         className="relative w-full"
                         onMouseEnter={onMouseEnter}
                         onMouseLeave={onMouseLeave}
@@ -66,7 +67,8 @@ export default function PlpCard({data}) {
                                         className="block rounded z-0"
                                     />
 
-                                    <Button label={"QUICK VIEW"} color="white" size="medium"
+                                    <Button label={"QUICK VIEW"} onClick={openPopup(product)} color="white"
+                                            size="medium"
                                             className="absolute-x-center bottom-6 w-11/12  z-10"/>
 
                                 </>
@@ -84,50 +86,22 @@ export default function PlpCard({data}) {
                             )
                         }
 
-                    </a>
+                    </div>
 
                 </Link>
             </div>
             <div className="mb-2.5 flex justify-between">
-                {
-                    productData.colors ? (
-                        <ColorSwatch colors={productData.colors} productSlug={product.slug}
-                                     onColorSwatchClickMouseEnter={onColorSwatchClickMouseEnter}/>
-                    ) : ("")
-                }
-
-                {
-                    product.reviews ? (
-                        <Reviews reviews={product.reviews} productSlug={product.slug} showReviewNumber={true}/>
-                    ) : ("")
-
-                }
-
-
+                <ColorSwatch colors={productData.colors} productSlug={product.slug}
+                             onColorSwatchClickMouseEnter={onColorSwatchClickMouseEnter}/>
+                <Reviews reviews={product.reviews} productSlug={product.slug} showReviewNumber={true}/>
             </div>
-            <div className="text-sm font-black mb-1.5">
-                {
-                    product.highlights ? (
-                        product.highlights.map((cat, index) => (
-                            <span key={"highlights-" + product.slug + index}>
-                             <span>{cat.title}</span>
-                                {
-                                    product.highlights.length > index + 1 ? (
-                                        <span className="px-1.5">+</span>
-                                    ) : ("")
-                                }
-                         </span>
-
-
-                        ))
-                    ) : ("")
-
-                }
+            <div>
+                <Highlights highlights={product.highlights} slug={product.slug}/>
             </div>
             <Link href={"/product/" + product.slug}>
                 <a className="text-sm">{product.title} </a>
             </Link>
-            <div>
+            <div className="text-sm">
                 {cardPrice}
             </div>
         </div>

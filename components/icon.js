@@ -2,7 +2,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import PropTypes from 'prop-types';
 
 export default function Icon({icon, className, size}) {
-    return <span className={`${className} icon box-content inline-block ${size}`}><FontAwesomeIcon icon={icon}/></span>
+    return <span className={`${className} icon box-content inline-block ${size}`}><FontAwesomeIcon icon={icon} className="w-full h-auto"/></span>
 }
 
 Icon.propTypes = {

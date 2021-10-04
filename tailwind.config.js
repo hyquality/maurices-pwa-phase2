@@ -62,6 +62,7 @@ module.exports = {
                 'gray_3': '#D4D5D5',
                 'gray_4': '#333333',
                 'gray_5': '#8E9191',
+                'gray_6': '#979797',
                 'gray_border': '#E8EBEB',
                 'green': '#58B7B1',
                 'balck_7': 'rgba(0,0,0,0.7)',
@@ -74,6 +75,7 @@ module.exports = {
             },
             letterSpacing: {
                 menu: '0.094rem',
+                label: '0.081',
                 tighter: '-.04em',
             },
             lineHeight: {

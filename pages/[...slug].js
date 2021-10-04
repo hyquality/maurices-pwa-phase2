@@ -1,30 +1,48 @@
 import {useRouter} from 'next/router'
-import Image from 'next/image'
 import ErrorPage from 'next/error'
 import Container from '../components/container'
 import Layout from '../components/layout'
 import Head from 'next/head'
 import {getStaticPageData} from "@lib/api";
-import {getTheTitle} from "@lib/helpers";
+import {bodyOverlay, getTheTitle} from "@lib/helpers";
 import staticCollectionJson from "../fake_data/dataCollectionJson.json"
 import Breadcrumbs from "@components/breadcrumbs";
 import PlpList from "@components/templates/plp/plp-list";
-//import {useTranslation} from 'next-i18next';
-
-import React from "react";
+import React, {useState} from "react";
 import PlpDescription from "@components/templates/plp/plp-description";
 import PlpFilter from "@components/templates/plp/plp-filter";
 import PlpSubcategotyList from "@components/templates/plp/plp-subcategoty-list";
 import HeaderTitle from "@components/templates/header-title";
+import Popup from "../components/templates/popup";
+import dynamic from "next/dynamic";
 
 export default function Post({data, collection, preview}) {
     //const {t} = useTranslation('common');
+    const [isPopupVisible, setIsPopupVisible] = useState(false);
+    const [popupContent, setPopupContent] = useState("");
+
     const {title, slug, products, desc} = collection || {}
     const router = useRouter()
 
     if (!router.isFallback && !collection?.slug) {
         return <ErrorPage statusCode={404}/>
     }
+
+
+
+    const openQuickView  = (data) => (e) => {
+
+        e.preventDefault()
+
+        let TemplateItem = dynamic(import('../components/templates/plp/plp-quick-view'))
+        setPopupContent(<TemplateItem product={data}/>)
+        setIsPopupVisible(true)
+    }
+    const closeQuickView = (e) => {
+        e.preventDefault();
+        setIsPopupVisible(false)
+    }
+
     return (
         <>
             {data ? (
@@ -42,7 +60,7 @@ export default function Post({data, collection, preview}) {
                             </div>
                             <div className="w-3/4 pb-28">
 
-                                <PlpList data={products}/>
+                                <PlpList data={products} openPopup={openQuickView}/>
                                 {
                                     collection.desc ? (
                                         <PlpDescription data={desc}/>
@@ -51,6 +69,7 @@ export default function Post({data, collection, preview}) {
 
                             </div>
                         </div>
+                        <Popup content={popupContent} visible={isPopupVisible} closePopup={closeQuickView} className={"w-full max-w-4xl"}/>
                     </Container>
                 </Layout>
             ) : null}

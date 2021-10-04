@@ -1,6 +1,6 @@
 import PlpCard from "@components/templates/product/card/plp-card";
 
-export default function PlpList({data}) {
+export default function PlpList({data,openPopup}) {
     return (
         <>
             {
@@ -21,7 +21,7 @@ export default function PlpList({data}) {
                                 data.map((product, index) => (
                                     <li className="w-30"
                                         key={"product-" + product.slug + "-" + index}>
-                                        <PlpCard data={product}/>
+                                        <PlpCard data={product} openPopup={openPopup}/>
 
                                     </li>
                                 ))
