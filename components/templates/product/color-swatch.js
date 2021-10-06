@@ -6,26 +6,25 @@ export default function ColorSwatch({
                                         className,
                                         productSlug,
                                         showLabel = false,
+                                        active = 0,
+                                        selectedVariant,
+                                        variants,
                                         onColorSwatchClickMouseEnter = false
                                     }) {
-    const [activeIndex, setActiveIndex] = useState(0);
+    const [activeIndex, setActiveIndex] = useState(active);
 
     const onMouseEnter = (index) => (e) => {
         e.preventDefault();
-        console.log(index);
-        const {price, swatch, short, image, prices} = colors[index]
-        if(onColorSwatchClickMouseEnter){
-            onColorSwatchClickMouseEnter(e, {
-                price,
-                swatch,
-                short,
-                image,
-                prices
-            });
+
+       // const {title, price, swatch, short, image, prices} = colors[index]
+        if (onColorSwatchClickMouseEnter) {
+            onColorSwatchClickMouseEnter(e, colors[index]);
         }
 
         setActiveIndex(index)
     }
+
+    console.log(selectedVariant);
     return (
         <>
             {
@@ -40,9 +39,9 @@ export default function ColorSwatch({
                         {
                             colors.map(({price, swatch, short, image, prices}, index) => (
 
-                                <a className={`mr-1.5 inline-block cursor-pointer border border-gray_2 rounded-full ${index === activeIndex ? " active" : ""}`}
+                                <a className={`mr-1.5 inline-block cursor-pointer border border-gray_2 rounded-full ${(selectedVariant.color!== undefined && short === selectedVariant.color.short) ? " active" : ""}`}
 
-                                   onMouseEnter={onMouseEnter(index)}
+                                   onClick={onMouseEnter(index)}
                                    data-color={prices}
                                    key={"color-" + productSlug + index}>
                                     {
@@ -97,12 +96,16 @@ ColorSwatch.propTypes = {
     ).isRequired,
     className: PropTypes.string,
     showLabel: PropTypes.bool,
+    active: PropTypes.number,
+    selectedVariant: PropTypes.any,
     onColorSwatchClickMouseEnter: PropTypes.func,
 }
 
 ColorSwatch.defaultProps = {
     colors: [],
     showLabel: false,
+    active: 0,
+    selectedVariant: {},
     onColorSwatchClickMouseEnter: undefined,
     className: ""
 };

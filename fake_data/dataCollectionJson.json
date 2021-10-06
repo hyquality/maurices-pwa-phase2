@@ -88,6 +88,40 @@
             "title": "Small",
             "short": "S"
           },
+          "fit": {
+            "title": "Regular",
+            "short": "regular"
+          },
+          "image": {
+            "main": "/assets/images/plp/43394_C7978.jpeg",
+            "hover": "/assets/images/plp/118676_C7453.jpeg"
+          },
+          "gallery": [
+            {
+              "image": "/assets/images/plp/43394_C7978.jpeg"
+            },
+            {
+              "image": "/assets/images/plp/118676_C7453.jpeg"
+            }
+          ],
+          "price": {
+            "main":  34.00
+          }
+        },
+        {
+          "title": "",
+          "color": {
+            "title": "Red",
+            "short": "red"
+          },
+          "size": {
+            "title": "Small",
+            "short": "S"
+          },
+          "fit": {
+            "title": "Plus",
+            "short": "plus"
+          },
           "image": {
             "main": "/assets/images/plp/43394_C7978.jpeg",
             "hover": "/assets/images/plp/118676_C7453.jpeg"
@@ -113,6 +147,10 @@
           "size": {
             "title": "Medium",
             "short": "M"
+          },
+          "fit": {
+            "title": "Regular",
+            "short": "regular"
           },
           "image": {
             "main": "/assets/images/plp/43394_C7978.jpeg",
@@ -140,16 +178,20 @@
             "title": "Small",
             "short": "S"
           },
+          "fit": {
+            "title": "Regular",
+            "short": "regular"
+          },
           "image": {
             "main": "/assets/images/plp/48615_C1756.jpeg",
             "hover": "/assets/images/plp/118676_C7453.jpeg"
           },
           "gallery": [
             {
-              "image": "/assets/images/plp/48615_C1756.jpeg"
+              "image": "/assets/images/plp/118676_C7453.jpeg"
             },
             {
-              "image": "/assets/images/plp/118676_C7453.jpeg"
+              "image": "/assets/images/plp/48615_C1756.jpeg"
             }
           ],
           "price": {
@@ -165,6 +207,10 @@
           "size": {
             "title": "Medium",
             "short": "M"
+          },
+          "fit": {
+            "title": "Regular",
+            "short": "regular"
           },
           "image": {
             "main": "/assets/images/plp/48615_C1756.jpeg",
@@ -192,6 +238,10 @@
           "size": {
             "title": "Large",
             "short": "L"
+          },
+          "fit": {
+            "title": "Regular",
+            "short": "regular"
           },
           "image": {
             "main": "/assets/images/plp/115961_C5426.jpeg",
@@ -240,6 +290,10 @@
           "size": {
             "title": "Large",
             "short": "L"
+          },
+          "fit": {
+            "title": "Regular",
+            "short": "regular"
           },
           "image": {
             "main": "/assets/images/plp/116303_C4360.jpeg",
@@ -291,6 +345,10 @@
           "size": {
             "title": "Large",
             "short": "L"
+          },
+          "fit": {
+            "title": "Regular",
+            "short": "regular"
           },
           "image": {
             "main": "/assets/images/plp/118358_C1756.jpeg",
