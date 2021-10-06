@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export default function Highlights({highlights, slug}) {
 
     return (
-        <div className="text-sm font-black mb-1.5">
+        <div className="text-xs font-normal mb-1.5">
             {
                 highlights ? (
                     highlights.map(({title}, index) => (

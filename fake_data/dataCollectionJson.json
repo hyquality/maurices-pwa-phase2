@@ -53,6 +53,7 @@
     {
       "title": "Kimono Cowl Neck Poncho",
       "slug": "kimono-cowl-neck-poncho",
+      "description": "When it comes to fashion finds, our fashion tops are where it’s at. From cozy cardigans and comfy sweaters to top rated graphic tees and pretty tunics, our tops come in a variety of colors, styles, and sizes perfect for outfitting casual weekends, morning work meetings and everything in between.",
       "highlights": [
         {
           "title": "New"
@@ -80,17 +81,19 @@
       "variants": [
         {
           "title": "",
-          "color": {
-            "title": "Red",
-            "short": "red"
-          },
-          "size": {
-            "title": "Small",
-            "short": "S"
-          },
-          "fit": {
-            "title": "Regular",
-            "short": "regular"
+          "attributes": {
+            "color": {
+              "title": "Red",
+              "short": "red"
+            },
+            "size": {
+              "title": "Small",
+              "short": "S"
+            },
+            "fit": {
+              "title": "Regular",
+              "short": "regular"
+            }
           },
           "image": {
             "main": "/assets/images/plp/43394_C7978.jpeg",
@@ -105,22 +108,24 @@
             }
           ],
           "price": {
-            "main":  34.00
+            "main": 34.00
           }
         },
         {
           "title": "",
-          "color": {
-            "title": "Red",
-            "short": "red"
-          },
-          "size": {
-            "title": "Small",
-            "short": "S"
-          },
-          "fit": {
-            "title": "Plus",
-            "short": "plus"
+          "attributes": {
+            "color": {
+              "title": "Red",
+              "short": "red"
+            },
+            "size": {
+              "title": "Small",
+              "short": "S"
+            },
+            "fit": {
+              "title": "Plus",
+              "short": "plus"
+            }
           },
           "image": {
             "main": "/assets/images/plp/43394_C7978.jpeg",
@@ -135,22 +140,24 @@
             }
           ],
           "price": {
-            "main":  34.00
+            "main": 34.00
           }
         },
         {
           "title": "",
-          "color": {
-            "title": "Red",
-            "short": "red"
-          },
-          "size": {
-            "title": "Medium",
-            "short": "M"
-          },
-          "fit": {
-            "title": "Regular",
-            "short": "regular"
+          "attributes": {
+            "color": {
+              "title": "Red",
+              "short": "red"
+            },
+            "size": {
+              "title": "Medium",
+              "short": "M"
+            },
+            "fit": {
+              "title": "Regular",
+              "short": "regular"
+            }
           },
           "image": {
             "main": "/assets/images/plp/43394_C7978.jpeg",
@@ -165,22 +172,24 @@
             }
           ],
           "price": {
-            "main":  39.00
+            "main": 39.00
           }
         },
         {
           "title": "",
-          "color": {
-            "title": "Green",
-            "short": "green"
-          },
-          "size": {
-            "title": "Small",
-            "short": "S"
-          },
-          "fit": {
-            "title": "Regular",
-            "short": "regular"
+          "attributes": {
+            "color": {
+              "title": "Green",
+              "short": "green"
+            },
+            "size": {
+              "title": "Small",
+              "short": "S"
+            },
+            "fit": {
+              "title": "Regular",
+              "short": "regular"
+            }
           },
           "image": {
             "main": "/assets/images/plp/48615_C1756.jpeg",
@@ -195,22 +204,24 @@
             }
           ],
           "price": {
-            "main":  25.00
+            "main": 11.00
           }
         },
         {
           "title": "",
-          "color": {
-            "title": "Green",
-            "short": "green"
-          },
-          "size": {
-            "title": "Medium",
-            "short": "M"
-          },
-          "fit": {
-            "title": "Regular",
-            "short": "regular"
+          "attributes": {
+            "color": {
+              "title": "Green",
+              "short": "green"
+            },
+            "size": {
+              "title": "Medium",
+              "short": "M"
+            },
+            "fit": {
+              "title": "Regular",
+              "short": "regular"
+            }
           },
           "image": {
             "main": "/assets/images/plp/48615_C1756.jpeg",
@@ -225,23 +236,25 @@
             }
           ],
           "price": {
-            "main":  36.00
+            "main": 36.00
           }
         },
         {
           "title": "",
-          "color": {
-            "title": "Blue",
-            "short": "blue",
-            "swatch": "/assets/images/plp/cs1.png"
-          },
-          "size": {
-            "title": "Large",
-            "short": "L"
-          },
-          "fit": {
-            "title": "Regular",
-            "short": "regular"
+          "attributes": {
+            "color": {
+              "title": "Blue",
+              "short": "blue",
+              "swatch": "/assets/images/plp/cs1.png"
+            },
+            "size": {
+              "title": "Large",
+              "short": "L"
+            },
+            "fit": {
+              "title": "Regular",
+              "short": "regular"
+            }
           },
           "image": {
             "main": "/assets/images/plp/115961_C5426.jpeg",
@@ -256,13 +269,12 @@
             }
           ],
           "price": {
-            "main":  25.00,
+            "main": 25.00,
             "old": 27.00,
             "msg": "Limited Time! Now 30% Off"
           }
         }
       ]
-
     },
     {
       "title": "Solid Tie Waist Long Sleeve Tunic Blouse",
@@ -282,18 +294,20 @@
       "variants": [
         {
           "title": "",
-          "color": {
-            "title": "Blue",
-            "short": "blue",
-            "swatch": "/assets/images/plp/cs1.png"
-          },
-          "size": {
-            "title": "Large",
-            "short": "L"
-          },
-          "fit": {
-            "title": "Regular",
-            "short": "regular"
+          "attributes": {
+            "color": {
+              "title": "Blue",
+              "short": "blue",
+              "swatch": "/assets/images/plp/cs1.png"
+            },
+            "size": {
+              "title": "Large",
+              "short": "L"
+            },
+            "fit": {
+              "title": "Regular",
+              "short": "regular"
+            }
           },
           "image": {
             "main": "/assets/images/plp/116303_C4360.jpeg",
@@ -308,13 +322,12 @@
             }
           ],
           "price": {
-            "main":  25.00,
+            "main": 25.00,
             "old": 27.00,
             "msg": "Limited Time! Now 30% Off"
           }
         }
       ]
-
     },
     {
       "title": "Wide Rib Circle Hem Open Front Cardigan",
@@ -338,17 +351,19 @@
       "variants": [
         {
           "title": "",
-          "color": {
-            "title": "orange",
-            "short": "orange"
-          },
-          "size": {
-            "title": "Large",
-            "short": "L"
-          },
-          "fit": {
-            "title": "Regular",
-            "short": "regular"
+          "attributes": {
+            "color": {
+              "title": "orange",
+              "short": "orange"
+            },
+            "size": {
+              "title": "Large",
+              "short": "L"
+            },
+            "fit": {
+              "title": "Regular",
+              "short": "regular"
+            }
           },
           "image": {
             "main": "/assets/images/plp/118358_C1756.jpeg",
@@ -363,11 +378,10 @@
             }
           ],
           "price": {
-            "main":  17.00
+            "main": 17.00
           }
         }
       ]
-
     }
   ]
 }

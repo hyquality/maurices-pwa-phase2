@@ -69,7 +69,7 @@ export default function Post({data, collection, preview}) {
 
                             </div>
                         </div>
-                        <Popup content={popupContent} visible={isPopupVisible} closePopup={closeQuickView} className={"w-full max-w-4xl"}/>
+                        <Popup content={popupContent} visible={isPopupVisible} closePopup={closeQuickView} className={"w-full max-w-5xl"}/>
                     </Container>
                 </Layout>
             ) : null}

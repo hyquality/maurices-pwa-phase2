@@ -4,26 +4,40 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export default function CalloutItem({data}) {
-    const {id, title, icon, text, nav} = data || {}
+    const {id, title, icon, text, nav,w,h} = data || {}
     return (
-        <div className="flex pb-9 md:pb-0">
-            <div>
-                <Image
-                    alt={title}
-                    src={icon}
-                    width={72}
-                    height={64}
-                    quality={100}
-                    className="max-w-cellout-width-small lg:max-w-cellout-width h-auto mr-6"
-                />
-            </div>
-            <div>
-                <h4 className="text-sm font-bold">{title}</h4>
-                <p className="text-xs">{text}</p>
+        <div className="flex items-center pb-9 md:pb-0">
+            {
+                icon ? (
+                    <div className={"pr-2"}>
+
+                        <Image
+                            alt={title}
+                            src={icon}
+                            width={w?w:72}
+                            height={h?h:64}
+                            quality={100}
+                            className="max-w-cellout-width-small lg:max-w-cellout-width h-auto mr-6"
+                        />
+                    </div>
+                ) : null
+            }
+            <div className={"flex flex-col"}>
+                {
+                    title ? (
+                        <h4 className="text-sm font-bold">{title}</h4>
+                    ) : null
+                }
+                {
+                    text ? (
+                        <p className="text-xs" dangerouslySetInnerHTML={{__html: text}}/>
+                    ) : null
+                }
+
 
                 <ul className="flex pt-5">
                     {nav ? (
-                        nav.map(({url,text},index) => (
+                        nav.map(({url, text}, index) => (
                             <li key={"cell-" + id + "_" + index} className="text-xs pr-5">
                                 <Link href={url}>
                                     <a className="underline hover:no-underline">{text}</a>

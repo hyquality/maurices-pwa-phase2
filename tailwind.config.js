@@ -51,7 +51,8 @@ module.exports = {
                 '6/7': '85.7142857%',
             },
             maxHeight:{
-                'max384': '24rem'
+                'max384': '24rem',
+                'max640': '42rem'
             },
             colors: {
                 'main': '#5D5D5D',
@@ -91,8 +92,11 @@ module.exports = {
             boxShadow: {
                 small: '0 1px 5px rgba(0, 0, 0, 0.12)',
                 medium: '0 8px 30px rgba(0, 0, 0, 0.12)',
+                top: '-2px -2px 4px 0 rgba(0,0,0,0.05);',
             },
-
+            borderWidth: {
+                '3': '3px',
+            }
         },
     },
     variants: {

@@ -8,26 +8,24 @@ export default function AttributeSelector({
                                               className,
                                               productSlug,
                                               showLabel = false,
-                                              active = 0,
                                               selectedVariant,
                                               variants,
                                               onAttributeClickMouseEnter = false
                                           }) {
 
-    attributes = attributes.filter(attribute => variants[selectedVariant.color.short+selectedVariant.size.short+selectedVariant.fit.short]!==undefined);
-
-
-    const [activeIndex, setActiveIndex] = useState(active);
 
     const onMouseEnter = (index) => (e) => {
         e.preventDefault();
 
-
         if (onAttributeClickMouseEnter) {
             onAttributeClickMouseEnter(e, attributes[index]);
         }
-
-        setActiveIndex(index)
+    }
+    const checkIsNotExist = (short) => {
+        const key = Object.keys(selectedVariant.attributes).map(function (key) {
+            return (attributeKey === key) ? short : selectedVariant.attributes[key].short
+        });
+        return variants[key.join("")] === undefined
     }
     return (
         <>
@@ -43,7 +41,7 @@ export default function AttributeSelector({
                         {
                             attributes.map(({title, short}, index) => (
 
-                                <a className={`mr-1.5 py-2.5 px-5 inline-block cursor-pointer rounded-lg border${short === selectedVariant[attributeKey].short ? " bg-gray_border border-gray_2" : " border-gray_3"}`}
+                                <a className={`mr-1.5 py-1.5 px-5 inline-block cursor-pointer rounded-lg border${short === selectedVariant.attributes[attributeKey].short ? " bg-gray_border border-gray_2 active" : " border-gray_3"} ${checkIsNotExist(short) ? " opacity-40" : ""}`}
 
                                    onClick={onMouseEnter(index)}
                                    key={short + "-" + productSlug + index}>
@@ -67,25 +65,26 @@ AttributeSelector.propTypes = {
     attributes: PropTypes.arrayOf(
         PropTypes.shape({
             title: PropTypes.string.isRequired,
-            short: PropTypes.string.isRequired
+            short: PropTypes.string.isRequired,
+            key: PropTypes.string.isRequired,
         })
     ).isRequired,
     className: PropTypes.string,
     productSlug: PropTypes.string.isRequired,
     showLabel: PropTypes.bool,
-    active: PropTypes.number,
     selectedVariant: PropTypes.any,
+    variants: PropTypes.any.isRequired,
     onAttributeClickMouseEnter: PropTypes.func,
 }
 
 AttributeSelector.defaultProps = {
     attributeName: "Size",
-    attributeKey:"size",
+    attributeKey: "size",
     attributes: [],
     showLabel: false,
     productSlug: "",
-    active: 0,
     selectedVariant: {},
+    variants: {},
     onAttributeClickMouseEnter: undefined,
     className: ""
 };

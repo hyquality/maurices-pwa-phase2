@@ -18,6 +18,7 @@ button {
     &.gray {
       @apply bg-gray_1;
     }
+
     &.green {
       @apply bg-green border-green text-white;
     }
@@ -30,21 +31,23 @@ button {
       @apply bg-white;
     }
 
-    &.no-border{
+    &.no-border {
       @apply border-0;
     }
 
   }
 }
 
-.header-title{
-  @apply pb-8;
+.header-title {
+  //@apply pb-8;
   &.utopia {
     @apply font-utopia;
   }
-  &.extra-small{
+
+  &.extra-small {
     @apply text-xl;
   }
+
   &.small {
     @apply text-2xl;
   }
@@ -52,15 +55,19 @@ button {
   &.medium {
     @apply text-3xl;
   }
+
   &.large {
     @apply text-4xl;
   }
+
   &.dark-gray {
     @apply text-gray_4;
   }
+
   &.gray {
     @apply text-gray_1;
   }
+
   &.green {
     @apply text-green;
   }
@@ -68,25 +75,30 @@ button {
   &.red {
     @apply text-red;
   }
+
   &.white {
     @apply text-white;
   }
-  &.bold{
+
+  &.bold {
     @apply font-semibold;
   }
-  &.left{
+
+  &.left {
     @apply text-left;
   }
-  &.right{
+
+  &.right {
     @apply text-right;
   }
-  &.center{
+
+  &.center {
     @apply text-center;
   }
 }
 
 .popup-wrapper {
-  &:before{
+  &:before {
     content: "";
     @apply absolute block inset-0 bg-balck_7 z-0;
   }
@@ -121,14 +133,37 @@ ul.link-list-border {
   }
 }
 
-span.icon{
-  &.small{
+span.icon {
+  &.small {
     @apply w-3;
   }
-  &.medium{
+
+  &.medium {
     @apply w-5 md:w-4;
   }
-  &.large{
+
+  &.large {
     @apply w-5;
+  }
+}
+
+input.qty-field {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+
+}
+
+input.qty-field::-webkit-inner-spin-button,
+input.qty-field::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.quick-view-button {
+  width: calc(100% + 3.5rem);
+
+  button {
+    width: calc(41.666667% - 2rem);
+    @apply ml-auto px-0 ;
   }
 }
