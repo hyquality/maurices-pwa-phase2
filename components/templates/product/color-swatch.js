@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 export default function ColorSwatch({
                                         colors,
                                         className,
-                                        size="small",
+                                        size = "small",
                                         productSlug,
                                         showLabel = false,
+                                        showName = false,
                                         selectedVariant,
                                         onColorSwatchClickMouseEnter = false
                                     }) {
@@ -30,25 +31,43 @@ export default function ColorSwatch({
                         {
                             showLabel ? (
                                 <label className={"block pb-2 text-xs tracking-label"}>
-                                    <span>COLOR</span>: {selectedVariant.attributes?selectedVariant.attributes.color.title:null}
+                                    <span>COLOR</span>: {selectedVariant.attributes ? selectedVariant.attributes.color.title : null}
                                 </label>) : null
                         }
                         {
-                            colors.map(({price, swatch, short, image, prices}, index) => (
+                            colors.map(({title, swatch, short, qty}, index) => (
 
-                                <a className={`mr-1.5 inline-block cursor-pointer border  rounded-full ${(selectedVariant.attributes !== undefined && short === selectedVariant.attributes.color.short) ? " active border-gray_2" : "border-gray_3"}`}
+                                <a className={`mr-1.5 inline-flex cursor-pointer  times-center`}
 
                                    onClick={onMouseEnter(index)}
-                                   data-color={prices}
+
                                    key={"color-" + productSlug + index}>
                                     {
                                         swatch ? (
-                                            <span className={`block ${sizes[size]} rounded-full border-3 border-white`}
-                                                  style={{backgroundImage: `url('${swatch}')`}}/>
+                                            <span className={`inline-block border rounded-full  ${(selectedVariant.attributes !== undefined && short === selectedVariant.attributes.color.short) ? " active border-gray_2" : "border-gray_3"}`}>
+                                                <span className={`block ${sizes[size]} rounded-full border-3 border-white`}
+                                                      style={{backgroundImage: `url('${swatch}')`}}/>
+                                            </span>
+
                                         ) : (
+                                            <span className={`inline-block border rounded-full  ${(selectedVariant.attributes !== undefined && short === selectedVariant.attributes.color.short) ? " active border-gray_2" : "border-gray_3"}`}>
                                             <span className={`block ${sizes[size]} rounded-full border-3 border-white`}
                                                   style={{backgroundColor: short}}/>
+                                            </span>
                                         )
+                                    }
+                                    {
+                                        showName ? (
+                                            title? (
+                                                <span
+                                                    className={`flex items-center`}>
+                                                    {title}
+                                                    {
+                                                        qty?(<span>({qty})</span>):null
+                                                    }
+                                                </span>
+                                            ) : null
+                                        ) : null
                                     }
 
                                 </a>
@@ -68,11 +87,12 @@ ColorSwatch.propTypes = {
         PropTypes.shape({
             title: PropTypes.string.isRequired,
             short: PropTypes.string.isRequired,
-            key: PropTypes.string.isRequired,
+            key: PropTypes.string,
             swatch: PropTypes.oneOfType([
                 PropTypes.string,
                 PropTypes.bool,
             ]),
+            qty: PropTypes.number,
             // image: PropTypes.object,
             image: PropTypes.shape({
                     main: PropTypes.string.isRequired,
@@ -95,12 +115,14 @@ ColorSwatch.propTypes = {
     className: PropTypes.string,
     size: PropTypes.oneOf(['small', 'medium', 'large']),
     showLabel: PropTypes.bool,
+    showName: PropTypes.bool,
     selectedVariant: PropTypes.any,
     onColorSwatchClickMouseEnter: PropTypes.func,
 }
 ColorSwatch.defaultProps = {
     colors: [],
     showLabel: false,
+    showName: false,
     selectedVariant: {},
     onColorSwatchClickMouseEnter: undefined,
     className: "",

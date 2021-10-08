@@ -8,10 +8,9 @@ export default function Popup({content="", visible = false, closePopup, classNam
         <>
             {
                 visible?(
-                <div className="fixed flex justify-center items-center  inset-0 popup-wrapper z-50">
-
+                <div className="fixed flex justify-center items-center  inset-0 popup-wrapper z-50 close-popup">
                     <div className={"relative inner bg-white p-7 z-10 "+className}>
-                        <a className="absolute right-2 top-2" onClick={closePopup}>
+                        <a className="absolute right-2 top-2 close-popup cursor-pointer" onClick={closePopup}>
                             <Icon icon={["fas", "times"]} className="w-4 block"/>
                         </a>
                         {content}

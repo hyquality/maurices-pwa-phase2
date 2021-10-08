@@ -62,6 +62,14 @@
           "title": "Online Exclusive"
         }
       ],
+      "subcategories": [
+        {
+          "title": "Shirts & Blouses"
+        },
+        {
+          "title": "Kimonos"
+        }
+      ],
       "image": {
         "main": "/assets/images/plp/43394_C7978.jpeg",
         "hover": "/assets/images/plp/118676_C7453.jpeg"
@@ -279,6 +287,14 @@
     {
       "title": "Solid Tie Waist Long Sleeve Tunic Blouse",
       "slug": "solid-tie-waist-long-sleeve-tunic-blouse",
+      "subcategories": [
+        {
+          "title": "Shirts & Blouses"
+        },
+        {
+          "title": "Tees"
+        }
+      ],
       "image": {
         "main": "/assets/images/plp/116303_C4360.jpeg",
         "hover": "/assets/images/plp/118676_C7453.jpeg"
@@ -332,6 +348,14 @@
     {
       "title": "Wide Rib Circle Hem Open Front Cardigan",
       "slug": "wide-rib-circle-hem-open-front-cardigan",
+      "subcategories": [
+        {
+          "title": "Thanks & Camis"
+        },
+        {
+          "title": "Sweaters & Cardigans"
+        }
+      ],
       "image": {
         "main": "/assets/images/plp/118358_C1756.jpeg",
         "hover": "/assets/images/plp/118676_C7453.jpeg"

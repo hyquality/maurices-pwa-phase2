@@ -77,7 +77,7 @@ export default function PlpQuickView({product}) {
     }
     return (
         <div className={"plp-quickview relative pb-20"}>
-            <HeaderTitle tag={"h2"} className={"pb-0"} position={"left"} size={"extra-small"} color={"dark-gray"}>{title}</HeaderTitle>
+            <HeaderTitle tag={"h2"} className={"pb-0"} position={"left"} size={"text-xl"} color={"dark-gray"}>{title}</HeaderTitle>
             <a href="#" className="underline hover:no-underline text-xs">View Full Details</a>
             <div className="flex pt-5">
                 <div className={"w-24"}>

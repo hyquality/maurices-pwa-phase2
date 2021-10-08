@@ -1,6 +1,6 @@
 body {
   .sticky-wrapper{
-    header.mar-header {
+    .mar-header {
       .middle-bar-menu {
         & > li {
           @apply ml-5 md:ml-7 min-h-0 md:min-h-min80;

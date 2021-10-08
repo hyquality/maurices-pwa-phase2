@@ -22,10 +22,13 @@ export default function AttributeSelector({
         }
     }
     const checkIsNotExist = (short) => {
-        const key = Object.keys(selectedVariant.attributes).map(function (key) {
-            return (attributeKey === key) ? short : selectedVariant.attributes[key].short
-        });
-        return variants[key.join("")] === undefined
+        if(selectedVariant){
+            const key = Object.keys(selectedVariant.attributes).map(function (key) {
+                return (attributeKey === key) ? short : selectedVariant.attributes[key].short
+            });
+            return variants[key.join("")] === undefined
+        }
+        return false
     }
     return (
         <>
@@ -41,7 +44,7 @@ export default function AttributeSelector({
                         {
                             attributes.map(({title, short}, index) => (
 
-                                <a className={`mr-1.5 py-1.5 px-5 inline-block cursor-pointer rounded-lg border${short === selectedVariant.attributes[attributeKey].short ? " bg-gray_border border-gray_2 active" : " border-gray_3"} ${checkIsNotExist(short) ? " opacity-40" : ""}`}
+                                <a className={`mr-1.5 py-1.5 px-5 inline-block cursor-pointer rounded-lg border${(selectedVariant && short === selectedVariant.attributes[attributeKey].short) ? " bg-gray_border border-gray_2 active" : " border-gray_3"} ${checkIsNotExist(short) ? " opacity-40" : ""}`}
 
                                    onClick={onMouseEnter(index)}
                                    key={short + "-" + productSlug + index}>
@@ -66,7 +69,7 @@ AttributeSelector.propTypes = {
         PropTypes.shape({
             title: PropTypes.string.isRequired,
             short: PropTypes.string.isRequired,
-            key: PropTypes.string.isRequired,
+            key: PropTypes.string,
         })
     ).isRequired,
     className: PropTypes.string,
@@ -83,7 +86,7 @@ AttributeSelector.defaultProps = {
     attributes: [],
     showLabel: false,
     productSlug: "",
-    selectedVariant: {},
+    selectedVariant: false,
     variants: {},
     onAttributeClickMouseEnter: undefined,
     className: ""

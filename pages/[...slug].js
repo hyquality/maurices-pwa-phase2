@@ -4,7 +4,7 @@ import Container from '../components/container'
 import Layout from '../components/layout'
 import Head from 'next/head'
 import {getStaticPageData} from "@lib/api";
-import {bodyOverlay, getTheTitle} from "@lib/helpers";
+import {bodyOverlay, generateFilters, getTheTitle} from "@lib/helpers";
 import staticCollectionJson from "../fake_data/dataCollectionJson.json"
 import Breadcrumbs from "@components/breadcrumbs";
 import PlpList from "@components/templates/plp/plp-list";
@@ -18,10 +18,15 @@ import dynamic from "next/dynamic";
 
 export default function Post({data, collection, preview}) {
     //const {t} = useTranslation('common');
+
     const [isPopupVisible, setIsPopupVisible] = useState(false);
     const [popupContent, setPopupContent] = useState("");
 
+
+
     const {title, slug, products, desc} = collection || {}
+
+    const [productList, setProductList] = useState(products);
     const router = useRouter()
 
     if (!router.isFallback && !collection?.slug) {
@@ -43,6 +48,11 @@ export default function Post({data, collection, preview}) {
         setIsPopupVisible(false)
     }
 
+
+    const filterProducts = (e) => {
+        e.preventDefault();
+        setProductList(products)
+    }
     return (
         <>
             {data ? (
@@ -52,15 +62,15 @@ export default function Post({data, collection, preview}) {
                     </Head>
                     <Container>
                         <Breadcrumbs/>
-                        <HeaderTitle weight={"bold"} size={"large"} tag={"h1"} style={"utopia"}>{title}</HeaderTitle>
+                        <HeaderTitle weight={"bold"} size={"text-4xl"} tag={"h1"} style={"utopia"}>{title}</HeaderTitle>
                         <PlpSubcategotyList collection={collection}/>
                         <div className="flex">
                             <div className="filter w-1/4">
-                                <PlpFilter collection={collection}/>
+                                <PlpFilter collection={collection} filterProducts={filterProducts}/>
                             </div>
                             <div className="w-3/4 pb-28">
 
-                                <PlpList data={products} openPopup={openQuickView}/>
+                                <PlpList data={productList} openPopup={openQuickView}/>
                                 {
                                     collection.desc ? (
                                         <PlpDescription data={desc}/>
