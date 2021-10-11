@@ -4,38 +4,31 @@ import Container from '../components/container'
 import Layout from '../components/layout'
 import Head from 'next/head'
 import {getStaticPageData} from "@lib/api";
-import { getTheTitle} from "@lib/helpers";
+import {getTheTitle} from "@lib/helpers";
 import staticCollectionJson from "../fake_data/dataCollectionJson.json"
 import Breadcrumbs from "@components/breadcrumbs";
 import PlpList from "@components/templates/plp/plp-list";
-import React, {useState,useRef} from "react";
+import React, {useState} from "react";
 import PlpDescription from "@components/templates/plp/plp-description";
 import PlpFilter from "@components/templates/plp/filter/plp-filter";
 import PlpSubcategotyList from "@components/templates/plp/plp-subcategoty-list";
 import HeaderTitle from "@components/templates/header-title";
 import Popup from "../components/templates/popup";
 import dynamic from "next/dynamic";
+import FilterContainer from "@components/templates/plp/filter/filter-container";
+
+
 
 export default function Post({data, collection, preview}) {
     //const {t} = useTranslation('common');
-
-    const fref = useRef()
 
     const [isPopupVisible, setIsPopupVisible] = useState(false);
     const [popupContent, setPopupContent] = useState("");
 
 
+    const {title, desc} = collection || {}
 
-
-    const {title, slug, products, desc} = collection || {}
-
-    const [productList, setProductList] = useState(products);
-
-
-
-    const [filterSelectedFilters, setFilterSelectedFilters] = useState({});
-
-    const openQuickView  = (data) => (e) => {
+    const openQuickView = (data) => (e) => {
 
         e.preventDefault()
 
@@ -46,23 +39,6 @@ export default function Post({data, collection, preview}) {
     const closeQuickView = (e) => {
         e.preventDefault();
         setIsPopupVisible(false)
-    }
-
-
-    const filterProducts = (e) => {
-        e.preventDefault();
-        setProductList(products)
-    }
-
-
-    const onFilterChange = (selectedFilters) => {
-        console.log("fire2")
-        console.log(selectedFilters)
-         setFilterSelectedFilters(selectedFilters)
-    }
-
-    const onClearFilterClick = (e,data)=>{
-        fref.current.setFromOutside(data,filterSelectedFilters)
     }
 
     const router = useRouter()
@@ -81,22 +57,25 @@ export default function Post({data, collection, preview}) {
                         <Breadcrumbs/>
                         <HeaderTitle weight={"bold"} size={"text-4xl"} tag={"h1"} style={"utopia"}>{title}</HeaderTitle>
                         <PlpSubcategotyList collection={collection}/>
-                        <div className="flex">
-                            <div className="filter w-1/4">
-                                <PlpFilter collection={collection} filterProducts={filterProducts} onFilterChange={onFilterChange} ref={fref}/>
-                            </div>
-                            <div className="w-3/4 pb-28">
+                        <FilterContainer collection={collection}>
+                            <div className="flex">
+                                <div className="filter w-1/4">
+                                    <PlpFilter collection={collection} />
+                                </div>
+                                <div className="w-3/4 pb-28">
 
-                                <PlpList data={productList} openPopup={openQuickView} selectedFilters={filterSelectedFilters} clearFilterClick={onClearFilterClick}/>
-                                {
-                                    collection.desc ? (
-                                        <PlpDescription data={desc}/>
-                                    ) : null
-                                }
+                                    <PlpList openPopup={openQuickView} />
+                                    {
+                                        collection.desc ? (
+                                            <PlpDescription data={desc}/>
+                                        ) : null
+                                    }
 
+                                </div>
                             </div>
-                        </div>
-                        <Popup content={popupContent} visible={isPopupVisible} closePopup={closeQuickView} className={"w-full max-w-5xl"}/>
+                        </FilterContainer>
+                        <Popup content={popupContent} visible={isPopupVisible} closePopup={closeQuickView}
+                               className={"w-full max-w-5xl"}/>
                     </Container>
                 </Layout>
             ) : null}
