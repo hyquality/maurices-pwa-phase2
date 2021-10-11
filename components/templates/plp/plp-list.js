@@ -1,6 +1,32 @@
 import PlpCard from "@components/templates/product/card/plp-card";
+import PlpFilterSelectedList from "@components/templates/plp/filter/plp-filter-selected-list";
+import React from "react";
+import Icon from "@components/icon";
 
-export default function PlpList({data,openPopup}) {
+export default function PlpList({data,openPopup, selectedFilters,clearFilterClick}) {
+    let filters = []
+
+    for (const key in selectedFilters) {
+        selectedFilters[key].map(({short, title, state}, valueIndex) => (
+            state ? (
+                filters.push(
+                    {
+                        name: key,
+                        short: short,
+                        title: title,
+                        state: state
+                    }
+                )
+            ) : null
+
+        ))
+    }
+
+    const onClearFilterClick = (e,data)=>{
+        if (clearFilterClick) {
+            clearFilterClick(e, data);
+        }
+    }
     return (
         <>
             {
@@ -16,6 +42,8 @@ export default function PlpList({data,openPopup}) {
                                 </select>
                             </div>
                         </div>
+                        <PlpFilterSelectedList selectedFilters={filters} onClick={onClearFilterClick}/>
+
                         <ul className="flex justify-between flex-wrap border-b border-gray_border py-5 mb-8 ">
                             {
                                 data.map((product, index) => (

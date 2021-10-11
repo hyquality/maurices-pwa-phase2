@@ -8,6 +8,7 @@ export default function AttributeSelector({
                                               className,
                                               productSlug,
                                               showLabel = false,
+                                              selectedFilters = false,
                                               selectedVariant,
                                               variants,
                                               onAttributeClickMouseEnter = false
@@ -18,7 +19,7 @@ export default function AttributeSelector({
         e.preventDefault();
 
         if (onAttributeClickMouseEnter) {
-            onAttributeClickMouseEnter(e, attributes[index]);
+            onAttributeClickMouseEnter(e, attributes[index],attributeKey);
         }
     }
     const checkIsNotExist = (short) => {
@@ -44,7 +45,7 @@ export default function AttributeSelector({
                         {
                             attributes.map(({title, short}, index) => (
 
-                                <a className={`mr-1.5 py-1.5 px-5 inline-block cursor-pointer rounded-lg border${(selectedVariant && short === selectedVariant.attributes[attributeKey].short) ? " bg-gray_border border-gray_2 active" : " border-gray_3"} ${checkIsNotExist(short) ? " opacity-40" : ""}`}
+                                <a className={`mr-1.5 py-1.5 px-5 inline-block cursor-pointer rounded-lg border${((selectedVariant && short === selectedVariant.attributes[attributeKey].short) || (selectedFilters && selectedFilters.filter((item) => item.short === short)[0].state)) ? " bg-gray_border border-gray_2 active" : " border-gray_3"} ${checkIsNotExist(short) ? " opacity-40" : ""}`}
 
                                    onClick={onMouseEnter(index)}
                                    key={short + "-" + productSlug + index}>

@@ -4,13 +4,13 @@ import Container from '../components/container'
 import Layout from '../components/layout'
 import Head from 'next/head'
 import {getStaticPageData} from "@lib/api";
-import {bodyOverlay, generateFilters, getTheTitle} from "@lib/helpers";
+import { getTheTitle} from "@lib/helpers";
 import staticCollectionJson from "../fake_data/dataCollectionJson.json"
 import Breadcrumbs from "@components/breadcrumbs";
 import PlpList from "@components/templates/plp/plp-list";
-import React, {useState} from "react";
+import React, {useState,useRef} from "react";
 import PlpDescription from "@components/templates/plp/plp-description";
-import PlpFilter from "@components/templates/plp/plp-filter";
+import PlpFilter from "@components/templates/plp/filter/plp-filter";
 import PlpSubcategotyList from "@components/templates/plp/plp-subcategoty-list";
 import HeaderTitle from "@components/templates/header-title";
 import Popup from "../components/templates/popup";
@@ -19,21 +19,21 @@ import dynamic from "next/dynamic";
 export default function Post({data, collection, preview}) {
     //const {t} = useTranslation('common');
 
+    const fref = useRef()
+
     const [isPopupVisible, setIsPopupVisible] = useState(false);
     const [popupContent, setPopupContent] = useState("");
+
 
 
 
     const {title, slug, products, desc} = collection || {}
 
     const [productList, setProductList] = useState(products);
-    const router = useRouter()
-
-    if (!router.isFallback && !collection?.slug) {
-        return <ErrorPage statusCode={404}/>
-    }
 
 
+
+    const [filterSelectedFilters, setFilterSelectedFilters] = useState({});
 
     const openQuickView  = (data) => (e) => {
 
@@ -53,6 +53,23 @@ export default function Post({data, collection, preview}) {
         e.preventDefault();
         setProductList(products)
     }
+
+
+    const onFilterChange = (selectedFilters) => {
+        console.log("fire2")
+        console.log(selectedFilters)
+         setFilterSelectedFilters(selectedFilters)
+    }
+
+    const onClearFilterClick = (e,data)=>{
+        fref.current.setFromOutside(data,filterSelectedFilters)
+    }
+
+    const router = useRouter()
+
+    if (!router.isFallback && !collection?.slug) {
+        return <ErrorPage statusCode={404}/>
+    }
     return (
         <>
             {data ? (
@@ -66,11 +83,11 @@ export default function Post({data, collection, preview}) {
                         <PlpSubcategotyList collection={collection}/>
                         <div className="flex">
                             <div className="filter w-1/4">
-                                <PlpFilter collection={collection} filterProducts={filterProducts}/>
+                                <PlpFilter collection={collection} filterProducts={filterProducts} onFilterChange={onFilterChange} ref={fref}/>
                             </div>
                             <div className="w-3/4 pb-28">
 
-                                <PlpList data={productList} openPopup={openQuickView}/>
+                                <PlpList data={productList} openPopup={openQuickView} selectedFilters={filterSelectedFilters} clearFilterClick={onClearFilterClick}/>
                                 {
                                     collection.desc ? (
                                         <PlpDescription data={desc}/>

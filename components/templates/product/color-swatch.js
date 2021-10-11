@@ -8,6 +8,7 @@ export default function ColorSwatch({
                                         productSlug,
                                         showLabel = false,
                                         showName = false,
+                                        selectedFilters = false,
                                         selectedVariant,
                                         onColorSwatchClickMouseEnter = false
                                     }) {
@@ -18,9 +19,11 @@ export default function ColorSwatch({
         large: "w-10 h-10"
     }
     const onMouseEnter = (index) => (e) => {
+
         e.preventDefault();
         if (onColorSwatchClickMouseEnter) {
-            onColorSwatchClickMouseEnter(e, colors[index]);
+
+            onColorSwatchClickMouseEnter(e, colors[index], 'color');
         }
     }
     return (
@@ -44,13 +47,13 @@ export default function ColorSwatch({
                                    key={"color-" + productSlug + index}>
                                     {
                                         swatch ? (
-                                            <span className={`inline-block border rounded-full  ${(selectedVariant.attributes !== undefined && short === selectedVariant.attributes.color.short) ? " active border-gray_2" : "border-gray_3"}`}>
+                                            <span className={`inline-block border rounded-full  ${((selectedVariant.attributes !== undefined && short === selectedVariant.attributes.color.short) || (selectedFilters && selectedFilters.filter((item) => item.short === short)[0].state)) ? " active border-gray_2" : "border-gray_3"}`}>
                                                 <span className={`block ${sizes[size]} rounded-full border-3 border-white`}
                                                       style={{backgroundImage: `url('${swatch}')`}}/>
                                             </span>
 
                                         ) : (
-                                            <span className={`inline-block border rounded-full  ${(selectedVariant.attributes !== undefined && short === selectedVariant.attributes.color.short) ? " active border-gray_2" : "border-gray_3"}`}>
+                                            <span className={`inline-block border rounded-full  ${((selectedVariant.attributes !== undefined && short === selectedVariant.attributes.color.short) ||  (selectedFilters && selectedFilters.filter((item) => item.short === short)[0].state))  ? " active border-gray_2" : "border-gray_3"}`}>
                                             <span className={`block ${sizes[size]} rounded-full border-3 border-white`}
                                                   style={{backgroundColor: short}}/>
                                             </span>
