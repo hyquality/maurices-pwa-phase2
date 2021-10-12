@@ -15,7 +15,7 @@ Button.propTypes = {
     label: PropTypes.string.isRequired,
     className: PropTypes.string,
     size: PropTypes.oneOf(['small', 'medium', 'large']),
-    color: PropTypes.oneOf([undefined, 'gray', 'green', 'red', 'white']),
+    color: PropTypes.oneOf([undefined, 'gray','gray_2', 'green', 'red', 'white']),
     showBorder: PropTypes.bool,
     onClick: PropTypes.func
 }

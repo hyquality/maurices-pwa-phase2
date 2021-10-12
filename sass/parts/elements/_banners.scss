@@ -1,0 +1,19 @@
+.hero-banner {
+  h2.header-title {
+    .highlight-wrapper {
+      border-style: solid;
+      border-bottom-width: 24px;
+      top: -24px;
+    }
+    @media (min-width: 768px){
+      &.md\:text-7xl {
+        .highlight-wrapper {
+          border-style: solid;
+          border-bottom-width: 44px;
+          top: -52px;
+        }
+      }
+    }
+
+  }
+}

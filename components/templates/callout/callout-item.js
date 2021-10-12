@@ -66,8 +66,8 @@ CalloutItem.propTypes = {
         )
 
     })
-
 }
+
 CalloutItem.defaultProps = {
     data: {
         id: 0,
@@ -87,4 +87,4 @@ CalloutItem.defaultProps = {
             }
         ]
     }
-};
+}

@@ -18,6 +18,11 @@ Small.args = {
     className: "",
     size: 'small',
     weight: 'regular',
-    color: undefined
+    color: undefined,
+    upper: false,
+    position: 'center',
+    highlight: false,
+    highlightColor: "",
+    highlightHeight: 0
 };
 

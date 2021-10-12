@@ -1,0 +1,42 @@
+button {
+  &.btn {
+    @apply block text-gray_2 text-center text-xs md:text-sm uppercase tracking-wider border border-gray_3 rounded-md;
+
+
+    &.small {
+      @apply p-2;
+    }
+
+    &.medium {
+      @apply font-black p-4;
+    }
+
+    &.large {
+
+    }
+
+    &.gray {
+      @apply bg-gray_1;
+    }
+    &.gray_2 {
+      @apply bg-gray_2 border-gray_2 text-white;
+    }
+
+    &.green {
+      @apply bg-green border-green text-white;
+    }
+
+    &.red {
+      @apply bg-red border-red text-white;
+    }
+
+    &.white {
+      @apply bg-white;
+    }
+
+    &.no-border {
+      @apply border-0;
+    }
+
+  }
+}

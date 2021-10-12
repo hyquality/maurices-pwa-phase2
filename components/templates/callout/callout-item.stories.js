@@ -1,15 +1,14 @@
-import React from 'react';
-
-import CalloutItem from './callout-item';
+import React from 'react'
+import CalloutItem from './callout-item'
 
 export default {
     title: 'Maurices React App/Elements/CalloutItem',
     component: CalloutItem
-};
+}
 
-const Template = (args) => <CalloutItem {...args} />;
+const Template = (args) => <CalloutItem {...args} />
 
-export const Default = Template.bind({});
+export const Default = Template.bind({})
 
 Default.args = {
     data: {
@@ -30,5 +29,5 @@ Default.args = {
             }
         ]
     }
-};
+}
 

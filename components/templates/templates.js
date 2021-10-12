@@ -9,9 +9,10 @@ export default function Templates({templates, context=""}) {
             {
                 templates.map((template) => {
                     TemplateItem = dynamic(import(template.path+ ''))
+                    let dynamicProps = template.data;
                     return (
                         <div className={template.class?template.class+"":""} key={"dyn-template-"+context+"-"+template.path}>
-                            <TemplateItem data={template.data} />
+                            <TemplateItem {...dynamicProps} />
                         </div>
 
                     )
