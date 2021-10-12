@@ -1,16 +1,11 @@
-import React, {Component} from 'react';
-class MainContent extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {}
-  }
-  render () {
+import React from 'react';
+export default function MainContent ({mainData}) {
+
     return (
         <main className="mar-main-content" id="content">
-            <div className="mar-grid-container" dangerouslySetInnerHTML={{__html: this.props.mainData}}>
+            <div className="mar-grid-container" dangerouslySetInnerHTML={{__html: mainData}}>
             </div>
         </main>
     )
-  }
 }
-export default MainContent;
+

@@ -1,17 +1,21 @@
 import NavList from "@components/templates/nav-list";
 import Templates from "@components/templates/templates";
-import React from "react";
+import React, {useContext} from "react";
 import Button from "@components/button";
-
-export default function CustomerMenu({customer}) {
+import {DataProviderContext} from '../../layout-data-provider';
+export default function CustomerMenu() {
+    const {
+         customer
+    } = useContext(DataProviderContext)
+    const {nav,templates} = customer || {}
 
     return (
         <div>
-            <NavList data={customer.nav}
+            <NavList data={nav}
                      className={"customer-header-menu left-0"}/>
 
-            {customer.templates ? (
-                <Templates templates={customer.templates}/>
+            {templates ? (
+                <Templates templates={templates}/>
             ) : ("")}
             <Button label={"SIGN OUT"} size="small" className="mt-5 w-full"/>
 

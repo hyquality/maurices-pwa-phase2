@@ -1,6 +1,7 @@
 import Container from "@components/container";
 import dynamic from "next/dynamic";
 
+
 export default function CalloutList({data}) {
     const CalloutItem = dynamic(import("./callout-item"));
 

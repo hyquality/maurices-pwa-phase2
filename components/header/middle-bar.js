@@ -1,5 +1,5 @@
 import Container from "@components/container";
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import {
     faChevronUp,
     faChevronDown,
@@ -21,12 +21,17 @@ import {MOBILE_BREAKPOINT} from "@lib/constants";
 import Button from "@components/button";
 import logo from "@public/assets/images/logo.png"
 import Image from "next/image";
+import {DataProviderContext} from '../layout-data-provider';
 
-export default function MiddleBar({store, customer, minicart}) {
+export default function MiddleBar() {
+    const {
+        store, customer
+    } = useContext(DataProviderContext)
+    const {address,title,phone,time,timeOpening} = store || {}
 
     const [isHovering, setIsHovered] = useState(false);
     const onMouseEnter = () => {
-        if(getCurrentWidth() > MOBILE_BREAKPOINT){
+        if (getCurrentWidth() > MOBILE_BREAKPOINT) {
             bodyOverlay(1).then(r => {
             })
             setIsHovered(true)
@@ -41,7 +46,7 @@ export default function MiddleBar({store, customer, minicart}) {
 
     const [isCustomerHovering, setIsCustomerHovering] = useState(false);
     const onCustomerMouseEnter = () => {
-        if(getCurrentWidth() > MOBILE_BREAKPOINT){
+        if (getCurrentWidth() > MOBILE_BREAKPOINT) {
             bodyOverlay(1).then(r => {
             })
             setIsCustomerHovering(true)
@@ -56,7 +61,7 @@ export default function MiddleBar({store, customer, minicart}) {
 
     const [isMiniCartHovering, setIsMiniCartHovering] = useState(false);
     const onMiniCartMouseEnter = () => {
-        if(getCurrentWidth() > MOBILE_BREAKPOINT){
+        if (getCurrentWidth() > MOBILE_BREAKPOINT) {
             bodyOverlay(1).then(r => {
             })
             setIsMiniCartHovering(true)
@@ -92,74 +97,66 @@ export default function MiddleBar({store, customer, minicart}) {
                          onMouseLeave={onMouseLeave}>
                         <a href="#" className="block relative md:pl-5">
                             <Icon icon={faMapMarkerAlt}
-                                  className={"md:absolute md:left-0 md:pr-2.5 md:transform " + (store.address ? "translate-y-2/4" : "top-1/2 -translate-y-2/4")} size={"medium"}/>
+                                  className={"md:absolute md:left-0 md:pr-2.5 md:transform " + (address ? "translate-y-2/4" : "top-1/2 -translate-y-2/4")}
+                                  size={"medium"}/>
 
                             <span className="hidden md:inline">
 
-                                {store.title}
-                                {store.address ? (
+                                {title}
+                                {address ? (
                                     isHovering ? (
                                         <Icon icon={faChevronUp} className="pl-2.5" size={"small"}/>
                                     ) : (
                                         <Icon icon={faChevronDown} className="pl-2.5" size={"small"}/>
                                     )
-                                ) : (
-                                    ""
-                                )}
-                                {store.timeOpening ? (
-                                    <time className="time block flex items-center"><span
-                                        className="w-2 h-2 rounded-xl inline-block bg-green box-content text-xs  mr-2.5"/>{store.timeOpening}
-                                    </time>
-                                ) : (
-                                    ""
-                                )}
+                                ) : null
+                                }
+                                {
+                                    timeOpening ? (
+                                        <time className="time block flex items-center"><span
+                                            className="w-2 h-2 rounded-xl inline-block bg-green box-content text-xs  mr-2.5"/>{timeOpening}
+                                        </time>
+                                    ) : null
+                                }
                             </span>
                         </a>
                         {
                             getCurrentWidth() > MOBILE_BREAKPOINT ? (
                                 <div className="hidden md:block">
-                                    {store.address ? (
+                                    {address ? (
                                         isHovering ? (
                                             <div
                                                 className="overlay-fade text-xs absolute border border-gray_border border-solid bg-white w-full min-w-min352 p-5 top-full">
-                                                <h3 className="text-xl text-gray_4 font-bold  pb-2.5">{store.title}</h3>
+                                                <h3 className="text-xl text-gray_4 font-bold  pb-2.5">{title}</h3>
                                                 {
-                                                    store.address ? (
-                                                        <p className="pb-2.5" dangerouslySetInnerHTML={{__html: store.address}}/>
-                                                    ) : (
-                                                        ""
-                                                    )
+                                                    address ? (
+                                                        <p className="pb-2.5"
+                                                           dangerouslySetInnerHTML={{__html: address}}/>
+                                                    ) : null
                                                 }
 
                                                 {
-                                                    store.phone ? (
-                                                        <p className="phone pb-2.5">{store.phone}</p>
+                                                    phone ? (
+                                                        <p className="phone pb-2.5">{phone}</p>
 
-                                                    ) : (
-                                                        ""
-                                                    )
+                                                    ) : null
                                                 }
 
                                                 {
-                                                    store.time ? (
-                                                        <time className="pb-2.5" dangerouslySetInnerHTML={{__html: store.time}}/>
-                                                    ) : (
-                                                        ""
-                                                    )
+                                                    time ? (
+                                                        <time className="pb-2.5"
+                                                              dangerouslySetInnerHTML={{__html: time}}/>
+                                                    ) : null
                                                 }
-                                                <Button label={"Change Your Store"} size="small" className="mt-5 w-full"/>
+                                                <Button label={"Change Your Store"} size="small"
+                                                        className="mt-5 w-full"/>
                                             </div>
-                                        ) : (
-                                            ""
-                                        )
-                                    ) : (
-                                        ""
-                                    )}
+                                        ) : null
+                                    ) : null
+                                    }
                                 </div>
-                            ):("")
+                            ) : null
                         }
-
-
                     </div>
                     <div className="logo text-center flex-grow">
                         <Link href="/">
@@ -206,17 +203,17 @@ export default function MiddleBar({store, customer, minicart}) {
 
                                                 <div
                                                     className="overlay-fade absolute left-0 border border-gray_border border-solid bg-white min-w-min352 p-5 top-full">
-                                                    <CustomerMenu customer={customer}/>
+                                                    <CustomerMenu />
                                                 </div>
 
-                                            ) : ("")}
+                                            ) : null}
                                         </div>
 
                                     </div>
                                 ) : (
                                     <a href="#">
                                         <Icon icon={farUserCircle}
-                                                      className="md:pr-1.5" size={"medium"}/>{customer.title}<Icon
+                                              className="md:pr-1.5" size={"medium"}/>{customer.title}<Icon
                                         icon={faChevronDown} className="pl-1.5"/></a>
                                 )
                             }
@@ -234,13 +231,13 @@ export default function MiddleBar({store, customer, minicart}) {
                             {
                                 getCurrentWidth() > MOBILE_BREAKPOINT ? (
                                     <div className="hidden md:block">
-                                        {minicart ? (
+                                        {
                                             isMiniCartHovering ? (
-                                                <MiniCart data={minicart}/>
-                                            ) : ("")
-                                        ) : ("")}
+                                                <MiniCart/>
+                                            ) : null
+                                        }
                                     </div>
-                                ):("")
+                                ) : null
                             }
 
                         </li>

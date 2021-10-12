@@ -4,10 +4,11 @@ import Header from "@components/header/header";
 import Nav from "@components/header/main-nav/nav";
 
 import React, {useState, useRef, useEffect} from 'react';
+import LayoutDataProvider from "./layout-data-provider";
 
 
-export default function Layout({data, nav, children}) {
-    const {header, footer, store, customer, minicart, mainNav} = data
+export default function Layout({data, children}) {
+
     const [stickyHeader, setStickyHeader] = useState(false);
     const [offsetCompensation, setOffsetCompensation] = useState(0);
     const headerRef = useRef(null);
@@ -42,33 +43,19 @@ export default function Layout({data, nav, children}) {
     return (
         <>
             <Meta/>
-            <div style={{marginTop: offsetCompensation}}>
-                <div className={`sticky-wrapper${stickyHeader ? ' stickyHeader' : ''}`} ref={headerRef}>
-                    {
-                        header ? (
-                            <Header data={header} customer={customer} store={store} minicart={minicart}/>
-                        ) : null
-                    }
+            <LayoutDataProvider data={data}>
+                <div style={{marginTop: offsetCompensation}}>
+                    <div className={`sticky-wrapper${stickyHeader ? ' stickyHeader' : ''}`} ref={headerRef}>
+                        <Header/>
+                        <Nav/>
+                    </div>
 
-                    {
-                        mainNav ? (
-                            <Nav data={mainNav}
-                                 store={store ? store : {}}
-                                 customer={customer ? customer : {}}/>
-                        ) : null
-                    }
+                    <div className="">
+                        <main>{children}</main>
+                    </div>
+                    <Footer/>
                 </div>
-
-                <div className="">
-                    <main>{children}</main>
-                </div>
-                {
-                    footer ? (
-                        <Footer data={footer}/>
-                    ) : null
-                }
-
-            </div>
+            </LayoutDataProvider>
         </>
     )
 }
