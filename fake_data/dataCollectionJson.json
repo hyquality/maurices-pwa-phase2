@@ -5,6 +5,32 @@
     "title": "Discover Ladies Tops",
     "text": "When it comes to fashion finds, our fashion tops are where it’s at. From cozy cardigans and comfy sweaters to top rated graphic tees and pretty tunics, our tops come in a variety of colors, styles, and sizes perfect for outfitting casual weekends, morning work meetings and everything in between."
   },
+  "promo": [
+    {
+      "name": "B1",
+      "index": 3,
+      "type": 1,
+      "w": 336,
+      "h": 600,
+      "y": "bottom",
+      "title": "Our Favorite Cardigans",
+      "image": "/assets/images/banners/ads/add_banner.jpg",
+      "label": "Shop Now",
+      "url": "#"
+    },
+    {
+      "name": "C3",
+      "index": 9,
+      "type": 2,
+      "w": 731,
+      "h": 661,
+      "x": "left",
+      "title": "Explore Fall Kiminos",
+      "image": "/assets/images/banners/ads/add_banner_big.jpg",
+      "label": "Shop Now",
+      "url": "#"
+    }
+  ],
   "subcategories": [
     {
       "title": "Shirts & Blouses",
@@ -403,6 +429,464 @@
           ],
           "price": {
             "main": 17.00
+          }
+        }
+      ]
+    },
+    {
+      "title": "Homeward Striped Sherpa Hoodie",
+      "slug": "homeward-striped-sherpa-hoodie",
+      "subcategories": [
+        {
+          "title": "Thanks & Camis"
+        },
+        {
+          "title": "Sweaters & Cardigans"
+        }
+      ],
+      "image": {
+        "main": "/assets/images/plp/126256_C4213.webp",
+        "hover": "/assets/images/plp/126256_C4213_alt1.webp"
+      },
+      "gallery": [
+        {
+          "image": "/assets/images/plp/126256_C4213.webp"
+        },
+        {
+          "image": "/assets/images/plp/126256_C4213_alt1.webp"
+        },
+        {
+          "image": "/assets/images/plp/126256_C4213_alt2.webp"
+        },
+        {
+          "image": "/assets/images/plp/126256_C4213_Back.webp"
+        },
+        {
+          "image": "/assets/images/plp/126256_C4213_swatch.webp"
+        }
+      ],
+      "reviews": {
+        "total": 10,
+        "avg": 1
+      },
+      "variants": [
+        {
+          "title": "",
+          "attributes": {
+            "color": {
+              "title": "SIENNA BRICK COMBO",
+              "short": "sienna_brick_combo",
+              "swatch": "/assets/images/plp/126256_C4213_swatch.webp"
+            },
+            "size": {
+              "title": "Large",
+              "short": "L"
+            },
+            "fit": {
+              "title": "Regular",
+              "short": "regular"
+            }
+          },
+          "image": {
+            "main": "/assets/images/plp/126256_C4213.webp",
+            "hover": "/assets/images/plp/126256_C4213_alt1.webp"
+          },
+          "gallery": [
+            {
+              "image": "/assets/images/plp/126256_C4213.webp"
+            },
+            {
+              "image": "/assets/images/plp/126256_C4213_alt1.webp"
+            },
+            {
+              "image": "/assets/images/plp/126256_C4213_alt2.webp"
+            },
+            {
+              "image": "/assets/images/plp/126256_C4213_Back.webp"
+            },
+            {
+              "image": "/assets/images/plp/126256_C4213_swatch.webp"
+            }
+          ],
+          "price": {
+            "main": 17.00
+          }
+        }
+      ]
+    },
+    {
+      "title": "24/7 Solid Rib Knit Tuck In Tee",
+      "slug": "24-7-solid-rib-knit-tuck-in-tee",
+      "subcategories": [
+        {
+          "title": "Thanks & Camis"
+        },
+        {
+          "title": "Sweaters & Cardigans"
+        }
+      ],
+      "image": {
+        "main": "/assets/images/plp/127186_C151_gray_1.webp",
+        "hover": "/assets/images/plp/127186_C151_Back_gray2.webp"
+      },
+      "gallery": [
+        {
+          "image": "/assets/images/plp/127186_C151_gray_1.webp"
+        },
+        {
+          "image": "/assets/images/plp/127186_C151_Back_gray2.webp"
+        }
+      ],
+      "reviews": {
+        "total": 10,
+        "avg": 1
+      },
+      "variants": [
+        {
+          "title": "",
+          "attributes": {
+            "color": {
+              "title": "HEATHER GRAY",
+              "short": "heather_gray",
+              "swatch": "/assets/images/plp/colors/127186_C151_swatch.webp"
+            },
+            "size": {
+              "title": "Large",
+              "short": "L"
+            },
+            "fit": {
+              "title": "Regular",
+              "short": "regular"
+            }
+          },
+          "image": {
+            "main": "/assets/images/plp/127186_C151_gray_1.webp",
+            "hover": "/assets/images/plp/127186_C151_Back_gray2.webp"
+          },
+          "gallery": [
+            {
+              "image": "/assets/images/plp/127186_C151_gray_1.webp"
+            },
+            {
+              "image": "/assets/images/plp/127186_C151_Back_gray2.webp"
+            }
+          ],
+          "price": {
+            "main": 19.90
+          }
+        },
+        {
+          "title": "",
+          "attributes": {
+            "color": {
+              "title": "BURGUNDY",
+              "short": "burgundy",
+              "swatch": "/assets/images/plp/colors/127186_C8087_swatch.webp"
+            },
+            "size": {
+              "title": "X Large",
+              "short": "XL"
+            },
+            "fit": {
+              "title": "Regular",
+              "short": "regular"
+            }
+          },
+          "image": {
+            "main": "/assets/images/plp/127186_C8087_orange_1.webp",
+            "hover": "/assets/images/plp/127186_C8087_Back_orange_2.webp"
+          },
+          "gallery": [
+            {
+              "image": "/assets/images/plp/127186_C8087_orange_1.webp"
+            },
+            {
+              "image": "/assets/images/plp/127186_C8087_Back_orange_2.webp"
+            }
+          ],
+          "price": {
+            "main": 19.90
+          }
+        },
+        {
+          "title": "",
+          "attributes": {
+            "color": {
+              "title": "MAPLE BROWN",
+              "short": "maple_brown",
+              "swatch": "/assets/images/plp/colors/127186_C830_swatch.webp"
+            },
+            "size": {
+              "title": "Large",
+              "short": "L"
+            },
+            "fit": {
+              "title": "Regular",
+              "short": "regular"
+            }
+          },
+          "image": {
+            "main": "/assets/images/plp/127186_C830_red2.webp",
+            "hover": "/assets/images/plp/127186_C830_Back_red.webp"
+          },
+          "gallery": [
+            {
+              "image": "/assets/images/plp/127186_C830_red2.webp"
+            },
+            {
+              "image": "/assets/images/plp/127186_C830_Back_red.webp"
+            }
+          ],
+          "price": {
+            "main": 19.90
+          }
+        }
+      ]
+    },
+    {
+      "title": "Rust Striped Short Sleeve Cardigan",
+      "slug": "rust_striped_short_sleeve_cardigan",
+      "subcategories": [
+        {
+          "title": "Shirts & Blouses"
+        },
+        {
+          "title": "Tees"
+        }
+      ],
+      "image": {
+        "main": "/assets/images/plp/125698_C5616.webp",
+        "hover": "/assets/images/plp/125698_C5616_Back.webp"
+      },
+      "gallery": [
+        {
+          "image": "/assets/images/plp/125698_C5616.webp"
+        },
+        {
+          "image": "/assets/images/plp/125698_C5616_Back.webp"
+        }
+      ],
+      "variants": [
+        {
+          "title": "",
+          "attributes": {
+            "color": {
+              "title": "Blue",
+              "short": "blue",
+              "swatch": "/assets/images/plp/125698_C5616_swatch.webp"
+            },
+            "size": {
+              "title": "Large",
+              "short": "L"
+            },
+            "fit": {
+              "title": "Regular",
+              "short": "regular"
+            }
+          },
+          "image": {
+            "main": "/assets/images/plp/125698_C5616.webp",
+            "hover": "/assets/images/plp/125698_C5616_Back.webp"
+          },
+          "gallery": [
+            {
+              "image": "/assets/images/plp/125698_C5616.webp"
+            },
+            {
+              "image": "/assets/images/plp/125698_C5616_Back.webp"
+            }
+          ],
+          "price": {
+            "main": 25.00,
+            "old": 27.00,
+            "msg": "Limited Time! Now 30% Off"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Solid Pocket Duster Cardigan",
+      "slug": "solid_pocket_duster_cardigan",
+      "subcategories": [
+        {
+          "title": "Thanks & Camis"
+        },
+        {
+          "title": "Sweaters & Cardigans"
+        }
+      ],
+      "image": {
+        "main": "/assets/images/plp/124101_C8398.jfif",
+        "hover": "/assets/images/plp/124101_C8398_alt1.webp"
+      },
+      "gallery": [
+        {
+          "image": "/assets/images/plp/124101_C8398.jfif"
+        },
+        {
+          "image": "/assets/images/plp/124101_C8398_alt1.webp"
+        }
+      ],
+      "reviews": {
+        "total": 10,
+        "avg": 1
+      },
+      "variants": [
+        {
+          "title": "",
+          "attributes": {
+            "color": {
+              "title": "orange",
+              "short": "orange",
+              "swatch": "/assets/images/plp/124101_C8398_swatch.webp"
+            },
+            "size": {
+              "title": "Large",
+              "short": "L"
+            },
+            "fit": {
+              "title": "Regular",
+              "short": "regular"
+            }
+          },
+          "image": {
+            "main": "/assets/images/plp/124101_C8398.jfif",
+            "hover": "/assets/images/plp/124101_C8398_alt1.webp"
+          },
+          "gallery": [
+            {
+              "image": "/assets/images/plp/124101_C8398.jfif"
+            },
+            {
+              "image": "/assets/images/plp/124101_C8398_alt1.webp"
+            }
+          ],
+          "price": {
+            "main": 39.90
+          }
+        }
+      ]
+    },
+    {
+      "title": "24/7 Solid Crew Neck Tee",
+      "slug": "24-7-solid-crew-neck-tee",
+      "subcategories": [
+        {
+          "title": "Shirts & Blouses"
+        },
+        {
+          "title": "Tees"
+        }
+      ],
+      "image": {
+        "main": "/assets/images/plp/127191_C6348.webp",
+        "hover": "/assets/images/plp/127191_C6348_Back.webp"
+      },
+      "gallery": [
+        {
+          "image": "/assets/images/plp/127191_C6348.webp"
+        },
+        {
+          "image": "/assets/images/plp/127191_C6348_Back.webp"
+        }
+      ],
+      "variants": [
+        {
+          "title": "",
+          "attributes": {
+            "color": {
+              "title": "DEEP PUMPKIN",
+              "short": "deep_pumpkin",
+              "swatch": "/assets/images/plp/127191_C6348_swatch.webp"
+            },
+            "size": {
+              "title": "Large",
+              "short": "L"
+            },
+            "fit": {
+              "title": "Regular",
+              "short": "regular"
+            }
+          },
+          "image": {
+            "main": "/assets/images/plp/127191_C6348.webp",
+            "hover": "/assets/images/plp/127191_C6348_Back.webp"
+          },
+          "gallery": [
+            {
+              "image": "/assets/images/plp/127191_C6348.webp"
+            },
+            {
+              "image": "/assets/images/plp/127191_C6348_Back.webp"
+            }
+          ],
+          "price": {
+            "main": 55.35,
+            "old": 60.20,
+            "msg": "Limited Time! Now 30% Off"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Cabin Plaid Orange Button Down Shirt",
+      "slug": "cabin_plaid_orange_button_down_shirt",
+      "subcategories": [
+        {
+          "title": "Thanks & Camis"
+        },
+        {
+          "title": "Sweaters & Cardigans"
+        }
+      ],
+      "image": {
+        "main": "/assets/images/plp/124542_C4213.webp",
+        "hover": "/assets/images/plp/124542_C4213_Back.webp"
+      },
+      "gallery": [
+        {
+          "image": "/assets/images/plp/124542_C4213.webp"
+        },
+        {
+          "image": "/assets/images/plp/124542_C4213_Back.webp"
+        }
+      ],
+      "reviews": {
+        "total": 10,
+        "avg": 1
+      },
+      "variants": [
+        {
+          "title": "",
+          "attributes": {
+            "color": {
+              "title": "SIENNA BRICK COMBO",
+              "short": "sienna_brick_combo",
+              "swatch": "/assets/images/plp/124542_C4213_swatch.webp"
+            },
+            "size": {
+              "title": "Large",
+              "short": "L"
+            },
+            "fit": {
+              "title": "Regular",
+              "short": "regular"
+            }
+          },
+          "image": {
+            "main": "/assets/images/plp/124542_C4213.webp",
+            "hover": "/assets/images/plp/124542_C4213_Back.webp"
+          },
+          "gallery": [
+            {
+              "image": "/assets/images/plp/124542_C4213.webp"
+            },
+            {
+              "image": "/assets/images/plp/124542_C4213_Back.webp"
+            }
+          ],
+          "price": {
+            "main": 39.90
           }
         }
       ]

@@ -17,3 +17,33 @@
 
   }
 }
+.simple-banner{
+  h3{
+    @apply w-full font-utopia;
+  }
+  .caption{
+    a{
+      @apply block text-sm uppercase tracking-widest font-bold mt-4 ;
+    }
+  }
+  .sb-x-center{
+    @apply w-full;
+  }
+  .sb-x-left{
+    @apply w-5/12 left-0;
+  }
+  .sb-x-right{
+    @apply w-5/12 right-0;
+  }
+
+  .sb-y-center{
+    @apply top-1/3;
+  }
+  .sb-y-top{
+    @apply top-1/4;
+  }
+  .sb-y-bottom{
+    @apply bottom-1/4;
+  }
+
+}

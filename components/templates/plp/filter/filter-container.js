@@ -1,14 +1,15 @@
 import React, {createContext, useState} from "react";
-import {generateFilters} from "@lib/helpers";
+import {generateFilters, generatePromos} from "@lib/helpers";
 import PlpCard from "@components/templates/product/card/plp-card";
 
 export const SelectedFiltersContext = createContext();
 
 export default function FilterContainer({collection, children, ...props}) {
-    const {products} = collection || {}
+    const {products,promo} = collection || {}
 
     const [productList, setProductList] = useState(products);
     const [filters, setFilter] = useState(generateFilters(products));
+    const [promos, setPromos] = useState(generatePromos(promo));
 
     const setDefaultAttrState = () => {
         let tempSelectedFilters = []
@@ -142,6 +143,7 @@ export default function FilterContainer({collection, children, ...props}) {
     return (
         <SelectedFiltersContext.Provider
             value={{
+                promos,
                 productList,
                 selectedFilters,
                 setSelectedFilters,

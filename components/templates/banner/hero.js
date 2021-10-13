@@ -22,13 +22,13 @@ export default function Hero({
     const {first, second} = background || {}
     const router = useRouter()
     const buttonOnClick=(e)=> {
-        (button && button.url)?router.push(button.url):null
+        (button && button.url) && router.push(button.url)
     }
     const content = (
         <div className={"flex flex-col md:flex-row relative"} style={{backgroundColor: first ? first : ""}}>
             <div className={"w-full md:w-1/2 flex order-2 md:order-1"}>
                 {
-                    image ? (
+                    image && (
                         <div className={"flex md:inline-block px-10"}>
                             <Image
                                 alt={title}
@@ -39,21 +39,21 @@ export default function Hero({
                                 className="h-auto "
                             />
                         </div>
-                    ) : null
+                    )
                 }
             </div>
             <div className={"w-full md:w-1/3 flex items-center order-1 md:order-2 pt-7 md:pt-0"}>
                 <div className={"text-center md:max-w-md m-auto"}>
                     <span className={"uppercase text-xs md:text-base font-normal tracking-widest md:tracking-widest pb-4 md:pb-10 block text-gray_4"}>{top}</span>
-                    <HeaderTitle color={titleColor} tag={"h2"} size={"text-3xl md:text-7xl"} position={"center"} style={"utopia"}
+                    <HeaderTitle className={"md:text-7xl"} color={titleColor} tag={"h2"} size={"text-3xl"} position={"center"} style={"utopia"}
                                  weight={"regular"} highlight={highlight} highlightColor={highlightColor} highlightHeight={highlightHeight}>{title}</HeaderTitle>
                     <p className={"pt-4 pb-4 md:pb-0 md:pt-7 text-base md:text-xl w-8/12 md:w-full m-auto"}>{text}</p>
                     {
-                        button?(
+                        button && (
                             <div className="flex justify-center pt-12 absolute bottom-10 w-full md:bottom-auto md:w-auto  md:relative">
                                 <Button label={button.title} size={"medium"} color={"gray_2"} onClick={buttonOnClick} className={"w-11/12 md:w-auto text-sm tracking-widest font-normal"}/>
                             </div>
-                        ):null
+                        )
                     }
                 </div>
             </div>
@@ -108,7 +108,7 @@ Hero.defaultProps = {
         first: "#f2f3f7",
         second: "#dddfe9"
     },
-    image: "/assets/images/banners/hero/hero1.png",
+    image: "",
     button: {
         title: "Button",
         url: "#"

@@ -90,7 +90,7 @@ export default function NavList({data, className}) {
                                                     {
                                                         item.banner ? (
                                                             <div key={"nav-megamenu-banner" + itemIndex}>
-                                                                <SimpleBanner data={item.banner}/>
+                                                                <SimpleBanner {...item.banner}/>
                                                             </div>
                                                         ) : ("")
                                                     }

@@ -63,7 +63,7 @@ export default function ColorSwatch({
                                         showName ? (
                                             title? (
                                                 <span
-                                                    className={`flex items-center`}>
+                                                    className="flex items-center lowercase">
                                                     {title}
                                                     {
                                                         qty?(<span>({qty})</span>):null

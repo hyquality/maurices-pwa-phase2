@@ -2,9 +2,11 @@ import PlpCard from "@components/templates/product/card/plp-card";
 import PlpFilterSelectedList from "@components/templates/plp/filter/plp-filter-selected-list";
 import React, {useContext} from "react";
 import {SelectedFiltersContext} from './filter/filter-container';
+import SimpleBanner from "@components/templates/banner/simple-banner";
 
 export default function PlpList({openPopup}) {
-    const {productList} = useContext(SelectedFiltersContext)
+    const {productList,promos} = useContext(SelectedFiltersContext)
+
     return (
         <>
             {
@@ -22,14 +24,23 @@ export default function PlpList({openPopup}) {
                         </div>
                         <PlpFilterSelectedList/>
 
-                        <ul className="flex justify-between flex-wrap border-b border-gray_border py-5 mb-8 ">
+                        <ul className="flex gap-x-2per gap-y-4  flex-wrap border-b border-gray_border py-5 mb-8 ">
                             {
                                 productList.map((product, index) => (
-                                    <li className="w-30"
-                                        key={"product-" + product.slug + "-" + index}>
-                                        <PlpCard data={product} openPopup={openPopup}/>
+                                   <>
+                                       <li className="w-32"
+                                           key={"product-" + product.slug + "-" + index}>
+                                           <PlpCard data={product} openPopup={openPopup}/>
 
-                                    </li>
+                                       </li>
+                                       {
+                                           promos[(index)] && (
+                                               <li className={promos[(index)].promo.type===1?"w-32":"w-66"} key={"product-promo-" + product.slug + "-" + index}>
+                                                   <SimpleBanner {...promos[(index)].promo}/>
+                                               </li>
+                                           )
+                                       }
+                                   </>
                                 ))
                             }
                         </ul>
