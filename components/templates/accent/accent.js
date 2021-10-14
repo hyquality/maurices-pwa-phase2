@@ -1,8 +1,7 @@
-import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import PropTypes from "prop-types";
-import NavList from "@components/templates/nav-list";
+import NavList from "../nav-list";
 
 export default function Accent({
                                    url,
@@ -18,7 +17,7 @@ export default function Accent({
                                    className = ""
                                }) {
     return (
-        <div className={`accent-banner relative text-center ${className}`}>
+        <div className={`accent-banner relative  ${className} position-${x}`}>
             <div className={"relative z-0 pb-7"}>
                 <Image
                     alt={title}
@@ -33,17 +32,17 @@ export default function Accent({
                     <div className={`relative caption  z-10`}>
                         {
                             title && (
-                                <h3 className={`${size} font-utopia `}>{title}</h3>
+                                <h3 className={`${size} font-utopia dark:text-white`}>{title}</h3>
                             )
                         }
                         {
                             description && (
-                                <p className={"py-3 text-sm md:text-base"}>{description}</p>
+                                <p className={"py-3 text-sm md:text-base dark:text-white"}>{description}</p>
                             )
                         }
                         {
                             (nav && nav.length > 0) && (
-                                <NavList data={nav} className="link-list-border"/>
+                                <NavList data={nav} className="link-list-border dark:text-white"/>
                             )
                         }
                     </div>
@@ -77,7 +76,6 @@ Accent.defaultProps = {
     w: 50,
     h: 50,
     x: "center",
-    y: "center",
     className: "PropTypes.string",
     size: "text-4xl"
 };

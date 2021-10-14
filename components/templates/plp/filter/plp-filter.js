@@ -1,11 +1,11 @@
 import Link from "next/link";
 import React, {useState, forwardRef, useImperativeHandle, useContext} from "react";
 import {generateFilters} from "@lib/helpers";
-import ColorSwatch from "@components/templates/product/color-swatch";
-import HeaderTitle from "@components/templates/header-title";
-import AttributeSelector from "@components/templates/product/attribute-selector";
-import Icon from "@components/icon";
-import PlpFilterClearFilterItem from "@components/templates/plp/filter/plp-filter-clear-filter-item";
+import ColorSwatch from "../../product/color-swatch";
+import HeaderTitle from "../../header-title";
+import AttributeSelector from "../../product/attribute-selector";
+import Icon from "../../../icon";
+import PlpFilterClearFilterItem from "./plp-filter-clear-filter-item";
 import {SelectedFiltersContext} from './filter-container';
 
 export default function PlpFilter({collection}) {

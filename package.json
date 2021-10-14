@@ -10,7 +10,7 @@
     "lint": "next lint",
     "cache-result": "node scripts/cache.js",
     "test": "next test",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=d4bbaf589182"
   },

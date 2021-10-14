@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Container from "../../container";
 import HeaderTitle from "../header-title";
 import Image from "next/image";
-import Button from "@components/button";
+import Button from "../../button";
 import { useRouter } from 'next/router'
 export default function Hero({
                                  fullwidth,
