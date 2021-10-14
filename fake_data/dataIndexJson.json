@@ -22,7 +22,6 @@
           "highlight": true,
           "highlightColor": "#FF5353",
           "highlightHeight": 44
-
         }
       },
       {
@@ -44,6 +43,71 @@
             "title": "Shop The Sale",
             "url": "#"
           }
+        }
+      },
+      {
+        "path": "./layout/grid",
+        "class": "pt-20 pb-20",
+        "data": {
+          "columns": 2,
+          "context": "index-accent-row",
+          "templates": [
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "name": "B1",
+                "index": 3,
+                "type": 1,
+                "w": 700,
+                "h": 695,
+                "y": "bottom",
+                "title": "Pretty in Plaid",
+                "description": "A classic pattern, fit for the holidays.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner.jpg",
+                "label": "Shop Now",
+                "url": "#",
+                "nav": [
+                  {
+                    "text": "Shop Plaids",
+                    "url": "#"
+                  },
+                  {
+                    "text": "Plus Plaids",
+                    "url": "#"
+                  }
+                ]
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "name": "B1",
+                "index": 3,
+                "type": 1,
+                "w": 700,
+                "h": 695,
+                "y": "bottom",
+                "title": "Keep it Cozy",
+                "description": "Sweaters that feel as good as they look.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner2.jpg",
+                "label": "Shop Now",
+                "nav": [
+                  {
+                    "text": "Shop Sweaters",
+                    "url": "#"
+                  },
+                  {
+                    "text": "Plus Sweaters",
+                    "url": "#"
+                  }
+                ]
+              }
+            }
+          ]
         }
       }
     ]

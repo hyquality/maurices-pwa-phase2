@@ -31,6 +31,7 @@ module.exports = {
                 'min80': '5rem',
             },
             minWidth: {
+                'min180': '11rem',
                 'min352': '22rem',
                 'min230': '13.75rem',
             },
@@ -108,7 +109,7 @@ module.exports = {
     },
     variants: {
         extend: {
-            borderWidth: ['last'],
+            borderWidth: ['hover','last'],
         },
     },
     plugins: [],

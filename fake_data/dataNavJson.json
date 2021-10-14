@@ -64,6 +64,8 @@
           "id": 2,
           "banner": {
             "title": "Shop New Clothing",
+            "w": 180,
+            "h": 200,
             "image": "/assets/images/banners/banner_1_1.png",
             "url": "#"
           }
@@ -72,6 +74,8 @@
           "id": 3,
           "banner": {
             "title": "Shop New Plus",
+            "w": 180,
+            "h": 200,
             "image": "/assets/images/banners/banner_1_2.png",
             "url": "#"
           }
@@ -202,6 +206,8 @@
           "id": 3,
           "banner": {
             "title": "Shop Jeans",
+            "w": 180,
+            "h": 200,
             "image": "/assets/images/banners/banner_2_1.png",
             "url": "#"
           }
@@ -210,6 +216,8 @@
           "id": 4,
           "banner": {
             "title": "Shop Fall Looks",
+            "w": 180,
+            "h": 200,
             "image": "/assets/images/banners/banner_2_2.png",
             "url": "#"
           }
@@ -340,6 +348,8 @@
           "id": 3,
           "banner": {
             "title": "Shop Plus Jeans",
+            "w": 180,
+            "h": 200,
             "image": "/assets/images/banners/banner_3_1.png",
             "url": "#"
           }
@@ -348,6 +358,8 @@
           "id": 4,
           "banner": {
             "title": "Shop Fall Looks",
+            "w": 180,
+            "h": 200,
             "image": "/assets/images/banners/banner_3_2.png",
             "url": "#"
           }
@@ -443,6 +455,8 @@
           "id": 2,
           "banner": {
             "title": "Shop Shoes",
+            "w": 180,
+            "h": 200,
             "image": "/assets/images/banners/banner_4_1.png",
             "url": "#"
           }
@@ -451,6 +465,8 @@
           "id": 3,
           "banner": {
             "title": "Shop Scarves",
+            "w": 180,
+            "h": 200,
             "image": "/assets/images/banners/banner_4_2.png",
             "url": "#"
           }

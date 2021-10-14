@@ -23,7 +23,7 @@ body {
           @apply border-t border-gray_border border-solid;
           & > div {
             & > div {
-              @apply max-w-max-13 pr-7 box-content;
+              @apply max-w-max-13 pr-7 box-content min-w-min180;
               & > a {
                 @apply pb-2.5 text-sm;
               }

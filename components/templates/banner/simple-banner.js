@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import PropTypes from "prop-types";
 
-export default function SimpleBanner({url, label, title, image,size, w, h, x,y, className = ""}) {
+export default function SimpleBanner({url, label, title, showCaption, image, size, w, h, x, y, className = ""}) {
     return (
         <div className={`simple-banner relative text-center ${className}`}>
             <Link href={url}>
@@ -18,7 +18,7 @@ export default function SimpleBanner({url, label, title, image,size, w, h, x,y, 
                 </a>
             </Link>
             {
-                (title || (url && label)) && (
+                (showCaption && (title || (url && label))) && (
                     <div className={`absolute caption  z-10 sb-x-${x} sb-y-${y}`}>
                         {
                             title && (
@@ -41,9 +41,10 @@ export default function SimpleBanner({url, label, title, image,size, w, h, x,y, 
     )
 }
 SimpleBanner.propTypes = {
-    url:PropTypes.string,
+    url: PropTypes.string,
     label: PropTypes.string,
-    title:PropTypes.string,
+    title: PropTypes.string,
+    showCaption: PropTypes.bool,
     image: PropTypes.string.isRequired,
     w: PropTypes.number,
     h: PropTypes.number,
@@ -53,9 +54,10 @@ SimpleBanner.propTypes = {
     size: PropTypes.oneOf(['text-xs', 'text-sm', 'text-base', 'text-lg', 'text-xl', 'text-2xl', 'text-3xl', 'text-4xl', 'text-5xl', 'text-6xl', 'text-7xl', 'text-8xl', 'text-9xl']),
 }
 SimpleBanner.defaultProps = {
-    url:"#",
-    label: "Label",
-    title:"Title",
+    url: "",
+    label: "",
+    title: "",
+    showCaption: false,
     image: "image",
     w: 50,
     h: 50,

@@ -47,3 +47,10 @@
   }
 
 }
+.accent-banner{
+  .link-list-border{
+    a{
+      @apply underline hover:no-underline font-normal text-sm;
+    }
+  }
+}

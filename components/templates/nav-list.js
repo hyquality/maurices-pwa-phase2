@@ -80,26 +80,26 @@ export default function NavList({data, className}) {
                                             link.mega.map((item,itemIndex) => (
                                                 <div className={"nav-megamenu-wrapper"} key={"nav-megamenu-wrapper" + itemIndex}>
                                                     {
-                                                        item.nav ? (
+                                                        item.nav && (
                                                             <div className="nav-megamenu-wrapper-submenu" key={"nav-megamenu-nav" + itemIndex}>
                                                                 <NavList data={item.nav}
                                                                          className={"nav-megamenu-nav-submenu-" + item.id}/>
                                                             </div>
-                                                        ) : ("")
+                                                        )
                                                     }
                                                     {
-                                                        item.banner ? (
+                                                        item.banner && (
                                                             <div key={"nav-megamenu-banner" + itemIndex}>
                                                                 <SimpleBanner {...item.banner}/>
                                                             </div>
-                                                        ) : ("")
+                                                        )
                                                     }
                                                     {
-                                                        item.template ? (
+                                                        item.template && (
                                                             <div>
                                                                 <Template template={item.template}/>
                                                             </div>
-                                                        ) : ("")
+                                                        )
                                                     }
                                                 </div>
 

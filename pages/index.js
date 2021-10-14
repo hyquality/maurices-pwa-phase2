@@ -7,8 +7,6 @@ import Templates from "@components/templates/templates";
 import React from "react";
 
 export default function Home({data,index}) {
-    console.log(123)
-    console.log(index.templates)
     return (
         <>
             <Layout data={data}>

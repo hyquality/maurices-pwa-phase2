@@ -14,6 +14,7 @@
       "h": 600,
       "y": "bottom",
       "title": "Our Favorite Cardigans",
+      "showCaption": true,
       "image": "/assets/images/banners/ads/add_banner.jpg",
       "label": "Shop Now",
       "url": "#"
@@ -26,6 +27,7 @@
       "h": 661,
       "x": "left",
       "title": "Explore Fall Kiminos",
+      "showCaption": true,
       "image": "/assets/images/banners/ads/add_banner_big.jpg",
       "label": "Shop Now",
       "url": "#"
