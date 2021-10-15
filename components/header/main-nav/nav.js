@@ -1,6 +1,6 @@
 import NavList from "@components/templates/nav-list";
 import Link from "next/link";
-import Icon from "@components/icon";
+import Icon from "@components/templates/icon";
 import React, {useContext} from "react";
 import {openMainMenu, getCurrentWidth} from "@lib/helpers";
 import MobileMenuExt from "./mobile-menu-ext";

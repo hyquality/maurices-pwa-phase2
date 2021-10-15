@@ -18,7 +18,7 @@ export default function Accent({
                                }) {
     return (
         <div className={`accent-banner relative  ${className} position-${x}`}>
-            <div className={"relative z-0 pb-7"}>
+            <div className={"relative z-0"}>
                 <Image
                     alt={title}
                     src={image}
@@ -31,8 +31,8 @@ export default function Accent({
                 (showCaption) && (
                     <div className={`relative caption  z-10`}>
                         {
-                            title && (
-                                <h3 className={`${size} font-utopia dark:text-white`}>{title}</h3>
+                            (title && title!=="") && (
+                                <h3 className={`${size} font-utopia dark:text-white pt-7`}>{title}</h3>
                             )
                         }
                         {

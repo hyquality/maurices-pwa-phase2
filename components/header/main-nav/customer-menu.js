@@ -1,7 +1,7 @@
 import NavList from "@components/templates/nav-list";
 import Templates from "@components/templates/templates";
 import React, {useContext} from "react";
-import Button from "@components/button";
+import Button from "@components/templates/button";
 import {DataProviderContext} from '../../layout-data-provider';
 export default function CustomerMenu() {
     const {

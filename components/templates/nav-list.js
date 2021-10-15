@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import Icon from "../icon";
+import Icon from "@components/templates/icon";
 import React, {useState} from "react";
-import SimpleBanner from "./banner/simple-banner";
-import Template from "./template";
+import SimpleBanner from "@components/templates/banner/simple-banner";
+import Template from "@components/templates/template";
 
 
 export default function NavList({data, className}) {

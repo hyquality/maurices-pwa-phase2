@@ -3,7 +3,7 @@ import React from 'react';
 import Button from './button';
 
 export default {
-  title: 'Maurices React App/Elements/Button',
+  title: 'Maurices React App/Templates/Button',
   component: Button,
   argTypes: {
     backgroundColor: { control: 'color' },

@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import Icon from "@components/icon";
+import Icon from "@components/templates/icon";
 import {SelectedFiltersContext} from './filter-container';
 
 export default function PlpFilterSelectedList() {

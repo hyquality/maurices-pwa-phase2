@@ -10,7 +10,7 @@ import {
 import {
     faUserCircle as farUserCircle
 } from "@fortawesome/free-regular-svg-icons";
-import Icon from "@components/icon";
+import Icon from "@components/templates/icon";
 import Link from "next/link";
 import {bodyOverlay, getCurrentWidth, openMainMenu} from "../../lib/helpers";
 import SearchField from "@components/header/search/search-field";
@@ -18,7 +18,7 @@ import InstantSearch from "@components/header/search/instant-search";
 import CustomerMenu from "@components/header/main-nav/customer-menu";
 import MiniCart from "@components/header/mini-cart";
 import {MOBILE_BREAKPOINT} from "@lib/constants";
-import Button from "@components/button";
+import Button from "@components/templates/button";
 import logo from "@public/assets/images/logo.png"
 import Image from "next/image";
 import {DataProviderContext} from '../layout-data-provider';

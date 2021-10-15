@@ -19,7 +19,7 @@ export default function HeaderTitle({
     const CustomTag = `${tag}`;
     return (
         <CustomTag
-            className={[tag, style, size, className, color, weight, position, " header-title leading-none relative", upper ? "uppercase" : ""].join(' ')}
+            className={[tag, style, size, color, weight, position,className, " header-title leading-none relative", upper ? "uppercase" : ""].join(' ')}
             {...props}
         >
             {
@@ -47,7 +47,7 @@ HeaderTitle.propTypes = {
     weight: PropTypes.oneOf(['regular', 'bold']),
     className: PropTypes.string,
     size: PropTypes.oneOf(['text-xs', 'text-sm', 'text-base', 'text-lg', 'text-xl', 'text-2xl', 'text-3xl', 'text-4xl', 'text-5xl', 'text-6xl', 'text-7xl', 'text-8xl', 'text-9xl']),
-    position: PropTypes.oneOf(['left', 'right', 'center']),
+    position: PropTypes.oneOf([undefined,'text-left', 'text-right', 'text-center']),
     upper: PropTypes.bool,
     highlight: PropTypes.bool,
     highlightColor: PropTypes.string,
@@ -62,7 +62,7 @@ HeaderTitle.defaultProps = {
     size: 'text-2xl',
     weight: 'regular',
     upper: false,
-    position: 'center',
+    position: undefined,
     highlight: false,
     highlightColor: "",
     highlightHeight: 0,

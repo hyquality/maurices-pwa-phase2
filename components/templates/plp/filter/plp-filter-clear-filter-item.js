@@ -1,5 +1,5 @@
 import React from "react";
-import Icon from "@components/icon";
+import Icon from "@components/templates/icon";
 
 export default function PlpFilterClearFilterItem({selectedFilters, name,clearFilters}) {
 

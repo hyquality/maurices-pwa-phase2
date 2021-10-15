@@ -1,4 +1,6 @@
 import dynamic from "next/dynamic";
+import PropTypes from "prop-types";
+import React from "react";
 
 export default function Template({template, context=""}) {
 
@@ -12,3 +14,10 @@ export default function Template({template, context=""}) {
         </>
     )
 }
+Template.propTypes = {
+    template: PropTypes.any
+
+}
+Template.defaultProps = {
+    template:{}
+};

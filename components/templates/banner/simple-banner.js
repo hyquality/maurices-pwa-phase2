@@ -2,12 +2,28 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import PropTypes from "prop-types";
+import HeaderTitle from "@components/templates/header-title";
 
-export default function SimpleBanner({url, label, title, showCaption, image, size, w, h, x, y, className = ""}) {
+export default function SimpleBanner({
+                                         url,
+                                         label,
+                                         title,
+                                         titleColor,
+                                         titleTextAlign,
+                                         size,
+                                         style,
+                                         showCaption,
+                                         image,
+                                         w,
+                                         h,
+                                         x,
+                                         y,
+                                         className = ""
+                                     }) {
     return (
-        <div className={`simple-banner relative text-center ${className}`}>
+        <div className={`simple-banner relative text-center ${className}`} style={{maxWidth: w?w+"px":"none"}}>
             <Link href={url}>
-                <a className={"relative z-0"}>
+                <a className={"relative flex z-0"}>
                     <Image
                         alt={title}
                         src={image}
@@ -22,7 +38,10 @@ export default function SimpleBanner({url, label, title, showCaption, image, siz
                     <div className={`absolute caption  z-10 sb-x-${x} sb-y-${y}`}>
                         {
                             title && (
-                                <h3 className={size}>{title}</h3>
+                                /* <h3 className={`px-6 ${size}`}>{title}</h3>*/
+                                <HeaderTitle size={size} position={`text-${titleTextAlign}`} tag={"h3"}
+                                             className={`px-6`}
+                                             style={style} color={titleColor}>{title}</HeaderTitle>
                             )
                         }
                         {
@@ -44,6 +63,9 @@ SimpleBanner.propTypes = {
     url: PropTypes.string,
     label: PropTypes.string,
     title: PropTypes.string,
+    style: PropTypes.oneOf(['normal', 'utopia']),
+    titleColor: PropTypes.oneOf([undefined, 'dark-gray', 'gray', 'green', 'red', 'white']),
+    titleTextAlign: PropTypes.oneOf(['center', 'left', 'right']),
     showCaption: PropTypes.bool,
     image: PropTypes.string.isRequired,
     w: PropTypes.number,
@@ -57,6 +79,9 @@ SimpleBanner.defaultProps = {
     url: "",
     label: "",
     title: "",
+    style: "normal",
+    titleTextAlign: "center",
+    titleColor: undefined,
     showCaption: false,
     image: "image",
     w: 50,

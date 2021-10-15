@@ -3,7 +3,7 @@ import React from 'react';
 import HeaderTitle from './header-title';
 
 export default {
-    title: 'Maurices React App/Elements/Title',
+    title: 'Maurices React App/Templates/Title',
     component: HeaderTitle
 };
 

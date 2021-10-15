@@ -1,4 +1,4 @@
-import Icon from "@components/icon";
+import Icon from "@components/templates/icon";
 import React, {useState} from "react";
 import CustomerMenu from "@components/header/main-nav/customer-menu";
 import MegaMenuWrapper from "@components/header/main-nav/mega-menu-wrapper";

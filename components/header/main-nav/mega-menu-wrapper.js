@@ -1,4 +1,4 @@
-import Icon from "@components/icon";
+import Icon from "@components/templates/icon";
 import CustomerMenu from "@components/header/main-nav/customer-menu";
 import React from "react";
 

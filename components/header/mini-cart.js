@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, {useContext} from "react";
-import Icon from "@components/icon";
-import Button from "@components/button";
+import Icon from "@components/templates/icon";
+import Button from "@components/templates/button";
 import Image from "next/image";
 import {DataProviderContext} from '../layout-data-provider';
 

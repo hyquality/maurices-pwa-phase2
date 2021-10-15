@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import Container from "../../container";
 import HeaderTitle from "../header-title";
 import Image from "next/image";
-import Button from "@components/button";
 import {useRouter} from 'next/router'
 
 export default function Promo({
@@ -93,6 +92,7 @@ Promo.propTypes = {
     fullwidth: PropTypes.bool,
     top: PropTypes.string,
     title: PropTypes.string,
+    titleColor: PropTypes.oneOf([undefined, 'dark-gray', 'gray', 'green', 'red', 'white']),
     background: {
         first: PropTypes.string,
         second: PropTypes.string,

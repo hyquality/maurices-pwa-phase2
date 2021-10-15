@@ -2,7 +2,7 @@ import React from 'react';
 import Accent from './accent';
 
 export default {
-    title: 'Maurices React App/Elements/Banner/Accent',
+    title: 'Maurices React App/Templates/Banner/Accent',
     component: Accent,
 }
 

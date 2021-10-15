@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import PropTypes from "prop-types";
 
 export default function Templates({templates, context="", className}) {
 
@@ -21,3 +22,10 @@ export default function Templates({templates, context="", className}) {
         </>
     )
 }
+Templates.propTypes = {
+    templates: PropTypes.any
+
+}
+Templates.defaultProps = {
+    templates:[]
+};

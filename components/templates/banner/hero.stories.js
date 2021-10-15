@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from './hero';
 
 export default {
-    title: 'Maurices React App/Elements/Banner/Hero',
+    title: 'Maurices React App/Templates/Banner/Hero',
     component: Hero,
     argTypes: {
         backgroundColor: { control: 'highlightColor' },

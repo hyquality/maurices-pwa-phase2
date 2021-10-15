@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, {useState} from "react";
-import Icon from "@components/icon";
+import Icon from "@components/templates/icon";
 
 export default function Popup({content="", visible = false, closePopup, className, ...props}) {
 

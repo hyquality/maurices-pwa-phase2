@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Container from "../../container";
-import HeaderTitle from "../header-title";
+import Container from "@components/container";
+import HeaderTitle from "@components/templates/header-title";
 import Image from "next/image";
-import Button from "../../button";
+import Button from "@components/templates/button";
 import { useRouter } from 'next/router'
 export default function Hero({
                                  fullwidth,

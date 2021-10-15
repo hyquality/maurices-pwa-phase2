@@ -2,9 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import {getProductCardData, getProductCardPrice} from "@lib/helpers";
 import React, {useState} from "react";
-import Icon from "@components/icon";
+import Icon from "@components/templates/icon";
 import ColorSwatch from "@components/templates/product/color-swatch";
-import Button from "@components/button";
+import Button from "@components/templates/button";
 import Reviews from "@components/templates/product/reviews";
 import Highlights from "@components/templates/product/highlights";
 

@@ -6,7 +6,7 @@ import {fab} from '@fortawesome/free-brands-svg-icons';
 import {far} from '@fortawesome/free-regular-svg-icons';
 
 import {faChevronDown, faChevronUp, fas} from "@fortawesome/free-solid-svg-icons";
-import Icon from "@components/icon";
+import Icon from "@components/templates/icon";
 import React, {useContext} from "react";
 import NavList from "@components/templates/nav-list";
 import logo from "@public/assets/images/logo.png"

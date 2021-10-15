@@ -3,7 +3,7 @@ import PlpDescription from './plp-description';
 
 
 export default {
-  title: 'Maurices React App/Plp/Description',
+  title: 'Maurices React App/Templates/Plp/Description',
   component: PlpDescription
 };
 

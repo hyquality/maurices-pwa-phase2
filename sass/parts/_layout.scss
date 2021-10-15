@@ -1,20 +1,31 @@
 .column-grid{
     .grid-item{
-        @apply mb-9
-    }
-    .grid-item-1_2 {
-        width: 49%;
-    }
-    .grid-item-1_3 {
-        width: 32%;
-    }
-    .grid-item-1_4 {
-        width: 24%;
-    }
-    @media (max-width: 768px){
-        .grid-item{
-            width: 100%;
+        margin-bottom: 2rem;
+        &.grid-item-1_2 {
+            width: 49%;
+            margin-bottom: 2%;
         }
-
+        &.grid-item-1_3 {
+            width: 32%;
+            margin-bottom: 1.5%;
+        }
+        &.grid-item-1_4 {
+            width: 24%;
+            margin-bottom: 1.33%;
+        }
+        @media (max-width: 768px){
+            width: 100%;
+            &.mgrid-item-1_2{
+                width: 49%;
+            }
+            &.mgrid-item-1_3 {
+                width: 32%;
+            }
+            &.mgrid-item-1_4 {
+                width: 24%;
+            }
+        }
     }
+
+
 }

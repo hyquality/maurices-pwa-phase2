@@ -3,7 +3,7 @@ import React from 'react';
 import Reviews from './reviews';
 
 export default {
-    title: 'Maurices React App/Product/Reviews',
+    title: 'Maurices React App/Templates/Product/Reviews',
     component: Reviews
 };
 

@@ -7,9 +7,9 @@ import Reviews from "@components/templates/product/reviews";
 import {getProductCardData, getProductCardPrice} from "@lib/helpers";
 import ColorSwatch from "@components/templates/product/color-swatch";
 import AttributeSelector from "@components/templates/product/attribute-selector";
-import Icon from "@components/icon";
+import Icon from "@components/templates/icon";
 import CalloutItem from "@components/templates/callout/callout-item";
-import Button from "@components/button";
+import Button from "@components/templates/button";
 
 export default function PlpQuickView({product}) {
     const {title, slug, variants, highlights, reviews,description} = product || {}

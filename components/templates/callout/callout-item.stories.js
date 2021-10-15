@@ -2,7 +2,7 @@ import React from 'react'
 import CalloutItem from './callout-item'
 
 export default {
-    title: 'Maurices React App/Elements/CalloutItem',
+    title: 'Maurices React App/Templates/Callout/CalloutItem',
     component: CalloutItem
 }
 

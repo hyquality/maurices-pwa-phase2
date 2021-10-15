@@ -3,7 +3,7 @@ import React from 'react';
 import ColorSwatch from './color-swatch';
 
 export default {
-    title: 'Maurices React App/Product/ColorSwatch',
+    title: 'Maurices React App/Templates/Product/ColorSwatch',
     component: ColorSwatch
 };
 

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Link from "next/link";
 import {bodyOverlay, isMobile,isDescktop} from "@lib/helpers";
 import {getSearchData} from "@lib/api";
-import Icon from "@components/icon";
+import Icon from "@components/templates/icon";
 import Image from "next/image";
 import logo from "@public/assets/images/logo.png";
 export default function InstantSearch({data, instantSearchState, setInstantSearchState}) {

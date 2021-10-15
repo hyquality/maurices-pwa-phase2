@@ -3,7 +3,7 @@ import Icon from './icon'
 import {faHeart} from "@fortawesome/free-solid-svg-icons";
 
 export default {
-    title: 'Maurices React App/Icon',
+    title: 'Maurices React App/Templates/Icon',
     component: Icon,
 };
 
