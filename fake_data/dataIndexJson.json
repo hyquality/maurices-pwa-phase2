@@ -109,6 +109,259 @@
             }
           ]
         }
+      },
+      {
+        "path": "./layout/slider",
+        "class": "layout-slider pb-20",
+        "data": {
+          "fullwidth": false,
+          "itemWidth": 288,
+          "title": "Picked For You",
+          "templates": [
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "type": 1,
+                "w": 286,
+                "h": 340,
+                "x": "left",
+                "size": "text-2xl",
+                "description": "A classic pattern, fit for the holidays.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner.jpg",
+                "url": "#"
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "w": 286,
+                "h": 340,
+                "x": "left",
+                "size": "text-2xl",
+                "description": "Sweaters that feel as good as they look.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner2.jpg"
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "type": 1,
+                "w": 286,
+                "h": 340,
+                "x": "left",
+                "size": "text-2xl",
+                "description": "A classic pattern, fit for the holidays.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner.jpg",
+                "url": "#"
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "w": 286,
+                "h": 340,
+                "x": "left",
+                "size": "text-2xl",
+                "description": "Sweaters that feel as good as they look.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner2.jpg"
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "type": 1,
+                "w": 286,
+                "h": 340,
+                "x": "left",
+                "size": "text-2xl",
+                "description": "A classic pattern, fit for the holidays.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner.jpg",
+                "url": "#"
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "w": 286,
+                "h": 340,
+                "x": "left",
+                "size": "text-2xl",
+                "description": "Sweaters that feel as good as they look.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner2.jpg"
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "type": 1,
+                "w": 286,
+                "h": 340,
+                "x": "left",
+                "size": "text-2xl",
+                "description": "A classic pattern, fit for the holidays.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner.jpg",
+                "url": "#"
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "w": 286,
+                "h": 340,
+                "x": "left",
+                "size": "text-2xl",
+                "description": "Sweaters that feel as good as they look.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner2.jpg"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "path": "./layout/grid",
+        "class": "pt-20 pb-20",
+        "data": {
+          "columns": 4,
+          "columnsMobile": 2,
+          "context": "index-category-grid",
+          "templates": [
+            {
+              "path": "./banner/simple-banner",
+              "class": "simple-banner",
+              "data": {
+                "w": 336,
+                "h": 336,
+                "x": "center",
+                "y": "bottom",
+                "title": "JUST WHAT YOU’RE LOOKING FOR…",
+                "titleColor": "white",
+                "size": "text-base",
+                "showCaption": true,
+                "image": "/assets/images/slider/s0.jpg"
+              }
+            },
+            {
+              "path": "./banner/simple-banner",
+              "class": "simple-banner",
+              "data": {
+                "w": 336,
+                "h": 336,
+                "x": "left",
+                "y": "center",
+                "title": "Tops",
+                "titleTextAlign": "left",
+                "size": "text-3xl",
+                "showCaption": true,
+                "image": "/assets/images/slider/s1.jpg"
+              }
+            },
+            {
+              "path": "./banner/simple-banner",
+              "class": "simple-banner",
+              "data": {
+                "w": 336,
+                "h": 336,
+                "x": "left",
+                "y": "center",
+                "title": "Jeans",
+                "titleTextAlign": "left",
+                "size": "text-3xl",
+                "showCaption": true,
+                "image": "/assets/images/slider/s2.jpg"
+              }
+            },
+            {
+              "path": "./banner/simple-banner",
+              "class": "simple-banner",
+              "data": {
+                "w": 336,
+                "h": 336,
+                "x": "left",
+                "y": "center",
+                "title": "Sweaters",
+                "titleTextAlign": "left",
+                "size": "text-3xl",
+                "showCaption": true,
+                "image": "/assets/images/slider/s3.jpg"
+              }
+            },
+            {
+              "path": "./banner/simple-banner",
+              "class": "simple-banner",
+              "data": {
+                "w": 336,
+                "h": 336,
+                "x": "left",
+                "y": "center",
+                "title": "Jackets &<br>Vests",
+                "titleTextAlign": "left",
+                "size": "text-3xl",
+                "showCaption": true,
+                "image": "/assets/images/slider/s4.jpg"
+              }
+            },
+            {
+              "path": "./banner/simple-banner",
+              "class": "simple-banner",
+              "data": {
+                "w": 336,
+                "h": 336,
+                "x": "left",
+                "y": "center",
+                "title": "Dresses &<br>Jumpsuits",
+                "titleTextAlign": "left",
+                "size": "text-3xl",
+                "showCaption": true,
+                "image": "/assets/images/slider/s5.jpg"
+              }
+            },
+            {
+              "path": "./banner/simple-banner",
+              "class": "simple-banner",
+              "data": {
+                "w": 336,
+                "h": 336,
+                "x": "left",
+                "y": "center",
+                "title": "Boots &<br>Booties",
+                "titleTextAlign": "left",
+                "size": "text-3xl",
+                "showCaption": true,
+                "image": "/assets/images/slider/s6.jpg"
+              }
+            },
+            {
+              "path": "./banner/simple-banner",
+              "class": "simple-banner",
+              "data": {
+                "w": 336,
+                "h": 336,
+                "x": "left",
+                "y": "center",
+                "title": "Cold<br>Weather",
+                "size": "text-3xl",
+                "showCaption": true,
+                "image": "/assets/images/slider/s7.jpg"
+              }
+            }
+          ]
+        }
       }
     ]
   },

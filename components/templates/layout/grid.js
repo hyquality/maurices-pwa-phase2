@@ -7,10 +7,15 @@ export default function Grid({
                                  fullwidth,
                                  templates,
                                  columns,
+                                 columnsMobile,
                                  context = "",
                                  ...props
                              }) {
     const grid = {
+        1: {
+            w:"w-full",
+            p:"grid-item-1_1"
+        },
         2: {
             w:"w-1/2",
             p:"grid-item-1_2"
@@ -29,22 +34,17 @@ export default function Grid({
             {
                 fullwidth ? (
                     <div className={`flex flex-wrap justify-between ${!grid[columns]?"flex-col":null}`}>
-                        <Templates templates={templates} context={context} className={`grid-item ${grid[columns]?grid[columns].p:null}`}/>
+                        <Templates templates={templates} context={context} className={`grid-item ${grid[columns]?grid[columns].p:null} ${grid[columnsMobile]?"m"+grid[columnsMobile].p:null}`}/>
                     </div>
                 ) : (
                     <Container>
                         <div className={`flex flex-wrap justify-between ${!grid[columns]?"flex-col":null}`}>
-                            <Templates templates={templates} context={context} className={`grid-item ${grid[columns]?grid[columns].p:null}`}/>
+                            <Templates templates={templates} context={context} className={`grid-item ${grid[columns]?grid[columns].p:null} ${grid[columnsMobile]?"m"+grid[columnsMobile].p:null}`}/>
                         </div>
                     </Container>
 
                 )
             }
-            <style jsx>{`
-               .hero-banner .row > *{
-    
-                }
-      `}</style>
         </div>
     )
 }
@@ -53,12 +53,14 @@ Grid.propTypes = {
     fullwidth: PropTypes.bool,
     templates: PropTypes.any,
     context: PropTypes.string,
-    columns: PropTypes.oneOf([2, 3, 4]),
+    columns: PropTypes.oneOf([1,2, 3, 4]),
+    columnsMobile:PropTypes.oneOf([1,2, 3, 4]),
 
 }
 Grid.defaultProps = {
     fullwidth: false,
     templates: {},
     context: "",
-    columns: 2
+    columns: 2,
+    columnsMobile: 1
 };

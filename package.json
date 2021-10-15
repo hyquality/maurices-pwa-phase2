@@ -11,7 +11,7 @@
     "cache-result": "node scripts/cache.js",
     "test": "next test",
     "storybook": "start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook -s ./public",
     "chromatic": "npx chromatic --project-token=d4bbaf589182"
   },
   "dependencies": {
