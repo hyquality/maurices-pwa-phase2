@@ -56,7 +56,7 @@ export default function Promo({
                 <div className={"text-center md:text-left md:max-w-md m-auto"}>
                     <span
                         className={`uppercase text-xs md:text-base font-normal tracking-widest md:tracking-widest pb-2 md:pb-5 block  ${lightMode?"text-white":"text-gray_4"}`}>{top}</span>
-                    <HeaderTitle className={"md:text-4xl"} color={titleColor} tag={"h3"} size={"text-2xl"} position={"center"}
+                    <HeaderTitle className={"md:text-4xl"} color={titleColor} tag={"h3"} size={"text-2xl"} position={"text-center"}
                                  style={"utopia"}
                                  weight={"regular"}>{title}</HeaderTitle>
                     {
@@ -93,10 +93,10 @@ Promo.propTypes = {
     top: PropTypes.string,
     title: PropTypes.string,
     titleColor: PropTypes.oneOf([undefined, 'dark-gray', 'gray', 'green', 'red', 'white']),
-    background: {
+    background: PropTypes.shape({
         first: PropTypes.string,
         second: PropTypes.string,
-    },
+    }),
     backgroundImage: PropTypes.string,
     image: PropTypes.string,
     button: PropTypes.shape({

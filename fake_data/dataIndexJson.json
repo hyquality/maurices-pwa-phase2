@@ -111,6 +111,130 @@
         }
       },
       {
+        "path": "./carousel",
+        "class": "layout-slider pb-20",
+        "data": {
+          "fullwidth": false,
+          "itemWidth": 288,
+          "title": "Picked For You",
+          "templates": [
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "type": 1,
+                "title": "Test",
+                "w": 286,
+                "h": 340,
+                "x": "center",
+                "size": "text-2xl",
+                "description": "A classic pattern, fit for the holidays.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner.jpg",
+                "url": "#"
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "w": 286,
+                "h": 340,
+                "x": "left",
+                "size": "text-2xl",
+                "description": "Sweaters that feel as good as they look.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner2.jpg"
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "type": 1,
+                "w": 286,
+                "h": 340,
+                "x": "left",
+                "size": "text-2xl",
+                "description": "A classic pattern, fit for the holidays.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner.jpg",
+                "url": "#"
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "w": 286,
+                "h": 340,
+                "x": "left",
+                "size": "text-2xl",
+                "description": "Sweaters that feel as good as they look.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner2.jpg"
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "type": 1,
+                "w": 286,
+                "h": 340,
+                "x": "left",
+                "size": "text-2xl",
+                "description": "A classic pattern, fit for the holidays.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner.jpg",
+                "url": "#"
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "w": 286,
+                "h": 340,
+                "x": "left",
+                "size": "text-2xl",
+                "description": "Sweaters that feel as good as they look.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner2.jpg"
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "type": 1,
+                "w": 286,
+                "h": 340,
+                "x": "left",
+                "size": "text-2xl",
+                "description": "A classic pattern, fit for the holidays.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner.jpg",
+                "url": "#"
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "w": 286,
+                "h": 340,
+                "x": "left",
+                "size": "text-2xl",
+                "description": "Sweaters that feel as good as they look.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner2.jpg"
+              }
+            }
+          ]
+        }
+      },
+      {
         "path": "./layout/slider",
         "class": "layout-slider pb-20",
         "data": {

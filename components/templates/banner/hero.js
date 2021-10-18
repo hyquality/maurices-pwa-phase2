@@ -45,7 +45,7 @@ export default function Hero({
             <div className={"w-full md:w-1/3 flex items-center order-1 md:order-2 pt-7 md:pt-0"}>
                 <div className={"text-center md:max-w-md m-auto"}>
                     <span className={"uppercase text-xs md:text-base font-normal tracking-widest md:tracking-widest pb-4 md:pb-10 block text-gray_4"}>{top}</span>
-                    <HeaderTitle className={"md:text-7xl"} color={titleColor} tag={"h2"} size={"text-3xl"} position={"center"} style={"utopia"}
+                    <HeaderTitle className={"md:text-7xl"} color={titleColor} tag={"h2"} size={"text-3xl"} position={"text-center"} style={"utopia"}
                                  weight={"regular"} highlight={highlight} highlightColor={highlightColor} highlightHeight={highlightHeight}>{title}</HeaderTitle>
                     <p className={"pt-4 pb-4 md:pb-0 md:pt-7 text-base md:text-xl w-8/12 md:w-full m-auto"}>{text}</p>
                     {

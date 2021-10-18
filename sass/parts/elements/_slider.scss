@@ -28,3 +28,13 @@
    // scroll-snap-align: start;
   }
 }
+.carousel-list {
+  .swiper-button-next,
+  .swiper-button-prev{
+    @apply bg-white rounded-full h-10 w-10;
+
+    &:after{
+      @apply text-gray_2 text-xl font-bold;
+    }
+  }
+}

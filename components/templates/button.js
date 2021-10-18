@@ -20,6 +20,7 @@ Button.propTypes = {
     onClick: PropTypes.func
 }
 Button.defaultProps = {
+    label:"",
     className: "",
     size: 'small',
     color: undefined,
