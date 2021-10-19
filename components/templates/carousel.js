@@ -25,19 +25,14 @@ function debounce(fn, ms) {
     };
 }
 
-export default function Carousel({fullwidth,title, templates, context = "", className}) {
-    const [slides, setSlides] = useState({num:4, scroll:{ draggable: true }});
+export default function Carousel({fullwidth,title, visibleNum, templates, context = "", className}) {
+    const [slides, setSlides] = useState({num:visibleNum, scroll:{ draggable: true }});
     useEffect(() => {
-        function handleResize() {
-
-        }
-        window.addEventListener('resize', handleResize)
-
         const debouncedHandleResize = debounce(function handleResize() {
             if(window.innerWidth<768){
                 setSlides({num:1, scroll:false})
             } else {
-                setSlides({num:4, scroll:{ draggable: true }})
+                setSlides({num:visibleNum, scroll:{ draggable: true }})
             }
         }, 1000)
 
@@ -64,7 +59,7 @@ export default function Carousel({fullwidth,title, templates, context = "", clas
                         let dynamicProps = template.data;
                         return (
                             <SwiperSlide key={`dyn-carousel-${context}-${template.path}-${index}`}>
-                                <div className={`${template.class ? template.class + "" : ""} ${className}`}>
+                                <div className={`pb-10 ${template.class ? template.class + "" : ""} ${className}`}>
 
                                     <TemplateItem {...dynamicProps} />
                                 </div>
@@ -93,9 +88,11 @@ export default function Carousel({fullwidth,title, templates, context = "", clas
     )
 }
 Carousel.propTypes = {
+    visibleNum: PropTypes.number,
     templates: PropTypes.any
 
 }
 Carousel.defaultProps = {
+    visibleNum: 4,
     templates: []
 };

@@ -38,7 +38,12 @@
             "second": ""
           },
           "backgroundImage": "/assets/images/banners/promo/promo1bg.jpg",
-          "image": "/assets/images/banners/promo/promo1.png",
+          "image": {
+            "src": "/assets/images/banners/promo/promo1.png",
+            "w": 1285,
+            "h": 445,
+            "offset": "-mt-5"
+          },
           "button": {
             "title": "Shop The Sale",
             "url": "#"
@@ -111,21 +116,87 @@
         }
       },
       {
-        "path": "./carousel",
+        "path": "./banner/slider-banner",
         "class": "layout-slider pb-20",
         "data": {
           "fullwidth": false,
+          "top": "LOOKS WE LOVE:",
+          "title": "Layers on Layers",
+          "titleColor": "white",
+          "highlight": true,
+          "highlightColor": "#FF5353",
+          "text": "Stock up on styles perfect for Pumpkin-Spice season.",
+          "background": "#E0E4F2",
+          "className": "md:-top-12",
           "itemWidth": 288,
-          "title": "Picked For You",
           "templates": [
             {
               "path": "./accent/accent",
               "class": "accent-banner",
               "data": {
                 "type": 1,
-                "title": "Test",
-                "w": 286,
-                "h": 340,
+                "title": "Brave the Cold",
+                "w": 330,
+                "h": 400,
+                "x": "center",
+                "size": "text-2xl",
+                "description": "Scarves, hats and gloves to bundle you up from head to toe.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner.jpg",
+                "url": "#"
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "title": "From Puffers to Plaids",
+                "w": 330,
+                "h": 400,
+                "x": "center",
+                "size": "text-2xl",
+                "description": "Because every outdoor adventure needs a jacket… or two.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner2.jpg"
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "type": 1,
+                "title": "Very Vestive",
+                "w": 330,
+                "h": 400,
+                "x": "center",
+                "size": "text-2xl",
+                "description": "A layering fave, from kicking leaves to catching snowflakes.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner.jpg",
+                "url": "#"
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "title": "Boots with the Fur",
+                "w": 330,
+                "h": 400,
+                "x": "center",
+                "size": "text-2xl",
+                "description": "Finish the look with the perfect pair of boots that go the distance.",
+                "showCaption": true,
+                "image": "/assets/images/banners/ads/column-banner2.jpg"
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "type": 1,
+                "w": 330,
+                "h": 400,
                 "x": "center",
                 "size": "text-2xl",
                 "description": "A classic pattern, fit for the holidays.",
@@ -138,9 +209,9 @@
               "path": "./accent/accent",
               "class": "accent-banner",
               "data": {
-                "w": 286,
-                "h": 340,
-                "x": "left",
+                "w": 330,
+                "h": 400,
+                "x": "center",
                 "size": "text-2xl",
                 "description": "Sweaters that feel as good as they look.",
                 "showCaption": true,
@@ -152,9 +223,9 @@
               "class": "accent-banner",
               "data": {
                 "type": 1,
-                "w": 286,
-                "h": 340,
-                "x": "left",
+                "w": 330,
+                "h": 400,
+                "x": "center",
                 "size": "text-2xl",
                 "description": "A classic pattern, fit for the holidays.",
                 "showCaption": true,
@@ -166,65 +237,9 @@
               "path": "./accent/accent",
               "class": "accent-banner",
               "data": {
-                "w": 286,
-                "h": 340,
-                "x": "left",
-                "size": "text-2xl",
-                "description": "Sweaters that feel as good as they look.",
-                "showCaption": true,
-                "image": "/assets/images/banners/ads/column-banner2.jpg"
-              }
-            },
-            {
-              "path": "./accent/accent",
-              "class": "accent-banner",
-              "data": {
-                "type": 1,
-                "w": 286,
-                "h": 340,
-                "x": "left",
-                "size": "text-2xl",
-                "description": "A classic pattern, fit for the holidays.",
-                "showCaption": true,
-                "image": "/assets/images/banners/ads/column-banner.jpg",
-                "url": "#"
-              }
-            },
-            {
-              "path": "./accent/accent",
-              "class": "accent-banner",
-              "data": {
-                "w": 286,
-                "h": 340,
-                "x": "left",
-                "size": "text-2xl",
-                "description": "Sweaters that feel as good as they look.",
-                "showCaption": true,
-                "image": "/assets/images/banners/ads/column-banner2.jpg"
-              }
-            },
-            {
-              "path": "./accent/accent",
-              "class": "accent-banner",
-              "data": {
-                "type": 1,
-                "w": 286,
-                "h": 340,
-                "x": "left",
-                "size": "text-2xl",
-                "description": "A classic pattern, fit for the holidays.",
-                "showCaption": true,
-                "image": "/assets/images/banners/ads/column-banner.jpg",
-                "url": "#"
-              }
-            },
-            {
-              "path": "./accent/accent",
-              "class": "accent-banner",
-              "data": {
-                "w": 286,
-                "h": 340,
-                "x": "left",
+                "w": 330,
+                "h": 400,
+                "x": "center",
                 "size": "text-2xl",
                 "description": "Sweaters that feel as good as they look.",
                 "showCaption": true,
@@ -483,6 +498,44 @@
                 "showCaption": true,
                 "image": "/assets/images/slider/s7.jpg"
               }
+            }
+          ]
+        }
+      },
+      {
+        "path": "./banner/promo",
+        "class": "banner-promo mb-20",
+        "data": {
+          "fullwidth": true,
+          "top": "MAURICES  x  ST. JUDE",
+          "title": "",
+          "icon": {
+            "src": "/assets/images/banners/promo/promo_icon.png",
+            "w": 146,
+            "h": 142
+          },
+          "text": "We invite you to join us in contributing towards the fight to end childhood cancer.",
+          "lightMode": true,
+          "titleColor": "white",
+          "background": {
+            "first": "#58b7b1",
+            "second": ""
+          },
+          "image": {
+            "src": "/assets/images/banners/promo/promo2.png",
+            "w": 300,
+            "h": 300,
+            "offset": "-my-10 ml-auto"
+          },
+          "imagePosition": "right",
+          "nav": [
+            {
+              "text": "Donate Now",
+              "url": "#"
+            },
+            {
+              "text": "Learn More",
+              "url": "#"
             }
           ]
         }

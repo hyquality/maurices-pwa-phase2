@@ -16,6 +16,16 @@ export default function Accent({
                                    x,
                                    className = ""
                                }) {
+
+
+    const sizeData = {
+        "text-2xl": {
+            p:"pt-3"
+        },
+        "text-4xl": {
+              p:"pt-5"
+        },
+    }
     return (
         <div className={`accent-banner relative  ${className} position-${x}`}>
             <div className={"relative z-0"}>
@@ -32,7 +42,7 @@ export default function Accent({
                     <div className={`relative caption  z-10`}>
                         {
                             (title && title!=="") && (
-                                <h3 className={`${size} font-utopia dark:text-white pt-7`}>{title}</h3>
+                                <h3 className={`${size} font-utopia dark:text-white ${sizeData[size]?sizeData[size].p:"pt-7"}`}>{title}</h3>
                             )
                         }
                         {

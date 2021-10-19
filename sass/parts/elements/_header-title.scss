@@ -54,4 +54,26 @@
   &.center {
     @apply text-center;
   }
+  .highlight-wrapper {
+    border-style: solid;
+    border-bottom-width: 24px;
+    top: -24px;
+    padding: 0 1rem;
+    left: -0.5rem;
+  }
+
+  @media (min-width: 768px) {
+    &.md\:text-6xl {
+      .highlight-wrapper {
+        border-bottom-width: 34px;
+        top: -34px;
+      }
+    }
+    &.md\:text-7xl {
+      .highlight-wrapper {
+        border-bottom-width: 44px;
+        top: -52px;
+      }
+    }
+  }
 }

@@ -13,7 +13,6 @@ export default function NavList({data, className}) {
         if(element.tagName==="SPAN"){
             element = element.parentNode;
         }
-        console.log(element.tagName)
         element.className="active"
         setActiveElement(element)
 

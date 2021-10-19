@@ -36,6 +36,31 @@ ul.link-list-border {
       }
     }
   }
+  &.position-left {
+    @apply justify-center md:justify-start;
+    li {
+      &:first-child{
+        a {
+          @apply pl-3 md:pl-0;
+        }
+      }
+    }
+  }
+  &.position-right {
+    @apply justify-end;
+    li {
+      &:last-child{
+        a {
+          @apply pr-3 md:pr-0;
+        }
+      }
+    }
+  }
+  &.link_underline{
+    a{
+      @apply underline hover:no-underline;
+    }
+  }
 }
 
 span.icon {
