@@ -10,6 +10,7 @@
           "title": "A Very Merry<br> Gift Guide",
           "titleColor": "white",
           "text": "Find gifts they really want — and maybe a little something for you, too.",
+
           "background": {
             "first": "#DDDFE9",
             "second": ""
@@ -33,6 +34,7 @@
           "title": "30% Off Select Styles",
           "lightMode": true,
           "titleColor": "white",
+          "paddingTop": true,
           "background": {
             "first": "#DDDFE9",
             "second": ""
@@ -52,10 +54,12 @@
       },
       {
         "path": "./layout/grid",
-        "class": "pt-20 pb-20",
+        "class": "",
         "data": {
           "columns": 2,
           "context": "index-accent-row",
+          "paddingTop": true,
+          "paddingBottom": true,
           "templates": [
             {
               "path": "./accent/accent",
@@ -117,9 +121,10 @@
       },
       {
         "path": "./banner/slider-banner",
-        "class": "layout-slider pb-20",
+        "class": "layout-slider",
         "data": {
           "fullwidth": false,
+          "paddingBottom": true,
           "top": "LOOKS WE LOVE:",
           "title": "Layers on Layers",
           "titleColor": "white",
@@ -251,11 +256,12 @@
       },
       {
         "path": "./layout/slider",
-        "class": "layout-slider pb-20",
+        "class": "layout-slider",
         "data": {
           "fullwidth": false,
           "itemWidth": 288,
           "title": "Picked For You",
+          "paddingBottom": true,
           "templates": [
             {
               "path": "./accent/accent",
@@ -374,11 +380,13 @@
       },
       {
         "path": "./layout/grid",
-        "class": "pt-20 pb-20",
+        "class": "",
         "data": {
           "columns": 4,
           "columnsMobile": 2,
           "context": "index-category-grid",
+          "paddingTop": true,
+          "paddingBottom": true,
           "templates": [
             {
               "path": "./banner/simple-banner",
@@ -504,11 +512,12 @@
       },
       {
         "path": "./banner/promo",
-        "class": "banner-promo mb-20",
+        "class": "banner-promo",
         "data": {
           "fullwidth": true,
           "top": "MAURICES  x  ST. JUDE",
           "title": "",
+          "paddingBottom": true,
           "icon": {
             "src": "/assets/images/banners/promo/promo_icon.png",
             "w": 146,

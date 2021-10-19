@@ -97,3 +97,6 @@ input.qty-field::-webkit-outer-spin-button {
     @apply ml-auto px-0 ;
   }
 }
+.test-temp-instructions{
+  @apply md:-top-12 -mt-5 -my-10 ml-auto;
+}

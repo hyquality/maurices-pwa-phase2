@@ -9,6 +9,8 @@ import Container from "@components/container";
 
 export default function SliderBanner({
                                          fullwidth,
+                                         paddingTop,
+                                         paddingBottom,
                                          top,
                                          title,
                                          titleColor,
@@ -26,7 +28,7 @@ export default function SliderBanner({
 
     const content = (
         <>
-            <div className={`slider-banner relative block md:flex ${className}`}>
+            <div className={`slider-banner relative block md:flex ${className} ${paddingTop && "pt-sectionBT"} ${paddingBottom && "pb-sectionBT"}`}>
                 {
                     (showCaption) && (
                         <div className={`relative w-full md:w-1/4 flex flex-col justify-center pt-5 md:pt-0`}>
@@ -71,26 +73,31 @@ export default function SliderBanner({
         </>
     )
     return (
-        <div
-            style={{
-                backgroundColor: `${background ? background : "none"}`
-            }}>
-            {
-                fullwidth ? (
-                    content
-                ) : (
-                    <Container>
-                        {content}
-                    </Container>
+        <div className={`${paddingTop && "pt-sectionBT"} ${paddingBottom && "pb-sectionBT"}`}>
 
-                )
-            }
+            <div
+                style={{
+                    backgroundColor: `${background ? background : "none"}`
+                }}>
+                {
+                    fullwidth ? (
+                        content
+                    ) : (
+                        <Container>
+                            {content}
+                        </Container>
+
+                    )
+                }
+            </div>
         </div>
 
     )
 }
 SliderBanner.propTypes = {
     fullwidth: PropTypes.bool,
+    paddingTop: PropTypes.bool,
+    paddingBottom: PropTypes.bool,
     showCaption: PropTypes.bool,
     top: PropTypes.string,
     title: PropTypes.string,
@@ -104,6 +111,8 @@ SliderBanner.propTypes = {
 }
 SliderBanner.defaultProps = {
     fullwidth: true,
+    paddingTop: false,
+    paddingBottom: false,
     showCaption: true,
     top: "A Very Merry Gift Guide",
     title: "Title",

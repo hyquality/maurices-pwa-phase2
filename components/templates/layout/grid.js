@@ -5,9 +5,12 @@ import Templates from "@components/templates/templates";
 
 export default function Grid({
                                  fullwidth,
+                                 paddingTop,
+                                 paddingBottom,
                                  templates,
                                  columns,
                                  columnsMobile,
+                                 className,
                                  context = "",
                                  ...props
                              }) {
@@ -30,7 +33,7 @@ export default function Grid({
         }
     }
     return (
-        <div className={"column-grid"}>
+        <div className={`column-grid ${className} ${paddingTop && "pt-sectionBT"} ${paddingBottom && "pb-sectionBT"}`}>
             {
                 fullwidth ? (
                     <div className={`flex flex-wrap justify-between ${!grid[columns]?"flex-col":null}`}>
@@ -51,6 +54,8 @@ export default function Grid({
 
 Grid.propTypes = {
     fullwidth: PropTypes.bool,
+    paddingTop: PropTypes.bool,
+    paddingBottom: PropTypes.bool,
     templates: PropTypes.any,
     context: PropTypes.string,
     columns: PropTypes.oneOf([1,2, 3, 4]),
@@ -59,6 +64,8 @@ Grid.propTypes = {
 }
 Grid.defaultProps = {
     fullwidth: false,
+    paddingTop: false,
+    paddingBottom: false,
     templates: {},
     context: "",
     columns: 2,

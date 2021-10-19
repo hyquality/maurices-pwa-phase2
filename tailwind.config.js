@@ -77,6 +77,7 @@ module.exports = {
             },
             spacing: {
                 28: '7rem',
+                'sectionBT': '5rem',
                 '30px': '1.875rem'
             },
             inset: {
