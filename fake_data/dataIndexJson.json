@@ -124,6 +124,7 @@
         "class": "layout-slider",
         "data": {
           "fullwidth": false,
+          "paddingTop": true,
           "paddingBottom": true,
           "top": "LOOKS WE LOVE:",
           "title": "Layers on Layers",
@@ -132,7 +133,7 @@
           "highlightColor": "#FF5353",
           "text": "Stock up on styles perfect for Pumpkin-Spice season.",
           "background": "#E0E4F2",
-          "className": "md:-top-12",
+          "className": "",
           "itemWidth": 288,
           "templates": [
             {
@@ -141,13 +142,13 @@
               "data": {
                 "type": 1,
                 "title": "Brave the Cold",
-                "w": 330,
-                "h": 400,
+                "w": 572,
+                "h": 700,
                 "x": "center",
                 "size": "text-2xl",
                 "description": "Scarves, hats and gloves to bundle you up from head to toe.",
                 "showCaption": true,
-                "image": "/assets/images/banners/ads/column-banner.jpg",
+                "image": "/assets/images/slider/car7.jpg",
                 "url": "#"
               }
             },
@@ -156,13 +157,13 @@
               "class": "accent-banner",
               "data": {
                 "title": "From Puffers to Plaids",
-                "w": 330,
-                "h": 400,
+                "w": 572,
+                "h": 700,
                 "x": "center",
                 "size": "text-2xl",
                 "description": "Because every outdoor adventure needs a jacket… or two.",
                 "showCaption": true,
-                "image": "/assets/images/banners/ads/column-banner2.jpg"
+                "image": "/assets/images/slider/car8.jpg"
               }
             },
             {
@@ -171,13 +172,13 @@
               "data": {
                 "type": 1,
                 "title": "Very Vestive",
-                "w": 330,
-                "h": 400,
+                "w": 572,
+                "h": 700,
                 "x": "center",
                 "size": "text-2xl",
                 "description": "A layering fave, from kicking leaves to catching snowflakes.",
                 "showCaption": true,
-                "image": "/assets/images/banners/ads/column-banner.jpg",
+                "image": "/assets/images/slider/car9.jpg",
                 "url": "#"
               }
             },
@@ -186,8 +187,8 @@
               "class": "accent-banner",
               "data": {
                 "title": "Boots with the Fur",
-                "w": 330,
-                "h": 400,
+                "w": 572,
+                "h": 700,
                 "x": "center",
                 "size": "text-2xl",
                 "description": "Finish the look with the perfect pair of boots that go the distance.",
@@ -200,8 +201,8 @@
               "class": "accent-banner",
               "data": {
                 "type": 1,
-                "w": 330,
-                "h": 400,
+                "w": 572,
+                "h": 700,
                 "x": "center",
                 "size": "text-2xl",
                 "description": "A classic pattern, fit for the holidays.",
@@ -214,11 +215,58 @@
               "path": "./accent/accent",
               "class": "accent-banner",
               "data": {
-                "w": 330,
-                "h": 400,
+                "type": 1,
+                "title": "Brave the Cold",
+                "w": 572,
+                "h": 700,
                 "x": "center",
                 "size": "text-2xl",
-                "description": "Sweaters that feel as good as they look.",
+                "description": "Scarves, hats and gloves to bundle you up from head to toe.",
+                "showCaption": true,
+                "image": "/assets/images/slider/car7.jpg",
+                "url": "#"
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "title": "From Puffers to Plaids",
+                "w": 572,
+                "h": 700,
+                "x": "center",
+                "size": "text-2xl",
+                "description": "Because every outdoor adventure needs a jacket… or two.",
+                "showCaption": true,
+                "image": "/assets/images/slider/car8.jpg"
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "type": 1,
+                "title": "Very Vestive",
+                "w": 572,
+                "h": 700,
+                "x": "center",
+                "size": "text-2xl",
+                "description": "A layering fave, from kicking leaves to catching snowflakes.",
+                "showCaption": true,
+                "image": "/assets/images/slider/car9.jpg",
+                "url": "#"
+              }
+            },
+            {
+              "path": "./accent/accent",
+              "class": "accent-banner",
+              "data": {
+                "title": "Boots with the Fur",
+                "w": 572,
+                "h": 700,
+                "x": "center",
+                "size": "text-2xl",
+                "description": "Finish the look with the perfect pair of boots that go the distance.",
                 "showCaption": true,
                 "image": "/assets/images/banners/ads/column-banner2.jpg"
               }
@@ -228,8 +276,8 @@
               "class": "accent-banner",
               "data": {
                 "type": 1,
-                "w": 330,
-                "h": 400,
+                "w": 572,
+                "h": 700,
                 "x": "center",
                 "size": "text-2xl",
                 "description": "A classic pattern, fit for the holidays.",
@@ -237,29 +285,19 @@
                 "image": "/assets/images/banners/ads/column-banner.jpg",
                 "url": "#"
               }
-            },
-            {
-              "path": "./accent/accent",
-              "class": "accent-banner",
-              "data": {
-                "w": 330,
-                "h": 400,
-                "x": "center",
-                "size": "text-2xl",
-                "description": "Sweaters that feel as good as they look.",
-                "showCaption": true,
-                "image": "/assets/images/banners/ads/column-banner2.jpg"
-              }
             }
           ]
         }
       },
       {
-        "path": "./layout/slider",
-        "class": "layout-slider",
+        "path": "./carousel",
+        "class": "layout-slider overflow-hidden",
         "data": {
           "fullwidth": false,
-          "itemWidth": 288,
+          "visibleNum": 6,
+          "mobileVisibleNum": 2,
+          "showNav": false,
+          "showNavMobile": false,
           "title": "Picked For You",
           "paddingBottom": true,
           "templates": [
@@ -268,13 +306,13 @@
               "class": "accent-banner",
               "data": {
                 "type": 1,
-                "w": 286,
-                "h": 340,
+                "w": 360,
+                "h": 520,
                 "x": "left",
                 "size": "text-2xl",
                 "description": "A classic pattern, fit for the holidays.",
                 "showCaption": true,
-                "image": "/assets/images/banners/ads/column-banner.jpg",
+                "image": "/assets/images/slider/car1.jpg",
                 "url": "#"
               }
             },
@@ -282,13 +320,13 @@
               "path": "./accent/accent",
               "class": "accent-banner",
               "data": {
-                "w": 286,
-                "h": 340,
+                "w": 360,
+                "h": 520,
                 "x": "left",
                 "size": "text-2xl",
                 "description": "Sweaters that feel as good as they look.",
                 "showCaption": true,
-                "image": "/assets/images/banners/ads/column-banner2.jpg"
+                "image": "/assets/images/slider/car2.jpg"
               }
             },
             {
@@ -296,13 +334,13 @@
               "class": "accent-banner",
               "data": {
                 "type": 1,
-                "w": 286,
-                "h": 340,
+                "w": 360,
+                "h": 520,
                 "x": "left",
                 "size": "text-2xl",
                 "description": "A classic pattern, fit for the holidays.",
                 "showCaption": true,
-                "image": "/assets/images/banners/ads/column-banner.jpg",
+                "image": "/assets/images/slider/car3.jpg",
                 "url": "#"
               }
             },
@@ -310,13 +348,13 @@
               "path": "./accent/accent",
               "class": "accent-banner",
               "data": {
-                "w": 286,
-                "h": 340,
+                "w": 360,
+                "h": 520,
                 "x": "left",
                 "size": "text-2xl",
                 "description": "Sweaters that feel as good as they look.",
                 "showCaption": true,
-                "image": "/assets/images/banners/ads/column-banner2.jpg"
+                "image": "/assets/images/slider/car4.jpg"
               }
             },
             {
@@ -324,13 +362,13 @@
               "class": "accent-banner",
               "data": {
                 "type": 1,
-                "w": 286,
-                "h": 340,
+                "w": 360,
+                "h": 520,
                 "x": "left",
                 "size": "text-2xl",
                 "description": "A classic pattern, fit for the holidays.",
                 "showCaption": true,
-                "image": "/assets/images/banners/ads/column-banner.jpg",
+                "image": "/assets/images/slider/car5.jpg",
                 "url": "#"
               }
             },
@@ -338,13 +376,13 @@
               "path": "./accent/accent",
               "class": "accent-banner",
               "data": {
-                "w": 286,
-                "h": 340,
+                "w": 360,
+                "h": 520,
                 "x": "left",
                 "size": "text-2xl",
                 "description": "Sweaters that feel as good as they look.",
                 "showCaption": true,
-                "image": "/assets/images/banners/ads/column-banner2.jpg"
+                "image": "/assets/images/slider/car6.jpg"
               }
             },
             {
@@ -352,13 +390,13 @@
               "class": "accent-banner",
               "data": {
                 "type": 1,
-                "w": 286,
-                "h": 340,
+                "w": 360,
+                "h": 520,
                 "x": "left",
                 "size": "text-2xl",
                 "description": "A classic pattern, fit for the holidays.",
                 "showCaption": true,
-                "image": "/assets/images/banners/ads/column-banner.jpg",
+                "image": "/assets/images/slider/car1.jpg",
                 "url": "#"
               }
             },
@@ -366,13 +404,13 @@
               "path": "./accent/accent",
               "class": "accent-banner",
               "data": {
-                "w": 286,
-                "h": 340,
+                "w": 360,
+                "h": 520,
                 "x": "left",
                 "size": "text-2xl",
                 "description": "Sweaters that feel as good as they look.",
                 "showCaption": true,
-                "image": "/assets/images/banners/ads/column-banner2.jpg"
+                "image": "/assets/images/slider/car2.jpg"
               }
             }
           ]

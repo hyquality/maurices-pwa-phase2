@@ -82,6 +82,7 @@ module.exports = {
             },
             inset: {
               '2/12': '16.66%',
+                '35_p': '35%',
             },
             letterSpacing: {
                 menu: '0.094rem',

@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-
 export default function HeaderTitle({
                                         tag,
                                         style,
@@ -19,7 +18,7 @@ export default function HeaderTitle({
     const CustomTag = `${tag}`;
     return (
         <CustomTag
-            className={[tag, style, size, color, weight, position,className, " header-title leading-none relative", upper ? "uppercase" : ""].join(' ')}
+            className={[tag, style, size, color, weight, position,className," header-title leading-none relative", upper ? "uppercase" : ""].join(' ')}
             {...props}
         >
             {

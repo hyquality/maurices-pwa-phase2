@@ -1,0 +1,20 @@
+body {
+  @apply text-main font-gibson font-light;
+  &:after{
+    content: "";
+    @apply fixed opacity-0 block left-full bg-balck_7 z-0 transition-opacity duration-500;
+
+  }
+
+  &.on{
+    &:after{
+      @apply z-10 inset-0 opacity-100;
+    }
+  }
+  &.menu-opened{
+    &:after{
+      @apply z-20 inset-0 opacity-100;
+    }
+  }
+
+}

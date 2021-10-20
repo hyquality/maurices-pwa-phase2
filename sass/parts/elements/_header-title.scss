@@ -1,9 +1,8 @@
 .header-title {
-  //@apply pb-8;
+
   &.utopia {
     @apply font-utopia;
   }
-
 
   &.small {
     @apply text-2xl;
@@ -16,7 +15,6 @@
   &.large {
     @apply text-4xl;
   }
-
 
 
   &.dark-gray {
@@ -54,6 +52,7 @@
   &.center {
     @apply text-center;
   }
+
   .highlight-wrapper {
     border-style: solid;
     border-bottom-width: 24px;

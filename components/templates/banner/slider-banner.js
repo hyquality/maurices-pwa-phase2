@@ -28,7 +28,7 @@ export default function SliderBanner({
 
     const content = (
         <>
-            <div className={`slider-banner relative block md:flex ${className} ${paddingTop && "pt-sectionBT"} ${paddingBottom && "pb-sectionBT"}`}>
+            <div className={`slider-banner relative block md:flex md:-top-12 ${className}`}>
                 {
                     (showCaption) && (
                         <div className={`relative w-full md:w-1/4 flex flex-col justify-center pt-5 md:pt-0`}>
@@ -67,13 +67,13 @@ export default function SliderBanner({
                     )
                 }
                 <div className={"w-full md:w-3/4"}>
-                    <Carousel templates={templates} context={"slider-banner-carousel"} visibleNum={3}/>
+                    <Carousel templates={templates} context={"slider-banner-carousel"} visibleNum={3} showScrollMobile={false} showNavMobile={true} showNav={false}/>
                 </div>
             </div>
         </>
     )
     return (
-        <div className={`${paddingTop && "pt-sectionBT"} ${paddingBottom && "pb-sectionBT"}`}>
+        <div className={`overflow-hidden ${paddingTop && "pt-sectionBT"} ${paddingBottom && "pb-sectionBT"}`}>
 
             <div
                 style={{

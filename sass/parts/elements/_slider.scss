@@ -31,10 +31,33 @@
 .carousel-list {
   .swiper-button-next,
   .swiper-button-prev{
-    @apply bg-white rounded-full h-10 w-10;
+    @apply bg-white rounded-full h-10 w-10 top-35_p;
 
     &:after{
       @apply text-gray_2 text-xl font-bold;
+    }
+  }
+  .swiper-horizontal {
+    //@apply overflow-visible;
+    & > .swiper-scrollbar{
+      @apply h-0.5;
+    }
+  }
+  &.hide-nav{
+    .swiper-button-next,
+    .swiper-button-prev{
+      @apply hidden;
+    }
+  }
+  @media (max-width: 768px) {
+    .swiper-button-next{
+      @apply -right-5
+    }
+    .swiper-button-prev{
+      @apply -left-5
+    }
+    .swiper-horizontal {
+      @apply overflow-visible;
     }
   }
 }
