@@ -1,0 +1,119 @@
+{
+  "templates": [
+    {
+      "path": "./insta-slide",
+      "class": "insta-slide",
+      "data": {
+        "paddingBottom": true,
+        "title": "SHOW US HOW YOU",
+        "hash": "discovermaurices",
+        "text": "Share your style on Instagram using <strong>#discovermaurices</strong> for a chance to be featured here.",
+        "buttonTitle": "VIEW GALLERY",
+        "ButtonUrl": "#",
+        "className": "",
+        "data": []
+      }
+    }
+  ],
+  "data": [
+    {
+      "path": "./accent/accent",
+      "data": {
+        "w": 500,
+        "h": 500,
+        "showCaption": false,
+        "image": "/assets/images/insta/insta1.jpg",
+        "url": "#"
+      }
+    },
+    {
+      "path": "./accent/accent",
+      "data": {
+        "w": 500,
+        "h": 500,
+        "showCaption": false,
+        "image": "/assets/images/insta/insta2.jpg",
+        "url": "#"
+      }
+    },
+    {
+      "path": "./accent/accent",
+      "data": {
+        "w": 500,
+        "h": 500,
+        "showCaption": false,
+        "image": "/assets/images/insta/insta3.jpg",
+        "url": "#"
+      }
+    },
+    {
+      "path": "./accent/accent",
+      "data": {
+        "w": 500,
+        "h": 500,
+        "showCaption": false,
+        "image": "/assets/images/insta/insta4.jpg",
+        "url": "#"
+      }
+    },
+    {
+      "path": "./accent/accent",
+      "data": {
+        "w": 500,
+        "h": 500,
+        "showCaption": false,
+        "image": "/assets/images/insta/insta5.jpg",
+        "url": "#"
+      }
+    },    {
+      "path": "./accent/accent",
+      "data": {
+        "w": 500,
+        "h": 500,
+        "showCaption": false,
+        "image": "/assets/images/insta/insta1.jpg",
+        "url": "#"
+      }
+    },
+    {
+      "path": "./accent/accent",
+      "data": {
+        "w": 500,
+        "h": 500,
+        "showCaption": false,
+        "image": "/assets/images/insta/insta2.jpg",
+        "url": "#"
+      }
+    },
+    {
+      "path": "./accent/accent",
+      "data": {
+        "w": 500,
+        "h": 500,
+        "showCaption": false,
+        "image": "/assets/images/insta/insta3.jpg",
+        "url": "#"
+      }
+    },
+    {
+      "path": "./accent/accent",
+      "data": {
+        "w": 500,
+        "h": 500,
+        "showCaption": false,
+        "image": "/assets/images/insta/insta4.jpg",
+        "url": "#"
+      }
+    },
+    {
+      "path": "./accent/accent",
+      "data": {
+        "w": 500,
+        "h": 500,
+        "showCaption": false,
+        "image": "/assets/images/insta/insta5.jpg",
+        "url": "#"
+      }
+    }
+  ]
+}

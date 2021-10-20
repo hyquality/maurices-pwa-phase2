@@ -10,7 +10,6 @@
           "title": "A Very Merry<br> Gift Guide",
           "titleColor": "white",
           "text": "Find gifts they really want — and maybe a little something for you, too.",
-
           "background": {
             "first": "#DDDFE9",
             "second": ""
@@ -59,7 +58,6 @@
           "columns": 2,
           "context": "index-accent-row",
           "paddingTop": true,
-          "paddingBottom": true,
           "templates": [
             {
               "path": "./accent/accent",

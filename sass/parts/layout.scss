@@ -4,17 +4,21 @@
         &.grid-item-1_2 {
             width: 49%;
             margin-bottom: 2%;
+            @apply mb-9;
         }
         &.grid-item-1_3 {
             width: 32%;
-            margin-bottom: 1.5%;
+            @apply mb-7;
         }
         &.grid-item-1_4 {
             width: 24%;
-            margin-bottom: 1.33%;
+            @apply mb-5;
         }
         @media (max-width: 768px){
             width: 100%;
+            &.mgrid-item-1_1{
+                width: 100%;
+            }
             &.mgrid-item-1_2{
                 width: 49%;
             }

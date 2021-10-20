@@ -71,6 +71,7 @@ module.exports = {
                 'gray_6': '#979797',
                 'gray_border': '#E8EBEB',
                 'green': '#58B7B1',
+                'green_2': '#A4DEDC',
                 'balck_7': 'rgba(0,0,0,0.7)',
                 success: '#0070f3',
                 cyan: '#79FFE1',

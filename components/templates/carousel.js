@@ -50,14 +50,14 @@ export default function Carousel(
         space: 32
     }
 
-    if (window.innerWidth < 768) {
+/*    if (window.innerWidth < 768) {
         initState = {
             num: mobileVisibleNum,
             nav: showNavMobile,
             scroll: showScrollMobile ? {draggable: true} : false,
             space: 4
         }
-    }
+    }*/
     const [slides, setSlides] = useState(initState);
 
 
@@ -85,8 +85,10 @@ export default function Carousel(
         }, 1000)
 
         window.addEventListener('resize', debouncedHandleResize)
+        window.addEventListener('load', debouncedHandleResize)
         return function cleanup() {
             window.removeEventListener('resize', debouncedHandleResize)
+            window.removeEventListener('load', debouncedHandleResize)
         };
     });
 

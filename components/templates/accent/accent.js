@@ -26,16 +26,22 @@ export default function Accent({
               p:"pt-5"
         },
     }
+    const onClick =(e)=> {
+        console.log(url)
+    }
     return (
         <div className={`accent-banner relative  ${className} position-${x}`}>
             <div className={"relative z-0"}>
-                <Image
-                    alt={title}
-                    src={image}
-                    width={w ? w : 300}
-                    height={h ? h : 300}
-                    quality={100}
-                />
+                <a onClick={onClick} className={`${url&&"cursor-pointer"}`}>
+                    <Image
+                        alt={title}
+                        src={image}
+                        width={w ? w : 300}
+                        height={h ? h : 300}
+                        quality={100}
+                    />
+                </a>
+
             </div>
             {
                 (showCaption) && (
