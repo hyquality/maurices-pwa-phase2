@@ -36,6 +36,8 @@ export default function Carousel(
         mobileVisibleNum,
         showScroll,
         showScrollMobile,
+        spaceBetween,
+        loop,
         showNav,
         showNavMobile,
         templates,
@@ -47,17 +49,9 @@ export default function Carousel(
         num: visibleNum,
         nav: showNav,
         scroll: showScroll ? {draggable: true} : false,
-        space: 32
+        space: spaceBetween
     }
 
-/*    if (window.innerWidth < 768) {
-        initState = {
-            num: mobileVisibleNum,
-            nav: showNavMobile,
-            scroll: showScrollMobile ? {draggable: true} : false,
-            space: 4
-        }
-    }*/
     const [slides, setSlides] = useState(initState);
 
 
@@ -78,7 +72,7 @@ export default function Carousel(
                         num: visibleNum,
                         nav: showNav,
                         scroll: showScroll ? {draggable: true} : false,
-                        space: 32
+                        space: spaceBetween
                     }
                 )
             }
@@ -105,15 +99,14 @@ export default function Carousel(
                 spaceBetween={slides.space}
                 slidesPerView={slides.num}
                 slidesPerGroup={1}
-                loop={true}
+                loop={loop}
                 loopFillGroupWithBlank={false}
                 navigation
                 scrollbar={slides.scroll}
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log(swiper)}
             >
                 {
                     templates.map((template, index) => {
+
                         TemplateItem = dynamic(import(template.path + ''))
                         let dynamicProps = template.data;
                         return (
@@ -152,6 +145,8 @@ Carousel.propTypes = {
     paddingBottom: PropTypes.bool,
     showScroll: PropTypes.bool,
     showScrollMobile: PropTypes.bool,
+    spaceBetween: PropTypes.number,
+    loop: PropTypes.bool,
     showNav: PropTypes.bool,
     showNavMobile: PropTypes.bool,
     title: PropTypes.string,
@@ -169,6 +164,8 @@ Carousel.defaultProps = {
     showScrollMobile: true,
     showNav: true,
     showNavMobile: true,
+    spaceBetween: 32,
+    loop:true,
     title: "",
     titleSize: "text-3xl",
     visibleNum: 4,

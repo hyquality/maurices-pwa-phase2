@@ -21,14 +21,14 @@ export default function InstaSlide(
 
     const onClick =(e)=> {
         ButtonUrl?(
-            document.location=ButtonUrl
+                console.log("clicked")
         ):(
             console.log("clicked")
         )
     }
 
     const content = (
-        <div className={`flex overflow-hidden justify-center ${paddingTop && "pt-sectionBT"} ${paddingBottom && "pb-sectionBT"}`}>
+        <div className={`overflow-hidden justify-center ${paddingTop && "pt-sectionBT"} ${paddingBottom && "pb-sectionBT"}`}>
           <div>
               <h3 className={`text-center font-normal uppercase tracking-widest`}>
                   <span className={`block md:inline-block`}>{title}</span>
@@ -39,7 +39,7 @@ export default function InstaSlide(
               </h3>
               <p className={`text-center pt-7 pb-10 px-4 m-auto `} dangerouslySetInnerHTML={{__html: text}}/>
 
-              <Carousel templates={data} context={"slider-insta-carousel"} visibleNum={5} mobileVisibleNum={2} showScrollMobile={true} showNavMobile={false} showNav={false} />
+              <Carousel templates={data} context={"slider-insta-carousel"} visibleNum={5} mobileVisibleNum={2} showScrollMobile={true} showNavMobile={false} showNav={false} loop={false} spaceBetween={10}/>
 
               <Button className={`mx-auto mt-12`} onClick={onClick} color={'gray_2'} size={`medium`} label={buttonTitle}/>
           </div>

@@ -20,7 +20,7 @@ export default function Home({data, index,insta}) {
                             <Templates templates={index.templates}/>
                         ) : null
                     }
-
+{/*
                     <div className={`insta-slide`}>
                         <InstaSlide
                             paddingBottom={true}
@@ -31,7 +31,7 @@ export default function Home({data, index,insta}) {
                             ButtonUrl={"#"}
                             data={insta}
                         />
-                    </div>
+                    </div>*/}
 
                 </div>
             </Layout>
