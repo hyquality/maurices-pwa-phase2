@@ -1,16 +1,16 @@
 import React from "react";
-import {getStaticPageData, getIndexPageData, getInstaFeedData} from "@lib/api";
+import {getStaticPageData, getIndexPageData, getInstaFeedData, getPwaData} from "@lib/api";
 import Layout from "@components/layout";
 import Head from 'next/head'
 import {getTheTitle} from "@lib/helpers";
 import Templates from "@components/templates/templates";
 import InstaSlide from "@components/templates/insta-slide";
 
-export default function Home({data, index,insta}) {
+export default function Home({data, index,insta,pwa}) {
 
     return (
         <>
-            <Layout data={data}>
+            <Layout data={data} pwa={pwa}>
                 <Head>
                     <title>{getTheTitle("Home")}</title>
                 </Head>
@@ -43,7 +43,7 @@ export async function getStaticProps({preview = false}) {
     const data = (await getStaticPageData()) || {};
     const index = (await getIndexPageData()) || {};
     const insta = (await getInstaFeedData()) || {};
-
+    const pwa = (await getPwaData()) || {};
     if (!data) {
         return {
             notFound: true,
@@ -54,6 +54,7 @@ export async function getStaticProps({preview = false}) {
             data: data,
             index: index.data,
             insta: insta.data,
+            pwa: pwa,
             preview
         }
     }

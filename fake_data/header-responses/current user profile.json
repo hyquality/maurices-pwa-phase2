@@ -1,0 +1,9 @@
+{
+  "type": "getProfileResponse",
+  "success": true,
+  "profileInfo": {
+    "favoriteProductsCount": 0,
+    "id": "19350010",
+    "loggedIn": false
+  }
+}

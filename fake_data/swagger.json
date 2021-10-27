@@ -1,0 +1,2115 @@
+{
+    "basePath": "/pwa",
+    "definitions": {
+        "AddItem": {
+            "properties": {
+                "colorId": {
+                    "type": "string"
+                },
+                "length": {
+                    "type": "string"
+                },
+                "productId": {
+                    "type": "string"
+                },
+                "quantity": {
+                    "format": "int64",
+                    "type": "integer"
+                },
+                "sizeId": {
+                    "type": "string"
+                },
+                "skuId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "CategoryInfo": {
+            "description": "Basic category information",
+            "properties": {
+                "categoryId": {
+                    "description": "the unique ID of the category",
+                    "type": "string"
+                },
+                "displayName": {
+                    "description": "the display name of the category",
+                    "type": "string"
+                },
+                "displayOrder": {
+                    "description": "the display order of this category within a list",
+                    "format": "int32",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "FacetInfo": {
+            "description": "An available facet type and its list of options",
+            "properties": {
+                "code": {
+                    "description": "the code for this facet",
+                    "type": "string"
+                },
+                "displayName": {
+                    "description": "the display name of the facet",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "the name of the facet",
+                    "type": "string"
+                },
+                "options": {
+                    "description": "the list of available options for this facet",
+                    "items": {
+                        "$ref": "#/definitions/FacetOptionInfo"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "FacetOptionInfo": {
+            "description": "An available option for a facet",
+            "properties": {
+                "code": {
+                    "description": "the code for this facet, to be passed back to APIs that allow faceted filtering",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "the displayed name of the facet option",
+                    "type": "string"
+                },
+                "swatchImageUrl": {
+                    "description": "the URL of the swatch image for this facet, if applicable",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "GenericResponse": {
+            "properties": {
+                "errorCode": {
+                    "enum": [
+                        "UNKNOWN_SERVICE_ERROR",
+                        "SERVICE_TIMEOUT",
+                        "ENDECA_UNABLE_TO_RETRIEVE",
+                        "PROFILE_UNABLE_TO_RETRIEVE",
+                        "PROFILE_UNABLE_TO_ADD_FAVORITE",
+                        "PROFILE_UNABLE_TO_REMOVE_FAVORITE",
+                        "PROFILE_UNABLE_TO_LOGOUT",
+                        "PAYMENT_UNABLE_TO_RETRIEVE",
+                        "STORE_UNABLE_TO_RETRIEVE",
+                        "CART_UNABLE_TO_RETRIEVE",
+                        "CART_UNABLE_TO_ADD",
+                        "CATEGORY_NOT_PROVIDED",
+                        "CATEGORY_NOT_FOUND",
+                        "PRODUCT_NOT_PROVIDED",
+                        "PRODUCT_NOT_FOUND",
+                        "SORT_OPTION_INVALID",
+                        "INVALID_SEARCH_KEYWORDS",
+                        "INVALID_START_INDEX",
+                        "INVALID_PAGE_SIZE",
+                        "UNABLE_TO_DETERMINE_CATALOG",
+                        "UNABLE_TO_DETERMINE_ROOT_CATEGORY",
+                        "UNABLE_TO_FIND_SKUS",
+                        "LOYALTY_UNABLE_TO_RETRIEVE",
+                        "FOOTER_UNABLE_TO_RETRIEVE_SOCIAL_MEDIA",
+                        "FOOTER_UNABLE_TO_RETRIEVE_CTO",
+                        "FOOTER_UNABLE_TO_RETRIEVE_COLUMNS",
+                        "FOOTER_UNABLE_TO_RETRIEVE_CALLOUT_ITEMS",
+                        "FOOTER_UNABLE_TO_RETRIEVE_SUBFOOTER"
+                    ],
+                    "type": "string"
+                },
+                "responseStatus": {
+                    "enum": [
+                        "OK",
+                        "CREATED",
+                        "ACCEPTED",
+                        "NO_CONTENT",
+                        "RESET_CONTENT",
+                        "PARTIAL_CONTENT",
+                        "MOVED_PERMANENTLY",
+                        "FOUND",
+                        "SEE_OTHER",
+                        "NOT_MODIFIED",
+                        "USE_PROXY",
+                        "TEMPORARY_REDIRECT",
+                        "BAD_REQUEST",
+                        "UNAUTHORIZED",
+                        "PAYMENT_REQUIRED",
+                        "FORBIDDEN",
+                        "NOT_FOUND",
+                        "METHOD_NOT_ALLOWED",
+                        "NOT_ACCEPTABLE",
+                        "PROXY_AUTHENTICATION_REQUIRED",
+                        "REQUEST_TIMEOUT",
+                        "CONFLICT",
+                        "GONE",
+                        "LENGTH_REQUIRED",
+                        "PRECONDITION_FAILED",
+                        "REQUEST_ENTITY_TOO_LARGE",
+                        "REQUEST_URI_TOO_LONG",
+                        "UNSUPPORTED_MEDIA_TYPE",
+                        "REQUESTED_RANGE_NOT_SATISFIABLE",
+                        "EXPECTATION_FAILED",
+                        "INTERNAL_SERVER_ERROR",
+                        "NOT_IMPLEMENTED",
+                        "BAD_GATEWAY",
+                        "SERVICE_UNAVAILABLE",
+                        "GATEWAY_TIMEOUT",
+                        "HTTP_VERSION_NOT_SUPPORTED"
+                    ],
+                    "type": "string"
+                },
+                "success": {
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "GetNavigationMenuResponse": {
+            "description": "Response of the GET navigation menu service",
+            "properties": {
+                "errorCode": {
+                    "enum": [
+                        "UNKNOWN_SERVICE_ERROR",
+                        "SERVICE_TIMEOUT",
+                        "ENDECA_UNABLE_TO_RETRIEVE",
+                        "PROFILE_UNABLE_TO_RETRIEVE",
+                        "PROFILE_UNABLE_TO_ADD_FAVORITE",
+                        "PROFILE_UNABLE_TO_REMOVE_FAVORITE",
+                        "PROFILE_UNABLE_TO_LOGOUT",
+                        "PAYMENT_UNABLE_TO_RETRIEVE",
+                        "STORE_UNABLE_TO_RETRIEVE",
+                        "CART_UNABLE_TO_RETRIEVE",
+                        "CART_UNABLE_TO_ADD",
+                        "CATEGORY_NOT_PROVIDED",
+                        "CATEGORY_NOT_FOUND",
+                        "PRODUCT_NOT_PROVIDED",
+                        "PRODUCT_NOT_FOUND",
+                        "SORT_OPTION_INVALID",
+                        "INVALID_SEARCH_KEYWORDS",
+                        "INVALID_START_INDEX",
+                        "INVALID_PAGE_SIZE",
+                        "UNABLE_TO_DETERMINE_CATALOG",
+                        "UNABLE_TO_DETERMINE_ROOT_CATEGORY",
+                        "UNABLE_TO_FIND_SKUS",
+                        "LOYALTY_UNABLE_TO_RETRIEVE",
+                        "FOOTER_UNABLE_TO_RETRIEVE_SOCIAL_MEDIA",
+                        "FOOTER_UNABLE_TO_RETRIEVE_CTO",
+                        "FOOTER_UNABLE_TO_RETRIEVE_COLUMNS",
+                        "FOOTER_UNABLE_TO_RETRIEVE_CALLOUT_ITEMS",
+                        "FOOTER_UNABLE_TO_RETRIEVE_SUBFOOTER"
+                    ],
+                    "type": "string"
+                },
+                "navMenuItems": {
+                    "description": "top level nav menus",
+                    "items": {
+                        "$ref": "#/definitions/NavigationMenu"
+                    },
+                    "type": "array"
+                },
+                "responseStatus": {
+                    "enum": [
+                        "OK",
+                        "CREATED",
+                        "ACCEPTED",
+                        "NO_CONTENT",
+                        "RESET_CONTENT",
+                        "PARTIAL_CONTENT",
+                        "MOVED_PERMANENTLY",
+                        "FOUND",
+                        "SEE_OTHER",
+                        "NOT_MODIFIED",
+                        "USE_PROXY",
+                        "TEMPORARY_REDIRECT",
+                        "BAD_REQUEST",
+                        "UNAUTHORIZED",
+                        "PAYMENT_REQUIRED",
+                        "FORBIDDEN",
+                        "NOT_FOUND",
+                        "METHOD_NOT_ALLOWED",
+                        "NOT_ACCEPTABLE",
+                        "PROXY_AUTHENTICATION_REQUIRED",
+                        "REQUEST_TIMEOUT",
+                        "CONFLICT",
+                        "GONE",
+                        "LENGTH_REQUIRED",
+                        "PRECONDITION_FAILED",
+                        "REQUEST_ENTITY_TOO_LARGE",
+                        "REQUEST_URI_TOO_LONG",
+                        "UNSUPPORTED_MEDIA_TYPE",
+                        "REQUESTED_RANGE_NOT_SATISFIABLE",
+                        "EXPECTATION_FAILED",
+                        "INTERNAL_SERVER_ERROR",
+                        "NOT_IMPLEMENTED",
+                        "BAD_GATEWAY",
+                        "SERVICE_UNAVAILABLE",
+                        "GATEWAY_TIMEOUT",
+                        "HTTP_VERSION_NOT_SUPPORTED"
+                    ],
+                    "type": "string"
+                },
+                "success": {
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "GetProductDetailsResponse": {
+            "description": "Response of the GET product details service",
+            "properties": {
+                "errorCode": {
+                    "enum": [
+                        "UNKNOWN_SERVICE_ERROR",
+                        "SERVICE_TIMEOUT",
+                        "ENDECA_UNABLE_TO_RETRIEVE",
+                        "PROFILE_UNABLE_TO_RETRIEVE",
+                        "PROFILE_UNABLE_TO_ADD_FAVORITE",
+                        "PROFILE_UNABLE_TO_REMOVE_FAVORITE",
+                        "PROFILE_UNABLE_TO_LOGOUT",
+                        "PAYMENT_UNABLE_TO_RETRIEVE",
+                        "STORE_UNABLE_TO_RETRIEVE",
+                        "CART_UNABLE_TO_RETRIEVE",
+                        "CART_UNABLE_TO_ADD",
+                        "CATEGORY_NOT_PROVIDED",
+                        "CATEGORY_NOT_FOUND",
+                        "PRODUCT_NOT_PROVIDED",
+                        "PRODUCT_NOT_FOUND",
+                        "SORT_OPTION_INVALID",
+                        "INVALID_SEARCH_KEYWORDS",
+                        "INVALID_START_INDEX",
+                        "INVALID_PAGE_SIZE",
+                        "UNABLE_TO_DETERMINE_CATALOG",
+                        "UNABLE_TO_DETERMINE_ROOT_CATEGORY",
+                        "UNABLE_TO_FIND_SKUS",
+                        "LOYALTY_UNABLE_TO_RETRIEVE",
+                        "FOOTER_UNABLE_TO_RETRIEVE_SOCIAL_MEDIA",
+                        "FOOTER_UNABLE_TO_RETRIEVE_CTO",
+                        "FOOTER_UNABLE_TO_RETRIEVE_COLUMNS",
+                        "FOOTER_UNABLE_TO_RETRIEVE_CALLOUT_ITEMS",
+                        "FOOTER_UNABLE_TO_RETRIEVE_SUBFOOTER"
+                    ],
+                    "type": "string"
+                },
+                "product": {
+                    "$ref": "#/definitions/ProductDetail",
+                    "description": "product details"
+                },
+                "responseStatus": {
+                    "enum": [
+                        "OK",
+                        "CREATED",
+                        "ACCEPTED",
+                        "NO_CONTENT",
+                        "RESET_CONTENT",
+                        "PARTIAL_CONTENT",
+                        "MOVED_PERMANENTLY",
+                        "FOUND",
+                        "SEE_OTHER",
+                        "NOT_MODIFIED",
+                        "USE_PROXY",
+                        "TEMPORARY_REDIRECT",
+                        "BAD_REQUEST",
+                        "UNAUTHORIZED",
+                        "PAYMENT_REQUIRED",
+                        "FORBIDDEN",
+                        "NOT_FOUND",
+                        "METHOD_NOT_ALLOWED",
+                        "NOT_ACCEPTABLE",
+                        "PROXY_AUTHENTICATION_REQUIRED",
+                        "REQUEST_TIMEOUT",
+                        "CONFLICT",
+                        "GONE",
+                        "LENGTH_REQUIRED",
+                        "PRECONDITION_FAILED",
+                        "REQUEST_ENTITY_TOO_LARGE",
+                        "REQUEST_URI_TOO_LONG",
+                        "UNSUPPORTED_MEDIA_TYPE",
+                        "REQUESTED_RANGE_NOT_SATISFIABLE",
+                        "EXPECTATION_FAILED",
+                        "INTERNAL_SERVER_ERROR",
+                        "NOT_IMPLEMENTED",
+                        "BAD_GATEWAY",
+                        "SERVICE_UNAVAILABLE",
+                        "GATEWAY_TIMEOUT",
+                        "HTTP_VERSION_NOT_SUPPORTED"
+                    ],
+                    "type": "string"
+                },
+                "success": {
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "GetProductsResponse": {
+            "description": "The response for any APIs returning a list of products",
+            "properties": {
+                "breadcrumbs": {
+                    "description": "the breadcrumbs",
+                    "items": {
+                        "$ref": "#/definitions/CategoryInfo"
+                    },
+                    "type": "array"
+                },
+                "categoryDisplayName": {
+                    "description": "the display name of the category, if applicable",
+                    "type": "string"
+                },
+                "categoryId": {
+                    "description": "the unique ID of this category, if applicable",
+                    "type": "string"
+                },
+                "categoryLevel": {
+                    "description": "the depth level of the category, if applicable",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "errorCode": {
+                    "enum": [
+                        "UNKNOWN_SERVICE_ERROR",
+                        "SERVICE_TIMEOUT",
+                        "ENDECA_UNABLE_TO_RETRIEVE",
+                        "PROFILE_UNABLE_TO_RETRIEVE",
+                        "PROFILE_UNABLE_TO_ADD_FAVORITE",
+                        "PROFILE_UNABLE_TO_REMOVE_FAVORITE",
+                        "PROFILE_UNABLE_TO_LOGOUT",
+                        "PAYMENT_UNABLE_TO_RETRIEVE",
+                        "STORE_UNABLE_TO_RETRIEVE",
+                        "CART_UNABLE_TO_RETRIEVE",
+                        "CART_UNABLE_TO_ADD",
+                        "CATEGORY_NOT_PROVIDED",
+                        "CATEGORY_NOT_FOUND",
+                        "PRODUCT_NOT_PROVIDED",
+                        "PRODUCT_NOT_FOUND",
+                        "SORT_OPTION_INVALID",
+                        "INVALID_SEARCH_KEYWORDS",
+                        "INVALID_START_INDEX",
+                        "INVALID_PAGE_SIZE",
+                        "UNABLE_TO_DETERMINE_CATALOG",
+                        "UNABLE_TO_DETERMINE_ROOT_CATEGORY",
+                        "UNABLE_TO_FIND_SKUS",
+                        "LOYALTY_UNABLE_TO_RETRIEVE",
+                        "FOOTER_UNABLE_TO_RETRIEVE_SOCIAL_MEDIA",
+                        "FOOTER_UNABLE_TO_RETRIEVE_CTO",
+                        "FOOTER_UNABLE_TO_RETRIEVE_COLUMNS",
+                        "FOOTER_UNABLE_TO_RETRIEVE_CALLOUT_ITEMS",
+                        "FOOTER_UNABLE_TO_RETRIEVE_SUBFOOTER"
+                    ],
+                    "type": "string"
+                },
+                "facets": {
+                    "description": "the list of available facets",
+                    "items": {
+                        "$ref": "#/definitions/FacetInfo"
+                    },
+                    "type": "array"
+                },
+                "firstRecNum": {
+                    "description": "the first record number returned by this query",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "lastRecNum": {
+                    "description": "the last record number returned by this query",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "numBadgesToShow": {
+                    "description": "the number of badges to show",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "parentCategory": {
+                    "$ref": "#/definitions/CategoryInfo",
+                    "description": "the parent category of this category, if applicable"
+                },
+                "products": {
+                    "description": "the list of products",
+                    "items": {
+                        "$ref": "#/definitions/ProductInfo"
+                    },
+                    "type": "array"
+                },
+                "promoSlotB1": {
+                    "$ref": "#/definitions/PLPPromoSlot",
+                    "description": "the promo content for spot position B1"
+                },
+                "promoSlotB4": {
+                    "$ref": "#/definitions/PLPPromoSlot",
+                    "description": "the promo content for spot position B4"
+                },
+                "promoSlotC3": {
+                    "$ref": "#/definitions/PLPPromoSlot",
+                    "description": "the promo content for spot position C3"
+                },
+                "promoSlotD6": {
+                    "$ref": "#/definitions/PLPPromoSlot",
+                    "description": "the promo content for spot position D6"
+                },
+                "responseStatus": {
+                    "enum": [
+                        "OK",
+                        "CREATED",
+                        "ACCEPTED",
+                        "NO_CONTENT",
+                        "RESET_CONTENT",
+                        "PARTIAL_CONTENT",
+                        "MOVED_PERMANENTLY",
+                        "FOUND",
+                        "SEE_OTHER",
+                        "NOT_MODIFIED",
+                        "USE_PROXY",
+                        "TEMPORARY_REDIRECT",
+                        "BAD_REQUEST",
+                        "UNAUTHORIZED",
+                        "PAYMENT_REQUIRED",
+                        "FORBIDDEN",
+                        "NOT_FOUND",
+                        "METHOD_NOT_ALLOWED",
+                        "NOT_ACCEPTABLE",
+                        "PROXY_AUTHENTICATION_REQUIRED",
+                        "REQUEST_TIMEOUT",
+                        "CONFLICT",
+                        "GONE",
+                        "LENGTH_REQUIRED",
+                        "PRECONDITION_FAILED",
+                        "REQUEST_ENTITY_TOO_LARGE",
+                        "REQUEST_URI_TOO_LONG",
+                        "UNSUPPORTED_MEDIA_TYPE",
+                        "REQUESTED_RANGE_NOT_SATISFIABLE",
+                        "EXPECTATION_FAILED",
+                        "INTERNAL_SERVER_ERROR",
+                        "NOT_IMPLEMENTED",
+                        "BAD_GATEWAY",
+                        "SERVICE_UNAVAILABLE",
+                        "GATEWAY_TIMEOUT",
+                        "HTTP_VERSION_NOT_SUPPORTED"
+                    ],
+                    "type": "string"
+                },
+                "selectedFacets": {
+                    "description": "the current list of selected facet codes",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "showBadges": {
+                    "description": "true; if badges should be shown",
+                    "type": "boolean"
+                },
+                "sortOptions": {
+                    "description": "the list of available sort options",
+                    "items": {
+                        "$ref": "#/definitions/SortOption"
+                    },
+                    "type": "array"
+                },
+                "subcategories": {
+                    "description": "the list of subcategories",
+                    "items": {
+                        "$ref": "#/definitions/CategoryInfo"
+                    },
+                    "type": "array"
+                },
+                "subcategoryCallouts": {
+                    "description": "the list of subcategory callouts to display",
+                    "items": {
+                        "$ref": "#/definitions/SubCategoryCallout"
+                    },
+                    "type": "array"
+                },
+                "success": {
+                    "type": "boolean"
+                },
+                "totalNumProducts": {
+                    "description": "the total number of available products for this query",
+                    "format": "int32",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "GetTypeAheadResponse": {
+            "properties": {
+                "categories": {
+                    "items": {
+                        "$ref": "#/definitions/TypeAheadCategoryInfo"
+                    },
+                    "type": "array"
+                },
+                "errorCode": {
+                    "enum": [
+                        "UNKNOWN_SERVICE_ERROR",
+                        "SERVICE_TIMEOUT",
+                        "ENDECA_UNABLE_TO_RETRIEVE",
+                        "PROFILE_UNABLE_TO_RETRIEVE",
+                        "PROFILE_UNABLE_TO_ADD_FAVORITE",
+                        "PROFILE_UNABLE_TO_REMOVE_FAVORITE",
+                        "PROFILE_UNABLE_TO_LOGOUT",
+                        "PAYMENT_UNABLE_TO_RETRIEVE",
+                        "STORE_UNABLE_TO_RETRIEVE",
+                        "CART_UNABLE_TO_RETRIEVE",
+                        "CART_UNABLE_TO_ADD",
+                        "CATEGORY_NOT_PROVIDED",
+                        "CATEGORY_NOT_FOUND",
+                        "PRODUCT_NOT_PROVIDED",
+                        "PRODUCT_NOT_FOUND",
+                        "SORT_OPTION_INVALID",
+                        "INVALID_SEARCH_KEYWORDS",
+                        "INVALID_START_INDEX",
+                        "INVALID_PAGE_SIZE",
+                        "UNABLE_TO_DETERMINE_CATALOG",
+                        "UNABLE_TO_DETERMINE_ROOT_CATEGORY",
+                        "UNABLE_TO_FIND_SKUS",
+                        "LOYALTY_UNABLE_TO_RETRIEVE",
+                        "FOOTER_UNABLE_TO_RETRIEVE_SOCIAL_MEDIA",
+                        "FOOTER_UNABLE_TO_RETRIEVE_CTO",
+                        "FOOTER_UNABLE_TO_RETRIEVE_COLUMNS",
+                        "FOOTER_UNABLE_TO_RETRIEVE_CALLOUT_ITEMS",
+                        "FOOTER_UNABLE_TO_RETRIEVE_SUBFOOTER"
+                    ],
+                    "type": "string"
+                },
+                "productSearches": {
+                    "items": {
+                        "$ref": "#/definitions/TypeAheadCategoryInfo"
+                    },
+                    "type": "array"
+                },
+                "responseStatus": {
+                    "enum": [
+                        "OK",
+                        "CREATED",
+                        "ACCEPTED",
+                        "NO_CONTENT",
+                        "RESET_CONTENT",
+                        "PARTIAL_CONTENT",
+                        "MOVED_PERMANENTLY",
+                        "FOUND",
+                        "SEE_OTHER",
+                        "NOT_MODIFIED",
+                        "USE_PROXY",
+                        "TEMPORARY_REDIRECT",
+                        "BAD_REQUEST",
+                        "UNAUTHORIZED",
+                        "PAYMENT_REQUIRED",
+                        "FORBIDDEN",
+                        "NOT_FOUND",
+                        "METHOD_NOT_ALLOWED",
+                        "NOT_ACCEPTABLE",
+                        "PROXY_AUTHENTICATION_REQUIRED",
+                        "REQUEST_TIMEOUT",
+                        "CONFLICT",
+                        "GONE",
+                        "LENGTH_REQUIRED",
+                        "PRECONDITION_FAILED",
+                        "REQUEST_ENTITY_TOO_LARGE",
+                        "REQUEST_URI_TOO_LONG",
+                        "UNSUPPORTED_MEDIA_TYPE",
+                        "REQUESTED_RANGE_NOT_SATISFIABLE",
+                        "EXPECTATION_FAILED",
+                        "INTERNAL_SERVER_ERROR",
+                        "NOT_IMPLEMENTED",
+                        "BAD_GATEWAY",
+                        "SERVICE_UNAVAILABLE",
+                        "GATEWAY_TIMEOUT",
+                        "HTTP_VERSION_NOT_SUPPORTED"
+                    ],
+                    "type": "string"
+                },
+                "success": {
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "NavigationMenu": {
+            "description": "A navigation menu",
+            "properties": {
+                "categoryId": {
+                    "description": "the unique ID of the linked category",
+                    "type": "string"
+                },
+                "displayName": {
+                    "description": "the category display name",
+                    "type": "string"
+                },
+                "displayOrder": {
+                    "description": "the display order",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "linkToLandingPage": {
+                    "description": "true; if this nav link should direct to the CLP view instead of the PLP view",
+                    "type": "boolean"
+                },
+                "navMenuColumns": {
+                    "description": "the columns of links to display in the nav menu",
+                    "items": {
+                        "$ref": "#/definitions/NavigationMenuColumn"
+                    },
+                    "type": "array"
+                },
+                "navSpots": {
+                    "description": "the content spots to display in the nav menu",
+                    "items": {
+                        "$ref": "#/definitions/NavigationMenuSpot"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "NavigationMenuCategorySpot": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/NavigationMenuSpot"
+                },
+                {
+                    "description": "A simple navigation menu content spot representing an image and link to a category",
+                    "properties": {
+                        "categoryId": {
+                            "description": "the unique ID of the category to link to",
+                            "type": "string"
+                        },
+                        "displayName": {
+                            "description": "the display name of the spot",
+                            "type": "string"
+                        },
+                        "imageUrl": {
+                            "description": "the URL of the image to use for the spot",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            ]
+        },
+        "NavigationMenuColumn": {
+            "description": "A column of navigation menu items",
+            "properties": {
+                "displayOrder": {
+                    "description": "the display order",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "navMenuItems": {
+                    "description": "the list of nav menu 'links' to display",
+                    "items": {
+                        "$ref": "#/definitions/NavigationMenuItem"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "NavigationMenuContentSpot": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/NavigationMenuSpot"
+                },
+                {
+                    "description": "A navigation menu content spot representing some general content with optional category links",
+                    "properties": {
+                        "backgroundColor": {
+                            "description": "the background color hash",
+                            "type": "string"
+                        },
+                        "categoryLinks": {
+                            "description": "list of category links to show in the content spot",
+                            "items": {
+                                "$ref": "#/definitions/CategoryInfo"
+                            },
+                            "type": "array"
+                        },
+                        "label": {
+                            "description": "the label of the spot",
+                            "type": "string"
+                        },
+                        "linkUrl": {
+                            "description": "the URL to link this spot to",
+                            "type": "string"
+                        },
+                        "notation": {
+                            "description": "the notation to use for this spot",
+                            "type": "string"
+                        },
+                        "subtitle": {
+                            "description": "the subtitle to use for the spot",
+                            "type": "string"
+                        },
+                        "textColor": {
+                            "description": "the text color hash",
+                            "type": "string"
+                        },
+                        "title": {
+                            "description": "the title of the spot",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            ]
+        },
+        "NavigationMenuItem": {
+            "description": "A navigation menu item",
+            "properties": {
+                "ancestorCategoryIds": {
+                    "description": "the list of ancestor category IDs (might be needed in the future for context on PLP calls)",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "categoryId": {
+                    "description": "the unique ID of the category to link to",
+                    "type": "string"
+                },
+                "categoryLevel": {
+                    "description": "the depth level of the category this link points to",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "displayName": {
+                    "description": "the display name of the link",
+                    "type": "string"
+                },
+                "displayOrder": {
+                    "description": "the display order",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "linkToLandingPage": {
+                    "description": "true; if this nav link should direct to the CLP view instead of the PLP view",
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "NavigationMenuSpot": {
+            "description": "A navigation menu spot",
+            "properties": {
+                "displayOrder": {
+                    "description": "the display order",
+                    "format": "int32",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "PLPPromoSlot": {
+            "description": "A PLP promo content spot",
+            "properties": {
+                "ctaLinkUrl": {
+                    "description": "the call-to-action link URL",
+                    "type": "string"
+                },
+                "heading": {
+                    "description": "the code for this spot",
+                    "type": "string"
+                },
+                "imageUrl": {
+                    "description": "the image URL for this spot",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "ProductColor": {
+            "description": "product color information",
+            "properties": {
+                "alternateImageUrl": {
+                    "description": "alternate/back image URL",
+                    "type": "string"
+                },
+                "colorId": {
+                    "description": "color unique ID",
+                    "type": "string"
+                },
+                "colorName": {
+                    "description": "the name of the color",
+                    "type": "string"
+                },
+                "productImageUrl": {
+                    "description": "front image URL",
+                    "type": "string"
+                },
+                "promoText": {
+                    "description": "promo texts for this color",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "swatchImageUrl": {
+                    "description": "URL of the swatch image",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "ProductColorDetails": {
+            "description": "product color information, with pricing and alt images",
+            "properties": {
+                "additionalImageUrls": {
+                    "description": "the list of alt image URLs",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "alternateImageUrl": {
+                    "description": "alternate/back image URL",
+                    "type": "string"
+                },
+                "colorId": {
+                    "description": "color unique ID",
+                    "type": "string"
+                },
+                "colorName": {
+                    "description": "the name of the color",
+                    "type": "string"
+                },
+                "listPrice": {
+                    "description": "list/strike price for this color",
+                    "type": "number"
+                },
+                "onSale": {
+                    "description": "is this color on sale?",
+                    "type": "boolean"
+                },
+                "productImageUrl": {
+                    "description": "front image URL",
+                    "type": "string"
+                },
+                "promoText": {
+                    "description": "promo texts for this color",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "salePrice": {
+                    "description": "sale price for this color",
+                    "type": "number"
+                },
+                "swatchImageUrl": {
+                    "description": "URL of the swatch image",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "ProductDetail": {
+            "description": "The product details",
+            "properties": {
+                "badgesBottomLeftImageUrl": {
+                    "description": "URL of the bottom left badge image",
+                    "type": "string"
+                },
+                "badgesBottomRightImageUrl": {
+                    "description": "URL of the bottom right badge image",
+                    "type": "string"
+                },
+                "badgesText": {
+                    "description": "list of text badges for the product",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "badgesTopLeftImageUrl": {
+                    "description": "URL of the top-left badge image",
+                    "type": "string"
+                },
+                "bvNumReviews": {
+                    "description": "the number of Bazaarvoice reviews",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "bvRating": {
+                    "description": "the product Bazaarvoice average rating",
+                    "type": "number"
+                },
+                "colors": {
+                    "description": "the color information for the product",
+                    "items": {
+                        "$ref": "#/definitions/ProductColorDetails"
+                    },
+                    "type": "array"
+                },
+                "defaultColor": {
+                    "description": "the faceout color ID for the product",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "the product description",
+                    "type": "string"
+                },
+                "displayName": {
+                    "description": "the product display name",
+                    "type": "string"
+                },
+                "groupedProductId": {
+                    "description": "the unique ID of the group parent product",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "the unique ID of the product",
+                    "type": "string"
+                },
+                "inFavorites": {
+                    "description": "is the product in the current customer's wishlist?",
+                    "type": "boolean"
+                },
+                "longDescription": {
+                    "description": "the product long description (could contain plain HTML)",
+                    "type": "string"
+                },
+                "newProduct": {
+                    "description": "is the product a new arrival?",
+                    "type": "boolean"
+                },
+                "onSale": {
+                    "description": "is the product on sale?",
+                    "type": "boolean"
+                },
+                "onlineExclusive": {
+                    "description": "is the product an online exclusive?",
+                    "type": "boolean"
+                },
+                "plusSizeProductId": {
+                    "description": "the plus product ID, if the product has both reg/plus styles",
+                    "type": "string"
+                },
+                "plusSizeProductLabel": {
+                    "description": "the plus product label, if the product has both reg/plus styles",
+                    "type": "string"
+                },
+                "promosText": {
+                    "description": "the list of promo texts",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "regularSizeProductId": {
+                    "description": "the regular product ID, if the product has both reg/plus styles",
+                    "type": "string"
+                },
+                "regularSizeProductLabel": {
+                    "description": "the regular product label, if the product has both reg/plus styles",
+                    "type": "string"
+                },
+                "sizeChartUri": {
+                    "description": "the URI of the size chart HTML",
+                    "type": "string"
+                },
+                "sizes": {
+                    "description": "the sizes for the product",
+                    "items": {
+                        "$ref": "#/definitions/ProductSize"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "ProductInfo": {
+            "description": "The product info for a search/plp response",
+            "properties": {
+                "badgesBottomLeftImageUrl": {
+                    "description": "URL of the bottom left badge image",
+                    "type": "string"
+                },
+                "badgesBottomRightImageUrl": {
+                    "description": "URL of the bottom right badge image",
+                    "type": "string"
+                },
+                "badgesText": {
+                    "description": "list of text badges for the product",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "badgesTopLeftImageUrl": {
+                    "description": "URL of the top-left badge image",
+                    "type": "string"
+                },
+                "bvNumReviews": {
+                    "description": "the number of Bazaarvoice reviews",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "bvRating": {
+                    "description": "the product Bazaarvoice average rating",
+                    "type": "number"
+                },
+                "colors": {
+                    "description": "the color information for the product",
+                    "items": {
+                        "$ref": "#/definitions/ProductColor"
+                    },
+                    "type": "array"
+                },
+                "defaultColor": {
+                    "description": "the faceout color ID for the product",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "the product description",
+                    "type": "string"
+                },
+                "displayName": {
+                    "description": "the product display name",
+                    "type": "string"
+                },
+                "id": {
+                    "description": "the unique ID of the product",
+                    "type": "string"
+                },
+                "inFavorites": {
+                    "description": "is the product in the current customer's wishlist?",
+                    "type": "boolean"
+                },
+                "longDescription": {
+                    "description": "the product long description (could contain plain HTML)",
+                    "type": "string"
+                },
+                "maxListPrice": {
+                    "description": "the maximum list/strike price for this product",
+                    "type": "number"
+                },
+                "maxSalePrice": {
+                    "description": "the maximum sale price for this product",
+                    "type": "number"
+                },
+                "minListPrice": {
+                    "description": "the minimum list/strike price for this product",
+                    "type": "number"
+                },
+                "minSalePrice": {
+                    "description": "the minimum sale price for this product",
+                    "type": "number"
+                },
+                "newProduct": {
+                    "description": "is the product a new arrival?",
+                    "type": "boolean"
+                },
+                "onSale": {
+                    "description": "is the product on sale?",
+                    "type": "boolean"
+                },
+                "onlineExclusive": {
+                    "description": "is the product an online exclusive?",
+                    "type": "boolean"
+                },
+                "promosText": {
+                    "description": "the list of promo texts",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "ProductSize": {
+            "description": "product size information",
+            "properties": {
+                "id": {
+                    "description": "size unique ID",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "the name of the size",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "SortOption": {
+            "description": "A sort option",
+            "properties": {
+                "code": {
+                    "description": "the code for this sort option, to be passed to APIs that allow sorting",
+                    "type": "string"
+                },
+                "displayName": {
+                    "description": "the display name of the sort option",
+                    "type": "string"
+                },
+                "displayOrder": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "selected": {
+                    "description": "true; if this sort option is currently active",
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "SubCategoryCallout": {
+            "description": "A PLP content spot for a subcategory link",
+            "properties": {
+                "categoryId": {
+                    "description": "the unique ID of the linked category",
+                    "type": "string"
+                },
+                "displayOrder": {
+                    "description": "the display order",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "imageUrl": {
+                    "description": "the URL of the image to show",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "the title to show on the spot",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "TypeAheadCategoryInfo": {
+            "description": "A typeahead result for a suggested keyword search",
+            "properties": {
+                "displayOrder": {
+                    "description": "the display order",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "keywords": {
+                    "description": "the suggested keyword search",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "host": "localhost:8080",
+    "info": {
+        "title": "",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/cart": {
+            "get": {
+                "description": "",
+                "operationId": "getCart",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "Get current shopping cart.",
+                "tags": [
+                    "cart"
+                ]
+            },
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "description": "",
+                "operationId": "addToCart",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": false,
+                        "schema": {
+                            "$ref": "#/definitions/AddItem"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "Add item to current shopping cart.",
+                "tags": [
+                    "cart"
+                ]
+            }
+        },
+        "/cart/empty": {
+            "post": {
+                "description": "",
+                "operationId": "emptyCart",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "Empty current shopping cart.",
+                "tags": [
+                    "cart"
+                ]
+            }
+        },
+        "/catalog/category/{categoryId}/product": {
+            "get": {
+                "description": "",
+                "operationId": "findProductsForCategory",
+                "parameters": [
+                    {
+                        "description": "The category id",
+                        "in": "path",
+                        "name": "categoryId",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "collectionFormat": "multi",
+                        "description": "One or more facets to apply to the lookup, as dimension IDs",
+                        "in": "query",
+                        "items": {
+                            "type": "string"
+                        },
+                        "name": "facet",
+                        "required": false,
+                        "type": "array",
+                        "x-example": "91348135"
+                    },
+                    {
+                        "default": 1,
+                        "description": "The start index",
+                        "format": "int32",
+                        "in": "query",
+                        "name": "startIndex",
+                        "required": false,
+                        "type": "integer",
+                        "x-example": 31
+                    },
+                    {
+                        "default": 30,
+                        "description": "The page size",
+                        "format": "int32",
+                        "in": "query",
+                        "name": "pageSize",
+                        "required": false,
+                        "type": "integer",
+                        "x-example": 30
+                    },
+                    {
+                        "description": "The sort option to apply to the result set",
+                        "in": "query",
+                        "name": "sortOption",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The response was created successfully",
+                        "schema": {
+                            "$ref": "#/definitions/GetProductsResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "The response could not be generated due to a bad request",
+                        "schema": {
+                            "$ref": "#/definitions/GenericResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "The response entity could not found",
+                        "schema": {
+                            "$ref": "#/definitions/GenericResponse"
+                        }
+                    }
+                },
+                "summary": "Get a list of products and dimensions according to search criteria.",
+                "tags": [
+                    "catalog"
+                ]
+            }
+        },
+        "/catalog/navigationMenu": {
+            "get": {
+                "description": "",
+                "operationId": "getNavigationMenu",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The response was created successfully",
+                        "schema": {
+                            "$ref": "#/definitions/GetNavigationMenuResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "The response could not be generated due to a bad request",
+                        "schema": {
+                            "$ref": "#/definitions/GenericResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "The response entity could not found",
+                        "schema": {
+                            "$ref": "#/definitions/GenericResponse"
+                        }
+                    }
+                },
+                "summary": "Get the header navigation menu.",
+                "tags": [
+                    "catalog"
+                ]
+            }
+        },
+        "/catalog/product": {
+            "get": {
+                "description": "",
+                "operationId": "findProductsByKeywords",
+                "parameters": [
+                    {
+                        "description": "The keywords to search by",
+                        "in": "query",
+                        "name": "keywords",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "collectionFormat": "multi",
+                        "description": "One or more facets to apply to the lookup, as dimension IDs",
+                        "in": "query",
+                        "items": {
+                            "type": "string"
+                        },
+                        "name": "facet",
+                        "required": false,
+                        "type": "array",
+                        "x-example": "91348135"
+                    },
+                    {
+                        "default": 1,
+                        "description": "The start index",
+                        "format": "int32",
+                        "in": "query",
+                        "name": "startIndex",
+                        "required": false,
+                        "type": "integer",
+                        "x-example": 31
+                    },
+                    {
+                        "default": 30,
+                        "description": "The page size",
+                        "format": "int32",
+                        "in": "query",
+                        "name": "pageSize",
+                        "required": false,
+                        "type": "integer",
+                        "x-example": 30
+                    },
+                    {
+                        "description": "The sort option to apply to the result set",
+                        "in": "query",
+                        "name": "sortOption",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The response was created successfully",
+                        "schema": {
+                            "$ref": "#/definitions/GetProductsResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "The response could not be generated due to a bad request",
+                        "schema": {
+                            "$ref": "#/definitions/GenericResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "The response entity could not found",
+                        "schema": {
+                            "$ref": "#/definitions/GenericResponse"
+                        }
+                    }
+                },
+                "summary": "Get a list of products and dimensions according to search criteria.",
+                "tags": [
+                    "catalog"
+                ]
+            }
+        },
+        "/catalog/product/{productId}": {
+            "get": {
+                "description": "",
+                "operationId": "getProductDetails",
+                "parameters": [
+                    {
+                        "description": "The product id",
+                        "in": "path",
+                        "name": "productId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The response was created successfully",
+                        "schema": {
+                            "$ref": "#/definitions/GetProductDetailsResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "The response could not be generated due to a bad request",
+                        "schema": {
+                            "$ref": "#/definitions/GenericResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "The response entity could not found",
+                        "schema": {
+                            "$ref": "#/definitions/GenericResponse"
+                        }
+                    }
+                },
+                "summary": "Get a details for a product.",
+                "tags": [
+                    "catalog"
+                ]
+            }
+        },
+        "/catalog/typeahead": {
+            "get": {
+                "description": "",
+                "operationId": "getTypeaheadForSearch",
+                "parameters": [
+                    {
+                        "description": "The keywords to search by",
+                        "in": "query",
+                        "name": "keywords",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The response was created successfully",
+                        "schema": {
+                            "$ref": "#/definitions/GetTypeAheadResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "The response could not be generated due to a bad request",
+                        "schema": {
+                            "$ref": "#/definitions/GenericResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "The response entity could not found",
+                        "schema": {
+                            "$ref": "#/definitions/GenericResponse"
+                        }
+                    }
+                },
+                "summary": "Get typeahead information from a keyword search.",
+                "tags": [
+                    "catalog"
+                ]
+            }
+        },
+        "/content/footer/callToAction": {
+            "get": {
+                "description": "",
+                "operationId": "getCallToAction",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "get footer call to action",
+                "tags": [
+                    "footer"
+                ]
+            }
+        },
+        "/content/footer/calloutItems": {
+            "get": {
+                "description": "",
+                "operationId": "getCalloutItems",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "get callout items",
+                "tags": [
+                    "footer"
+                ]
+            }
+        },
+        "/content/footer/columns": {
+            "get": {
+                "description": "",
+                "operationId": "getColumns",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "get footer columns",
+                "tags": [
+                    "footer"
+                ]
+            }
+        },
+        "/content/footer/socialMedia": {
+            "get": {
+                "description": "",
+                "operationId": "getSocialMedia",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "get social media information",
+                "tags": [
+                    "footer"
+                ]
+            }
+        },
+        "/content/footer/subfooter": {
+            "get": {
+                "description": "",
+                "operationId": "getSubfooter",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "get subfooter",
+                "tags": [
+                    "footer"
+                ]
+            }
+        },
+        "/content/header/announcementBar": {
+            "get": {
+                "description": "",
+                "operationId": "getAnnouncementBar",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "Get the announcement bar content.",
+                "tags": [
+                    "contentheader"
+                ]
+            }
+        },
+        "/content/header/promo": {
+            "get": {
+                "description": "",
+                "operationId": "getPromoContent",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "Get the promo content.",
+                "tags": [
+                    "contentheader"
+                ]
+            }
+        },
+        "/content/header/reward": {
+            "get": {
+                "description": "",
+                "operationId": "getRewardContent",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "Get the loyalty promo.",
+                "tags": [
+                    "contentheader"
+                ]
+            }
+        },
+        "/content/home/banner/hero": {
+            "get": {
+                "description": "",
+                "operationId": "getHeroBanner",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "get hero banner",
+                "tags": [
+                    "home"
+                ]
+            }
+        },
+        "/content/home/banner/promo1": {
+            "get": {
+                "description": "",
+                "operationId": "getPromoBannerOne",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "get promo banner",
+                "tags": [
+                    "home"
+                ]
+            }
+        },
+        "/content/home/banner/promo2": {
+            "get": {
+                "description": "",
+                "operationId": "getPromoBannerTwo",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "get promo banner",
+                "tags": [
+                    "home"
+                ]
+            }
+        },
+        "/content/home/carousel": {
+            "get": {
+                "description": "",
+                "operationId": "getCarousel",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "get carousel",
+                "tags": [
+                    "home"
+                ]
+            }
+        },
+        "/content/home/layout/catalog-grid": {
+            "get": {
+                "description": "",
+                "operationId": "getCatalogGridLayout",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "get catalog grid layout",
+                "tags": [
+                    "home"
+                ]
+            }
+        },
+        "/content/home/layout/grid": {
+            "get": {
+                "description": "",
+                "operationId": "getGridLayout",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "get grid layout",
+                "tags": [
+                    "home"
+                ]
+            }
+        },
+        "/content/home/layout/insta-slide": {
+            "get": {
+                "description": "",
+                "operationId": "getInstaSlideLayout",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "get instagram slider layout",
+                "tags": [
+                    "home"
+                ]
+            }
+        },
+        "/content/home/layout/slider-banner": {
+            "get": {
+                "description": "",
+                "operationId": "getSliderLayout",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "get slider banner layout",
+                "tags": [
+                    "home"
+                ]
+            }
+        },
+        "/endeca": {
+            "get": {
+                "description": "",
+                "operationId": "getContent",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "contentCollection",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "includePath",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "N",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "Get any content - testing only.",
+                "tags": [
+                    "endeca"
+                ]
+            }
+        },
+        "/favorites/{productId}": {
+            "delete": {
+                "description": "",
+                "operationId": "removeFromFavorites",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "productId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "Add product to favorites",
+                "tags": [
+                    "favorite products"
+                ]
+            },
+            "post": {
+                "description": "",
+                "operationId": "addToFavorites",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "productId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "Add product to favorites",
+                "tags": [
+                    "favorite products"
+                ]
+            }
+        },
+        "/payment": {
+            "get": {
+                "description": "",
+                "operationId": "getPayment",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "Get default payment.",
+                "tags": [
+                    "payment"
+                ]
+            }
+        },
+        "/payment/{paymentId}": {
+            "get": {
+                "description": "",
+                "operationId": "getPayment_1",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "paymentId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "Get payment by id.",
+                "tags": [
+                    "payment"
+                ]
+            }
+        },
+        "/profile": {
+            "get": {
+                "description": "",
+                "operationId": "getCurrentProfile",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "Get current profile.",
+                "tags": [
+                    "profile"
+                ]
+            }
+        },
+        "/rewards": {
+            "get": {
+                "description": "",
+                "operationId": "getLoyaltyInfo",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "Get rewards info for current profile.",
+                "tags": [
+                    "rewards"
+                ]
+            }
+        },
+        "/session/logout": {
+            "get": {
+                "description": "",
+                "operationId": "doLogout",
+                "parameters": [],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "logout the user",
+                "tags": [
+                    "session"
+                ]
+            }
+        },
+        "/store/{storeId}": {
+            "get": {
+                "description": "",
+                "operationId": "addToFavorites_1",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "storeId",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "get store information",
+                "tags": [
+                    "store"
+                ]
+            }
+        }
+    },
+    "schemes": [
+        "http"
+    ],
+    "swagger": "2.0",
+    "tags": [
+        {
+            "name": "cart"
+        },
+        {
+            "name": "catalog"
+        },
+        {
+            "name": "favorite products"
+        },
+        {
+            "name": "footer"
+        },
+        {
+            "name": "endeca"
+        },
+        {
+            "name": "contentheader"
+        },
+        {
+            "name": "home"
+        },
+        {
+            "name": "rewards"
+        },
+        {
+            "name": "payment"
+        },
+        {
+            "name": "profile"
+        },
+        {
+            "name": "session"
+        },
+        {
+            "name": "store"
+        }
+    ]
+}

@@ -1,0 +1,808 @@
+{
+  "type": "getNavigationMenuResponse",
+  "success": true,
+  "navMenuItems": [
+    {
+      "categoryId": "401",
+      "displayName": "JEANS3",
+      "displayOrder": 1,
+      "linkToLandingPage": true,
+      "navMenuColumns": [
+        {
+          "displayOrder": 1,
+          "navMenuItems": []
+        }
+      ],
+      "navSpots": [
+        {
+          "type": "navigationMenuCategorySpot",
+          "displayOrder": 1,
+          "categoryId": "4001",
+          "displayName": "Shop Jeans",
+          "imageUrl": "/assets/images/banners/banner_2_1.png"
+        },
+        {
+          "type": "navigationMenuCategorySpot",
+          "displayOrder": 2,
+          "categoryId": "cat20230029",
+          "displayName": "Shop Fall Looks",
+          "imageUrl": "/assets/images/banners/banner_2_2.png"
+        }
+      ]
+    },
+    {
+      "categoryId": "501",
+      "displayName": "PLUS SIZES",
+      "displayOrder": 2,
+      "linkToLandingPage": true,
+      "navMenuColumns": [
+        {
+          "displayOrder": 1,
+          "navMenuItems": [
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501"
+              ],
+              "categoryId": "5001",
+              "categoryLevel": 2,
+              "displayName": "tops",
+              "displayOrder": 1
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501",
+                "5001"
+              ],
+              "categoryId": "500101",
+              "categoryLevel": 3,
+              "displayName": "Blouses & Shirts",
+              "displayOrder": 2
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501",
+                "5001"
+              ],
+              "categoryId": "500105",
+              "categoryLevel": 3,
+              "displayName": "Cardigans",
+              "displayOrder": 3
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501",
+                "5001"
+              ],
+              "categoryId": "500104",
+              "categoryLevel": 3,
+              "displayName": "Sweaters",
+              "displayOrder": 4
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501",
+                "5001"
+              ],
+              "categoryId": "500107",
+              "categoryLevel": 3,
+              "displayName": "Tanks & Camis",
+              "displayOrder": 5
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501",
+                "5001"
+              ],
+              "categoryId": "500108",
+              "categoryLevel": 3,
+              "displayName": "layering tops by color",
+              "displayOrder": 6
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501",
+                "5001"
+              ],
+              "categoryId": "cat20150091",
+              "categoryLevel": 3,
+              "displayName": "tees",
+              "displayOrder": 7
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501",
+                "5001"
+              ],
+              "categoryId": "51003",
+              "categoryLevel": 3,
+              "displayName": "graphic tees & tanks",
+              "displayOrder": 8
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501",
+                "5001"
+              ],
+              "categoryId": "500102",
+              "categoryLevel": 3,
+              "displayName": "plaid & boyfriend shirts",
+              "displayOrder": 9
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501",
+                "5001"
+              ],
+              "categoryId": "51007",
+              "categoryLevel": 3,
+              "displayName": "hoodies & sweatshirts",
+              "displayOrder": 10
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501",
+                "5001"
+              ],
+              "categoryId": "51008",
+              "categoryLevel": 3,
+              "displayName": "jackets & blazers",
+              "displayOrder": 11
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501",
+                "5001"
+              ],
+              "categoryId": "51010",
+              "categoryLevel": 3,
+              "displayName": "vests",
+              "displayOrder": 12
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501",
+                "5001"
+              ],
+              "categoryId": "500103",
+              "categoryLevel": 3,
+              "displayName": "Tunics",
+              "displayOrder": 13
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501",
+                "5001"
+              ],
+              "categoryId": "500106",
+              "categoryLevel": 3,
+              "displayName": "Wraps & Kimonos",
+              "displayOrder": 14
+            }
+          ]
+        },
+        {
+          "displayOrder": 2,
+          "navMenuItems": [
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501"
+              ],
+              "categoryId": "5002",
+              "categoryLevel": 2,
+              "displayName": "bottoms",
+              "displayOrder": 1
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501",
+                "5002"
+              ],
+              "categoryId": "52002",
+              "categoryLevel": 3,
+              "displayName": "pants",
+              "displayOrder": 2
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501",
+                "5002"
+              ],
+              "categoryId": "52003",
+              "categoryLevel": 3,
+              "displayName": "leggings & yoga pants",
+              "displayOrder": 3
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501",
+                "5002"
+              ],
+              "categoryId": "52006",
+              "categoryLevel": 3,
+              "displayName": "skirts",
+              "displayOrder": 4
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501",
+                "5002"
+              ],
+              "categoryId": "52005",
+              "categoryLevel": 3,
+              "displayName": "capris",
+              "displayOrder": 5
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501",
+                "5002"
+              ],
+              "categoryId": "cat20190010",
+              "categoryLevel": 3,
+              "displayName": "joggers & sweatpants",
+              "displayOrder": 6
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501",
+                "5002"
+              ],
+              "categoryId": "52004",
+              "categoryLevel": 3,
+              "displayName": "shorts",
+              "displayOrder": 7
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501"
+              ],
+              "categoryId": "cat20190011",
+              "categoryLevel": 2,
+              "displayName": "sleep",
+              "displayOrder": 8
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501",
+                "cat20190011"
+              ],
+              "categoryId": "5009",
+              "categoryLevel": 3,
+              "displayName": "sleepwear",
+              "displayOrder": 9
+            }
+          ]
+        },
+        {
+          "displayOrder": 3,
+          "navMenuItems": [
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501"
+              ],
+              "categoryId": "5003",
+              "categoryLevel": 2,
+              "displayName": "dresses",
+              "displayOrder": 1
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501"
+              ],
+              "categoryId": "5004",
+              "categoryLevel": 2,
+              "displayName": "active",
+              "displayOrder": 2
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501"
+              ],
+              "categoryId": "5005",
+              "categoryLevel": 2,
+              "displayName": "outerwear",
+              "displayOrder": 3
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501"
+              ],
+              "categoryId": "5006",
+              "categoryLevel": 2,
+              "displayName": "dressy styles",
+              "displayOrder": 4
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "501"
+              ],
+              "categoryId": "6006",
+              "categoryLevel": 2,
+              "displayName": "wide-boots & shoes",
+              "displayOrder": 5
+            }
+          ]
+        }
+      ],
+      "navSpots": [
+        {
+          "type": "navigationMenuCategorySpot",
+          "displayOrder": 1,
+          "categoryId": "4002",
+          "displayName": "Shop Plus Jeans",
+          "imageUrl": "/assets/images/banners/banner_3_1.png"
+        },
+        {
+          "type": "navigationMenuCategorySpot",
+          "displayOrder": 2,
+          "categoryId": "cat20230029",
+          "displayName": "Shop Fall Looks",
+          "imageUrl": "/assets/images/banners/banner_3_2.png"
+        }
+      ]
+    },
+    {
+      "categoryId": "601",
+      "displayName": "SHOES",
+      "displayOrder": 3,
+      "linkToLandingPage": true,
+      "navMenuColumns": [
+        {
+          "displayOrder": 1,
+          "navMenuItems": [
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "601"
+              ],
+              "categoryId": "cat20400001",
+              "categoryLevel": 2,
+              "displayName": "Flat Sole Upcoming",
+              "displayOrder": 1
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "601"
+              ],
+              "categoryId": "cat20400000",
+              "categoryLevel": 2,
+              "displayName": "Flat Sole",
+              "displayOrder": 2
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "601"
+              ],
+              "categoryId": "6003",
+              "categoryLevel": 2,
+              "displayName": "wedges & heels",
+              "displayOrder": 3
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "601"
+              ],
+              "categoryId": "6004",
+              "categoryLevel": 2,
+              "displayName": "flats",
+              "displayOrder": 4
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "601"
+              ],
+              "categoryId": "6002",
+              "categoryLevel": 2,
+              "displayName": "sneakers & slip-ons",
+              "displayOrder": 5
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "601"
+              ],
+              "categoryId": "6001",
+              "categoryLevel": 2,
+              "displayName": "sandals",
+              "displayOrder": 6
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "601"
+              ],
+              "categoryId": "6006",
+              "categoryLevel": 2,
+              "displayName": "wide-boots & shoes",
+              "displayOrder": 7
+            }
+          ]
+        }
+      ],
+      "navSpots": [
+        {
+          "type": "navigationMenuCategorySpot",
+          "displayOrder": 1,
+          "categoryId": "601",
+          "displayName": "Shop Shoes",
+          "imageUrl": "/assets/images/banners/banner_4_1.png"
+        },
+        {
+          "type": "navigationMenuCategorySpot",
+          "displayOrder": 2,
+          "categoryId": "cat20150013",
+          "displayName": "Shop Scarves",
+          "imageUrl": "/assets/images/banners/banner_4_2.png"
+        }
+      ]
+    },
+    {
+      "categoryId": "701",
+      "displayName": "ACCESSORIES",
+      "displayOrder": 4,
+      "linkToLandingPage": true,
+      "navMenuColumns": [
+        {
+          "displayOrder": 1,
+          "navMenuItems": [
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "701"
+              ],
+              "categoryId": "7001",
+              "categoryLevel": 2,
+              "displayName": "jewelry",
+              "displayOrder": 1
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "701",
+                "7001"
+              ],
+              "categoryId": "71001",
+              "categoryLevel": 3,
+              "displayName": "necklaces",
+              "displayOrder": 2
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "701",
+                "7001"
+              ],
+              "categoryId": "71002",
+              "categoryLevel": 3,
+              "displayName": "earrings",
+              "displayOrder": 3
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "701",
+                "7001"
+              ],
+              "categoryId": "71003",
+              "categoryLevel": 3,
+              "displayName": "bracelets",
+              "displayOrder": 4
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "701",
+                "7001"
+              ],
+              "categoryId": "71004",
+              "categoryLevel": 3,
+              "displayName": "rings",
+              "displayOrder": 5
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "701",
+                "7001"
+              ],
+              "categoryId": "71005",
+              "categoryLevel": 3,
+              "displayName": "watches",
+              "displayOrder": 6
+            }
+          ]
+        },
+        {
+          "displayOrder": 2,
+          "navMenuItems": [
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "701"
+              ],
+              "categoryId": "7005",
+              "categoryLevel": 2,
+              "displayName": "hair accessories",
+              "displayOrder": 1
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "701"
+              ],
+              "categoryId": "7007",
+              "categoryLevel": 2,
+              "displayName": "fragrance",
+              "displayOrder": 2
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "701"
+              ],
+              "categoryId": "cat20150014",
+              "categoryLevel": 2,
+              "displayName": "scarf wraps",
+              "displayOrder": 3
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "701"
+              ],
+              "categoryId": "cat20150013",
+              "categoryLevel": 2,
+              "displayName": "scarves",
+              "displayOrder": 4
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "701"
+              ],
+              "categoryId": "7008",
+              "categoryLevel": 2,
+              "displayName": "hats",
+              "displayOrder": 5
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "701"
+              ],
+              "categoryId": "7013",
+              "categoryLevel": 2,
+              "displayName": "Cold Weather",
+              "displayOrder": 6
+            }
+          ]
+        },
+        {
+          "displayOrder": 3,
+          "navMenuItems": [
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "701"
+              ],
+              "categoryId": "7009",
+              "categoryLevel": 2,
+              "displayName": "socks & tights",
+              "displayOrder": 1
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "701"
+              ],
+              "categoryId": "7002",
+              "categoryLevel": 2,
+              "displayName": "handbags",
+              "displayOrder": 2
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "701"
+              ],
+              "categoryId": "7012",
+              "categoryLevel": 2,
+              "displayName": "wallets",
+              "displayOrder": 3
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "701"
+              ],
+              "categoryId": "7006",
+              "categoryLevel": 2,
+              "displayName": "sunglasses",
+              "displayOrder": 4
+            }
+          ]
+        }
+      ],
+      "navSpots": []
+    },
+    {
+      "categoryId": "801",
+      "displayName": "SALE",
+      "displayOrder": 5,
+      "linkToLandingPage": true,
+      "navMenuColumns": [
+        {
+          "displayOrder": 1,
+          "navMenuItems": [
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "801"
+              ],
+              "categoryId": "8001",
+              "categoryLevel": 2,
+              "displayName": "sale tops",
+              "displayOrder": 1
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "801"
+              ],
+              "categoryId": "8002",
+              "categoryLevel": 2,
+              "displayName": "sale bottoms",
+              "displayOrder": 2
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "801"
+              ],
+              "categoryId": "cat20240026",
+              "categoryLevel": 2,
+              "displayName": "sale jeans",
+              "displayOrder": 3
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "801"
+              ],
+              "categoryId": "cat20240027",
+              "categoryLevel": 2,
+              "displayName": "sale dresses",
+              "displayOrder": 4
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "801"
+              ],
+              "categoryId": "8004",
+              "categoryLevel": 2,
+              "displayName": "sale plus ",
+              "displayOrder": 5
+            },
+            {
+              "ancestorCategoryIds": [
+                "cat100",
+                "801"
+              ],
+              "categoryId": "8003",
+              "categoryLevel": 2,
+              "displayName": "sale shoes & accessories",
+              "displayOrder": 6
+            }
+          ]
+        }
+      ],
+      "navSpots": [
+        {
+          "type": "navigationMenuContentSpot",
+          "displayOrder": 1,
+          "backgroundColor": "#E0F3F2",
+          "categoryLinks": [
+            {
+              "categoryId": "801",
+              "displayName": "Shop Now",
+              "displayOrder": 1
+            },
+            {
+              "categoryId": "8004",
+              "displayName": "Shop Plus",
+              "displayOrder": 2
+            }
+          ],
+          "label": "IN STORE + ONLINE",
+          "linkUrl": "#",
+          "notation": "*exclusions apply",
+          "subtitle": "all dresses",
+          "textColor": "#58B7B1",
+          "title": "30% OFF"
+        },
+        {
+          "type": "navigationMenuContentSpot",
+          "displayOrder": 2,
+          "backgroundColor": "#FFEAE6",
+          "categoryLinks": [
+            {
+              "categoryId": "801",
+              "displayName": "Shop Now",
+              "displayOrder": 1
+            },
+            {
+              "categoryId": "8004",
+              "displayName": "Shop Plus",
+              "displayOrder": 2
+            }
+          ],
+          "label": "IN STORE + ONLINE",
+          "linkUrl": "#",
+          "notation": "*exclusions apply",
+          "subtitle": "new markdowns",
+          "textColor": "#C26E60",
+          "title": "30% OFF"
+        }
+      ]
+    },
+    {
+      "categoryId": "cat20230029",
+      "displayName": "COLLECTIONS",
+      "displayOrder": 6,
+      "linkToLandingPage": true,
+      "navMenuColumns": [
+        {
+          "displayOrder": 1,
+          "navMenuItems": []
+        }
+      ],
+      "navSpots": []
+    },
+    {
+      "categoryId": "cat20460000",
+      "displayName": "New dresses",
+      "displayOrder": 7,
+      "linkToLandingPage": true,
+      "navMenuColumns": [
+        {
+          "displayOrder": 1,
+          "navMenuItems": []
+        }
+      ],
+      "navSpots": []
+    }
+  ]
+}

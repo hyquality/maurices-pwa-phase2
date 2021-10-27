@@ -1,0 +1,11 @@
+{
+  "type": "getPromoResponse",
+  "success": true,
+  "promoInfo": {
+    "link": {
+      "text": "Learn More",
+      "url": "#"
+    },
+    "text": "Get $10 off when you share the love!"
+  }
+}

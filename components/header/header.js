@@ -1,27 +1,25 @@
 import AnnouncementBar from "@components/header/announcement-bar";
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import TopBar from "@components/header/top-bar";
 import MiddleBar from "@components/header/middle-bar";
 import {DataProviderContext} from '../layout-data-provider';
 
 export default function Header() {
     const {
-        header
+        headerContent
     } = useContext(DataProviderContext)
 
-    const {announcement} = header || {}
+    const {announcementInfo} = headerContent.announcementBar || {}
+
+
     return (
         <>
-            {
-                header ? (
-                    <div
-                        className="relative mar-header w-full top-0 z-20 border-b border-gray_border border-solid md:border-b-0">
-                        <AnnouncementBar data={announcement}/>
-                        <TopBar/>
-                        <MiddleBar/>
-                    </div>
-                ) : null
-            }
+            <div
+                className="relative mar-header w-full top-0 z-20 border-b border-gray_border border-solid md:border-b-0">
+                <AnnouncementBar data={announcementInfo}/>
+                <TopBar/>
+                <MiddleBar/>
+            </div>
 
         </>
     )

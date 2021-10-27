@@ -3,7 +3,7 @@ import ErrorPage from 'next/error'
 import Container from '../components/container'
 import Layout from '../components/layout'
 import Head from 'next/head'
-import {getStaticPageData} from "@lib/api";
+import {getPwaData, getStaticPageData} from "@lib/api";
 import {getTheTitle} from "@lib/helpers";
 import staticCollectionJson from "../fake_data/dataCollectionJson.json"
 import Breadcrumbs from "@components/breadcrumbs";
@@ -19,7 +19,7 @@ import FilterContainer from "@components/templates/plp/filter/filter-container";
 
 
 
-export default function Post({data, collection, preview}) {
+export default function Post({data, collection,pwa, preview}) {
     //const {t} = useTranslation('common');
 
     const [isPopupVisible, setIsPopupVisible] = useState(false);
@@ -49,7 +49,7 @@ export default function Post({data, collection, preview}) {
     return (
         <>
             {data ? (
-                <Layout data={data}>
+                <Layout data={data} pwa={pwa}>
                     <Head>
                         <title>{getTheTitle(`${title}`)}</title>
                     </Head>
@@ -89,6 +89,7 @@ export default function Post({data, collection, preview}) {
 
 export async function getStaticProps({params, preview = false, previewData, locale}) {
     const data = await getStaticPageData();
+    const pwa = (await getPwaData()) || {};
     //const collection = await getCollection(params.slug, preview, previewData)
     //const collection = await getCollection(params.slug, preview, previewData)
     //const collection = {slug:params.slug}
@@ -102,6 +103,7 @@ export async function getStaticProps({params, preview = false, previewData, loca
         props: {
             // ...(await serverSideTranslations(locale, ['common'])),
             data: data,
+            pwa: pwa,
             preview,
             collection: staticCollectionJson
         }

@@ -1,0 +1,11 @@
+{
+  "type": "getAnnouncementResponse",
+  "success": true,
+  "announcementInfo": {
+    "link": {
+      "text": "Read More",
+      "url": "#"
+    },
+    "text": "ONLINE ONLY — Get $25 off every $75 you spend!"
+  }
+}

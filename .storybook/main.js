@@ -36,6 +36,7 @@ module.exports = {
       '@lib': path.resolve(__dirname, '../lib'),
       '@styles': path.resolve(__dirname, '../styles'),
       '@sass': path.resolve(__dirname, '../sass'),
+      '@schemes': path.resolve(__dirname, '../schemes'),
       '@public': path.resolve(__dirname, '../public'),
     };
     config.module.rules.push({

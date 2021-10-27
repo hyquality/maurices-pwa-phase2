@@ -2,18 +2,19 @@ import React, {createContext, useState} from "react";
 
 export const DataProviderContext = createContext();
 
-export default function LayoutDataProvider({data, children, ...props}) {
-    const {header, footer, store, customer, minicart, mainNav} = data
-
+export default function LayoutDataProvider({data, pwa, children, ...props}) {
+    const {footer, store, customer} = data
+    const {headerContent, navMenuItems, cart, user} = pwa
     return (
         <DataProviderContext.Provider
             value={{
-                header,
+                headerContent,
+                navMenuItems,
                 footer,
                 store,
                 customer,
-                minicart,
-                mainNav
+                cart,
+                user
             }}>
             {children}
         </DataProviderContext.Provider>

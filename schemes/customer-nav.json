@@ -1,0 +1,46 @@
+{
+  "nav": [
+    {
+      "text": "My Profile",
+      "url": "#",
+      "caption": "Name, Password, etc."
+    },
+    {
+      "text": "My Orders",
+      "url": "#",
+      "caption": "Track & Manage"
+    },
+    {
+      "text": "My Payments",
+      "url": "#",
+      "caption": "Mastercard 2630"
+    },
+    {
+      "text": "My Addresses",
+      "url": "#",
+      "caption": "18 Harrison Avenue"
+    },
+    {
+      "text": "My Favorites",
+      "url": "#",
+      "caption": "5 items"
+    },
+    {
+      "text": "MyMaurices Rewards",
+      "url": "#",
+      "caption": "200 pts"
+    }
+  ],
+  "templates":[
+    {
+      "path": "./callout/callout-item",
+      "class": "customer-menu-callout",
+      "data": {
+        "id": 0,
+        "title": "Get Rewarded!",
+        "text": "Earn 1 point for every dollar you spend. 100 pts = $5 reward.",
+        "icon": "/assets/images/cell_1.png"
+      }
+    }
+  ]
+}

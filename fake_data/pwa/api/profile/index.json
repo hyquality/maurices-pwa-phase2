@@ -1,0 +1,12 @@
+{
+    "profileInfo": {
+        "email": "bb@brianballard.net",
+        "favoriteProductsCount": 0,
+        "firstName": "Brian",
+        "id": "19640000",
+        "lastName": "Ballard",
+        "loggedIn": true
+    },
+    "success": true,
+    "type": "getProfileResponse"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "getLoyaltyResponse",
+  "success": true,
+  "loyaltyInfo": {
+    "enrolled": false,
+    "points": 0,
+    "totalRewards": 0
+  }
+}

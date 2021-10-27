@@ -1,0 +1,11 @@
+{
+  "type": "getRewardResponse",
+  "success": true,
+  "rewardInfo": {
+    "link": {
+      "url": "#"
+    },
+    "text": "Earn 1 point for every dollar you spend. 100 pts = $5 reward.",
+    "title": "Get Rewarded!"
+  }
+}

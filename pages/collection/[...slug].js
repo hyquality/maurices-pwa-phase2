@@ -3,37 +3,37 @@ import ErrorPage from 'next/error'
 import Container from '../../components/container'
 import Layout from '../../components/layout'
 import Head from 'next/head'
-import {getCollection, getNavData, getStaticPageData} from "@lib/api";
+import {  getPwaData, getStaticPageData} from "@lib/api";
 import {getTheTitle} from "@lib/helpers";
 import staticCollectionJson from "../../fake_data/dataCollectionJson.json"
+import {useEffect} from "react";
+import axios from "axios";
+import {REACT_APP_API_URL} from "@lib/constants";
 
-export default function Post({data, collection, preview}) {
+export default function Post({data, pwa, collection, preview}) {
     const router = useRouter()
-    if (collection) console.log(collection);
+/*    if (collection) console.log(collection);
     if (!router.isFallback && !collection?.slug) {
         return <ErrorPage statusCode={404}/>
-    }
+    }*/
 
+    useEffect(()=>{
+        console.log(pwa)
+
+    })
     return (
         <>
             {data ? (
-                <Layout data={data}>
+                <Layout data={data} pwa={pwa}>
                     <Head>
-                        <title>{getTheTitle(`${collection.title}`)}</title>
+                        <title>{getTheTitle(`Test`)}</title>
                     </Head>
                     <Container>
                         <div className="flex">
                             <div className="filter w-1/4">collection</div>
                             <div className="w-3/4">
 
-                                {
-                                    collection.desc ? (
-                                        <div>
-                                            <h3>{collection.desc.title}</h3>
-                                            <p>{collection.desc.text}</p>
-                                        </div>
-                                    ) : ("")
-                                }
+      13
 
                             </div>
                         </div>
@@ -47,6 +47,9 @@ export default function Post({data, collection, preview}) {
 
 export async function getStaticProps({params, preview = false, previewData}) {
     const data = await getStaticPageData();
+    const pwa = (await getPwaData()) || {};
+   // const testApi = await apiCall("content/header/reward");
+    //const testApi = await axios.get(`${REACT_APP_API_URL}content/header/reward/index.json`);
     //const collection = await getCollection(params.slug, preview, previewData)
     //const collection = await getCollection(params.slug, preview, previewData)
     //const collection = {slug:params.slug}
@@ -59,8 +62,10 @@ export async function getStaticProps({params, preview = false, previewData}) {
     return {
         props: {
             data: data,
+            pwa:pwa,
+            //testApi: testApi.data,
             preview,
-            collection: staticCollectionJson
+            collection: {}
         }
     }
 }

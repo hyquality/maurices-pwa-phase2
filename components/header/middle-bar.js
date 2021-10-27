@@ -12,26 +12,30 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import Icon from "@components/templates/icon";
 import Link from "next/link";
-import {bodyOverlay, getCurrentWidth, openMainMenu} from "../../lib/helpers";
+import {bodyOverlay, openMainMenu} from "@lib/helpers";
 import SearchField from "@components/header/search/search-field";
 import InstantSearch from "@components/header/search/instant-search";
 import CustomerMenu from "@components/header/main-nav/customer-menu";
 import MiniCart from "@components/header/mini-cart";
-import {MOBILE_BREAKPOINT} from "@lib/constants";
 import Button from "@components/templates/button";
 import logo from "@public/assets/images/logo.png"
 import Image from "next/image";
 import {DataProviderContext} from '../layout-data-provider';
+import useScreenWidth from "@lib/effects/useScreenWidth";
 
 export default function MiddleBar() {
     const {
-        store, customer
+        store, cart,user
     } = useContext(DataProviderContext)
+
+    const {firstName,loggedIn} = user.profileInfo || {}
+
     const {address,title,phone,time,timeOpening} = store || {}
 
+    const isMobile = useScreenWidth();
     const [isHovering, setIsHovered] = useState(false);
     const onMouseEnter = () => {
-        if (getCurrentWidth() > MOBILE_BREAKPOINT) {
+        if (!isMobile) {
             bodyOverlay(1).then(r => {
             })
             setIsHovered(true)
@@ -46,7 +50,7 @@ export default function MiddleBar() {
 
     const [isCustomerHovering, setIsCustomerHovering] = useState(false);
     const onCustomerMouseEnter = () => {
-        if (getCurrentWidth() > MOBILE_BREAKPOINT) {
+        if (!isMobile) {
             bodyOverlay(1).then(r => {
             })
             setIsCustomerHovering(true)
@@ -61,9 +65,8 @@ export default function MiddleBar() {
 
     const [isMiniCartHovering, setIsMiniCartHovering] = useState(false);
     const onMiniCartMouseEnter = () => {
-        if (getCurrentWidth() > MOBILE_BREAKPOINT) {
-            bodyOverlay(1).then(r => {
-            })
+        if (!isMobile && cart.cartInfo.items && cart.cartInfo.items.length>0) {
+            bodyOverlay(1).then(r => {})
             setIsMiniCartHovering(true)
         }
 
@@ -121,7 +124,7 @@ export default function MiddleBar() {
                             </span>
                         </a>
                         {
-                            getCurrentWidth() > MOBILE_BREAKPOINT ? (
+                            !isMobile && (
                                 <div className="hidden md:block">
                                     {address ? (
                                         isHovering ? (
@@ -155,7 +158,8 @@ export default function MiddleBar() {
                                     ) : null
                                     }
                                 </div>
-                            ) : null
+                            )
+
                         }
                     </div>
                     <div className="logo text-center flex-grow">
@@ -182,12 +186,12 @@ export default function MiddleBar() {
                         >
 
                             {
-                                customer.nav ? (
+                                loggedIn ? (
                                     <div>
                                         <a href="#" className="flex items-center">
                                             <Icon icon={faUserCircle} className="md:pr-1.5" size={"medium"}/>
                                             <span className="hidden md:inline">
-                                                {customer.title}
+                                                Hy, {firstName}
                                                 {
                                                     isCustomerHovering ? (
                                                         <Icon icon={faChevronUp} className="pl-2.5"/>
@@ -199,21 +203,21 @@ export default function MiddleBar() {
 
                                         </a>
                                         <div className="hidden md:inline">
-                                            {isCustomerHovering ? (
+                                            {isCustomerHovering && (
 
                                                 <div
                                                     className="overlay-fade absolute left-0 border border-gray_border border-solid bg-white min-w-min352 p-5 top-full">
                                                     <CustomerMenu />
                                                 </div>
 
-                                            ) : null}
+                                            )}
                                         </div>
 
                                     </div>
                                 ) : (
                                     <a href="#">
                                         <Icon icon={farUserCircle}
-                                              className="md:pr-1.5" size={"medium"}/>{customer.title}<Icon
+                                              className="md:pr-1.5" size={"medium"}/>Sign In<Icon
                                         icon={faChevronDown} className="pl-1.5"/></a>
                                 )
                             }
@@ -229,15 +233,15 @@ export default function MiddleBar() {
                                 <span className="block absolute">5</span>
                             </a>
                             {
-                                getCurrentWidth() > MOBILE_BREAKPOINT ? (
+                                !isMobile && (
                                     <div className="hidden md:block">
                                         {
-                                            isMiniCartHovering ? (
+                                            isMiniCartHovering && (
                                                 <MiniCart/>
-                                            ) : null
+                                            )
                                         }
                                     </div>
-                                ) : null
+                                )
                             }
 
                         </li>

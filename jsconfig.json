@@ -6,6 +6,7 @@
       "@lib/*": ["lib/*"],
       "@styles/*": ["styles/*"],
       "@sass/*": ["sass/*"],
+      "@schemes/*": ["schemes/*"],
       "@public/*": ["public/*"]
     }
   }

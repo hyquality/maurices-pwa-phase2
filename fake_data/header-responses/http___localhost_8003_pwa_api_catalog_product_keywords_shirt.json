@@ -1,0 +1,964 @@
+{
+    "facets": [
+        {
+            "code": "Size",
+            "displayName": "Size",
+            "name": "Size",
+            "options": [
+                {
+                    "code": "4294966762",
+                    "name": "0"
+                },
+                {
+                    "code": "4294966741",
+                    "name": "1"
+                },
+                {
+                    "code": "4294966740",
+                    "name": "2"
+                },
+                {
+                    "code": "4294966693",
+                    "name": "3"
+                },
+                {
+                    "code": "4294966692",
+                    "name": "4"
+                },
+                {
+                    "code": "4294888829",
+                    "name": "LARGERREGULAR"
+                },
+                {
+                    "code": "4294964422",
+                    "name": "MEDIUM"
+                },
+                {
+                    "code": "4294964421",
+                    "name": "SMALL"
+                },
+                {
+                    "code": "4294964346",
+                    "name": "X LARGE"
+                },
+                {
+                    "code": "4294964345",
+                    "name": "X SMALL"
+                },
+                {
+                    "code": "4294964344",
+                    "name": "XX LARGE"
+                }
+            ]
+        },
+        {
+            "code": "product.silhouette",
+            "displayName": "product.silhouette",
+            "name": "Style",
+            "options": [
+                {
+                    "code": "4294963619",
+                    "name": "blouse"
+                },
+                {
+                    "code": "4294963631",
+                    "name": "button down shirt"
+                },
+                {
+                    "code": "4294963523",
+                    "name": "jacket"
+                },
+                {
+                    "code": "4294960669",
+                    "name": "peasant"
+                },
+                {
+                    "code": "4294960422",
+                    "name": "peplum"
+                },
+                {
+                    "code": "4294960634",
+                    "name": "pullover"
+                },
+                {
+                    "code": "4294960650",
+                    "name": "tank"
+                },
+                {
+                    "code": "4294960507",
+                    "name": "tee"
+                },
+                {
+                    "code": "4294962959",
+                    "name": "tunic"
+                }
+            ]
+        },
+        {
+            "code": "colorGroup",
+            "displayName": "colorGroup",
+            "name": "Colors",
+            "options": [
+                {
+                    "code": "4294964423",
+                    "name": "BLACK",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/1"
+                },
+                {
+                    "code": "4294964355",
+                    "name": "BLUE",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/2"
+                },
+                {
+                    "code": "4294964412",
+                    "name": "BROWN",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/3"
+                },
+                {
+                    "code": "4294964351",
+                    "name": "DENIM",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/16"
+                },
+                {
+                    "code": "4294964413",
+                    "name": "GRAY",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/4"
+                },
+                {
+                    "code": "4294964261",
+                    "name": "GREEN",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/5"
+                },
+                {
+                    "code": "4294964348",
+                    "name": "NATURAL",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/6"
+                },
+                {
+                    "code": "4294964260",
+                    "name": "NO COLOR",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/15"
+                },
+                {
+                    "code": "4294964259",
+                    "name": "ORANGE",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/7"
+                },
+                {
+                    "code": "4294964258",
+                    "name": "PINK",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/8"
+                },
+                {
+                    "code": "4294964257",
+                    "name": "PURPLE",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/9"
+                },
+                {
+                    "code": "4294964256",
+                    "name": "RED",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/14"
+                },
+                {
+                    "code": "4294964354",
+                    "name": "WHITE",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/11"
+                },
+                {
+                    "code": "4294964416",
+                    "name": "YELLOW",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/12"
+                }
+            ]
+        },
+        {
+            "code": "product.price_range",
+            "displayName": "product.price_range",
+            "name": "Price",
+            "options": [
+                {
+                    "code": "13868",
+                    "name": "Under $30"
+                },
+                {
+                    "code": "13869",
+                    "name": "$30 - $50"
+                }
+            ]
+        }
+    ],
+    "firstRecNum": 2,
+    "lastRecNum": 31,
+    "products": [
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C1756",
+                    "colorName": "BLACK COMBO",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25954_C1756?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25954_C1756_swatch"
+                }
+            ],
+            "defaultColor": "C1756",
+            "description": "Plt Bck Dbby Bffl W",
+            "displayName": "button down flannel shirt with ethnic embroidery",
+            "id": "25954",
+            "inFavorites": false,
+            "maxListPrice": 29.0,
+            "maxSalePrice": 29.0,
+            "minListPrice": 29.0,
+            "minSalePrice": 29.0,
+            "newProduct": false,
+            "onSale": false,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C1524",
+                    "colorName": "MULTI",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28715_C1524?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28715_C1524_swatch"
+                }
+            ],
+            "defaultColor": "C1524",
+            "description": "Square Print Plaid W",
+            "displayName": "button down flannel shirt in buffalo plaid",
+            "id": "28715",
+            "inFavorites": false,
+            "maxListPrice": 29.0,
+            "maxSalePrice": 29.0,
+            "minListPrice": 29.0,
+            "minSalePrice": 29.0,
+            "newProduct": false,
+            "onSale": false,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C1524",
+                    "colorName": "MULTI",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25790_C1524?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25790_C1524_swatch"
+                }
+            ],
+            "defaultColor": "C1524",
+            "description": "Mlt Rd Plt Bck Pld W",
+            "displayName": "button down multicolor plaid shirt",
+            "id": "25790",
+            "inFavorites": false,
+            "maxListPrice": 29.0,
+            "maxSalePrice": 29.0,
+            "minListPrice": 29.0,
+            "minSalePrice": 29.0,
+            "newProduct": false,
+            "onSale": false,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C1524",
+                    "colorName": "MULTI",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28717_C1524?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28717_C1524_swatch"
+                }
+            ],
+            "defaultColor": "C1524",
+            "description": "Square Pink Plaid W",
+            "displayName": "plus size button down flannel shirt in buffalo plaid",
+            "id": "28717",
+            "inFavorites": false,
+            "maxListPrice": 36.0,
+            "maxSalePrice": 36.0,
+            "minListPrice": 36.0,
+            "minSalePrice": 36.0,
+            "newProduct": false,
+            "onSale": false,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C5563",
+                    "colorName": "OFF WHITE COMBO",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/24004_C5563?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/24004_C5563_swatch"
+                }
+            ],
+            "defaultColor": "C5563",
+            "description": "cropped plaid",
+            "displayName": "button down cropped plaid shirt",
+            "id": "24004",
+            "inFavorites": false,
+            "maxListPrice": 29.0,
+            "maxSalePrice": 29.0,
+            "minListPrice": 29.0,
+            "minSalePrice": 29.0,
+            "newProduct": false,
+            "onSale": false,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "alternateImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/13846_C5792_Back?$large$",
+                    "colorId": "C5792",
+                    "colorName": "PINK CLAY COMBO",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/13846_C5792?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/13846_C5792_swatch"
+                }
+            ],
+            "defaultColor": "C5792",
+            "description": "ombre double pocket",
+            "displayName": "button down plaid shirt in pink clay combo",
+            "id": "13846",
+            "inFavorites": false,
+            "maxListPrice": 32.0,
+            "maxSalePrice": 29.99,
+            "minListPrice": 32.0,
+            "minSalePrice": 29.99,
+            "newProduct": true,
+            "onSale": true,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "alternateImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/13917_C1524_Back?$large$",
+                    "colorId": "C1524",
+                    "colorName": "MULTI",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/13917_C1524?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/13917_C1524_swatch"
+                }
+            ],
+            "defaultColor": "C1524",
+            "description": "multi double weave",
+            "displayName": "plus size lightweight button down multicolor plaid shirt",
+            "id": "13917",
+            "inFavorites": false,
+            "maxListPrice": 36.0,
+            "maxSalePrice": 29.99,
+            "minListPrice": 36.0,
+            "minSalePrice": 29.99,
+            "newProduct": true,
+            "onSale": true,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C4156",
+                    "colorName": "HOLLY RED",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25793_C4156?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25793_C4156_swatch"
+                }
+            ],
+            "defaultColor": "C4156",
+            "description": "Buffalo Bias Side",
+            "displayName": "button down shirt in red and black buffalo plaid",
+            "id": "25793",
+            "inFavorites": false,
+            "maxListPrice": 29.0,
+            "maxSalePrice": 29.0,
+            "minListPrice": 29.0,
+            "minSalePrice": 29.0,
+            "newProduct": false,
+            "onSale": false,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "alternateImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/13625_C8427_Back?$large$",
+                    "colorId": "C8427",
+                    "colorName": "MEDIUM DENIM",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/13625_C8427?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/13625_C8427_swatch"
+                }
+            ],
+            "defaultColor": "C8427",
+            "description": "lace trim denim",
+            "displayName": "chambray button down shirt with lace inset",
+            "id": "13625",
+            "inFavorites": false,
+            "maxListPrice": 39.0,
+            "maxSalePrice": 34.99,
+            "minListPrice": 39.0,
+            "minSalePrice": 34.99,
+            "newProduct": true,
+            "onSale": true,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C829",
+                    "colorName": "GRAY",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/26791_C829?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/26791_C829_swatch"
+                }
+            ],
+            "defaultColor": "C829",
+            "description": "Prntd Brshd Flnnl W",
+            "displayName": "button down shirt in ethnic print",
+            "id": "26791",
+            "inFavorites": false,
+            "maxListPrice": 29.0,
+            "maxSalePrice": 29.0,
+            "minListPrice": 29.0,
+            "minSalePrice": 29.0,
+            "newProduct": false,
+            "onSale": false,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C223",
+                    "colorName": "WHITE",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/91523_C223?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/91523_C223_swatch"
+                }
+            ],
+            "defaultColor": "C223",
+            "description": "white lace bk denim",
+            "displayName": "plus size button down denim shirt with lace back",
+            "id": "91523",
+            "inFavorites": false,
+            "maxListPrice": 39.0,
+            "maxSalePrice": 34.98,
+            "minListPrice": 39.0,
+            "minSalePrice": 34.98,
+            "newProduct": true,
+            "onSale": true,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C5046",
+                    "colorName": "GRAY WASH",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/22679_C5046?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/22679_C5046_swatch"
+                }
+            ],
+            "defaultColor": "C5046",
+            "description": "Grey Wash Tunic.W",
+            "displayName": "button down chambray tunic shirt in gray",
+            "id": "22679",
+            "inFavorites": false,
+            "maxListPrice": 39.0,
+            "maxSalePrice": 39.0,
+            "minListPrice": 39.0,
+            "minSalePrice": 39.0,
+            "newProduct": false,
+            "onSale": false,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C1524",
+                    "colorName": "MULTI",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/20919_C1524?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/20919_C1524_swatch"
+                }
+            ],
+            "defaultColor": "C1524",
+            "description": "Mlti Bfflo Pld Tnc.W",
+            "displayName": "button down buffalo plaid tunic top with button back",
+            "id": "20919",
+            "inFavorites": false,
+            "maxListPrice": 34.0,
+            "maxSalePrice": 34.0,
+            "minListPrice": 34.0,
+            "minSalePrice": 34.0,
+            "newProduct": false,
+            "onSale": false,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C2842",
+                    "colorName": "RED COMBO",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28712_C2842?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28712_C2842_swatch"
+                }
+            ],
+            "defaultColor": "C2842",
+            "description": "Red Plaid w/ Lurex W",
+            "displayName": "button down shirt in red plaid with goldtone metallic stitching",
+            "id": "28712",
+            "inFavorites": false,
+            "maxListPrice": 29.0,
+            "maxSalePrice": 29.0,
+            "minListPrice": 29.0,
+            "minSalePrice": 29.0,
+            "newProduct": false,
+            "onSale": false,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C1755",
+                    "colorName": "GRAY COMBO",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/26477_C1755?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/26477_C1755_swatch"
+                }
+            ],
+            "defaultColor": "C1755",
+            "description": "Pld w/ Swtr Bck W",
+            "displayName": "button down plaid shirt with sweater knit back yoke",
+            "id": "26477",
+            "inFavorites": false,
+            "maxListPrice": 32.0,
+            "maxSalePrice": 32.0,
+            "minListPrice": 32.0,
+            "minSalePrice": 32.0,
+            "newProduct": false,
+            "onSale": false,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "alternateImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/11587_C1524_Back?$large$",
+                    "colorId": "C1524",
+                    "colorName": "MULTI",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/11587_C1524?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/11587_C1524_swatch"
+                }
+            ],
+            "defaultColor": "C1524",
+            "description": "Multi Buffalo W",
+            "displayName": "button down multicolor buffalo plaid shirt",
+            "id": "11587",
+            "inFavorites": false,
+            "maxListPrice": 29.0,
+            "maxSalePrice": 26.99,
+            "minListPrice": 29.0,
+            "minSalePrice": 26.99,
+            "newProduct": true,
+            "onSale": true,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C1756",
+                    "colorName": "BLACK COMBO",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/24006_C1756?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/24006_C1756_swatch"
+                }
+            ],
+            "defaultColor": "C1756",
+            "description": "cropped wrap plaid",
+            "displayName": "button down cropped plaid shirt with wrap front",
+            "id": "24006",
+            "inFavorites": false,
+            "maxListPrice": 29.0,
+            "maxSalePrice": 29.0,
+            "minListPrice": 29.0,
+            "minSalePrice": 29.0,
+            "newProduct": false,
+            "onSale": false,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "alternateImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/13848_C4376_Back?$large$",
+                    "colorId": "C4376",
+                    "colorName": "ROSE PETAL COMBO",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/13848_C4376?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/13848_C4376_swatch"
+                }
+            ],
+            "defaultColor": "C4376",
+            "description": "ombre double pocket",
+            "displayName": "button down plaid shirt in rose petal combo",
+            "id": "13848",
+            "inFavorites": false,
+            "maxListPrice": 32.0,
+            "maxSalePrice": 29.99,
+            "minListPrice": 32.0,
+            "minSalePrice": 29.99,
+            "newProduct": true,
+            "onSale": true,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C2842",
+                    "colorName": "RED COMBO",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28714_C2842?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28714_C2842_swatch"
+                }
+            ],
+            "defaultColor": "C2842",
+            "description": "Red Plaid w/ Lurex W",
+            "displayName": "plus size button down shirt in red plaid with goldtone metallic stitching",
+            "id": "28714",
+            "inFavorites": false,
+            "maxListPrice": 36.0,
+            "maxSalePrice": 36.0,
+            "minListPrice": 36.0,
+            "minSalePrice": 36.0,
+            "newProduct": false,
+            "onSale": false,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C6918",
+                    "colorName": "SEA SALT GREEN",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/86721_C6918?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/86721_C6918_swatch"
+                }
+            ],
+            "defaultColor": "C6918",
+            "description": "gingham twill weave",
+            "displayName": "lightweight button down gingham shirt in sea salt",
+            "id": "86721",
+            "inFavorites": false,
+            "maxListPrice": 29.0,
+            "maxSalePrice": 26.98,
+            "minListPrice": 29.0,
+            "minSalePrice": 26.98,
+            "newProduct": false,
+            "onSale": true,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "alternateImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/13854_C1524_Back?$large$",
+                    "colorId": "C1524",
+                    "colorName": "MULTI",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/13854_C1524?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/13854_C1524_swatch"
+                }
+            ],
+            "defaultColor": "C1524",
+            "description": "buffalo two-color fl",
+            "displayName": "button down buffalo plaid shirt in orange",
+            "id": "13854",
+            "inFavorites": false,
+            "maxListPrice": 29.0,
+            "maxSalePrice": 26.99,
+            "minListPrice": 29.0,
+            "minSalePrice": 26.99,
+            "newProduct": true,
+            "onSale": true,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "alternateImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/13919_C5476_Back?$large$",
+                    "colorId": "C5476",
+                    "colorName": "CLOVE BROWN",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/13919_C5476?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/13919_C5476_swatch"
+                }
+            ],
+            "defaultColor": "C5476",
+            "description": "washed solid button",
+            "displayName": "plus size super soft button down shirt in clove brown",
+            "id": "13919",
+            "inFavorites": false,
+            "maxListPrice": 46.0,
+            "maxSalePrice": 39.99,
+            "minListPrice": 46.0,
+            "minSalePrice": 39.99,
+            "newProduct": true,
+            "onSale": true,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C3441",
+                    "colorName": "PARADISE TEAL",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/21685_C3441?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/21685_C3441_swatch"
+                }
+            ],
+            "defaultColor": "C3441",
+            "description": "Stndrd Dbl Pct Pld.W",
+            "displayName": "button down buffalo plaid shirt in teal",
+            "id": "21685",
+            "inFavorites": false,
+            "maxListPrice": 29.0,
+            "maxSalePrice": 29.0,
+            "minListPrice": 29.0,
+            "minSalePrice": 29.0,
+            "newProduct": false,
+            "onSale": false,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C1524",
+                    "colorName": "MULTI",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25794_C1524?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25794_C1524_swatch"
+                }
+            ],
+            "defaultColor": "C1524",
+            "description": "Mlt Rd PltBck Pld W",
+            "displayName": "plus size button down multicolor plaid shirt",
+            "id": "25794",
+            "inFavorites": false,
+            "maxListPrice": 36.0,
+            "maxSalePrice": 36.0,
+            "minListPrice": 36.0,
+            "minSalePrice": 36.0,
+            "newProduct": false,
+            "onSale": false,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C4623",
+                    "colorName": "PINK GRAPEFRUIT",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/86447_C4623?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/86447_C4623_swatch"
+                }
+            ],
+            "defaultColor": "C4623",
+            "description": "pink gingham plaid w",
+            "displayName": "lightweight button down gingham shirt in pink",
+            "id": "86447",
+            "inFavorites": false,
+            "maxListPrice": 29.0,
+            "maxSalePrice": 26.98,
+            "minListPrice": 29.0,
+            "minSalePrice": 26.98,
+            "newProduct": false,
+            "onSale": true,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C2254",
+                    "colorName": "MULBERRY COMBO",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25855_C2254?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25855_C2254_swatch"
+                }
+            ],
+            "defaultColor": "C2254",
+            "description": "Bias SdPnl Lrx BfflW",
+            "displayName": "button down plaid shirt with metallic shimmer in mulberry",
+            "id": "25855",
+            "inFavorites": false,
+            "maxListPrice": 29.0,
+            "maxSalePrice": 29.0,
+            "minListPrice": 29.0,
+            "minSalePrice": 29.0,
+            "newProduct": false,
+            "onSale": false,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C2660",
+                    "colorName": "BLACK/WHITE COMBO",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/20245_C2660?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/20245_C2660_swatch"
+                }
+            ],
+            "defaultColor": "C2660",
+            "description": "Black Ombre Plaid W",
+            "displayName": "button down textured plaid shirt",
+            "id": "20245",
+            "inFavorites": false,
+            "maxListPrice": 29.0,
+            "maxSalePrice": 29.0,
+            "minListPrice": 29.0,
+            "minSalePrice": 29.0,
+            "newProduct": false,
+            "onSale": false,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C4376",
+                    "colorName": "ROSE PETAL COMBO",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/19809_C4376?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/19809_C4376_swatch"
+                }
+            ],
+            "defaultColor": "C4376",
+            "description": "Baby Doll Plaid W",
+            "displayName": "button down plaid shirt with cinched waist",
+            "id": "19809",
+            "inFavorites": false,
+            "maxListPrice": 29.0,
+            "maxSalePrice": 29.0,
+            "minListPrice": 29.0,
+            "minSalePrice": 29.0,
+            "newProduct": false,
+            "onSale": false,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "alternateImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/13898_C2391_Back?$large$",
+                    "colorId": "C2391",
+                    "colorName": "OLIVE GREEN COMBO",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/13898_C2391?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/13898_C2391_swatch"
+                }
+            ],
+            "defaultColor": "C2391",
+            "description": "camo button front",
+            "displayName": "plus size super soft button down shirt in camo print",
+            "id": "13898",
+            "inFavorites": false,
+            "maxListPrice": 46.0,
+            "maxSalePrice": 39.99,
+            "minListPrice": 46.0,
+            "minSalePrice": 39.99,
+            "newProduct": true,
+            "onSale": true,
+            "onlineExclusive": false
+        },
+        {
+            "bvNumReviews": 0,
+            "bvRating": 0.0,
+            "colors": [
+                {
+                    "colorId": "C1524",
+                    "colorName": "MULTI",
+                    "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/20979_C1524?$large$",
+                    "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/20979_C1524_swatch"
+                }
+            ],
+            "defaultColor": "C1524",
+            "description": "Large Scale Tunic.W",
+            "displayName": "plus size button down plaid tunic top with button back",
+            "id": "20979",
+            "inFavorites": false,
+            "maxListPrice": 39.0,
+            "maxSalePrice": 39.0,
+            "minListPrice": 39.0,
+            "minSalePrice": 39.0,
+            "newProduct": false,
+            "onSale": false,
+            "onlineExclusive": false
+        }
+    ],
+    "selectedFacets": [],
+    "sortOptions": [
+        {
+            "code": "Featured",
+            "displayName": "Featured",
+            "displayOrder": 1,
+            "selected": false
+        },
+        {
+            "code": "Relevant",
+            "displayName": "Relevant",
+            "displayOrder": 2,
+            "selected": true
+        },
+        {
+            "code": "PriceAscending",
+            "displayName": "Price Low to High",
+            "displayOrder": 3,
+            "selected": false
+        },
+        {
+            "code": "PriceDescending",
+            "displayName": "Price High to Low",
+            "displayOrder": 4,
+            "selected": false
+        },
+        {
+            "code": "Newest",
+            "displayName": "Newest",
+            "displayOrder": 5,
+            "selected": false
+        },
+        {
+            "code": "TopRated",
+            "displayName": "Top Rated",
+            "displayOrder": 6,
+            "selected": false
+        }
+    ],
+    "success": true,
+    "totalNumProducts": 236,
+    "type": "getProductsResponse"
+}

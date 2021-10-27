@@ -7,6 +7,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 import React, {useEffect, useState} from "react";
 import Container from "@components/container";
+import useScreenWidth from "@lib/effects/useScreenWidth"
 
 import SwiperCore, {
     Loop, Navigation, Scrollbar, A11y
@@ -15,17 +16,6 @@ import HeaderTitle from "@components/templates/header-title";
 
 // install Swiper modules
 SwiperCore.use([Loop, Navigation, Scrollbar, A11y]);
-
-function debounce(fn, ms) {
-    let timer
-    return _ => {
-        clearTimeout(timer)
-        timer = setTimeout(_ => {
-            timer = null
-            fn.apply(this, arguments)
-        }, ms)
-    };
-}
 
 export default function Carousel(
     {
@@ -45,50 +35,13 @@ export default function Carousel(
         className
     }
 ) {
-    let initState = {
-        num: visibleNum,
-        nav: showNav,
-        scroll: showScroll ? {draggable: true} : false,
-        space: spaceBetween
-    }
 
-    const [slides, setSlides] = useState(initState);
-
-
-    useEffect(() => {
-        const debouncedHandleResize = debounce(function handleResize() {
-            if (window.innerWidth < 768) {
-                setSlides(
-                    {
-                        num: mobileVisibleNum,
-                        nav: showNavMobile,
-                        scroll: showScrollMobile ? {draggable: true} : false,
-                        space: 4
-                    }
-                )
-            } else {
-                setSlides(
-                    {
-                        num: visibleNum,
-                        nav: showNav,
-                        scroll: showScroll ? {draggable: true} : false,
-                        space: spaceBetween
-                    }
-                )
-            }
-        }, 1000)
-
-        window.addEventListener('resize', debouncedHandleResize)
-        window.addEventListener('load', debouncedHandleResize)
-        return function cleanup() {
-            window.removeEventListener('resize', debouncedHandleResize)
-            window.removeEventListener('load', debouncedHandleResize)
-        };
-    });
+    const isMobile = useScreenWidth();
 
     let TemplateItem;
     const content = (
         <>
+
             {
                 title && (
                     <HeaderTitle tag={"h2"} size={titleSize} style={"utopia"}
@@ -96,13 +49,13 @@ export default function Carousel(
                 )
             }
             <Swiper
-                spaceBetween={slides.space}
-                slidesPerView={slides.num}
+                spaceBetween={isMobile?4:spaceBetween}
+                slidesPerView={isMobile?mobileVisibleNum:visibleNum}
                 slidesPerGroup={1}
                 loop={loop}
                 loopFillGroupWithBlank={false}
                 navigation
-                scrollbar={slides.scroll}
+                scrollbar={isMobile?(showScrollMobile ? {draggable: true} : false):showScroll ? {draggable: true} : false}
             >
                 {
                     templates.map((template, index) => {
@@ -125,7 +78,7 @@ export default function Carousel(
         </>
     )
     return (
-        <div className={`carousel-list ${!slides.nav&&"hide-nav"}`}>
+        <div className={`carousel-list ${!(isMobile?showNavMobile:showNav)&&"hide-nav"}`}>
             {
                 fullwidth ? (
                     content

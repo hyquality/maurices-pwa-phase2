@@ -5,7 +5,7 @@ export default function AnnouncementBar({data}) {
             {
                 data.link
                     ? (
-                        <a href={data.link.url} >{data.link.text}</a>
+                        <a href={data.link.url} className={"ml-2 underline hover:no-underline"}>{data.link.text}</a>
                     )
                     : null
             }

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import Icon from "@components/templates/icon";
 import Button from "@components/templates/button";
 import Image from "next/image";
@@ -7,73 +7,70 @@ import {DataProviderContext} from '../layout-data-provider';
 
 export default function MiniCart() {
     const {
-        minicart
+        cart
     } = useContext(DataProviderContext)
-    const {items, subtotal} = minicart || {}
+
+   const {items, subtotal, count, orderId} = cart.cartInfo || {}
     return (
         <>
             {
-                minicart ? (
+                (items && items.length>0)  && (
                     <div
                         className="overlay-fade absolute right-0 border border-gray_border border-solid bg-white w-full  min-w-min352 top-full">
                         <div className="relative max-h-max384 overflow-y-auto">
-                            <h3 className="top-0 sticky bg-white pt-5 text-2xl text-gray_4 font-semibold px-5 pb-2.5 shadow-small">Your
+                            <h3 className="top-0 sticky bg-white pt-5 text-2xl text-gray_4 font-semibold px-5 pb-2.5 shadow-small z-10">Your
                                 Bag</h3>
-                            {
-                                items ? (
-                                    <ul className="pt-5 ">
-                                        {
-                                            items.map((item) => (
-                                                <li className="flex px-5 pb-5 mb-5 border-b border-gray_border last:border-0"
-                                                    key={"mini-cart-item-" + item.id}>
-                                                    <Link href={item.url}>
-                                                        <a className="w-20 pr-5 box-content">
-                                                            <Image
-                                                                alt={item.title}
-                                                                src={item.image}
-                                                                width={72}
-                                                                height={106}
-                                                                quality={100}
-                                                            />
-                                                        </a>
-                                                    </Link>
-                                                    <div className="flex-grow relative">
-                                                        <h4 className="font-extrabold text-gray_4 flex pb-2.5">
-                                                            <span>{item.title}</span>
-                                                            <span className="ml-auto pl-2"> {item.price}</span>
-                                                        </h4>
-                                                        <ul className="text-xs">
-                                                            {
-                                                                item.options ? (
-                                                                    item.options.map((option) => (
-                                                                        <li className="pb-0.5"
-                                                                            key={"mini-cart-item-оптион-" + item.id + "-" + option.id}>
-                                                                            <span>{option.name}:</span>
-                                                                            <span
-                                                                                className="text-gray_4 pl-2">{option.value}</span>
-                                                                        </li>
-                                                                    ))
-                                                                ) : ("")
-                                                            }
-                                                            <li>
-                                                                <span>Quantity:</span>
-                                                                <span className="text-gray_4 pl-2">{item.qty}</span>
-                                                            </li>
-                                                        </ul>
-                                                        <a href="#"
-                                                           className="absolute right-0 bottom-0 flex items-center text-gray_2">
-                                                            <Icon icon={["far", "trash-alt"]}/>
-                                                            <span
-                                                                className="pl-2 underline hover:no-underline">Remove</span>
-                                                        </a>
-                                                    </div>
-                                                </li>
-                                            ))
-                                        }
+                            <ul className="pt-5 ">
+                                {
+                                    items.map((item,index) => (
+                                        <li className="flex px-5 pb-5 mb-5 border-b border-gray_border last:border-0"
+                                            key={"mini-cart-item-" + index}>
+                                            <Link href={item.url}>
+                                                <a className="w-20 pr-5 box-content">
+                                                    <Image
+                                                        alt={item.title}
+                                                        src={item.image}
+                                                        width={72}
+                                                        height={106}
+                                                        quality={100}
+                                                    />
+                                                </a>
+                                            </Link>
+                                            <div className="flex-grow relative">
+                                                <h4 className="font-extrabold text-gray_4 flex pb-2.5">
+                                                    <span>{item.title}</span>
+                                                    <span className="ml-auto pl-2"> {item.price}</span>
+                                                </h4>
+                                                <ul className="text-xs">
+                                                    {
+                                                        item.options ? (
+                                                            item.options.map((option,optionIndex) => (
+                                                                <li className="pb-0.5"
+                                                                    key={"mini-cart-item-оптион-" + index + "-" + optionIndex}>
+                                                                    <span>{option.name}:</span>
+                                                                    <span
+                                                                        className="text-gray_4 pl-2">{option.value}</span>
+                                                                </li>
+                                                            ))
+                                                        ) : ("")
+                                                    }
+                                                    <li>
+                                                        <span>Quantity:</span>
+                                                        <span className="text-gray_4 pl-2">{item.qty}</span>
+                                                    </li>
+                                                </ul>
+                                                <a href="#"
+                                                   className="absolute right-0 bottom-0 flex items-center text-gray_2">
+                                                    <Icon icon={["far", "trash-alt"]}/>
+                                                    <span
+                                                        className="pl-2 underline hover:no-underline">Remove</span>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    ))
+                                }
 
-                                    </ul>
-                                ) : ("")
-                            }
+                            </ul>
                         </div>
 
                         <div className="bg-white px-5 py-4 border-t border-gray_border shadow-small">
@@ -94,7 +91,7 @@ export default function MiniCart() {
                             </div>
                         </div>
                     </div>
-                ) : null
+                )
             }
 
         </>
