@@ -2,22 +2,22 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 
-export default function PlpSubcategotyList({collection}) {
-    const {title, subcategories,slug} = collection;
+export default function PlpSubcategotyList({subcategoryCallouts}) {
+
     return (
         <div>
             {
-                subcategories ? (
+                subcategoryCallouts ? (
                     <ul className="flex justify-between flex-wrap border-b border-gray_border py-8 mb-8">
                         {
-                            subcategories.map(({url,image,qty,title}, index) => (
+                            subcategoryCallouts.map(({categoryId,imageUrl,title}, index) => (
                                 <li className="w-1/8"
-                                    key={"subcategory-" + slug + "-" + index}>
+                                    key={"subcategory-" + index}>
 
-                                    <Link href={url}>
+                                    <Link href={`/catalog/${categoryId}`}>
                                         <a className="block relative">
                                             <Image
-                                                src={image}
+                                                src={imageUrl}
                                                 alt={title}
                                                 width={200}
                                                 height={300}

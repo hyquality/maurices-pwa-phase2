@@ -6,7 +6,8 @@ module.exports = withPWA({
     target: "serverless",
     //target: "experimental-serverless-trace",
     images: {
-        disableStaticImages: true
+        disableStaticImages: true,
+        domains: ['mauricesprodatg.scene7.com',]
     },
     pwa: {
         dest: "public",

@@ -45,7 +45,7 @@ export default function AttributeSelector({
                         {
                             attributes.map(({title, short}, index) => (
 
-                                <a className={`mr-1.5 py-1.5 px-5 inline-block cursor-pointer rounded-lg border${((selectedVariant && short === selectedVariant.attributes[attributeKey].short) || (selectedFilters && selectedFilters.filter((item) => item.short === short)[0].state)) ? " bg-gray_border border-gray_2 active" : " border-gray_3"} ${checkIsNotExist(short) ? " opacity-40" : ""}`}
+                                <a className={`mr-1.5 mb-1.5 text-center min-w-min96 py-1.5 px-5 inline-block cursor-pointer rounded-lg border${((selectedVariant && short === selectedVariant.attributes[attributeKey].short) || (selectedFilters && selectedFilters.filter((item) => item.short === short)[0].state)) ? " bg-gray_border border-gray_2 active" : " border-gray_3"} ${checkIsNotExist(short) ? " opacity-40" : ""}`}
 
                                    onClick={onMouseEnter(index)}
                                    key={short + "-" + productSlug + index}>

@@ -38,6 +38,7 @@ export default function Promo({
                         <div className={"absolute inset-0 z-0"}>
                             <Image
                                 src={backgroundImage}
+                                alt={title}
                                 quality={100}
                                 layout='fill'
                             />

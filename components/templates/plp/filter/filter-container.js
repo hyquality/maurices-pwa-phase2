@@ -1,37 +1,54 @@
-import React, {createContext, useState} from "react";
-import {generateFilters, generatePromos} from "@lib/helpers";
+import React, {createContext, useEffect, useState} from "react";
+import {generateFilters, generateFilters2, generatePromos, mapProductsJson} from "@lib/helpers";
 import PlpCard from "@components/templates/product/card/plp-card";
 
 export const SelectedFiltersContext = createContext();
 
-export default function FilterContainer({collection, children, ...props}) {
-    const {products,promo} = collection || {}
+export default function FilterContainer({collection,catalogData, children, ...props}) {
+    const {title, slug,promo} = collection || {}
+    const {facets,products,sortOptions,totalNumProducts,subcategories} = catalogData || {}
 
-    const [productList, setProductList] = useState(products);
-    const [filters, setFilter] = useState(generateFilters(products));
+    const [productList, setProductList] = useState(mapProductsJson(products));
+
+    const [filters, setFilter] = useState(false);
     const [promos, setPromos] = useState(generatePromos(promo));
+    const [selectedFilters, setSelectedFilters] = useState(false);
 
     const setDefaultAttrState = () => {
         let tempSelectedFilters = []
-        filters.attributes.map(({values, name}, index) => (
-            tempSelectedFilters[name] = []
-        ))
-        filters.attributes.map(({values, name}, index) => (
-            values.map(({short, title}, valueIndex) => (
-                tempSelectedFilters[name].push(
-                    {
-                        short: short,
-                        title: title,
-                        state: false,
-                    }
-                )
-
+        if(filters.attributes!==undefined){
+            filters.attributes.map(({values, name}, index) => (
+                tempSelectedFilters[name] = []
             ))
-        ))
+            filters.attributes.map(({values, name}, index) => (
+                values.map(({short, title}, valueIndex) => (
+                    tempSelectedFilters[name].push(
+                        {
+                            short: short,
+                            title: title,
+                            state: false,
+                        }
+                    )
+
+                ))
+            ))
+        }
+
         return tempSelectedFilters
     }
 
-    const [selectedFilters, setSelectedFilters] = useState(setDefaultAttrState);
+    useEffect(()=>{
+        if (facets){
+            setFilter(generateFilters2(facets))
+        }
+    },[facets])
+    useEffect(()=>{
+        if (filters){
+            setSelectedFilters(setDefaultAttrState)
+        }
+    },[filters])
+
+
 
 
     const updateSelectedFilters = (name, filters) => {
@@ -71,6 +88,7 @@ export default function FilterContainer({collection, children, ...props}) {
 
 
     const menageColorFilters = (e, {short}, name) => {
+
         menageFilters(name, short)
     }
 
@@ -124,7 +142,7 @@ export default function FilterContainer({collection, children, ...props}) {
         return pass
     }
     const productFilter = (selectedFlatUpdated) => {
-        let filteredProducts = products
+/*        let filteredProducts = products
         if(selectedFlatUpdated.length>0){
             filteredProducts = products.filter(function ({variants}) {
                 let pass = false
@@ -133,16 +151,21 @@ export default function FilterContainer({collection, children, ...props}) {
                 }
                 return pass
             });
-        }
+        }*/
 
 
-        setProductList(filteredProducts)
+        //setProductList(filteredProducts)
     }
 
 
     return (
         <SelectedFiltersContext.Provider
             value={{
+                sortOptions,
+                totalNumProducts,
+                subcategories,
+                facets,
+                filters,
                 promos,
                 productList,
                 selectedFilters,
@@ -152,7 +175,8 @@ export default function FilterContainer({collection, children, ...props}) {
                 menageCheckFilters,
                 selectedFlat,
                 clearAll,
-                menageFilters
+                menageFilters,
+                title,  slug, products
             }}>
             {children}
         </SelectedFiltersContext.Provider>

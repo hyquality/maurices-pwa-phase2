@@ -5,7 +5,7 @@ import {SelectedFiltersContext} from './filter/filter-container';
 import SimpleBanner from "@components/templates/banner/simple-banner";
 
 export default function PlpList({openPopup}) {
-    const {productList,promos} = useContext(SelectedFiltersContext)
+    const {productList,promos,sortOptions,totalNumProducts} = useContext(SelectedFiltersContext)
 
     return (
         <>
@@ -13,11 +13,17 @@ export default function PlpList({openPopup}) {
                 productList ? (
                     <>
                         <div className="flex justify-between">
-                            <span className="text-sm text-gray_5">{productList.length} results</span>
+                            <span className="text-sm text-gray_5">{totalNumProducts} results</span>
                             <div className="sort">
                                 <select className="text-sm text-gray_2 font-medium pl-4 py-2.5 border border-gray_3 min-w-min230">
-                                    <option value="1">Sort by Featured</option>
-                                    <option value="2">Sort by Price</option>
+                                    {
+                                        sortOptions.map((option, index) => (
+                                            <option
+                                                value={option.code}
+                                                key={`sort-option-${index}`}
+                                                selected={option.selected}>{option.displayName}</option>
+                                        ))
+                                    }
 
                                 </select>
                             </div>

@@ -23,7 +23,7 @@ export default function ColorSwatch({
         e.preventDefault();
         if (onColorSwatchClickMouseEnter) {
 
-            onColorSwatchClickMouseEnter(e, colors[index], 'color');
+            onColorSwatchClickMouseEnter(e, colors[index], 'colorGroup');
         }
     }
     return (

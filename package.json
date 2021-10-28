@@ -32,6 +32,7 @@
     "sass": "^1.39.2",
     "sharp": "^0.29.1",
     "swiper": "^7.0.9",
+    "swr": "^1.0.1",
     "webpack": "^5.52.1"
   },
   "devDependencies": {

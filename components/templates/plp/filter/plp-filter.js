@@ -1,6 +1,6 @@
 import Link from "next/link";
-import React, {useState, forwardRef, useImperativeHandle, useContext} from "react";
-import {generateFilters} from "@lib/helpers";
+import React, {useState, forwardRef, useImperativeHandle, useContext, useEffect} from "react";
+import {generateFilters, generateFilters2} from "@lib/helpers";
 import ColorSwatch from "@components/templates/product/color-swatch";
 import HeaderTitle from "@components/templates/header-title";
 import AttributeSelector from "@components/templates/product/attribute-selector";
@@ -8,30 +8,40 @@ import Icon from "@components/templates/icon";
 import PlpFilterClearFilterItem from "./plp-filter-clear-filter-item";
 import {SelectedFiltersContext} from './filter-container';
 
-export default function PlpFilter({collection}) {
-    const {title, subcategories, slug, products} = collection;
+export default function PlpFilter(props) {
+    const filterType = []
+    filterType["colorGroup"] = "swatch"
+    filterType["Size"] = "tabs"
+    filterType["product.price_range"] = "checks"
+
+    filterType["product.silhouette"] = "checks"
 
     const {
         selectedFilters,
         setSelectedFilters,
         clearFilters,
         menageColorFilters,
-        menageCheckFilters
+        menageCheckFilters,
+        facets,
+        filters,
+        title, subcategories, slug, products
     } = useContext(SelectedFiltersContext)
 
-    const [filters, setFilter] = useState(generateFilters(products));
+//generateFilters(products)
+   // const [filters, setFilter] = useState(false);
 
     let tempSections = {}
-    filters.attributes.map(({values, name}, index) => (
-        tempSections[name] = false
-    ))
     const [sections, setSections] = useState(tempSections);
+    //console.log(filters)
 
+    useEffect(()=>{
+        if (filters){
+            filters.attributes.map(({values, name}, index) => (
+                tempSections[name] = false
+            ))
+        }
+    },[filters])
 
-    const filterType = []
-    filterType["color"] = "swatch"
-    filterType["size"] = "tabs"
-    filterType["fit"] = "checks"
 
     const openSection = (name) => (e) => {
         e.preventDefault();
@@ -48,12 +58,12 @@ export default function PlpFilter({collection}) {
                     subcategories ? (
                         <ul>
                             {
-                                subcategories.map(({url, qty, title}, index) => (
+                                subcategories.map(({categoryId, displayName}, index) => (
                                     <li className="py-1 text-xs"
-                                        key={"subcategory-filter-" + slug + "-" + index}>
+                                        key={"subcategory-filter-" + categoryId + "-" + index}>
 
-                                        <Link href={url}>
-                                            <a>{title} <span className={"text-gray_5 ml-1.5"}>({qty})</span> </a>
+                                        <Link href={`catalog/${categoryId}`}>
+                                            <a>{displayName} <span className={"text-gray_5 ml-1.5"}>({0})</span> </a>
                                         </Link>
                                     </li>
 
@@ -65,7 +75,7 @@ export default function PlpFilter({collection}) {
                 }
             </div>
             {
-                filters.attributes ? (
+                filters ? (
                     filters.attributes.map(({values, name}, index) => (
                         <div key={"attribute-filter-" + slug + "-" + index} className={"border-b border-gray_border"}>
 
@@ -155,7 +165,9 @@ export default function PlpFilter({collection}) {
 
                         </div>
                     ))
-                ) : null
+                ):(
+                    <div>loading...</div>
+                )
             }
         </div>
     )
