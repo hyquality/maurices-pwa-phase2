@@ -4,17 +4,22 @@ import PlpCard from "@components/templates/product/card/plp-card";
 
 export const SelectedFiltersContext = createContext();
 
-export default function FilterContainer({collection,catalogData, children, ...props}) {
+export default function FilterContainer({collection,catalogData,loadFilteredCatalog, children, ...props}) {
     const {title, slug,promo} = collection || {}
-    const {facets,products,sortOptions,totalNumProducts,subcategories} = catalogData || {}
+    const {facets,selectedFacets,products,sortOptions,totalNumProducts,subcategories} = catalogData || {}
 
     const [productList, setProductList] = useState(mapProductsJson(products));
 
     const [filters, setFilter] = useState(false);
     const [promos, setPromos] = useState(generatePromos(promo));
+
     const [selectedFilters, setSelectedFilters] = useState(false);
 
-    const setDefaultAttrState = () => {
+    const [catalogListIndex, setCatalogListIndex] = useState({startIndex:1,pageSize:30});
+
+    const [selectedSort, setSelectedSort] = useState(sortOptions.find(obj => obj.selected === true).code)
+
+    const setDefaultAttrState = (clear=false) => {
         let tempSelectedFilters = []
         if(filters.attributes!==undefined){
             filters.attributes.map(({values, name}, index) => (
@@ -26,7 +31,7 @@ export default function FilterContainer({collection,catalogData, children, ...pr
                         {
                             short: short,
                             title: title,
-                            state: false,
+                            state: (selectedFacets.indexOf(short) !== -1 && clear===false)
                         }
                     )
 
@@ -42,14 +47,24 @@ export default function FilterContainer({collection,catalogData, children, ...pr
             setFilter(generateFilters2(facets))
         }
     },[facets])
+
     useEffect(()=>{
         if (filters){
-            setSelectedFilters(setDefaultAttrState)
+            setSelectedFilters(setDefaultAttrState(false))
         }
     },[filters])
 
+    useEffect(()=>{
+        setSelectedFlat(selectedFiltersFlat(true))
+    },[selectedFacets])
 
+    useEffect(()=>{
+        setSelectedSort(sortOptions.find(obj => obj.selected === true).code)
+    },[sortOptions])
 
+    useEffect(()=>{
+        setProductList(mapProductsJson(products));
+    },[products])
 
     const updateSelectedFilters = (name, filters) => {
 
@@ -65,8 +80,8 @@ export default function FilterContainer({collection,catalogData, children, ...pr
 
     const clearAll = () => {
         setSelectedFilters(setDefaultAttrState);
-        setSelectedFlat(selectedFiltersFlat(true))
-        productFilter(selectedFiltersFlat(true))
+        setSelectedFlat(selectedFiltersFlat(true,true))
+        productFilter(selectedFiltersFlat(true,true))
     }
 
     const clearFilters = (e, name) => {
@@ -95,6 +110,7 @@ export default function FilterContainer({collection,catalogData, children, ...pr
     const menageCheckFilters = (name, value) => (e) => {
         menageFilters(name, value)
     }
+
     const menageFilters = (name, value) => {
         let modifiedFilters = []
         let tempFilters = selectedFilters
@@ -110,9 +126,10 @@ export default function FilterContainer({collection,catalogData, children, ...pr
     }
 
 
-    const selectedFiltersFlat = (selectedFiltersUpdated) => {
+    const selectedFiltersFlat = (selectedFiltersUpdated, clear=false) => {
         let filters = []
-        const selected = selectedFiltersUpdated ? setDefaultAttrState() : selectedFilters
+        const selected = selectedFiltersUpdated ? setDefaultAttrState(clear) : selectedFilters
+
         for (const key in selected) {
             selected[key].map(({short, title, state}, valueIndex) => (
                 state ? (
@@ -142,26 +159,21 @@ export default function FilterContainer({collection,catalogData, children, ...pr
         return pass
     }
     const productFilter = (selectedFlatUpdated) => {
-/*        let filteredProducts = products
-        if(selectedFlatUpdated.length>0){
-            filteredProducts = products.filter(function ({variants}) {
-                let pass = false
-                for (let i = 0; i < variants.length; i++) {
-                    checkSelectedAttributes(variants[i].attributes,selectedFlatUpdated) ? pass = true : null
-                }
-                return pass
-            });
-        }*/
+        loadFilteredCatalog(selectedFlatUpdated,selectedSort,catalogListIndex)
 
 
-        //setProductList(filteredProducts)
     }
-
+    const sortCatalogList = (code) => {
+        setSelectedSort(code)
+        loadFilteredCatalog(selectedFlat,code,catalogListIndex)
+    }
 
     return (
         <SelectedFiltersContext.Provider
             value={{
                 sortOptions,
+                selectedSort,
+                sortCatalogList,
                 totalNumProducts,
                 subcategories,
                 facets,

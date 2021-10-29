@@ -18,6 +18,7 @@ import Popup from "@components/templates/popup";
 import dynamic from "next/dynamic";
 import FilterContainer from "@components/templates/plp/filter/filter-container";
 import useSWR from 'swr'
+import axios from "axios";
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
@@ -29,20 +30,30 @@ export default function Post({params, plp, collection, pwa, preview}) {
     const [isPopupVisible, setIsPopupVisible] = useState(false);
     const [popupContent, setPopupContent] = useState("");
 
+    const [apiUrl, setApiUrl] = useState(`${REACT_APP_API_URL}catalog/category/slug/product${parseInt(REACT_APP_MODE) && "/index.json"}`);
+    const address = `${REACT_APP_API_URL}catalog/category/slug/product${parseInt(REACT_APP_MODE) && "/index.json"}`;
     const {
         data,
         error
-    } = useSWR(slug ? `${REACT_APP_API_URL}catalog/category/${slug}/product${parseInt(REACT_APP_MODE) && "/index.json"}` : null, fetcher)
+    } = useSWR(slug ? apiUrl.replace("slug", slug): null, fetcher)
 
     const {title, desc} = collection || {}
     const [catalogData, setCatalogData] = useState(false);
 
     useEffect(() => {
-
         if (data) {
-            setCatalogData(data)
+              setCatalogData(data)
         }
-    }, [data])
+    }, [data,slug])
+
+
+    useEffect(() => {
+
+        if (error) {
+            console.log(error)
+        }
+    }, [error])
+
 
     const openQuickView = (data) => (e) => {
         e.preventDefault()
@@ -56,7 +67,18 @@ export default function Post({params, plp, collection, pwa, preview}) {
         setIsPopupVisible(false)
     }
 
+    const loadFilteredCatalog = (fasets,selectedSort,catalogListIndex) =>  {
+        let vars = `?startIndex${catalogListIndex.startIndex}&pageSize=${catalogListIndex.pageSize}&sortOption=${selectedSort}`;
+        const names = fasets.map(function (faset) {
+            return faset.short;
+        });
+        if(names.length>0){
+            vars+= "&facet="+names.join("&facet=")
+        }
 
+        let apiURL = slug ? `${REACT_APP_API_URL}catalog/category/${slug}/product${parseInt(REACT_APP_MODE) && "/filtered.json"}${vars}` : null
+        setApiUrl(apiURL)
+    }
     if (!router.isFallback && !collection?.slug) {
         return <ErrorPage statusCode={404}/>
     }
@@ -69,6 +91,7 @@ export default function Post({params, plp, collection, pwa, preview}) {
                         <title>{getTheTitle(`${title}`)}</title>
                     </Head>
                     <Container>
+
                         {
                             error && (
                                 <div>failed to load</div>
@@ -83,11 +106,11 @@ export default function Post({params, plp, collection, pwa, preview}) {
                             catalogData && (
                                 <>
 
-                                    <Breadcrumbs/>
+                                    <Breadcrumbs title={false} elements={catalogData.breadcrumbs}/>
                                     <HeaderTitle weight={"bold"} size={"text-4xl"} tag={"h1"}
                                                  style={"utopia"}>{title}</HeaderTitle>
                                     <PlpSubcategotyList subcategoryCallouts={catalogData.subcategoryCallouts}/>
-                                    <FilterContainer collection={collection} catalogData={catalogData}>
+                                    <FilterContainer collection={collection} catalogData={catalogData} loadFilteredCatalog={loadFilteredCatalog}>
                                         <div className="flex">
                                             <div className="filter w-1/4">
                                                <PlpFilter/>

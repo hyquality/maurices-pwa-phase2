@@ -18,7 +18,7 @@ export default function PlpFilter(props) {
 
     const {
         selectedFilters,
-        setSelectedFilters,
+        selectedFlat,
         clearFilters,
         menageColorFilters,
         menageCheckFilters,
@@ -42,6 +42,14 @@ export default function PlpFilter(props) {
         }
     },[filters])
 
+    useEffect(()=>{
+        console.log("open")
+
+        selectedFlat.map(({name}, index) => (
+            setSections(prevSections => ({...prevSections, [name]: true}))
+        ))
+    },[selectedFlat])
+
 
     const openSection = (name) => (e) => {
         e.preventDefault();
@@ -62,7 +70,7 @@ export default function PlpFilter(props) {
                                     <li className="py-1 text-xs"
                                         key={"subcategory-filter-" + categoryId + "-" + index}>
 
-                                        <Link href={`catalog/${categoryId}`}>
+                                        <Link href={`/catalog/${categoryId}`}>
                                             <a>{displayName} <span className={"text-gray_5 ml-1.5"}>({0})</span> </a>
                                         </Link>
                                     </li>
