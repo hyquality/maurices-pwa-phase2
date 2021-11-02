@@ -8,7 +8,7 @@ export default function Breadcrumbs({title="Home", elements=[]}) {
             title && (
                 <li >
                     <Link href={"/"}>
-                        <a className="flex text-xs text-red">{title}<Icon icon={["fas","chevron-right"]} className={"w-4 h-4 pl-2"} size={""}/></a>
+                        <a className="flex text-xs text-red">{title}<Icon icon={["fas","chevron-right"]} className={"w-4 h-4 pl-2"}/></a>
                     </Link>
                 </li>
             )
@@ -21,7 +21,7 @@ export default function Breadcrumbs({title="Home", elements=[]}) {
                     {
                         ((elements.length-1)>index) ? (
                             <Link href={`/catalog/${element.categoryId}`}>
-                                <a className="inline-flex text-xs underline hover:no-underline capitalize">{element.displayName}<Icon icon={["fas","chevron-right"]} className={"w-1.5 h-1.5 pl-2"} size={""}/></a>
+                                <a className="inline-flex text-xs underline hover:no-underline capitalize">{element.displayName}<Icon icon={["fas","chevron-right"]} className={"w-1.5 h-1.5 pl-2"}/></a>
                             </Link>
                         ):(
                             <span className={"text-xs text-gray_4 capitalize"}>{element.displayName}</span>

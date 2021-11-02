@@ -1,0 +1,137 @@
+{
+  "type": "getSliderResponse",
+  "success": true,
+  "sliderInfo": {
+    "background": "#E0E4F2",
+    "fullWidth": false,
+    "highlight": true,
+    "highlightColor": "#FF5353",
+    "itemWidth": 288,
+    "paddingBottom": true,
+    "paddingTop": true,
+    "templates": [
+      {
+        "description": "Scarves, hats and gloves to bundle you up from head to toe.",
+        "height": 700,
+        "image": "/assets/images/slider/car7.jpg",
+        "index": 0,
+        "positionY": "center",
+        "showCaption": true,
+        "title": "Brave the Cold",
+        "type": 1,
+        "url": "#",
+        "width": 572
+      },
+      {
+        "description": "Because every outdoor adventure needs a jacket… or two.",
+        "height": 700,
+        "image": "/assets/images/slider/car8.jpg",
+        "index": 1,
+        "positionY": "center",
+        "showCaption": true,
+        "title": "From Puffers to Plaids",
+        "type": 0,
+        "url": "#",
+        "width": 572
+      },
+      {
+        "description": "A layering fave, from kicking leaves to catching snowflakes.",
+        "height": 700,
+        "image": "/assets/images/slider/car9.jpg",
+        "index": 2,
+        "positionY": "center",
+        "showCaption": true,
+        "title": "Very Vestive",
+        "type": 1,
+        "url": "#",
+        "width": 572
+      },
+      {
+        "description": "Finish the look with the perfect pair of boots that go the distance.",
+        "height": 700,
+        "image": "/assets/images/banners/ads/column-banner2.jpg",
+        "index": 3,
+        "positionY": "center",
+        "showCaption": true,
+        "title": "Boots with the Fur",
+        "type": 0,
+        "url": "#",
+        "width": 572
+      },
+      {
+        "description": "A classic pattern, fit for the holidays.",
+        "height": 700,
+        "image": "/assets/images/banners/ads/column-banner.jpg",
+        "index": 4,
+        "positionY": "center",
+        "showCaption": true,
+        "type": 1,
+        "url": "#",
+        "width": 572
+      },
+      {
+        "description": "Scarves, hats and gloves to bundle you up from head to toe.",
+        "height": 700,
+        "image": "/assets/images/slider/car7.jpg",
+        "index": 5,
+        "positionY": "center",
+        "showCaption": true,
+        "title": "Brave the Cold",
+        "type": 1,
+        "url": "#",
+        "width": 572
+      },
+      {
+        "description": "Because every outdoor adventure needs a jacket… or two.",
+        "height": 700,
+        "image": "/assets/images/slider/car8.jpg",
+        "index": 6,
+        "positionY": "center",
+        "showCaption": true,
+        "title": "From Puffers to Plaids",
+        "type": 0,
+        "url": "#",
+        "width": 572
+      },
+      {
+        "description": "A layering fave, from kicking leaves to catching snowflakes.",
+        "height": 700,
+        "image": "/assets/images/slider/car9.jpg",
+        "index": 7,
+        "positionY": "center",
+        "showCaption": true,
+        "title": "Very Vestive",
+        "type": 1,
+        "url": "#",
+        "width": 572
+      },
+      {
+        "description": "Finish the look with the perfect pair of boots that go the distance.",
+        "height": 700,
+        "image": "/assets/images/banners/ads/column-banner2.jpg",
+        "index": 8,
+        "positionY": "center",
+        "showCaption": true,
+        "title": "Boots with the Fur",
+        "type": 0,
+        "url": "#",
+        "width": 572
+      },
+      {
+        "description": "A classic pattern, fit for the holidays.",
+        "height": 700,
+        "image": "/assets/images/banners/ads/column-banner.jpg",
+        "index": 9,
+        "positionY": "center",
+        "showCaption": true,
+        "type": 1,
+        "url": "#",
+        "width": 572
+      }
+    ],
+    "text": "Stock up on styles perfect for Pumpkin-Spice season.",
+    "title": "Layers on Layers",
+    "titleColor": "white",
+    "top": "LOOKS WE LOVE:"
+  }
+}

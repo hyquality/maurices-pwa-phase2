@@ -1,0 +1,34 @@
+{
+  "type": "getBannerResponse",
+  "success": true,
+  "homePageInfo": {
+    "background": {
+      "first": "#58b7b1"
+    },
+    "fullWidth": true,
+    "highlight": false,
+    "highlightHeight": 0,
+    "image": {
+      "height": 300,
+      "offset": "-my-10 ml-auto",
+      "position": "right",
+      "src": "/assets/images/banners/promo/promo2.png",
+      "width": 300
+    },
+    "lightMode": true,
+    "nav": [
+      {
+        "text": "Plus Plaids",
+        "url": "#"
+      },
+      {
+        "text": "Plus Plaids",
+        "url": "#"
+      }
+    ],
+    "paddingTop": true,
+    "text": "We invite you to join us in contributing towards the fight to end childhood cancer.",
+    "titleColor": "white",
+    "top": "MAURICES  x  ST. JUDE"
+  }
+}

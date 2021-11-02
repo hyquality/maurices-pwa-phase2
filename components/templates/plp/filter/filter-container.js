@@ -1,27 +1,30 @@
 import React, {createContext, useEffect, useState} from "react";
 import {generateFilters, generateFilters2, generatePromos, mapProductsJson} from "@lib/helpers";
 import PlpCard from "@components/templates/product/card/plp-card";
+import {REACT_APP_CATALOG_PAGE_SIZE} from "@lib/constants";
 
 export const SelectedFiltersContext = createContext();
 
-export default function FilterContainer({collection,catalogData,loadFilteredCatalog, children, ...props}) {
-    const {title, slug,promo} = collection || {}
-    const {facets,selectedFacets,products,sortOptions,totalNumProducts,subcategories} = catalogData || {}
+export default function FilterContainer({catalogData, loadFilteredCatalog, children, ...props}) {
+
+    const {"categoryDisplayName": title, "categoryId": slug} = catalogData;
+    const {facets, selectedFacets, products, sortOptions, totalNumProducts, subcategories} = catalogData || {}
 
     const [productList, setProductList] = useState(mapProductsJson(products));
+    const [isMoreProductLoading, setIsMoreProductLoading] = useState(false);
 
     const [filters, setFilter] = useState(false);
-    const [promos, setPromos] = useState(generatePromos(promo));
+    const [promos, setPromos] = useState(generatePromos(catalogData));
 
     const [selectedFilters, setSelectedFilters] = useState(false);
 
-    const [catalogListIndex, setCatalogListIndex] = useState({startIndex:1,pageSize:30});
+    const [catalogListIndex, setCatalogListIndex] = useState({startIndex: 1, pageSize: REACT_APP_CATALOG_PAGE_SIZE});
 
     const [selectedSort, setSelectedSort] = useState(sortOptions.find(obj => obj.selected === true).code)
 
-    const setDefaultAttrState = (clear=false) => {
+    const setDefaultAttrState = (clear = false) => {
         let tempSelectedFilters = []
-        if(filters.attributes!==undefined){
+        if (filters.attributes !== undefined) {
             filters.attributes.map(({values, name}, index) => (
                 tempSelectedFilters[name] = []
             ))
@@ -31,7 +34,7 @@ export default function FilterContainer({collection,catalogData,loadFilteredCata
                         {
                             short: short,
                             title: title,
-                            state: (selectedFacets.indexOf(short) !== -1 && clear===false)
+                            state: (selectedFacets.indexOf(short) !== -1 && clear === false)
                         }
                     )
 
@@ -42,29 +45,37 @@ export default function FilterContainer({collection,catalogData,loadFilteredCata
         return tempSelectedFilters
     }
 
-    useEffect(()=>{
-        if (facets){
-            setFilter(generateFilters2(facets))
+    useEffect(() => {
+        if (facets) {
+            setFilter(generateFilters(facets))
         }
-    },[facets])
+    }, [facets])
 
-    useEffect(()=>{
-        if (filters){
+    useEffect(() => {
+        if (filters) {
             setSelectedFilters(setDefaultAttrState(false))
         }
-    },[filters])
+    }, [filters])
 
-    useEffect(()=>{
+    useEffect(() => {
         setSelectedFlat(selectedFiltersFlat(true))
-    },[selectedFacets])
+    }, [selectedFacets])
 
-    useEffect(()=>{
+    useEffect(() => {
         setSelectedSort(sortOptions.find(obj => obj.selected === true).code)
-    },[sortOptions])
+    }, [sortOptions])
 
-    useEffect(()=>{
-        setProductList(mapProductsJson(products));
-    },[products])
+    useEffect(() => {
+        setProductList(mapProductsJson(products,(isMoreProductLoading?productList:false)));
+        setIsMoreProductLoading(false)
+    }, [products])
+
+    useEffect(() => {
+        if(isMoreProductLoading){
+            loadFilteredCatalog(selectedFiltersFlat(false), selectedSort, catalogListIndex)
+        }
+
+    }, [catalogListIndex])
 
     const updateSelectedFilters = (name, filters) => {
 
@@ -80,8 +91,8 @@ export default function FilterContainer({collection,catalogData,loadFilteredCata
 
     const clearAll = () => {
         setSelectedFilters(setDefaultAttrState);
-        setSelectedFlat(selectedFiltersFlat(true,true))
-        productFilter(selectedFiltersFlat(true,true))
+        setSelectedFlat(selectedFiltersFlat(true, true))
+        productFilter(selectedFiltersFlat(true, true))
     }
 
     const clearFilters = (e, name) => {
@@ -126,7 +137,7 @@ export default function FilterContainer({collection,catalogData,loadFilteredCata
     }
 
 
-    const selectedFiltersFlat = (selectedFiltersUpdated, clear=false) => {
+    const selectedFiltersFlat = (selectedFiltersUpdated, clear = false) => {
         let filters = []
         const selected = selectedFiltersUpdated ? setDefaultAttrState(clear) : selectedFilters
 
@@ -150,22 +161,19 @@ export default function FilterContainer({collection,catalogData,loadFilteredCata
     const [selectedFlat, setSelectedFlat] = useState(selectedFiltersFlat);
 
 
-    const checkSelectedAttributes = (attributes,selectedFlatUpdated) => {
-        let pass = false
-        for (let i = 0; i < selectedFlatUpdated.length; i++) {
-            attributes[selectedFlatUpdated[i].name].short === selectedFlatUpdated[i].short ? pass = true : null
-
-        }
-        return pass
-    }
     const productFilter = (selectedFlatUpdated) => {
-        loadFilteredCatalog(selectedFlatUpdated,selectedSort,catalogListIndex)
 
+        setCatalogListIndex(prevCatalogListIndex => (
+            {
+                ...prevCatalogListIndex, startIndex: 1
+            }));
 
+        setProductList(false)
+        loadFilteredCatalog(selectedFlatUpdated, selectedSort, catalogListIndex)
     }
     const sortCatalogList = (code) => {
         setSelectedSort(code)
-        loadFilteredCatalog(selectedFlat,code,catalogListIndex)
+        loadFilteredCatalog(selectedFlat, code, catalogListIndex)
     }
 
     return (
@@ -188,7 +196,12 @@ export default function FilterContainer({collection,catalogData,loadFilteredCata
                 selectedFlat,
                 clearAll,
                 menageFilters,
-                title,  slug, products
+                title,
+                slug,
+                products,
+                setIsMoreProductLoading,
+                catalogListIndex,
+                setCatalogListIndex
             }}>
             {children}
         </SelectedFiltersContext.Provider>

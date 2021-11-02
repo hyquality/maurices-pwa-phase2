@@ -43,8 +43,6 @@ export default function PlpFilter(props) {
     },[filters])
 
     useEffect(()=>{
-        console.log("open")
-
         selectedFlat.map(({name}, index) => (
             setSections(prevSections => ({...prevSections, [name]: true}))
         ))
@@ -61,7 +59,7 @@ export default function PlpFilter(props) {
         <div className={"filter-wrapper pr-8"}>
             <div className={"pb-5 border-b border-gray_border"}>
                 <HeaderTitle className={"pb-2.5"} style={"normal"} size={"text-sm"} tag={"h3"} weight={"regular"}
-                             position={"left"} upper={true}>{title}</HeaderTitle>
+                             position={"text-left"} upper={true}>{title}</HeaderTitle>
                 {
                     subcategories ? (
                         <ul>
@@ -90,7 +88,7 @@ export default function PlpFilter(props) {
                             <label className={`cursor-pointer relative flex items-center`} onClick={openSection(name)}>
                                 <HeaderTitle className={"py-5"} style={"normal"} size={"text-sm"} tag={"h3"}
                                              weight={"regular"}
-                                             position={"left"} upper={true}>{name}</HeaderTitle>
+                                             position={"text-left"} upper={true}>{name}</HeaderTitle>
                                 <span className={"ml-auto mr-3"}>
                                         {
                                             sections[name] ? (

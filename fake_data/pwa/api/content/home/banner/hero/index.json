@@ -1,0 +1,26 @@
+{
+  "type": "getBannerResponse",
+  "success": true,
+  "homePageInfo": {
+    "background": {
+      "first": "#DDDFE9"
+    },
+    "button": {
+      "title": "SHOP THE GIFT GUIDE",
+      "url": "#"
+    },
+    "fullWidth": true,
+    "highlight": true,
+    "highlightColor": "#FF5353",
+    "highlightHeight": 44,
+    "image": {
+      "src": "/assets/images/banners/hero/hero1.png"
+    },
+    "lightMode": false,
+    "paddingTop": false,
+    "text": "Find gifts they really want — and maybe a little something for you, too.",
+    "title": "A Very Merry<br> Gift Guide",
+    "titleColor": "white",
+    "top": "CHECK IT OFF YOUR LIST"
+  }
+}

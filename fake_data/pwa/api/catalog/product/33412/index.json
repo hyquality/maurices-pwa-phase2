@@ -1,0 +1,81 @@
+{
+  "type": "getProductDetailsResponse",
+  "success": true,
+  "product": {
+    "bvNumReviews": 0,
+    "bvRating": 0,
+    "colors": [
+      {
+        "alternateImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28277C2_C6225?$large$",
+        "colorId": "C6324",
+        "colorName": "LAVENDER ASH",
+        "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28277C3_C6324?$large$",
+        "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28277C3_C6324_swatch",
+        "listPrice": 32,
+        "salePrice": 32
+      },
+      {
+        "alternateImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/31297_C1212?$large$",
+        "colorId": "C6225",
+        "colorName": "PEARL GRAY",
+        "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28277_C6225?$large$",
+        "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28277_C6225_swatch",
+        "listPrice": 36,
+        "salePrice": 28
+      },
+      {
+        "alternateImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25316_C106?$large$",
+        "colorId": "C8177",
+        "colorName": "MULBERRY",
+        "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/30646_C8177?$large$",
+        "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/30646_C8177_swatch",
+        "listPrice": 38,
+        "salePrice": 38
+      },
+      {
+        "alternateImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25316_C3466?$large$",
+        "colorId": "C6784",
+        "colorName": "ROSE PETAL",
+        "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/29790_C6784?$large$",
+        "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/29790_C6784_swatch",
+        "listPrice": 40,
+        "salePrice": 40
+      }
+    ],
+    "defaultColor": "C6324",
+    "description": "Dahlia woven wedge",
+    "displayName": "dahlia woven wedge in navy ",
+    "id": "33412",
+    "inFavorites": false,
+    "longDescription": "<ul><li>cute cork wedge</li><li>woven strap</li><li>lightly padded footbed</li><li>buckle closure</li><li>small elastic piece by buckle to make it possible to pull on and slip off</li></ul><ul><b>Sizing</b><li>1 inch platform</li><li>3 1/2 inch wedge</li></ul>",
+    "newProduct": false,
+    "onSale": false,
+    "onlineExclusive": false,
+    "sizes": [
+      {
+        "id": "6",
+        "name": "6"
+      },
+      {
+        "id": "7",
+        "name": "7"
+      },
+      {
+        "id": "8",
+        "name": "8"
+      },
+      {
+        "id": "9",
+        "name": "9"
+      },
+      {
+        "id": "10",
+        "name": "10"
+      },
+      {
+        "id": "11",
+        "name": "11"
+      }
+    ]
+  }
+}

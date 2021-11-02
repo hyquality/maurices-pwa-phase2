@@ -1,0 +1,104 @@
+{
+  "type": "getCarouselResponse",
+  "success": true,
+  "carouselInfo": {
+    "fullWidth": false,
+    "paddingBottom": true,
+    "showNav": false,
+    "showNavMobile": false,
+    "templates": [
+      {
+        "description": "A classic pattern, fit for the holidays.",
+        "height": 340,
+        "image": "/assets/images/banners/ads/column-banner.jpg",
+        "index": 0,
+        "positionY": "center",
+        "showCaption": true,
+        "title": "Test",
+        "type": 1,
+        "url": "#",
+        "width": 286
+      },
+      {
+        "description": "Sweaters that feel as good as they look.",
+        "height": 340,
+        "image": "/assets/images/banners/ads/column-banner2.jpg",
+        "index": 1,
+        "positionY": "left",
+        "showCaption": true,
+        "type": 1,
+        "url": "#",
+        "width": 286
+      },
+      {
+        "description": "A classic pattern, fit for the holidays.",
+        "height": 340,
+        "image": "/assets/images/banners/ads/column-banner.jpg",
+        "index": 2,
+        "positionY": "left",
+        "showCaption": true,
+        "type": 1,
+        "url": "#",
+        "width": 286
+      },
+      {
+        "description": "Sweaters that feel as good as they look.",
+        "height": 340,
+        "image": "/assets/images/banners/ads/column-banner2.jpg",
+        "index": 3,
+        "positionY": "left",
+        "showCaption": true,
+        "type": 1,
+        "url": "#",
+        "width": 286
+      },
+      {
+        "description": "A classic pattern, fit for the holidays.",
+        "height": 340,
+        "image": "/assets/images/banners/ads/column-banner.jpg",
+        "index": 4,
+        "positionY": "left",
+        "showCaption": true,
+        "type": 1,
+        "url": "#",
+        "width": 286
+      },
+      {
+        "description": "Sweaters that feel as good as they look.",
+        "height": 340,
+        "image": "/assets/images/banners/ads/column-banner2.jpg",
+        "index": 5,
+        "positionY": "left",
+        "showCaption": true,
+        "type": 1,
+        "url": "#",
+        "width": 286
+      },
+      {
+        "description": "A classic pattern, fit for the holidays.",
+        "height": 340,
+        "image": "/assets/images/banners/ads/column-banner.jpg",
+        "index": 6,
+        "positionY": "left",
+        "showCaption": true,
+        "type": 1,
+        "url": "#",
+        "width": 286
+      },
+      {
+        "description": "Sweaters that feel as good as they look.",
+        "height": 340,
+        "image": "/assets/images/banners/ads/column-banner2.jpg",
+        "index": 7,
+        "positionY": "left",
+        "showCaption": true,
+        "type": 1,
+        "url": "#",
+        "width": 286
+      }
+    ],
+    "title": "Picked For You",
+    "visibleNum": 6,
+    "visibleNumMobile": 2
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "type": "getSliderResponse",
+  "success": true,
+  "sliderInfo": {
+    "button": {
+      "title": "VIEW GALLERY",
+      "url": "#"
+    },
+    "fullWidth": true,
+    "hash": "discovermaurices",
+    "highlight": false,
+    "itemWidth": 0,
+    "paddingBottom": true,
+    "paddingTop": false,
+    "templates": [
+      {
+        "height": 500,
+        "image": "/assets/images/insta/insta1.jpg",
+        "index": 0,
+        "showCaption": false,
+        "type": 0,
+        "url": "#",
+        "width": 500
+      },
+      {
+        "height": 500,
+        "image": "/assets/images/insta/insta2.jpg",
+        "index": 1,
+        "showCaption": false,
+        "type": 0,
+        "url": "#",
+        "width": 500
+      },
+      {
+        "height": 500,
+        "image": "/assets/images/insta/insta3.jpg",
+        "index": 2,
+        "showCaption": false,
+        "type": 0,
+        "url": "#",
+        "width": 500
+      },
+      {
+        "height": 500,
+        "image": "/assets/images/insta/insta4.jpg",
+        "index": 3,
+        "showCaption": false,
+        "type": 0,
+        "url": "#",
+        "width": 500
+      },
+      {
+        "height": 500,
+        "image": "/assets/images/insta/insta5.jpg",
+        "index": 4,
+        "showCaption": false,
+        "type": 0,
+        "url": "#",
+        "width": 500
+      },
+      {
+        "height": 500,
+        "image": "/assets/images/insta/insta1.jpg",
+        "index": 5,
+        "showCaption": false,
+        "type": 0,
+        "url": "#",
+        "width": 500
+      },
+      {
+        "height": 500,
+        "image": "/assets/images/insta/insta2.jpg",
+        "index": 6,
+        "showCaption": false,
+        "type": 0,
+        "url": "#",
+        "width": 500
+      },
+      {
+        "height": 500,
+        "image": "/assets/images/insta/insta3.jpg",
+        "index": 7,
+        "showCaption": false,
+        "type": 0,
+        "url": "#",
+        "width": 500
+      },
+      {
+        "height": 500,
+        "image": "/assets/images/insta/insta4.jpg",
+        "index": 8,
+        "showCaption": false,
+        "type": 0,
+        "url": "#",
+        "width": 500
+      },
+      {
+        "height": 500,
+        "image": "/assets/images/insta/insta5.jpg",
+        "index": 9,
+        "showCaption": false,
+        "type": 0,
+        "url": "#",
+        "width": 500
+      }
+    ],
+    "text": "Share your style on Instagram using <strong>#discovermaurices</strong> for a chance to be featured here.",
+    "title": "SHOW US HOW YOU"
+  }
+}

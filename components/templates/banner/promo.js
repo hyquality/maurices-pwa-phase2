@@ -7,7 +7,7 @@ import {useRouter} from 'next/router'
 import NavList from "@components/templates/nav-list";
 
 export default function Promo({
-                                  fullwidth,
+                                  fullWidth,
                                   paddingTop,
                                   paddingBottom,
                                   top,
@@ -17,14 +17,13 @@ export default function Promo({
                                   lightMode,
                                   titleColor,
                                   background,
-                                  backgroundImage,
                                   image,
                                   button,
-                                  imagePosition,
+                                  highlight,
                                   nav,
                                   ...props
                               }) {
-    const {first, second} = background || {}
+    const {first, second, "image": backgroundImage} = background || {}
     const router = useRouter()
     const buttonOnClick = (e) => {
         (button && button.url) && router.push(button.url)
@@ -37,7 +36,7 @@ export default function Promo({
                     backgroundImage && (
                         <div className={"absolute inset-0 z-0"}>
                             <Image
-                                src={backgroundImage}
+                                src={backgroundImage.src}
                                 alt={title}
                                 quality={100}
                                 layout='fill'
@@ -57,22 +56,21 @@ export default function Promo({
                                         width={icon.w}
                                         height={icon.h}
                                         quality={100}
-                                        //layout='responsive'
                                         className="h-auto"
                                     />
                                 </div>
                             )
                         }
                         <div
-                            className={`${imagePosition === "left" ? "order-1" : "order-2"} ${image.offset ? image.offset : ""} w-full hidden md:block md:w-1/2 flex z-10`}>
+                            className={`${(image.position!==undefined || image.position === "left") ? "order-2" : "order-1"} ${image.offset ? image.offset : ""} w-full hidden md:block md:w-1/2 flex z-10`}>
                             {
-                                (image.src && image.w && image.h) && (
+                                (image.src && image.width && image.height) && (
                                     <div className={`flex md:inline p-0 w-full `}>
                                         <Image
                                             alt={title}
                                             src={image.src}
-                                            width={image.w}
-                                            height={image.h}
+                                            width={image.width}
+                                            height={image.height}
                                             quality={100}
                                             //layout='responsive'
                                             className="h-auto"
@@ -82,7 +80,7 @@ export default function Promo({
                             }
                         </div>
                         <div
-                            className={`${imagePosition === "left" ? "order-2" : "order-1"} w-full md:w-1/3 flex items-center py-12 z-10 `}>
+                            className={`${(image.position!==undefined || image.position === "left") ? "order-1" : "order-2"} w-full md:w-1/3 flex items-center py-12 z-10 `}>
 
                             <div className={"text-center md:text-left md:max-w-md m-auto"}>
                     <span
@@ -119,7 +117,7 @@ export default function Promo({
     )
 
     return (
-        fullwidth ? (
+        fullWidth ? (
             <>
                 {content}
             </>
@@ -133,7 +131,7 @@ export default function Promo({
 }
 
 Promo.propTypes = {
-    fullwidth: PropTypes.bool,
+    fullWidth: PropTypes.bool,
     paddingTop: PropTypes.bool,
     paddingBottom: PropTypes.bool,
     top: PropTypes.string,
@@ -149,15 +147,17 @@ Promo.propTypes = {
     background: PropTypes.shape({
         first: PropTypes.string,
         second: PropTypes.string,
+        image: PropTypes.shape({
+            src: PropTypes.string,
+        }),
     }),
-    backgroundImage: PropTypes.string,
     image: PropTypes.shape({
         src: PropTypes.string,
-        w: PropTypes.number,
-        h: PropTypes.number,
+        width: PropTypes.number,
+        position: PropTypes.oneOf(['left', 'right']),
+        height: PropTypes.number,
         offset: PropTypes.string,
     }),
-    imagePosition: PropTypes.oneOf(['left', 'right']),
     nav: PropTypes.any,
     button: PropTypes.shape({
         title: PropTypes.string,
@@ -165,26 +165,28 @@ Promo.propTypes = {
     }),
 }
 Promo.defaultProps = {
-    fullwidth: true,
+    fullWidth: false,
     paddingTop: false,
     paddingBottom: false,
     icon: {},
     top: "A Very Merry Gift Guide",
-    title: "Title",
+    title: "",
     titleColor: undefined,
     text: "",
     background: {
         first: "#f2f3f7",
         second: "#dddfe9",
-        offset: ""
+        offset: "",
+        image: {
+            src: "",
+        }
     },
-    backgroundImage: "",
     image: {
         src: "/assets/images/banners/promo/promo1.png",
-        w: 400,
-        h: 138
+        width: 400,
+        height: 138,
+        position: "left"
     },
-    imagePosition: "left",
     nav: {},
     button: {},
     highlight: false,

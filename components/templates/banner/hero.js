@@ -35,7 +35,7 @@ export default function Hero({
                         <div className={"flex md:inline-block px-10"}>
                             <Image
                                 alt={title}
-                                src={image}
+                                src={image.src?image.src:image}
                                 width={690}
                                 height={700}
                                 quality={100}
@@ -99,7 +99,9 @@ Hero.propTypes = {
         first: PropTypes.string.isRequired,
         second: PropTypes.string
     }),
-    image: PropTypes.string,
+    image:PropTypes.shape({
+        src: PropTypes.string.isRequired
+    }),
     button: PropTypes.shape({
         title: PropTypes.string.isRequired,
         url: PropTypes.string.isRequired
@@ -120,7 +122,9 @@ Hero.defaultProps = {
         first: "#f2f3f7",
         second: "#dddfe9"
     },
-    image: "",
+    image: {
+        src:""
+    },
     button: {
         title: "Button",
         url: "#"

@@ -1,0 +1,30 @@
+{
+  "type": "getBannerResponse",
+  "success": true,
+  "homePageInfo": {
+    "background": {
+      "first": "#DDDFE9",
+      "image": {
+        "src": "/assets/images/banners/promo/promo1bg.jpg"
+      }
+    },
+    "button": {
+      "title": "Shop The Sale",
+      "url": "#"
+    },
+    "fullWidth": true,
+    "highlight": false,
+    "highlightHeight": 0,
+    "image": {
+      "height": 445,
+      "offset": "-mt-5",
+      "src": "/assets/images/banners/promo/promo1.png",
+      "width": 1285
+    },
+    "lightMode": true,
+    "paddingTop": true,
+    "title": "30% Off Select Styles",
+    "titleColor": "white",
+    "top": "THE BUNDLE UP EVENT"
+  }
+}

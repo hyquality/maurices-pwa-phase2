@@ -37,7 +37,6 @@ export default function Carousel(
 ) {
 
     const isMobile = useScreenWidth();
-
     let TemplateItem;
     const content = (
         <>
@@ -58,21 +57,24 @@ export default function Carousel(
                 scrollbar={isMobile?(showScrollMobile ? {draggable: true} : false):showScroll ? {draggable: true} : false}
             >
                 {
-                    templates.map((template, index) => {
+                    (templates && Array.isArray(templates)) && (
+                        templates.map((template, index) => {
 
-                        TemplateItem = dynamic(import(template.path + ''))
-                        let dynamicProps = template.data;
-                        return (
-                            <SwiperSlide key={`dyn-carousel-${context}-${template.path}-${index}`}>
-                                <div className={`pb-10 ${template.class ? template.class + "" : ""} ${className}`}>
+                            TemplateItem = dynamic(import(template.path + ''))
+                            let dynamicProps = template.data;
+                            return (
+                                <SwiperSlide key={`dyn-carousel-${context}-${template.path}-${index}`}>
+                                    <div className={`pb-10 ${template.class ? template.class + "" : ""} ${className}`}>
 
-                                    <TemplateItem {...dynamicProps} />
-                                </div>
-                            </SwiperSlide>
+                                        <TemplateItem {...dynamicProps} />
+                                    </div>
+                                </SwiperSlide>
 
 
-                        )
-                    })
+                            )
+                        })
+                    )
+
                 }
             </Swiper>
         </>

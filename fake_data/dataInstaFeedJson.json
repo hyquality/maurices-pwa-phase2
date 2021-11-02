@@ -19,8 +19,8 @@
     {
       "path": "./accent/accent",
       "data": {
-        "w": 500,
-        "h": 500,
+        "width": 500,
+        "height": 500,
         "showCaption": false,
         "image": "/assets/images/insta/insta1.jpg",
         "url": "#"
@@ -29,8 +29,8 @@
     {
       "path": "./accent/accent",
       "data": {
-        "w": 500,
-        "h": 500,
+        "width": 500,
+        "height": 500,
         "showCaption": false,
         "image": "/assets/images/insta/insta2.jpg",
         "url": "#"
@@ -39,8 +39,8 @@
     {
       "path": "./accent/accent",
       "data": {
-        "w": 500,
-        "h": 500,
+        "width": 500,
+        "height": 500,
         "showCaption": false,
         "image": "/assets/images/insta/insta3.jpg",
         "url": "#"
@@ -49,8 +49,8 @@
     {
       "path": "./accent/accent",
       "data": {
-        "w": 500,
-        "h": 500,
+        "width": 500,
+        "height": 500,
         "showCaption": false,
         "image": "/assets/images/insta/insta4.jpg",
         "url": "#"
@@ -59,8 +59,8 @@
     {
       "path": "./accent/accent",
       "data": {
-        "w": 500,
-        "h": 500,
+        "width": 500,
+        "height": 500,
         "showCaption": false,
         "image": "/assets/images/insta/insta5.jpg",
         "url": "#"
@@ -68,8 +68,8 @@
     },    {
       "path": "./accent/accent",
       "data": {
-        "w": 500,
-        "h": 500,
+        "width": 500,
+        "height": 500,
         "showCaption": false,
         "image": "/assets/images/insta/insta1.jpg",
         "url": "#"
@@ -78,8 +78,8 @@
     {
       "path": "./accent/accent",
       "data": {
-        "w": 500,
-        "h": 500,
+        "width": 500,
+        "height": 500,
         "showCaption": false,
         "image": "/assets/images/insta/insta2.jpg",
         "url": "#"
@@ -88,8 +88,8 @@
     {
       "path": "./accent/accent",
       "data": {
-        "w": 500,
-        "h": 500,
+        "width": 500,
+        "height": 500,
         "showCaption": false,
         "image": "/assets/images/insta/insta3.jpg",
         "url": "#"
@@ -98,8 +98,8 @@
     {
       "path": "./accent/accent",
       "data": {
-        "w": 500,
-        "h": 500,
+        "width": 500,
+        "height": 500,
         "showCaption": false,
         "image": "/assets/images/insta/insta4.jpg",
         "url": "#"
@@ -108,8 +108,8 @@
     {
       "path": "./accent/accent",
       "data": {
-        "w": 500,
-        "h": 500,
+        "width": 500,
+        "height": 500,
         "showCaption": false,
         "image": "/assets/images/insta/insta5.jpg",
         "url": "#"

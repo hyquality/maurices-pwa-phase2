@@ -1035,20 +1035,10 @@
     "heading": "Our Favorite Cardigans",
     "imageUrl": "/assets/images/banners/ads/add_banner.jpg"
   },
-  "promoSlotC3": {
+  "promoSlotB4": {
     "ctaLinkUrl": "#",
     "heading": "Explore Fall<br>Kiminos",
     "imageUrl": "/assets/images/banners/ads/add_banner_big.jpg"
-  },
-  "promoSlotC3": {
-    "ctaLinkUrl": "string",
-    "heading": "string",
-    "imageUrl": "string"
-  },
-  "promoSlotD6": {
-    "ctaLinkUrl": "string",
-    "heading": "string",
-    "imageUrl": "string"
   },
   "selectedFacets": [],
   "sortOptions": [

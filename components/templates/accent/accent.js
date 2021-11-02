@@ -11,9 +11,9 @@ export default function Accent({
                                    showCaption,
                                    image,
                                    size,
-                                   w,
-                                   h,
-                                   x,
+                                   width,
+                                   height,
+                                   positionX,
                                    className = ""
                                }) {
 
@@ -30,14 +30,14 @@ export default function Accent({
         console.log(url)
     }
     return (
-        <div className={`accent-banner relative  ${className} position-${x}`}>
+        <div className={`accent-banner relative  ${className} position-${positionX}`}>
             <div className={"relative z-0"}>
                 <a onClick={onClick} className={`${url&&"cursor-pointer"}`}>
                     <Image
                         alt={title}
                         src={image}
-                        width={w ? w : 300}
-                        height={h ? h : 300}
+                        width={width ? width : 300}
+                        height={height ? height : 300}
                         quality={100}
                     />
                 </a>
@@ -76,9 +76,9 @@ Accent.propTypes = {
     description: PropTypes.string,
     showCaption: PropTypes.bool,
     image: PropTypes.string.isRequired,
-    w: PropTypes.number,
-    h: PropTypes.number,
-    x: PropTypes.oneOf(['center', 'left', 'right']),
+    width: PropTypes.number,
+    height: PropTypes.number,
+    positionX: PropTypes.oneOf(['center', 'left', 'right']),
     className: PropTypes.string,
     size: PropTypes.oneOf(['text-xs', 'text-sm', 'text-base', 'text-lg', 'text-xl', 'text-2xl', 'text-3xl', 'text-4xl', 'text-5xl', 'text-6xl', 'text-7xl', 'text-8xl', 'text-9xl']),
 }
@@ -89,9 +89,9 @@ Accent.defaultProps = {
     description: "",
     showCaption: true,
     image: "image",
-    w: 50,
-    h: 50,
-    x: "center",
+    width: 50,
+    height: 50,
+    positionX: "center",
     className: "PropTypes.string",
     size: "text-4xl"
 };

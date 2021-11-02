@@ -1,0 +1,109 @@
+{
+  "type": "getGridLayoutResponse",
+  "success": true,
+  "gridLayoutInfo": {
+    "columns": 2,
+    "columnsMobile": 2,
+    "context": "index-category-grid",
+    "paddingBottom": true,
+    "paddingTop": true,
+    "templates": [
+      {
+        "height": 336,
+        "image": "/assets/images/slider/s0.jpg",
+        "index": 0,
+        "positionX": "center",
+        "positionY": "bottom",
+        "showCaption": true,
+        "title": "JUST WHAT YOU’RE LOOKING FOR…",
+        "titleColor": "white",
+        "size": "text-base",
+        "type": 0,
+        "width": 336
+      },
+      {
+        "height": 336,
+        "image": "/assets/images/slider/s1.jpg",
+        "index": 1,
+        "positionX": "left",
+        "positionY": "center",
+        "showCaption": true,
+        "title": "Tops",
+        "titleTextAlign": "left",
+        "type": 0,
+        "width": 336
+      },
+      {
+        "height": 336,
+        "image": "/assets/images/slider/s2.jpg",
+        "index": 2,
+        "positionX": "left",
+        "positionY": "center",
+        "showCaption": true,
+        "title": "Jeans",
+        "titleTextAlign": "left",
+        "type": 0,
+        "width": 336
+      },
+      {
+        "height": 336,
+        "image": "/assets/images/slider/s3.jpg",
+        "index": 3,
+        "positionX": "left",
+        "positionY": "center",
+        "showCaption": true,
+        "title": "Sweaters",
+        "titleTextAlign": "left",
+        "type": 0,
+        "width": 336
+      },
+      {
+        "height": 336,
+        "image": "/assets/images/slider/s4.jpg",
+        "index": 4,
+        "positionX": "left",
+        "positionY": "center",
+        "showCaption": true,
+        "title": "Jackets &<br>Vests",
+        "titleTextAlign": "left",
+        "type": 0,
+        "width": 336
+      },
+      {
+        "height": 336,
+        "image": "/assets/images/slider/s5.jpg",
+        "index": 5,
+        "positionX": "left",
+        "positionY": "center",
+        "showCaption": true,
+        "title": "Dresses &<br>Jumpsuits",
+        "titleTextAlign": "left",
+        "type": 0,
+        "width": 336
+      },
+      {
+        "height": 336,
+        "image": "/assets/images/slider/s6.jpg",
+        "index": 6,
+        "positionX": "left",
+        "positionY": "center",
+        "showCaption": true,
+        "title": "Boots &<br>Booties",
+        "titleTextAlign": "left",
+        "type": 0,
+        "width": 336
+      },
+      {
+        "height": 336,
+        "image": "/assets/images/slider/s7.jpg",
+        "index": 7,
+        "positionX": "left",
+        "positionY": "center",
+        "showCaption": true,
+        "title": "Cold<br>Weather",
+        "type": 0,
+        "width": 336
+      }
+    ]
+  }
+}

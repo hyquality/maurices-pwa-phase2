@@ -11,10 +11,10 @@ const Template = (args) => <SimpleBanner {...args} />
 export const SimpleBannerBanner = Template.bind({})
 
 SimpleBannerBanner.args = {
-    "w": 336,
-    "h": 336,
-    "x": "left",
-    "y": "center",
+    "width": 336,
+    "height": 336,
+    "positionX": "left",
+    "positionY": "center",
     "title": "Tops",
     "titleTextAlign": "left",
     "size": "text-3xl",

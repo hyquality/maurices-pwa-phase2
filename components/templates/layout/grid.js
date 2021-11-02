@@ -32,6 +32,7 @@ export default function Grid({
             p:"grid-item-1_4"
         }
     }
+
     return (
         <div className={`column-grid ${className} ${paddingTop && "pt-sectionBT"} ${paddingBottom && "pb-sectionBT"}`}>
             {

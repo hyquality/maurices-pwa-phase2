@@ -1,19 +1,19 @@
 import NavList from "@components/templates/nav-list";
 import Link from "next/link";
 import Icon from "@components/templates/icon";
-import React, {useContext, useEffect, useState} from "react";
-import {openMainMenu, getCurrentWidth} from "@lib/helpers";
+import React, {useContext} from "react";
 import MobileMenuExt from "./mobile-menu-ext";
-import {MOBILE_BREAKPOINT} from "@lib/constants";
 import {DataProviderContext} from '../../layout-data-provider';
-import {mapNavJson} from "@lib/navMaping";
+import useScreenWidth from "@lib/effects/useScreenWidth";
 
 const onMobileMenuButtonClick = () => {
     openMainMenu(2).then(r => "");
 }
 export default function Nav() {
+    const isMobile = useScreenWidth();
+
         const {
-        navMenuItems, store, customer
+        navMenuItems, store, user
     } = useContext(DataProviderContext)
 
     return (
@@ -34,9 +34,9 @@ export default function Nav() {
                         <NavList data={navMenuItems} className={"nav main-navigation"}/>
                         <div>
                             {
-                                getCurrentWidth() <= MOBILE_BREAKPOINT ? (
-                                    <MobileMenuExt customer={customer} store={store}/>
-                                ) : ("")
+                                isMobile && (
+                                    <MobileMenuExt customer={user} store={store}/>
+                                )
                             }
                         </div>
 

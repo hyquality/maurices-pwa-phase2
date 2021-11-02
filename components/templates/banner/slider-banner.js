@@ -8,7 +8,7 @@ import dynamic from "next/dynamic";
 import Container from "@components/container";
 
 export default function SliderBanner({
-                                         fullwidth,
+                                         fullWidth,
                                          paddingTop,
                                          paddingBottom,
                                          top,
@@ -18,7 +18,6 @@ export default function SliderBanner({
                                          highlight,
                                          highlightColor,
                                          highlightHeight,
-
                                          showCaption,
                                          templates,
                                          background,
@@ -42,11 +41,11 @@ export default function SliderBanner({
                                 {
                                     title && (
                                         <HeaderTitle
-                                            className={"md:text-6xl mb-5 md:mb-0"}
+                                            className={"md:text-6xl mb-5 md:mb-0 md:text-left"}
                                             color={titleColor}
                                             tag={"h2"}
                                             size={"text-3xl"}
-                                            position={"text-center md:text-left"}
+                                            position={"text-center"}
                                             style={"utopia"}
                                             weight={"regular"}
                                             highlight={highlight}
@@ -80,7 +79,7 @@ export default function SliderBanner({
                     backgroundColor: `${background ? background : "none"}`
                 }}>
                 {
-                    fullwidth ? (
+                    fullWidth ? (
                         content
                     ) : (
                         <Container>
@@ -95,7 +94,7 @@ export default function SliderBanner({
     )
 }
 SliderBanner.propTypes = {
-    fullwidth: PropTypes.bool,
+    fullWidth: PropTypes.bool,
     paddingTop: PropTypes.bool,
     paddingBottom: PropTypes.bool,
     showCaption: PropTypes.bool,
@@ -110,7 +109,7 @@ SliderBanner.propTypes = {
     background: PropTypes.string,
 }
 SliderBanner.defaultProps = {
-    fullwidth: true,
+    fullWidth: true,
     paddingTop: false,
     paddingBottom: false,
     showCaption: true,

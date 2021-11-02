@@ -5,7 +5,7 @@ export default function PlpDescription({data}) {
     const {title,text} = data;
     return (
         <div>
-            <HeaderTitle tag={"h3"} position={"left"}>{title}</HeaderTitle>
+            <HeaderTitle tag={"h3"} position={"text-left"}>{title}</HeaderTitle>
             <p>{text}</p>
         </div>
     )

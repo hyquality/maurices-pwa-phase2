@@ -14,28 +14,28 @@ export default function SimpleBanner({
                                          style,
                                          showCaption,
                                          image,
-                                         w,
-                                         h,
-                                         x,
-                                         y,
+                                         width,
+                                         height,
+                                         positionX,
+                                         positionY,
                                          className = ""
                                      }) {
     return (
-        <div className={`simple-banner relative text-center ${className}`} style={{maxWidth: w?w+"px":"none"}}>
+        <div className={`simple-banner relative text-center ${className}`} style={{maxWidth: width?width+"px":"none"}}>
             <Link href={url}>
                 <a className={"relative flex z-0"}>
                     <Image
                         alt={title}
                         src={image}
-                        width={w ? w : 72}
-                        height={h ? h : 64}
+                        width={width ? width : 72}
+                        height={height ? height : 64}
                         quality={100}
                     />
                 </a>
             </Link>
             {
                 (showCaption && (title || (url && label))) && (
-                    <div className={`absolute caption  z-10 sb-x-${x} sb-y-${y}`}>
+                    <div className={`absolute caption  z-10 sb-x-${positionX} sb-y-${positionY}`}>
                         {
                             title && (
                                 /* <h3 className={`px-6 ${size}`}>{title}</h3>*/
@@ -68,10 +68,10 @@ SimpleBanner.propTypes = {
     titleTextAlign: PropTypes.oneOf(['center', 'left', 'right']),
     showCaption: PropTypes.bool,
     image: PropTypes.string.isRequired,
-    w: PropTypes.number,
-    h: PropTypes.number,
-    x: PropTypes.oneOf(['center', 'left', 'right']),
-    y: PropTypes.oneOf(['center', 'top', 'bottom']),
+    width: PropTypes.number,
+    height: PropTypes.number,
+    positionX: PropTypes.oneOf(['center', 'left', 'right']),
+    positionY: PropTypes.oneOf(['center', 'top', 'bottom']),
     className: PropTypes.string,
     size: PropTypes.oneOf(['text-xs', 'text-sm', 'text-base', 'text-lg', 'text-xl', 'text-2xl', 'text-3xl', 'text-4xl', 'text-5xl', 'text-6xl', 'text-7xl', 'text-8xl', 'text-9xl']),
 }
@@ -84,10 +84,10 @@ SimpleBanner.defaultProps = {
     titleColor: undefined,
     showCaption: false,
     image: "image",
-    w: 50,
-    h: 50,
-    x: "center",
-    y: "center",
+    width: 50,
+    height: 50,
+    positionX: "center",
+    positionY: "center",
     className: "PropTypes.string",
     size: "text-4xl"
 };

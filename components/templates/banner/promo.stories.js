@@ -11,7 +11,7 @@ const Template = (args) => <Promo {...args} />
 export const PromoBanner = Template.bind({})
 
 PromoBanner.args = {
-    fullwidth: false,
+    fullWidth: false,
     top: "THE BUNDLE UP EVENT",
     title: "30% Off Select Styles",
     lightMode: true,

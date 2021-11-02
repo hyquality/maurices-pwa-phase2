@@ -1,0 +1,61 @@
+{
+  "type": "getGridLayoutResponse",
+  "success": true,
+  "gridLayoutInfo": {
+    "columns": 2,
+    "columnsMobile": 0,
+    "context": "index-accent-row",
+    "paddingBottom": false,
+    "paddingTop": true,
+    "templates": [
+      {
+        "description": "A classic pattern, fit for the holidays.",
+        "height": 695,
+        "image": "/assets/images/banners/ads/column-banner.jpg",
+        "index": 3,
+        "label": "Shop Now",
+        "name": "B1",
+        "nav": [
+          {
+            "text": "Plus Plaids",
+            "url": "#"
+          },
+          {
+            "text": "Plus Plaids",
+            "url": "#"
+          }
+        ],
+        "positionY": "bottom",
+        "showCaption": true,
+        "title": "Pretty in Plaid",
+        "type": 1,
+        "url": "#",
+        "width": 700
+      },
+      {
+        "description": "Sweaters that feel as good as they look.",
+        "height": 695,
+        "image": "/assets/images/banners/ads/column-banner2.jpg",
+        "index": 3,
+        "label": "Shop Now",
+        "name": "B1",
+        "nav": [
+          {
+            "text": "Plus Plaids",
+            "url": "#"
+          },
+          {
+            "text": "Plus Plaids",
+            "url": "#"
+          }
+        ],
+        "positionY": "bottom",
+        "showCaption": true,
+        "title": "Keep it Cozy",
+        "type": 1,
+        "url": "#",
+        "width": 700
+      }
+    ]
+  }
+}
