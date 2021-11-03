@@ -31,18 +31,21 @@ export default function Post({plp, collection, pwa, preview}) {
     const [catalogData, setCatalogData] = useState(false);
 
     const [catalogDesc, setCatalogDesc] = useState(false);
-    const [apiUrl, setApiUrl] = useState(`${REACT_APP_API_URL}catalog/category/slug/product${parseInt(REACT_APP_MODE) && "/index.json"}`);
+    const [apiUrl, setApiUrl] = useState("/api/catalog/slug");
 
+/*    const {
+        data,
+        error
+    } = useSWR(slug ? apiUrl.replace("slug", slug): null, fetcher)*/
     const {
         data,
         error
     } = useSWR(slug ? apiUrl.replace("slug", slug): null, fetcher)
 
 
-
     useEffect(() => {
         if (data) {
-              setCatalogData(data)
+              setCatalogData(data.data)
         }
     }, [data,slug])
 
@@ -68,7 +71,7 @@ export default function Post({plp, collection, pwa, preview}) {
 
     const loadFilteredCatalog = (fasets,selectedSort,catalogListIndex) =>  {
 
-        let vars = `?startIndex${catalogListIndex.startIndex}&pageSize=${catalogListIndex.pageSize}&sortOption=${selectedSort}`;
+        let vars = `startIndex${catalogListIndex.startIndex}&pageSize=${catalogListIndex.pageSize}&sortOption=${selectedSort}`;
         const names = fasets.map(function (faset) {
             return faset.short;
         });
@@ -76,7 +79,9 @@ export default function Post({plp, collection, pwa, preview}) {
             vars+= "&facet="+names.join("&facet=")
         }
 
-        let apiURL = slug ? `${REACT_APP_API_URL}catalog/category/${slug}/product${parseInt(REACT_APP_MODE) && "/filtered.json"}${vars}` : null
+        //let apiURL = slug ? `${REACT_APP_API_URL}catalog/category/${slug}/product${parseInt(REACT_APP_MODE) && "/filtered.json"}${vars}` : null
+        let apiURL = slug ? `/api/catalog/${slug}/${vars}` : null
+
         setApiUrl(apiURL)
     }
 /*    if (router.isFallback) {

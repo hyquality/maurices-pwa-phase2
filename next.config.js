@@ -1,6 +1,7 @@
 //const {i18n} = require('./next-i18next.config');
 const withPWA = require("next-pwa");
 const path = require('path')
+
 module.exports = withPWA({
    // i18n,
     target: "serverless",
@@ -32,7 +33,7 @@ module.exports = withPWA({
         return [
             {
                 // matching all API routes
-                source: "/pwa/api/:path*",
+                source: "/api/:path*",
                 headers: [
                     { key: "Access-Control-Allow-Credentials", value: "true" },
                     { key: "Access-Control-Allow-Origin", value: "*" },
@@ -46,7 +47,7 @@ module.exports = withPWA({
         return [
             {
                 source: '/api/:path*',
-                destination: 'https://maurices.hyquality.com/pwa/api/:path*',
+                destination: `https://maurices.hyquality.com/pwa/api/:path*`,
             },
         ]
     },*/
