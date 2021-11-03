@@ -10,11 +10,12 @@ import "@sass/parts/filters.scss";
 import "@sass/parts/header.scss";
 import "@sass/parts/main_nav.scss";
 import "@sass/parts/footer.scss";
-//import { appWithTranslation } from 'next-i18next';
-
+import Cookies from 'js-cookie'
+import {REACT_APP_JSESSIONID} from "@lib/constants";
 function MyApp({ Component, pageProps }) {
+  Cookies.set('JSESSIONID', REACT_APP_JSESSIONID, { expires: 7 })
+
   return <Component {...pageProps} />
 }
 
 export default MyApp;
-//export default appWithTranslation(MyApp);
