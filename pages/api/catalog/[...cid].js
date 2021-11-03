@@ -8,7 +8,7 @@ export default async function handler(req, res) {
 
    // res.end(`Post: ${url}`)
     await axios
-        .get(url)
+        .get(url, { withCredentials: true })
         .then(({data}) => {
             res.status(200).json({data})
         })
