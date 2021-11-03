@@ -1,15 +1,17 @@
 import React, {useEffect, useState} from "react";
-import {getStaticPageData, getIndexPageData, getInstaFeedData, getPwaData, getIndexPwaData} from "@lib/api";
+import {getStaticPageData, getIndexPageData, getPwaData, getIndexPwaData} from "@lib/api";
 import Layout from "@components/layout";
 import Head from 'next/head'
 import {getTheTitle, mapHomeComponentsJson} from "@lib/helpers";
-import Templates from "@components/templates/templates";
 import InstaSlide from "@components/templates/insta-slide";
 import Hero from "@components/templates/banner/hero";
 import Promo from "@components/templates/banner/promo";
 import Grid from "@components/templates/layout/grid";
 import SliderBanner from "@components/templates/banner/slider-banner";
 import Carousel from "@components/templates/carousel";
+import Cookies from "js-cookie";
+import {REACT_APP_API_URL, REACT_APP_MODE} from "@lib/constants";
+import axios from "axios";
 
 export default function Home({data, index, pwa, indexPwa}) {
     const [gridData, setGridData] = useState(false);
@@ -17,6 +19,8 @@ export default function Home({data, index, pwa, indexPwa}) {
     const [carousel, setCarousel] = useState(false);
     const [catalogGrid, setCatalogGrid] = useState(false);
     const [insta, setInsta] = useState(false);
+
+    //console.log(Cookies.get('JSESSIONID'));
     useEffect(() => {
         indexPwa.grid.gridLayoutInfo.columnsMobile = indexPwa.grid.gridLayoutInfo.columnsMobile === 0 ? 1 : indexPwa.grid.gridLayoutInfo.columnsMobile
 
@@ -31,6 +35,25 @@ export default function Home({data, index, pwa, indexPwa}) {
         setInsta(mapHomeComponentsJson(indexPwa.insta.sliderInfo, "./accent/accent", "accent-banner"))
 
     }, [indexPwa])
+
+    const onClickEvent = (e) => {
+/*        console.log("works")
+        const url = `${REACT_APP_API_URL}catalog/category/5001/product/filtered.json`
+
+         axios
+            .get(url, {
+                headers: {
+                    Cookie: `JSESSIONID=${Cookies.get('JSESSIONID')}`
+                },
+                withCredentials: true
+            })
+            .then(({data}) => {
+                console.log(data)
+            })
+            .catch(({err}) => {
+                console.log(err)
+            })*/
+    }
     return (
         <>
             <Layout data={data} pwa={pwa}>
@@ -38,6 +61,7 @@ export default function Home({data, index, pwa, indexPwa}) {
                     <title>{getTheTitle("Home")}</title>
                 </Head>
                 <div className="min-h-screen">
+                    <p><a href="#" onClick={onClickEvent}>test buttn</a></p>
                     {
                         indexPwa.hero && (
                             <Hero {...indexPwa.hero.homePageInfo}/>

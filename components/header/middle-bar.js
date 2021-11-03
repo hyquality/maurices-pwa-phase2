@@ -78,7 +78,7 @@ export default function MiddleBar() {
     }
 
     const [instantSearchState, setInstantSearchState] = useState({
-        value: false,
+        value: "",
         mouseOn: false,
         error: false,
         suggestions: false,

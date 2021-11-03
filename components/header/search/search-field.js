@@ -10,7 +10,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json())
 export default function SearchField({instantSearchState, setInstantSearchState}) {
 
     const [searchValueCache, setSearchValueCache] = useState('');
-    const [searchInputValue, setSearchInputValue] = useState('');
+    const [searchInputValue, setSearchInputValue] = useState(instantSearchState.value);
 
     const {
         "data": searchData,
@@ -31,7 +31,7 @@ export default function SearchField({instantSearchState, setInstantSearchState})
     useEffect(() => {
         if (typeaheadData) {
             setInstantSearchState(prevState => {
-                return {...prevState, categories: typeaheadData.data, error: false}
+                return {...prevState, suggestions: typeaheadData.data.productSearches,categories: typeaheadData.data.categories, error: false}
             })
         }
     }, [typeaheadData])
@@ -51,6 +51,10 @@ export default function SearchField({instantSearchState, setInstantSearchState})
             })
         }
     }, [searchData])
+
+    useEffect(() => {
+        setSearchInputValue(instantSearchState.value)
+    }, [instantSearchState.value])
 
 
     const [isSearchHovered, setIsSearchHovered] = useState(false);
@@ -82,9 +86,9 @@ export default function SearchField({instantSearchState, setInstantSearchState})
 
     const handleSearchInput = async (event) => {
         setInstantSearchState(prevState => {
-            return {...prevState, searchResult: false}
+            return {...prevState, searchResult: false, value:event.target.value }
         })
-        setSearchInputValue(event.target.value);
+       // setSearchInputValue(event.target.value);
         setSearchValueCache(searchInputValue)
         updateInstantSearchState(event.target.value)
     }

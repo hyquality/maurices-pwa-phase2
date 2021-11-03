@@ -55,6 +55,12 @@ export default function InstantSearch({data, instantSearchState, setInstantSearc
         updateInstantSearchState("");
     };
 
+    const changeSearchValue = (keywords)=>(e) => {
+        console.log(keywords)
+        setInstantSearchState(prevState => {
+            return {...prevState, value: keywords, error: false,searchResult: false,suggestions: false,categories: false}
+        })
+    }
     return (
         <div
             onMouseEnter={onSearchResultMouseEnter}
@@ -135,41 +141,38 @@ export default function InstantSearch({data, instantSearchState, setInstantSearc
                     <h4 className="font-extrabold text-sm text-gray_4 pb-4">Suggestions</h4>
                     <div>
                         {
-                            (instantSearchState.searchResult && instantSearchState.searchResult.suggestions) ? (
+                            instantSearchState.suggestions ? (
                                 <ul>
                                     {
-                                        instantSearchState.searchResult.data.suggestions.map((link) => (
+                                        instantSearchState.suggestions.map((link) => (
                                             <li className="pb-2.5 text-gray_2"
-                                                key={"search-suggestion-" + link.id}>
-
-                                                <Link href={link.url}>
-                                                    <a>{link.text}</a>
-                                                </Link>
+                                                key={"search-suggestion-" + link.displayOrder}>
+                                                <a className={"cursor-pointer"} onClick={changeSearchValue(link.keywords)}>{link.keywords}</a>
                                             </li>
                                         ))
                                     }
                                 </ul>
-                            ) : ("")
+                            ) : ("Loading")
                         }
                     </div>
                     <h4 className="font-extrabold text-sm text-gray_4 pb-4 pt-4">Categories</h4>
                     <div>
                         {
-                            (instantSearchState.searchResult && instantSearchState.searchResult.data) ? (
+                            instantSearchState.categories ? (
                                 <ul>
                                     {
-                                        instantSearchState.searchResult.data.categories.map((link) => (
+                                        instantSearchState.categories.map((link) => (
                                             <li className="pb-2.5 text-gray_2"
                                                 key={"search-category-" + link.id}>
 
-                                                <Link href={link.url}>
-                                                    <a>{link.text}</a>
+                                                <Link href={`catalog/${link.id}`}>
+                                                    <a>{link.displayName}</a>
                                                 </Link>
                                             </li>
                                         ))
                                     }
                                 </ul>
-                            ) : ("")
+                            ) : ("Loading")
                         }
                     </div>
                 </div>

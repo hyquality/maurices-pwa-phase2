@@ -5,12 +5,10 @@ import Layout from '../../components/layout'
 import Head from 'next/head'
 import {  getPwaData, getStaticPageData} from "@lib/api";
 import {getTheTitle} from "@lib/helpers";
-import staticCollectionJson from "../../fake_data/dataCollectionJson.json"
-import {useEffect} from "react";
-import axios from "axios";
-import {REACT_APP_API_URL} from "@lib/constants";
 
-export default function Post({data, pwa, collection, preview}) {
+import {useEffect} from "react";
+
+export default function Post({data, pwa}) {
     const router = useRouter()
 /*    if (collection) console.log(collection);
     if (!router.isFallback && !collection?.slug) {
@@ -48,11 +46,6 @@ export default function Post({data, pwa, collection, preview}) {
 export async function getStaticProps({params, preview = false, previewData}) {
     const data = await getStaticPageData();
     const pwa = (await getPwaData()) || {};
-   // const testApi = await apiCall("content/header/reward");
-    //const testApi = await axios.get(`${REACT_APP_API_URL}content/header/reward/index.json`);
-    //const collection = await getCollection(params.slug, preview, previewData)
-    //const collection = await getCollection(params.slug, preview, previewData)
-    //const collection = {slug:params.slug}
 
     if (!data) {
         return {
