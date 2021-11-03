@@ -1,13 +1,57 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Icon from "@components/templates/icon";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
 import {getSearchData} from "@lib/api";
 import Button from "@components/templates/button";
+import useSWR from "swr";
 
-export default function SearchField({data, instantSearchState, setInstantSearchState}) {
+const fetcher = (url) => fetch(url).then((res) => res.json())
+
+export default function SearchField({instantSearchState, setInstantSearchState}) {
 
     const [searchValueCache, setSearchValueCache] = useState('');
     const [searchInputValue, setSearchInputValue] = useState('');
+
+    const {
+        "data": searchData,
+        "error": searchError
+    } = useSWR(searchInputValue ? `/api/search/${searchInputValue}` : null, fetcher)
+
+    const {
+        "data": typeaheadData,
+        "error": typeaheadError
+    } = useSWR(searchInputValue ? `/api/search/typeahead/${searchInputValue}` : null, fetcher)
+
+    useEffect(() => {
+        if (typeaheadError) {
+
+        }
+    }, [typeaheadError])
+
+    useEffect(() => {
+        if (typeaheadData) {
+            setInstantSearchState(prevState => {
+                return {...prevState, categories: typeaheadData.data, error: false}
+            })
+        }
+    }, [typeaheadData])
+
+    useEffect(() => {
+        if (searchError) {
+            setInstantSearchState(prevState => {
+                return {...prevState, searchResult: false, error: searchError}
+            })
+        }
+    }, [searchError])
+
+    useEffect(() => {
+        if (searchData) {
+            setInstantSearchState(prevState => {
+                return {...prevState, searchResult: searchData.data.products, error: false}
+            })
+        }
+    }, [searchData])
+
 
     const [isSearchHovered, setIsSearchHovered] = useState(false);
     const onSearchMouseEnter = () => {
@@ -18,7 +62,7 @@ export default function SearchField({data, instantSearchState, setInstantSearchS
     }
     const onSearchMouseLeave = () => {
         setIsSearchHovered(false)
-        if(!isSearchFocus && !instantSearchState.mouseOn) {
+        if (!isSearchFocus && !instantSearchState.mouseOn) {
             setSearchInputValue("")
             updateInstantSearchState("")
         }
@@ -30,27 +74,19 @@ export default function SearchField({data, instantSearchState, setInstantSearchS
     }
     const onSearchBlur = () => {
         setIsSearchFocus(false)
-        if(!isSearchHovered && !instantSearchState.mouseOn) {
+        if (!isSearchHovered && !instantSearchState.mouseOn) {
             setSearchInputValue("")
             updateInstantSearchState("")
         }
     }
 
     const handleSearchInput = async (event) => {
-
+        setInstantSearchState(prevState => {
+            return {...prevState, searchResult: false}
+        })
         setSearchInputValue(event.target.value);
         setSearchValueCache(searchInputValue)
         updateInstantSearchState(event.target.value)
-        let file = "dataSearchJson.json"
-        if(event.target.value.length>1) file = "dataSearchJson1.json"
-        if(event.target.value.length>3) file = "dataSearchJson2.json"
-        const searchData = (await getSearchData(event.target.value,file)) || {};
-
-        setInstantSearchState(prevState => {
-            return { ...prevState, searchResult: searchData }
-        });
-
-
     }
 
 
@@ -64,7 +100,7 @@ export default function SearchField({data, instantSearchState, setInstantSearchS
     const updateInstantSearchState = (value) => {
 
         setInstantSearchState(prevState => {
-            return { ...prevState, value: value }
+            return {...prevState, value: value}
         });
 
     }
@@ -88,7 +124,7 @@ export default function SearchField({data, instantSearchState, setInstantSearchS
                             onChange={handleSearchInput}
                             value={searchInputValue}
                             placeholder="Search"
-                           />
+                        />
 
                         <Button
                             className="absolute-y-center right-0"
@@ -97,7 +133,7 @@ export default function SearchField({data, instantSearchState, setInstantSearchS
                         >
                             <Icon icon={["fas", "times"]}/>
                         </Button>
-{/*                        <button onClick={closeSearch} className="absolute top-1/2 transform -translate-y-1/2 right-0">
+                        {/*                        <button onClick={closeSearch} className="absolute top-1/2 transform -translate-y-1/2 right-0">
 
                         </button>*/}
                     </div>

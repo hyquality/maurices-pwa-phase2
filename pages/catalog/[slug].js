@@ -3,7 +3,6 @@ import ErrorPage from 'next/error'
 import Container from '@components/container'
 import Layout from '@components/layout'
 import Head from 'next/head'
-import {REACT_APP_API_URL, REACT_APP_MODE} from "@lib/constants";
 import {getPwaData, getStaticPageData} from "@lib/api";
 import {getTheTitle} from "@lib/helpers";
 import Breadcrumbs from "@components/breadcrumbs";
@@ -33,10 +32,6 @@ export default function Post({plp, collection, pwa, preview}) {
     const [catalogDesc, setCatalogDesc] = useState(false);
     const [apiUrl, setApiUrl] = useState("/api/catalog/slug");
 
-/*    const {
-        data,
-        error
-    } = useSWR(slug ? apiUrl.replace("slug", slug): null, fetcher)*/
     const {
         data,
         error
@@ -79,7 +74,6 @@ export default function Post({plp, collection, pwa, preview}) {
             vars+= "&facet="+names.join("&facet=")
         }
 
-        //let apiURL = slug ? `${REACT_APP_API_URL}catalog/category/${slug}/product${parseInt(REACT_APP_MODE) && "/filtered.json"}${vars}` : null
         let apiURL = slug ? `/api/catalog/${slug}/${vars}` : null
 
         setApiUrl(apiURL)

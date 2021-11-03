@@ -57,7 +57,7 @@ export default function Hero({
                     {
                         button && (
                             <div
-                                className="flex justify-center pt-12 absolute bottom-10 w-full md:bottom-auto md:w-auto  md:relative">
+                                className="flex justify-center pt-12 absolute bottom-10 w-full md:bottom-auto md:w-auto  md:relative left-0">
                                 <Button label={button.title} size={"medium"} color={"gray_2"} onClick={buttonOnClick}
                                         className={"w-11/12 md:w-auto text-sm tracking-widest font-normal"}/>
                             </div>

@@ -64,7 +64,7 @@ export default function Home({data, index, pwa, indexPwa}) {
 
                     {
                         carousel && (
-                            <Carousel {...carousel}/>
+                            <div className={"overflow-hidden"}><Carousel {...carousel}/></div>
                         )
                     }
                     {

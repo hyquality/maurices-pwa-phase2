@@ -80,6 +80,9 @@ export default function MiddleBar() {
     const [instantSearchState, setInstantSearchState] = useState({
         value: false,
         mouseOn: false,
+        error: false,
+        suggestions: false,
+        categories: false,
         searchResult: false
     });
 

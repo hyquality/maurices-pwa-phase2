@@ -1,12 +1,15 @@
 import React, {useState} from "react";
 import Link from "next/link";
-import {bodyOverlay, isMobile,isDescktop} from "@lib/helpers";
+import {bodyOverlay, isMobile, isDescktop, parseImageUrl} from "@lib/helpers";
 import {getSearchData} from "@lib/api";
 import Icon from "@components/templates/icon";
 import Image from "next/image";
-import logo from "@public/assets/images/logo.png";
+
 export default function InstantSearch({data, instantSearchState, setInstantSearchState}) {
+
     const [searchInputValue, setSearchInputValue] = useState('');
+
+
     const onSearchResultMouseEnter = () => {
         setInstantSearchState(prevState => {
             return {...prevState, mouseOn: true}
@@ -23,14 +26,14 @@ export default function InstantSearch({data, instantSearchState, setInstantSearc
         setSearchInputValue(event.target.value);
         updateInstantSearchState(event.target.value)
 
-        let file = "dataSearchJson.json"
-        if (event.target.value.length > 1) file = "dataSearchJson1.json"
-        if (event.target.value.length > 3) file = "dataSearchJson2.json"
-        const searchData = (await getSearchData(event.target.value, file)) || {};
+        //let file = "dataSearchJson.json"
+        //if (event.target.value.length > 1) file = "dataSearchJson1.json"
+       // if (event.target.value.length > 3) file = "dataSearchJson2.json"
+       // const searchData = (await getSearchData(event.target.value, file)) || {};
 
-        setInstantSearchState(prevState => {
+  /*      setInstantSearchState(prevState => {
             return {...prevState, searchResult: searchData}
-        });
+        });*/
 
 
     }
@@ -86,27 +89,37 @@ export default function InstantSearch({data, instantSearchState, setInstantSearc
                             </Link>
                         </li>
                     </ul>
+                    {
+                        !instantSearchState.searchResult && (
+                            <div>Loading</div>
+                        )
+                    }
+                    {
+                        instantSearchState.error && (
+                            <div>{instantSearchState.error}</div>
+                        )
+                    }
 
                     {
 
                         instantSearchState.searchResult ? (
-                            <ul className="block md:flex md:flex-wrap md:pt-4 md:-mx-6 last:border-b-0">
+                            <ul className="block md:flex md:flex-wrap md:pt-4 md:-mx-6 last:border-b-0 max-h-96 overflow-y-auto">
                                 {
-                                    instantSearchState.searchResult.data.result.map((link) => (
+                                    instantSearchState.searchResult.map((product) => (
                                         <li className="w-full md:w-1/3 md:px-6  pt-2.5 md:pt-0 pb-2.5 md:pb-7 md:flex-grow border-b border-gray_border "
-                                            key={"search-result-" + link.id}>
+                                            key={`search-result-${product.id}`}>
 
-                                            <Link href={link.url}>
+                                            <Link href={`product/${product.id}`}>
                                                 <a>
                                                     <Image
-                                                        alt={link.text}
-                                                        src={link.image}
+                                                        alt={product.displayName}
+                                                        src={parseImageUrl(product.colors[0].productImageUrl)}
                                                         width={125}
                                                         height={190}
                                                         quality={100}
                                                         className="hidden md:block pb-2.5"
                                                     />
-                                                    <h4 className="text-sm md:text-xs text-gray_2 md:text-main">{link.text}</h4>
+                                                    <h4 className="text-sm md:text-xs text-gray_2 md:text-main">{product.displayName}</h4>
                                                 </a>
                                             </Link>
                                         </li>
@@ -122,7 +135,7 @@ export default function InstantSearch({data, instantSearchState, setInstantSearc
                     <h4 className="font-extrabold text-sm text-gray_4 pb-4">Suggestions</h4>
                     <div>
                         {
-                            instantSearchState.searchResult ? (
+                            (instantSearchState.searchResult && instantSearchState.searchResult.suggestions) ? (
                                 <ul>
                                     {
                                         instantSearchState.searchResult.data.suggestions.map((link) => (
@@ -142,7 +155,7 @@ export default function InstantSearch({data, instantSearchState, setInstantSearc
                     <h4 className="font-extrabold text-sm text-gray_4 pb-4 pt-4">Categories</h4>
                     <div>
                         {
-                            instantSearchState.searchResult ? (
+                            (instantSearchState.searchResult && instantSearchState.searchResult.data) ? (
                                 <ul>
                                     {
                                         instantSearchState.searchResult.data.categories.map((link) => (

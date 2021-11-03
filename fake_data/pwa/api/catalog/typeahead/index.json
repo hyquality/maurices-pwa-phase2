@@ -1,0 +1,65 @@
+{
+    "categories": [
+        {
+            "ancestors": [
+                "CLOTHING",
+                "tops"
+            ],
+            "displayName": "shirts & blouses",
+            "displayOrder": 1,
+            "id": "300101"
+        },
+        {
+            "ancestors": [
+                "PLUS SIZES",
+                "tops"
+            ],
+            "displayName": "shirts & blouses",
+            "displayOrder": 2,
+            "id": "500101"
+        },
+        {
+            "ancestors": [
+                "CLOTHING",
+                "tops"
+            ],
+            "displayName": "plaid & boyfriend shirts",
+            "displayOrder": 3,
+            "id": "300102"
+        },
+        {
+            "ancestors": [
+                "PLUS SIZES",
+                "tops"
+            ],
+            "displayName": "plaid & boyfriend shirts",
+            "displayOrder": 4,
+            "id": "500102"
+        },
+        {
+            "ancestors": [
+                "CLOTHING",
+                "tops"
+            ],
+            "displayName": "flannel shirts",
+            "displayOrder": 5,
+            "id": "cat20700005"
+        }
+    ],
+    "productSearches": [
+        {
+            "displayOrder": 1,
+            "keywords": "button down flannel shirt"
+        },
+        {
+            "displayOrder": 2,
+            "keywords": "super soft button down tunic shirt"
+        },
+        {
+            "displayOrder": 3,
+            "keywords": "Silver Jeans Co.&reg; button down plaid shirt"
+        }
+    ],
+    "success": true,
+    "type": "getTypeAheadResponse"
+}
