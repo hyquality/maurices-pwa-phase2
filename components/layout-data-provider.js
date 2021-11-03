@@ -4,7 +4,7 @@ export const DataProviderContext = createContext();
 
 export default function LayoutDataProvider({data, pwa, children, ...props}) {
     const {footer, store, customer} = data
-    const {headerContent, navMenuItems, cart, user} = pwa
+    const {headerContent, navMenuItems, cart} = pwa
     return (
         <DataProviderContext.Provider
             value={{
@@ -13,8 +13,7 @@ export default function LayoutDataProvider({data, pwa, children, ...props}) {
                 footer,
                 store,
                 customer,
-                cart,
-                user
+                cart
             }}>
             {children}
         </DataProviderContext.Provider>

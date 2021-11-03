@@ -1,5 +1,5 @@
 import Container from "@components/container";
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {
     faChevronUp,
     faChevronDown,
@@ -22,13 +22,28 @@ import logo from "@public/assets/images/logo.png"
 import Image from "next/image";
 import {DataProviderContext} from '../layout-data-provider';
 import useScreenWidth from "@lib/effects/useScreenWidth";
+import useSWR from "swr";
+const fetcher = (url) => fetch(url).then((res) => res.json())
 
 export default function MiddleBar() {
     const {
-        store, cart,user
+        store, cart
     } = useContext(DataProviderContext)
 
-    const {firstName,loggedIn} = user.profileInfo || {}
+    const [profileInfo, setProfileInfo] = useState(false);
+
+    const {
+        data,
+        error
+    } = useSWR( "/api/profile", fetcher)
+
+    useEffect(() => {
+        if (data) {
+            setProfileInfo(data.data.profileInfo)
+        }
+    }, [data])
+
+    const {firstName,loggedIn} = profileInfo || {}
 
     const {address,title,phone,time,timeOpening} = store || {}
 

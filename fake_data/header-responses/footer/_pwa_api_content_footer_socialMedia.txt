@@ -1,0 +1,1 @@
+{"type":"getSocialMediaResponse","success":true,"socialMediaInfo":{"socialNav":[{"icon":"facebook-f","id":0,"text":"Facebook","url":"#"},{"icon":"twitter","id":1,"text":"Twitter","url":"#"},{"icon":"instagram-square","id":2,"text":"Instagram","url":"#"},{"icon":"pinterest-p","id":3,"text":"Pinterest","url":"#"},{"icon":"youtube","id":4,"text":"Youtube","url":"#"}]}}

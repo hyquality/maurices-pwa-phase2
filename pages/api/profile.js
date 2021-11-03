@@ -3,8 +3,8 @@ import {REACT_APP_API_URL, REACT_APP_MODE} from "@lib/constants";
 import {objToString} from "@lib/helpers";
 
 export default async function handler(req, res) {
-    const {key} = req.query
-   const url = `${REACT_APP_API_URL}catalog/product${parseInt(REACT_APP_MODE) ? "/index.json":""}?keywords=${key[0]}&startIndex=1&pageSize=30`
+
+    const url = `${REACT_APP_API_URL}profile${parseInt(REACT_APP_MODE) ? "/index.json":""}`
 
     await axios
         .get(url, {

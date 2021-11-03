@@ -10,7 +10,6 @@ import Grid from "@components/templates/layout/grid";
 import SliderBanner from "@components/templates/banner/slider-banner";
 import Carousel from "@components/templates/carousel";
 import Cookies from "js-cookie";
-import {REACT_APP_API_URL, REACT_APP_MODE} from "@lib/constants";
 import axios from "axios";
 
 export default function Home({data, index, pwa, indexPwa}) {
@@ -20,7 +19,6 @@ export default function Home({data, index, pwa, indexPwa}) {
     const [catalogGrid, setCatalogGrid] = useState(false);
     const [insta, setInsta] = useState(false);
 
-    //console.log(Cookies.get('JSESSIONID'));
     useEffect(() => {
         indexPwa.grid.gridLayoutInfo.columnsMobile = indexPwa.grid.gridLayoutInfo.columnsMobile === 0 ? 1 : indexPwa.grid.gridLayoutInfo.columnsMobile
 
@@ -36,11 +34,23 @@ export default function Home({data, index, pwa, indexPwa}) {
 
     }, [indexPwa])
 
-    const onClickEvent = (e) => {
-/*        console.log("works")
-        const url = `${REACT_APP_API_URL}catalog/category/5001/product/filtered.json`
-
-         axios
+/*    const onClickEvent = (e) => {
+        console.log("works")
+        const url = `/api/test/5001`
+        axios.request({
+            url: url,
+            method: "get",
+            headers:{
+                Cookie: "cookie1=value; cookie2=value; cookie3=value;"
+            },
+            withCredentials: true
+        })  .then(({data}) => {
+            console.log(data)
+        })
+            .catch(({err}) => {
+                console.log(err)
+            })
+/!*         axios
             .get(url, {
                 headers: {
                     Cookie: `JSESSIONID=${Cookies.get('JSESSIONID')}`
@@ -52,8 +62,8 @@ export default function Home({data, index, pwa, indexPwa}) {
             })
             .catch(({err}) => {
                 console.log(err)
-            })*/
-    }
+            })*!/
+    }*/
     return (
         <>
             <Layout data={data} pwa={pwa}>
@@ -61,7 +71,7 @@ export default function Home({data, index, pwa, indexPwa}) {
                     <title>{getTheTitle("Home")}</title>
                 </Head>
                 <div className="min-h-screen">
-                    <p><a href="#" onClick={onClickEvent}>test buttn</a></p>
+{/*                    <p><a href="#" onClick={onClickEvent}>test buttn</a></p>*/}
                     {
                         indexPwa.hero && (
                             <Hero {...indexPwa.hero.homePageInfo}/>
