@@ -89,8 +89,8 @@ export default function Post({pwa, preview}) {
         </>
     )
 }
-export async function getServerSideProps({req, preview = false}) {
-    const pwa = (await getPwaData(req)) || {};
+export async function getStaticProps({params, preview = false, previewData, locale}) {
+    const pwa = (await getPwaData()) || {};
 
     if (!pwa) {
         return {
@@ -105,15 +105,14 @@ export async function getServerSideProps({req, preview = false}) {
     }
 }
 
-/*
 export async function getStaticPaths() {
 
     return {
         paths: [
-            /!*            {params: {slug: ['clothing', 'tops']}},
+            /*            {params: {slug: ['clothing', 'tops']}},
                         {params: {slug: ['clothing', 'new']}},
-                        {params: {slug: ['clothing', 'sweaters']}}*!/
+                        {params: {slug: ['clothing', 'sweaters']}}*/
         ],
         fallback: true,
     }
-}*/
+}

@@ -75,8 +75,8 @@ export default function Search({pwa}) {
     )
 }
 
-export async function getServerSideProps({req,preview = false}) {
-    const pwa = (await getPwaData(req)) || {};
+export async function getStaticProps({preview = false}) {
+    const pwa = (await getPwaData()) || {};
     if (!pwa) {
         return {
             notFound: true,
