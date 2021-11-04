@@ -75,10 +75,9 @@ export default function Search({pwa}) {
     )
 }
 
-export async function getStaticProps({preview = false}) {
-    const pwa = (await getPwaData()) || {};
-    const indexPwa = (await getIndexPwaData()) || {};
-    if (!pwa || !indexPwa) {
+export async function getServerSideProps({req,preview = false}) {
+    const pwa = (await getPwaData(req)) || {};
+    if (!pwa) {
         return {
             notFound: true,
         }
@@ -86,7 +85,6 @@ export async function getStaticProps({preview = false}) {
     return {
         props: {
             pwa: pwa,
-            indexPwa: indexPwa,
             preview
         }
     }

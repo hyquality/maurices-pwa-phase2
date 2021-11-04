@@ -125,9 +125,10 @@ export default function Home({pwa, indexPwa}) {
     )
 }
 
-export async function getStaticProps({preview = false}) {
-    const pwa = (await getPwaData()) || {};
-    const indexPwa = (await getIndexPwaData()) || {};
+export async function getServerSideProps({req,preview = false}) {
+
+    const pwa = (await getPwaData(req)) || {};
+    const indexPwa = (await getIndexPwaData(req)) || {};
     if (!pwa || !indexPwa) {
         return {
             notFound: true,
