@@ -1,14 +1,8 @@
 import {localApiCall} from "@lib/api";
 
 export default async function handler(req, res) {
-    const {key} = req.query
-
-    await localApiCall(
-        req.cookies,
-        false,
-        "catalog/product",
-        `keywords=${key[0]}&startIndex=1&pageSize=30`
-    )
+    const {id} = req.query
+    await localApiCall(req.cookies,false,`store/${id}`)
         .then(({data}) => {
             res.status(200).json({data})
         })

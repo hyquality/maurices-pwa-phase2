@@ -5,6 +5,7 @@ import Button from "@components/templates/button";
 import Image from "next/image";
 import {DataProviderContext} from '../layout-data-provider';
 
+
 export default function MiniCart() {
     const {
         cart
@@ -27,7 +28,7 @@ export default function MiniCart() {
                                             key={"mini-cart-item-" + index}>
                                             <Link href={item.url}>
                                                 <a className="w-20 pr-5 box-content">
-                                                    <Image
+                                                    <Image                        
                                                         alt={item.title}
                                                         src={item.image}
                                                         width={72}

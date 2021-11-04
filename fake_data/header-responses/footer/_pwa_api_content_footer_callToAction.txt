@@ -1,1 +1,0 @@
-{"type":"getCallToActionResponse","success":true,"callToActionInfo":{"signUp":{"message":"123Get exclusive access to even more offers, new arrivals, style tips and more! <a href='#'>Sign Up Now</a>","title":"Sign Up for Emails"}}}

@@ -3,7 +3,7 @@ import ErrorPage from 'next/error'
 import Container from '@components/container'
 import Layout from '@components/layout'
 import Head from 'next/head'
-import {getPwaData, getStaticPageData} from "@lib/api";
+import {getPwaData} from "@lib/api";
 import {getTheTitle} from "@lib/helpers";
 import Breadcrumbs from "@components/breadcrumbs";
 import PlpList from "@components/templates/plp/plp-list";
@@ -19,7 +19,7 @@ import useSWR from 'swr'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
-export default function Post({plp, collection, pwa, preview}) {
+export default function Post({pwa, preview}) {
 
     const router = useRouter()
     const {slug} = router.query
@@ -78,14 +78,10 @@ export default function Post({plp, collection, pwa, preview}) {
 
         setApiUrl(apiURL)
     }
-/*    if (router.isFallback) {
-        return <ErrorPage statusCode={404}/>
-    }*/
-
     return (
         <>
-            {plp ? (
-                <Layout data={plp} pwa={pwa}>
+            {pwa ? (
+                <Layout pwa={pwa}>
                     <Head>
                         <title>{getTheTitle(`${catalogData.categoryDisplayName}`)}</title>
                     </Head>
@@ -140,17 +136,15 @@ export default function Post({plp, collection, pwa, preview}) {
     )
 }
 export async function getStaticProps({params, preview = false, previewData, locale}) {
-    const data = await getStaticPageData();
     const pwa = (await getPwaData()) || {};
 
-    if (!data) {
+    if (!pwa) {
         return {
             notFound: true,
         }
     }
     return {
         props: {
-            plp: data,
             pwa: pwa,
             preview
         }

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {getStaticPageData, getIndexPageData, getPwaData, getIndexPwaData} from "@lib/api";
+import {getPwaData, getIndexPwaData} from "@lib/api";
 import Layout from "@components/layout";
 import Head from 'next/head'
 import {getTheTitle, mapHomeComponentsJson} from "@lib/helpers";
@@ -12,7 +12,7 @@ import Carousel from "@components/templates/carousel";
 import Cookies from "js-cookie";
 import axios from "axios";
 
-export default function Home({data, index, pwa, indexPwa}) {
+export default function Home({data, pwa, indexPwa}) {
     const [gridData, setGridData] = useState(false);
     const [sliderBannerData, setSliderBannerData] = useState(false);
     const [carousel, setCarousel] = useState(false);
@@ -66,7 +66,7 @@ export default function Home({data, index, pwa, indexPwa}) {
     }*/
     return (
         <>
-            <Layout data={data} pwa={pwa}>
+            <Layout pwa={pwa}>
                 <Head>
                     <title>{getTheTitle("Home")}</title>
                 </Head>
@@ -119,14 +119,6 @@ export default function Home({data, index, pwa, indexPwa}) {
                             <InstaSlide {...insta}/>
                         )
                     }
-
-{/*                    {
-                        index.templates ? (
-                            <Templates templates={index.templates}/>
-                        ) : null
-                    }*/}
-
-
                 </div>
             </Layout>
         </>
@@ -134,19 +126,15 @@ export default function Home({data, index, pwa, indexPwa}) {
 }
 
 export async function getStaticProps({preview = false}) {
-    const data = (await getStaticPageData()) || {};
-    const index = (await getIndexPageData()) || {};
     const pwa = (await getPwaData()) || {};
     const indexPwa = (await getIndexPwaData()) || {};
-    if (!data) {
+    if (!pwa || !indexPwa) {
         return {
             notFound: true,
         }
     }
     return {
         props: {
-            data: data,
-            index: index.data,
             pwa: pwa,
             indexPwa: indexPwa,
             preview

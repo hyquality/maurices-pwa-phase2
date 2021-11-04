@@ -12,7 +12,7 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 import Icon from "@components/templates/icon";
 import Link from "next/link";
-import {bodyOverlay, openMainMenu} from "@lib/helpers";
+import {bodyOverlay, myLoader, openMainMenu} from "@lib/helpers";
 import SearchField from "@components/header/search/search-field";
 import InstantSearch from "@components/header/search/instant-search";
 import CustomerMenu from "@components/header/main-nav/customer-menu";
@@ -22,26 +22,13 @@ import logo from "@public/assets/images/logo.png"
 import Image from "next/image";
 import {DataProviderContext} from '../layout-data-provider';
 import useScreenWidth from "@lib/effects/useScreenWidth";
-import useSWR from "swr";
-const fetcher = (url) => fetch(url).then((res) => res.json())
 
 export default function MiddleBar() {
     const {
-        store, cart
+        store, cart,profileInfo
     } = useContext(DataProviderContext)
 
-    const [profileInfo, setProfileInfo] = useState(false);
 
-    const {
-        data,
-        error
-    } = useSWR( "/api/profile", fetcher)
-
-    useEffect(() => {
-        if (data) {
-            setProfileInfo(data.data.profileInfo)
-        }
-    }, [data])
 
     const {firstName,loggedIn} = profileInfo || {}
 
@@ -183,7 +170,7 @@ export default function MiddleBar() {
                     <div className="logo text-center flex-grow">
                         <Link href="/">
                             <a>
-                                <Image
+                                <Image    
                                     alt=""
                                     src={logo}
                                     width={288}

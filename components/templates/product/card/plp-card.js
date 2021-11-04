@@ -1,12 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import {getProductCardData, getProductCardPrice} from "@lib/helpers";
+import {getProductCardData, getProductCardPrice, myLoader} from "@lib/helpers";
 import React, {useEffect, useState} from "react";
 import Icon from "@components/templates/icon";
 import ColorSwatch from "@components/templates/product/color-swatch";
 import Button from "@components/templates/button";
 import Reviews from "@components/templates/product/reviews";
 import Highlights from "@components/templates/product/highlights";
+
 
 export default function PlpCard({data, openPopup}) {
 
@@ -27,17 +28,6 @@ export default function PlpCard({data, openPopup}) {
         main: productData.colors[0].image.main,
         hover: productData.colors[0].image.hover,
     });
-
-/*    useEffect(() => {
-        setProductData(getProductCardData(data))
-        setCardPrice(getProductCardPrice(productData.colors[0].prices))
-        setCardImage(
-            {
-                main: productData.colors[0].image.main,
-                hover: productData.colors[0].image.hover,
-            }
-        )
-    }, [data])*/
 
     const onColorSwatchClickMouseEnter = (e, data) => {
         e.stopPropagation();
@@ -68,7 +58,7 @@ export default function PlpCard({data, openPopup}) {
                                             <Icon icon={["far", "heart"]} size={"medium"}/>
                                         </a>
 
-                                        <Image
+                                        <Image            
                                             src={cardImage.hover}
                                             alt={data.title}
                                             width={286}
@@ -85,7 +75,7 @@ export default function PlpCard({data, openPopup}) {
 
 
                                 ) : (
-                                    <Image
+                                    <Image        
                                         src={cardImage.main}
                                         alt={data.title}
                                         width={286}

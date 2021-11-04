@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 
+
 export default function PlpSubcategotyList({subcategoryCallouts}) {
 
     return (
@@ -16,7 +17,7 @@ export default function PlpSubcategotyList({subcategoryCallouts}) {
 
                                     <Link href={`/catalog/${categoryId}`}>
                                         <a className="block relative">
-                                            <Image
+                                            <Image                
                                                 src={imageUrl}
                                                 alt={title}
                                                 width={200}

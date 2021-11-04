@@ -6,6 +6,7 @@ import Image from "next/image";
 import Button from "@components/templates/button";
 import {useRouter} from 'next/router'
 
+
 export default function Hero({
                                  fullwidth,
                                  paddingTop,

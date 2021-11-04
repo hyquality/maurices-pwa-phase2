@@ -1,16 +1,8 @@
-import axios from "axios";
-import {REACT_APP_API_URL, REACT_APP_MODE} from "@lib/constants";
-import {objToString} from "@lib/helpers";
+import {localApiCall} from "@lib/api";
 
 export default async function handler(req, res) {
 
-    const url = `${REACT_APP_API_URL}profile${parseInt(REACT_APP_MODE) ? "/index.json":""}`
-
-    await axios
-        .get(url, {
-            headers:{
-                Cookie: objToString(req.cookies)
-            }})
+    await localApiCall(req.cookies,false,"profile")
         .then(({data}) => {
             res.status(200).json({data})
         })

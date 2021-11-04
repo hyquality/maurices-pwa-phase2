@@ -11,15 +11,18 @@ import React, {useContext} from "react";
 import NavList from "@components/templates/nav-list";
 import logo from "@public/assets/images/logo.png"
 
+
 library.add(fab);
 library.add(far);
 library.add(fas);
 export default function Columns() {
     const {
-        footer
+        footerContent
     } = useContext(DataProviderContext)
-    const {columns, signUp} = footer.columnFooter || {}
-    const {title, msg, socialNav} = signUp || {}
+    const {columns} = footerContent.footerColumns.columnInfo || {}
+
+    const {title, message} = footerContent.callToAction.callToActionInfo.signUp || {}
+    const {socialNav} = footerContent.socialMedia.socialMediaInfo || {}
 
     const handleToggle = (e) => {
         const isActive = e.target.classList.contains("on");
@@ -36,9 +39,9 @@ export default function Columns() {
         <div className="columns-footer  pt-8 ">
             <Container>
                 <div className="md:flex -mx-5 md:m-0">
-                    {columns.map((column) => (
+                    {columns.map((column,index) => (
 
-                        <div key={"columnn-" + column.id}
+                        <div key={"columnn-" + index}
                              className={"border-b md:border-b-0 border-gray_border w-full " + (column.id === 0 ? "md:w-1/4" : "md:w-1/5")}>
                             {
                                 column.title
@@ -58,7 +61,7 @@ export default function Columns() {
                                 column.nav
                                     ? (
                                         <NavList data={column.nav}
-                                                 className={"footer-column-nav  footer-column-link-" + column.id + " " + (column.id === 0 ? "first-column" : "next-column small")}/>
+                                                 className={"footer-column-nav  footer-column-link-" + index + " " + (index === 0 ? "first-column" : "next-column small")}/>
                                     )
                                     : null
                             }
@@ -75,10 +78,10 @@ export default function Columns() {
                                 : null
                         }
                         {
-                            msg
+                            message
                                 ? (
                                     <p className="text-xs text-gray_2 leading-4 pb-2.5"
-                                       dangerouslySetInnerHTML={{__html: msg}}/>
+                                       dangerouslySetInnerHTML={{__html: message}}/>
                                 )
                                 : null
                         }

@@ -3,8 +3,9 @@ import Image from "next/image";
 import React from "react";
 import PropTypes from "prop-types";
 
+
 export default function CalloutItem({data}) {
-    const {id, title, icon, text, nav,w,h} = data || {}
+    const { title, icon, text, nav,w,h} = data || {}
     return (
         <div className="flex items-center pb-9 md:pb-0">
             {
@@ -12,6 +13,7 @@ export default function CalloutItem({data}) {
                     <div className={"pr-2"}>
 
                         <Image
+                            
                             alt={title}
                             src={icon}
                             width={w?w:72}
@@ -38,7 +40,7 @@ export default function CalloutItem({data}) {
                 <ul className="flex pt-5">
                     {nav ? (
                         nav.map(({url, text}, index) => (
-                            <li key={"cell-" + id + "_" + index} className="text-xs pr-5">
+                            <li key={"cell-nav" + title + "_" + index} className="text-xs pr-5">
                                 <Link href={url}>
                                     <a className="underline hover:no-underline">{text}</a>
                                 </Link>

@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import Link from "next/link";
-import {bodyOverlay, isMobile, isDescktop, parseImageUrl} from "@lib/helpers";
-import {getSearchData} from "@lib/api";
+import {bodyOverlay, parseImageUrl, myLoader} from "@lib/helpers";
 import Icon from "@components/templates/icon";
 import Image from "next/image";
 
@@ -26,16 +25,6 @@ export default function InstantSearch({data, instantSearchState, setInstantSearc
         setSearchInputValue(event.target.value);
         updateInstantSearchState(event.target.value)
 
-        //let file = "dataSearchJson.json"
-        //if (event.target.value.length > 1) file = "dataSearchJson1.json"
-       // if (event.target.value.length > 3) file = "dataSearchJson2.json"
-       // const searchData = (await getSearchData(event.target.value, file)) || {};
-
-  /*      setInstantSearchState(prevState => {
-            return {...prevState, searchResult: searchData}
-        });*/
-
-
     }
 
     const updateInstantSearchState = (value) => {
@@ -55,10 +44,17 @@ export default function InstantSearch({data, instantSearchState, setInstantSearc
         updateInstantSearchState("");
     };
 
-    const changeSearchValue = (keywords)=>(e) => {
-        console.log(keywords)
+    const changeSearchValue = (keywords) => (e) => {
+
         setInstantSearchState(prevState => {
-            return {...prevState, value: keywords, error: false,searchResult: false,suggestions: false,categories: false}
+            return {
+                ...prevState,
+                value: keywords,
+                error: false,
+                searchResult: false,
+                suggestions: false,
+                categories: false
+            }
         })
     }
     return (
@@ -97,7 +93,7 @@ export default function InstantSearch({data, instantSearchState, setInstantSearc
                     </ul>
                     {
                         !instantSearchState.searchResult && (
-                            <div>Loading</div>
+                            <div className={"absolute inset-0 flex justify-center items-center"}>Loading...</div>
                         )
                     }
                     {
@@ -147,7 +143,8 @@ export default function InstantSearch({data, instantSearchState, setInstantSearc
                                         instantSearchState.suggestions.map((link) => (
                                             <li className="pb-2.5 text-gray_2"
                                                 key={"search-suggestion-" + link.displayOrder}>
-                                                <a className={"cursor-pointer"} onClick={changeSearchValue(link.keywords)}>{link.keywords}</a>
+                                                <a className={"cursor-pointer"}
+                                                   onClick={changeSearchValue(link.keywords)}>{link.keywords}</a>
                                             </li>
                                         ))
                                     }

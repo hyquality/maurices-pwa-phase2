@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Icon from "@components/templates/icon";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
-import {getSearchData} from "@lib/api";
 import Button from "@components/templates/button";
 import useSWR from "swr";
 

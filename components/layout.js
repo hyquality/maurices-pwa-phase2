@@ -7,7 +7,7 @@ import React, {useState, useRef, useEffect} from 'react';
 import LayoutDataProvider from "./layout-data-provider";
 
 
-export default function Layout({data,pwa, children}) {
+export default function Layout({pwa, children}) {
 
     const [stickyHeader, setStickyHeader] = useState(false);
     const [offsetCompensation, setOffsetCompensation] = useState(0);
@@ -43,7 +43,7 @@ export default function Layout({data,pwa, children}) {
     return (
         <>
             <Meta/>
-            <LayoutDataProvider data={data} pwa={pwa}>
+            <LayoutDataProvider pwa={pwa}>
                 <div style={{marginTop: offsetCompensation}}>
                     <div className={`sticky-wrapper${stickyHeader ? ' stickyHeader' : ''}`} ref={headerRef}>
                         <Header/>

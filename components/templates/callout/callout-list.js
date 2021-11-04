@@ -9,8 +9,8 @@ export default function CalloutList({data}) {
         <div className="bg-gray_1 pt-10 pb-0 md:py-10">
             <Container>
                 <ul className="md:flex w-full">
-                    {data.map((cell) => (
-                        <li key={"cell-" + cell.id} className="flex-grow">
+                    {data.map((cell, index) => (
+                        <li key={"cell-" + index} className="flex-grow">
                             <CalloutItem data={cell}/>
                         </li>
                     ))}

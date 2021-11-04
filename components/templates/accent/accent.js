@@ -3,6 +3,7 @@ import Image from "next/image";
 import PropTypes from "prop-types";
 import NavList from "../nav-list";
 
+
 export default function Accent({
                                    url,
                                    nav,
@@ -34,6 +35,7 @@ export default function Accent({
             <div className={"relative z-0"}>
                 <a onClick={onClick} className={`${url&&"cursor-pointer"}`}>
                     <Image
+                        
                         alt={title}
                         src={image}
                         width={width ? width : 300}

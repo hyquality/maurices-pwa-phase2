@@ -6,6 +6,7 @@ import Image from "next/image";
 import {useRouter} from 'next/router'
 import NavList from "@components/templates/nav-list";
 
+
 export default function Promo({
                                   fullWidth,
                                   paddingTop,
@@ -50,7 +51,7 @@ export default function Promo({
                         {
                             (icon.src && icon.w && icon.h) && (
                                 <div className={`hidden md:flex flex-col md:inline pr-12 justify-center`}>
-                                    <Image
+                                    <Image        
                                         alt={title}
                                         src={icon.src}
                                         width={icon.w}
@@ -66,7 +67,7 @@ export default function Promo({
                             {
                                 (image.src && image.width && image.height) && (
                                     <div className={`flex md:inline p-0 w-full `}>
-                                        <Image
+                                        <Image            
                                             alt={title}
                                             src={image.src}
                                             width={image.width}

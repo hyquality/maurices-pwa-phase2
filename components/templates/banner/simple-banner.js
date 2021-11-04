@@ -4,6 +4,7 @@ import Image from "next/image";
 import PropTypes from "prop-types";
 import HeaderTitle from "@components/templates/header-title";
 
+
 export default function SimpleBanner({
                                          url,
                                          label,
@@ -25,6 +26,7 @@ export default function SimpleBanner({
             <Link href={url}>
                 <a className={"relative flex z-0"}>
                     <Image
+                        
                         alt={title}
                         src={image}
                         width={width ? width : 72}

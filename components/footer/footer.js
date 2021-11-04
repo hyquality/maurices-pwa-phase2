@@ -5,14 +5,14 @@ import {DataProviderContext} from '../layout-data-provider';
 import {useContext} from "react";
 export default function Footer() {
     const {
-        footer
+        footerContent
     } = useContext(DataProviderContext)
     return (
         <>
             {
-                footer?(
+                footerContent?(
                     <footer>
-                        <CalloutList data={footer.calloutItems}/>
+                        <CalloutList data={footerContent.calloutItemList.calloutItemInfo.calloutItems}/>
                         <Columns />
                         <SubFooter />
                     </footer>

@@ -4,7 +4,7 @@ import PlpCard from "@components/templates/product/card/plp-card";
 import Image from "next/image";
 import Highlights from "@components/templates/product/highlights";
 import Reviews from "@components/templates/product/reviews";
-import {getProductCardData, getProductCardPrice, getProductData} from "@lib/helpers";
+import {getProductCardData, getProductCardPrice, getProductData, myLoader} from "@lib/helpers";
 import ColorSwatch from "@components/templates/product/color-swatch";
 import AttributeSelector from "@components/templates/product/attribute-selector";
 import Icon from "@components/templates/icon";
@@ -132,7 +132,7 @@ export default function PlpQuickView({product}) {
                                         key={"quick-view-image-" + slug + "-" + index}>
                                         <a onMouseEnter={changeImage(index)}
                                            rel={index === 0 ? " border border-black " : " "}>
-                                            <Image
+                                            <Image                
                                                 src={image}
                                                 alt={title}
                                                 width={74}

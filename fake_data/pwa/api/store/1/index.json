@@ -1,0 +1,13 @@
+{
+  "type": "getCallToActionResponse",
+  "success": true,
+  "storeInfo": {
+    "store": {
+      "title": "Maurices Shoppes at Richland",
+      "address": " 3553 Richland Ave W <br/>\n                                    Suite 120 <br/>\n                                    Aiken, SC   29801",
+      "phone": "(803) 642-2257",
+      "timeOpening": "open until 9pm",
+      "time": "  Mon-Sat: 10am &mdash; 9pm <br/>\n                                    Sun: 1pm &mdash; 6pm"
+    }
+  }
+}

@@ -43,12 +43,4 @@ module.exports = withPWA({
             }
         ]
     },
-/*    async rewrites() {
-        return [
-            {
-                source: '/api/:path*',
-                destination: `https://maurices.hyquality.com/pwa/api/:path*`,
-            },
-        ]
-    },*/
 });
