@@ -12,7 +12,7 @@ import Carousel from "@components/templates/carousel";
 import Cookies from "js-cookie";
 import axios from "axios";
 
-export default function Home({data, pwa, indexPwa}) {
+export default function Home({pwa, indexPwa}) {
     const [gridData, setGridData] = useState(false);
     const [sliderBannerData, setSliderBannerData] = useState(false);
     const [carousel, setCarousel] = useState(false);

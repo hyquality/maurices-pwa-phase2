@@ -1,10 +1,16 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import Link from "next/link";
 import {bodyOverlay, parseImageUrl, myLoader} from "@lib/helpers";
 import Icon from "@components/templates/icon";
 import Image from "next/image";
+import {DataProviderContext} from "@components/layout-data-provider";
 
-export default function InstantSearch({data, instantSearchState, setInstantSearchState}) {
+export default function InstantSearch() {
+
+    const {
+        instantSearchState, setInstantSearchState
+    } = useContext(DataProviderContext)
+
 
     const [searchInputValue, setSearchInputValue] = useState('');
 
@@ -86,7 +92,7 @@ export default function InstantSearch({data, instantSearchState, setInstantSearc
                             “{instantSearchState.value}”
                         </li>
                         <li className="ml-auto">
-                            <Link href="#">
+                            <Link href={"/search"}>
                                 <a>View All Results</a>
                             </Link>
                         </li>

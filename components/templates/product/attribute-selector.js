@@ -23,13 +23,14 @@ export default function AttributeSelector({
         }
     }
     const checkIsNotExist = (short) => {
-        if(selectedVariant){
+        return false
+/*        if(selectedVariant){
             const key = Object.keys(selectedVariant.attributes).map(function (key) {
                 return (attributeKey === key) ? short : selectedVariant.attributes[key].short
             });
             return variants[key.join("")] === undefined
         }
-        return false
+        return false*/
     }
     return (
         <>

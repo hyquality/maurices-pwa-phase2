@@ -16,27 +16,35 @@ import Popup from "@components/templates/popup";
 import dynamic from "next/dynamic";
 import FilterContainer from "@components/templates/plp/filter/filter-container";
 import useSWR from 'swr'
+import PlpContent from "@components/plp-content";
 
-const fetcher = (url) => fetch(url).then((res) => res.json())
 
+const fetcher = async url => {
+    const res = await fetch(url)
+
+    // If the status code is not in the range 200-299,
+    // we still try to parse and throw it.
+    if (!res.ok) {
+        const error = new Error('An error occurred while fetching the data.')
+        // Attach extra info to the error object.
+        error.info = await res.json()
+        error.status = res.status
+        throw error
+    }
+
+    return res.json()
+}
 export default function Post({pwa, preview}) {
-
     const router = useRouter()
     const {slug} = router.query
 
-
-    const [isPopupVisible, setIsPopupVisible] = useState(false);
-    const [popupContent, setPopupContent] = useState("");
-    const [catalogData, setCatalogData] = useState(false);
-
-    const [catalogDesc, setCatalogDesc] = useState(false);
-    const [apiUrl, setApiUrl] = useState("/api/catalog/slug");
+    const [catalogData, setCatalogData] = useState(false)
+    const [apiUrl, setApiUrl] = useState("/api/catalog/slug")
 
     const {
         data,
         error
     } = useSWR(slug ? apiUrl.replace("slug", slug): null, fetcher)
-
 
     useEffect(() => {
         if (data) {
@@ -44,25 +52,12 @@ export default function Post({pwa, preview}) {
         }
     }, [data,slug])
 
-
     useEffect(() => {
         if (error) {
+            setCatalogData(false)
             console.log(error)
         }
     }, [error])
-
-
-    const openQuickView = (data) => (e) => {
-        e.preventDefault()
-        let TemplateItem = dynamic(import('@components/templates/plp/plp-quick-view'))
-        setPopupContent(<TemplateItem product={data}/>)
-        setIsPopupVisible(true)
-    }
-
-    const closeQuickView = (e) => {
-        e.preventDefault();
-        setIsPopupVisible(false)
-    }
 
     const loadFilteredCatalog = (fasets,selectedSort,catalogListIndex) =>  {
 
@@ -83,51 +78,10 @@ export default function Post({pwa, preview}) {
             {pwa ? (
                 <Layout pwa={pwa}>
                     <Head>
-                        <title>{getTheTitle(`${catalogData.categoryDisplayName}`)}</title>
+                        <title>{getTheTitle(`${catalogData?catalogData.categoryDisplayName:"Category not found"}`)}</title>
                     </Head>
                     <Container>
-
-                        {
-                            error && (
-                                <div>failed to load</div>
-                            )
-                        }
-                        {
-                            !data && (
-                                <div>loading...</div>
-                            )
-                        }
-                        {
-                            catalogData && (
-                                <>
-
-                                    <Breadcrumbs title={false} elements={catalogData.breadcrumbs}/>
-                                    <HeaderTitle weight={"bold"} size={"text-4xl"} tag={"h1"}
-                                                 style={"utopia"}>{catalogData.categoryDisplayName}</HeaderTitle>
-                                    <PlpSubcategotyList subcategoryCallouts={catalogData.subcategoryCallouts}/>
-                                    <FilterContainer catalogData={catalogData} loadFilteredCatalog={loadFilteredCatalog}>
-                                        <div className="flex">
-                                            <div className="filter w-1/4">
-                                               <PlpFilter/>
-                                            </div>
-                                            <div className="w-3/4 pb-28">
-
-                                                <PlpList openPopup={openQuickView}/>
-                                                {
-                                                    catalogDesc ? (
-                                                        <PlpDescription data={catalogDesc}/>
-                                                    ) : null
-                                                }
-
-                                            </div>
-                                        </div>
-                                    </FilterContainer>
-                                    <Popup content={popupContent} visible={isPopupVisible} closePopup={closeQuickView}
-                                           className={"w-full max-w-5xl"}/>
-                                </>
-                            )
-                        }
-
+                        <PlpContent loadFilteredCatalog={loadFilteredCatalog} data={data} error={error} setApiUrl={setApiUrl} catalogData={catalogData}/>
                     </Container>
                 </Layout>
             ) : null}

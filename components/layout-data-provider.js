@@ -9,6 +9,15 @@ export default function LayoutDataProvider({pwa, children, ...props}) {
 
     const [profileInfo, setProfileInfo] = useState(false);
 
+    const [instantSearchState, setInstantSearchState] = useState({
+        value: "",
+        mouseOn: false,
+        error: false,
+        suggestions: false,
+        categories: false,
+        searchResult: false
+    });
+
     const {
         "data": prfileData,
         "error": prfileError
@@ -51,6 +60,7 @@ export default function LayoutDataProvider({pwa, children, ...props}) {
     return (
         <DataProviderContext.Provider
             value={{
+                instantSearchState, setInstantSearchState,
                 profileInfo,
                 headerContent,
                 navMenuItems,

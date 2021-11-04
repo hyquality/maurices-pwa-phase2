@@ -15,21 +15,22 @@ import {REACT_APP_API_URL, REACT_APP_MODE} from "@lib/constants";
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
 
+
 export default function PlpQuickView({product}) {
-    const {title, slug, variants, highlights, reviews, description} = product || {}
+    const {title, slug, highlights, reviews, description} = product || {}
 
     const [productData, setProductData] = useState(false);
-    const [apiUrl, setApiUrl] = useState(`${REACT_APP_API_URL}catalog/product${parseInt(REACT_APP_MODE) ? "/33412/index.json" : slug}`);
+    //const [apiUrl, setApiUrl] = useState(`api/product${parseInt(REACT_APP_MODE) ? "/33412" : slug}`);
     const {
         data,
         error
-    } = useSWR(slug ? apiUrl.replace("slug", slug) : null, fetcher)
+    } = useSWR(slug ? `/api/product${parseInt(REACT_APP_MODE) ? "/33412" : slug}` : null, fetcher)
 
 
     useEffect(() => {
         if (data) {
-            console.log(data);
-            setProductData(getProductData(data.product))
+            console.log(data)
+             setProductData(getProductData(data.data.product))
         }
     }, [data])
 
@@ -49,9 +50,6 @@ export default function PlpQuickView({product}) {
 
 
     const [gallery, setGallery] = useState(false);
-
-
-
 
     const [qty, setQty] = useState(1);
 
@@ -85,7 +83,7 @@ export default function PlpQuickView({product}) {
         }
     }
     const colorSwatchChange = (e, {title, short, key}) => {
-        //cahngeActiveVariant(short,"color")
+        cahngeActiveVariant(short,"color")
         setImageSrc(0);
         const variant = productData.variants.filter(variant => variant.attributes.color.title === title);
        // const variant = productData.variants[short] ? productData.variants[short] : false
@@ -116,6 +114,26 @@ export default function PlpQuickView({product}) {
     }
     if (!data) {
         return <div>loading...</div>
+    }
+
+    const addToCart =(e) => {
+        e.preventDefault();
+
+        console.log(selectedVariant)
+/*        const res = fetch("api/cart/add", {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({a: 1, b: 'Textual content'})
+        });
+
+        // If the status code is not in the range 200-299,
+        // we still try to parse and throw it.
+        if (res.ok) {
+           console.log(res)
+        }*/
     }
     return (
         <div className={"plp-quickview relative pb-20"}>
@@ -186,18 +204,6 @@ export default function PlpQuickView({product}) {
                             </div>
                         ) : null
                     }
-                    {/*                    {
-                        productData.fits ? (
-                            <div className={"pt-5"}>
-                                <AttributeSelector attributeName={"FIT"} attributeKey={"fit"}
-                                                   attributes={productData.fits}
-                                                   productSlug={slug + "-popup-color-swatch"}
-                                                   showLabel={true} selectedVariant={selectedVariant}
-                                                   variants={productData.variants}
-                                                   onAttributeClickMouseEnter={attributeChange}/>
-                            </div>
-                        ) : null
-                    }*/}
                     {
                         productData.sizes ? (
                             <div className={"pt-5"}>
@@ -275,7 +281,7 @@ export default function PlpQuickView({product}) {
             </div>
             <div className="quick-view-button absolute bottom-0 bottom-0 left-0 w-full pt-5 px-8 -mx-7 shadow-top">
 
-                <Button label={"ADD TO BAG"} size="small" color={"green"}> </Button>
+                <Button label={"ADD TO BAG"} size="small" color={"green"} onClick={addToCart}/>
             </div>
         </div>
     )

@@ -25,7 +25,7 @@ import useScreenWidth from "@lib/effects/useScreenWidth";
 
 export default function MiddleBar() {
     const {
-        store, cart,profileInfo
+        store, cart,profileInfo,instantSearchState, setInstantSearchState
     } = useContext(DataProviderContext)
 
 
@@ -79,14 +79,14 @@ export default function MiddleBar() {
         setIsMiniCartHovering(false)
     }
 
-    const [instantSearchState, setInstantSearchState] = useState({
+/*    const [instantSearchState, setInstantSearchState] = useState({
         value: "",
         mouseOn: false,
         error: false,
         suggestions: false,
         categories: false,
         searchResult: false
-    });
+    });*/
 
     const onMobileMenuButtonClick = () => {
         openMainMenu(1).then(r => "");
@@ -252,8 +252,7 @@ export default function MiddleBar() {
                         </li>
                     </ul>
                 </div>
-                <InstantSearch data={[]} instantSearchState={instantSearchState}
-                               setInstantSearchState={setInstantSearchState}/>
+                <InstantSearch/>
             </Container>
 
         </div>
