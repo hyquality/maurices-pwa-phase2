@@ -182,8 +182,7 @@ export default function MiddleBar() {
                     </div>
                     <ul className="middle-bar-menu flex items-center ml-auto relative md:py-30px md:-my-5">
                         <li className="hidden md:block py-30px -my-30px">
-                            <SearchField instantSearchState={instantSearchState}
-                                         setInstantSearchState={setInstantSearchState}/>
+                            <SearchField/>
                         </li>
                         <li className="md:py-30px md:-my-30px"
                             onMouseEnter={onCustomerMouseEnter}

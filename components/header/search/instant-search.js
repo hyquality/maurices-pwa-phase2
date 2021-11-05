@@ -8,11 +8,11 @@ import {DataProviderContext} from "@components/layout-data-provider";
 export default function InstantSearch() {
 
     const {
-        instantSearchState, setInstantSearchState
+        instantSearchState, setInstantSearchState,
+        searchValueCache, setSearchValueCache,
+        searchInputValue, setSearchInputValue,
+        loadSearchPage
     } = useContext(DataProviderContext)
-
-
-    const [searchInputValue, setSearchInputValue] = useState('');
 
 
     const onSearchResultMouseEnter = () => {
@@ -51,7 +51,7 @@ export default function InstantSearch() {
     };
 
     const changeSearchValue = (keywords) => (e) => {
-
+        setSearchValueCache(keywords)
         setInstantSearchState(prevState => {
             return {
                 ...prevState,
@@ -63,6 +63,9 @@ export default function InstantSearch() {
             }
         })
     }
+
+
+
     return (
         <div
             onMouseEnter={onSearchResultMouseEnter}
@@ -74,7 +77,7 @@ export default function InstantSearch() {
                           className="absolute left-2.5 top-1/2 transform -translate-y-1/2 "/>
                     <input
                         className="pl-8 py-2.5 text-sm text-gray_4 focus:outline-none w-full block md:hidden border border-gray_border focus:border-gray_2 border-0 rounded-lg"
-                        placeholder="Search"
+                        placeholder="Key"
                         value={searchInputValue}
                         onChange={handleSearchInput}
                     />
@@ -92,9 +95,7 @@ export default function InstantSearch() {
                             “{instantSearchState.value}”
                         </li>
                         <li className="ml-auto">
-                            <Link href={"/search"}>
-                                <a>View All Results</a>
-                            </Link>
+                            <a className={"cursor-pointer"} onClick={loadSearchPage}>View All Results</a>
                         </li>
                     </ul>
                     {

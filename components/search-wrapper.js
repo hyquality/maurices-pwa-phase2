@@ -1,12 +1,8 @@
-import React, {useContext, useEffect, useState} from "react";
-import {getPwaData, getIndexPwaData} from "@lib/api";
-import Layout from "@components/layout";
-import Head from 'next/head'
-import {getTheTitle} from "@lib/helpers";
-import Container from "@components/container";
-
-import useSWR from "swr";
 import PlpContent from "@components/plp-content";
+import React, {useContext, useEffect, useState} from "react";
+import useSWR from "swr";
+import {DataProviderContext} from "@components/layout-data-provider";
+import HeaderTitle from "@components/templates/header-title";
 
 const fetcher = async url => {
     const res = await fetch(url)
@@ -23,8 +19,12 @@ const fetcher = async url => {
 
     return res.json()
 }
-export default function Search({pwa}) {
+export default function SearchWrapper({searchKey}) {
+    const {
+        instantSearchState, setInstantSearchState
+    } = useContext(DataProviderContext)
 
+    const [searchPageKey, setSearchPageKey] = useState(searchKey)
     const [catalogData, setCatalogData] = useState(false)
     const [apiUrl, setApiUrl] = useState(false)
 
@@ -42,9 +42,18 @@ export default function Search({pwa}) {
     useEffect(() => {
         if (error) {
             setCatalogData(false)
-            console.log(error)
         }
     }, [error])
+
+    useEffect(() => {
+        if (searchKey) {
+            setSearchPageKey(searchKey)
+            let apiURL = searchPageKey ? `/api/search/${searchPageKey}` : null
+
+            setApiUrl(apiURL)
+        }
+    }, [searchKey])
+
 
     const loadFilteredCatalog = (fasets,selectedSort,catalogListIndex,searchInputValue="") =>  {
 
@@ -56,36 +65,15 @@ export default function Search({pwa}) {
             vars+= "&facet="+names.join("&facet=")
         }
 
-        let apiURL = searchInputValue ? `/api/search/${searchInputValue}/${vars}` : null
+        let apiURL = searchPageKey ? `/api/search/${searchPageKey}/&${vars}` : null
 
         setApiUrl(apiURL)
     }
     return (
-        <>
-            <Layout pwa={pwa}>
-                <Head>
-                    <title>{getTheTitle(`Search`)}</title>
-                </Head>
-                <Container>
-                    <PlpContent loadFilteredCatalog={loadFilteredCatalog} data={data} error={error} setApiUrl={setApiUrl} catalogData={catalogData} isSearch={true}/>
-                </Container>
+<>
 
-            </Layout>
-        </>
+    <HeaderTitle tag={"h2"} position={"text-left"} size={"text-2xl"} style={"utopia"} weight={"bold"} className={"py-6"}>{`Search result for: ${searchPageKey}`}</HeaderTitle>
+    <PlpContent loadFilteredCatalog={loadFilteredCatalog} data={data} error={error} setApiUrl={setApiUrl} catalogData={catalogData} isSearch={true}/>
+</>
     )
-}
-
-export async function getStaticProps({preview = false}) {
-    const pwa = (await getPwaData()) || {};
-    if (!pwa) {
-        return {
-            notFound: true,
-        }
-    }
-    return {
-        props: {
-            pwa: pwa,
-            preview
-        }
-    }
 }

@@ -1,73 +1,35 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useState} from "react";
 import Icon from "@components/templates/icon";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
 import Button from "@components/templates/button";
-import useSWR from "swr";
+import {DataProviderContext} from "@components/layout-data-provider";
 
-const fetcher = (url) => fetch(url).then((res) => res.json())
 
-export default function SearchField({instantSearchState, setInstantSearchState}) {
-
-    const [searchValueCache, setSearchValueCache] = useState('');
-    const [searchInputValue, setSearchInputValue] = useState(instantSearchState.value);
+export default function SearchField() {
 
     const {
-        "data": searchData,
-        "error": searchError
-    } = useSWR(searchInputValue ? `/api/search/${searchInputValue}` : null, fetcher)
-
-    const {
-        "data": typeaheadData,
-        "error": typeaheadError
-    } = useSWR(searchInputValue ? `/api/search/typeahead/${searchInputValue}` : null, fetcher)
-
-    useEffect(() => {
-        if (typeaheadError) {
-
-        }
-    }, [typeaheadError])
-
-    useEffect(() => {
-        if (typeaheadData) {
-            setInstantSearchState(prevState => {
-                return {...prevState, suggestions: typeaheadData.data.productSearches,categories: typeaheadData.data.categories, error: false}
-            })
-        }
-    }, [typeaheadData])
-
-    useEffect(() => {
-        if (searchError) {
-            setInstantSearchState(prevState => {
-                return {...prevState, searchResult: false, error: searchError}
-            })
-        }
-    }, [searchError])
-
-    useEffect(() => {
-        if (searchData) {
-            setInstantSearchState(prevState => {
-                return {...prevState, searchResult: searchData.data.products, error: false}
-            })
-        }
-    }, [searchData])
-
-    useEffect(() => {
-        setSearchInputValue(instantSearchState.value)
-    }, [instantSearchState.value])
-
+        instantSearchState, setInstantSearchState,
+        searchValueCache, setSearchValueCache,
+        searchInputValue, setSearchInputValue,
+        loadSearchPage
+    } = useContext(DataProviderContext)
 
     const [isSearchHovered, setIsSearchHovered] = useState(false);
     const onSearchMouseEnter = () => {
         setIsSearchHovered(true)
+        setInstantSearchState(prevState => {
+            return {...prevState, value:searchValueCache }
+        })
 
-        updateInstantSearchState(searchValueCache)
         setSearchInputValue(searchValueCache)
     }
     const onSearchMouseLeave = () => {
         setIsSearchHovered(false)
         if (!isSearchFocus && !instantSearchState.mouseOn) {
             setSearchInputValue("")
-            updateInstantSearchState("")
+            setInstantSearchState(prevState => {
+                return {...prevState, searchResult: false, value:"" }
+            })
         }
     }
 
@@ -79,7 +41,9 @@ export default function SearchField({instantSearchState, setInstantSearchState})
         setIsSearchFocus(false)
         if (!isSearchHovered && !instantSearchState.mouseOn) {
             setSearchInputValue("")
-            updateInstantSearchState("")
+            setInstantSearchState(prevState => {
+                return {...prevState, searchResult: false, value:"" }
+            })
         }
     }
 
@@ -87,27 +51,21 @@ export default function SearchField({instantSearchState, setInstantSearchState})
         setInstantSearchState(prevState => {
             return {...prevState, searchResult: false, value:event.target.value }
         })
-       // setSearchInputValue(event.target.value);
         setSearchValueCache(searchInputValue)
-        updateInstantSearchState(event.target.value)
+
     }
 
 
     const closeSearch = () => {
         setIsSearchHovered(false)
         setSearchValueCache("")
-        updateInstantSearchState("");
-    };
-
-
-    const updateInstantSearchState = (value) => {
-
         setInstantSearchState(prevState => {
-            return {...prevState, value: value}
-        });
-
+            return {...prevState, searchResult: false, value:"" }
+        })
+    };
+    const onKeyPress=(e)=>{
+        e.code==="Enter" && loadSearchPage()
     }
-
     return (
         <div
             className={"transition-all duration-500 border-b border-white hover:border-gray_2 " + ((isSearchHovered || isSearchFocus || instantSearchState.mouseOn) ? "border-gray_2 w-40 " : "w-16")}
@@ -125,8 +83,9 @@ export default function SearchField({instantSearchState, setInstantSearchState})
                             onFocus={onSearchFocus}
                             onBlur={onSearchBlur}
                             onChange={handleSearchInput}
+                            onKeyPress={onKeyPress}
                             value={searchInputValue}
-                            placeholder="Search"
+                            placeholder="Key"
                         />
 
                         <Button
@@ -143,7 +102,7 @@ export default function SearchField({instantSearchState, setInstantSearchState})
                 ) : (
                     <a href="#" className="relative border-b border-white">
                         <Icon icon={faSearch} className="absolute top-1/2 transform -translate-y-1/2"/>
-                        <span className="pl-5">Search</span>
+                        <span className="pl-5">Key</span>
                     </a>
                 )
             }

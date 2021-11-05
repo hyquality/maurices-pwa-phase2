@@ -45,8 +45,10 @@ export default function PlpContent({loadFilteredCatalog,data,error,catalogData,i
             {
                 catalogData && (
                     <>
+                        {
+                            catalogData.breadcrumbs && <Breadcrumbs title={false} elements={catalogData.breadcrumbs}/>
+                        }
 
-                        <Breadcrumbs title={false} elements={catalogData.breadcrumbs}/>
                         <HeaderTitle weight={"bold"} size={"text-4xl"} tag={"h1"}
                                      style={"utopia"}>{catalogData.categoryDisplayName}</HeaderTitle>
                         <PlpSubcategotyList subcategoryCallouts={catalogData.subcategoryCallouts}/>

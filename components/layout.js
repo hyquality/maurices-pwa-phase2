@@ -9,6 +9,7 @@ import LayoutDataProvider from "./layout-data-provider";
 
 export default function Layout({pwa, children}) {
 
+    const [isLoading, setIsLoading] = useState(false);
     const [stickyHeader, setStickyHeader] = useState(false);
     const [offsetCompensation, setOffsetCompensation] = useState(0);
     const headerRef = useRef(null);
@@ -40,10 +41,15 @@ export default function Layout({pwa, children}) {
         };
     }, []);
 
+    useEffect(() => {
+        if (pwa) {
+            console.log("call")
+        }
+    }, [pwa])
     return (
         <>
             <Meta/>
-            <LayoutDataProvider pwa={pwa}>
+            <LayoutDataProvider pwa={pwa} setIsLoading={setIsLoading}>
                 <div style={{marginTop: offsetCompensation}}>
                     <div className={`sticky-wrapper${stickyHeader ? ' stickyHeader' : ''}`} ref={headerRef}>
                         <Header/>
@@ -51,7 +57,13 @@ export default function Layout({pwa, children}) {
                     </div>
 
                     <div className="">
-                        <main>{children}</main>
+                        {
+                            !isLoading ? (
+                                <main>{children}</main>
+                            ):(
+                                <div className={"min-h-min512 flex items-center justify-center"}>Loading</div>
+                            )
+                        }
                     </div>
                     <Footer/>
                 </div>

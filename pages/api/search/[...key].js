@@ -7,7 +7,7 @@ export default async function handler(req, res) {
         req.cookies,
         false,
         "catalog/product",
-        `keywords=${key[0]}`
+        `keywords=${key[0]}${key[1]?key[1]:""}`
     )
         .then(({data}) => {
             res.status(200).json({data})
