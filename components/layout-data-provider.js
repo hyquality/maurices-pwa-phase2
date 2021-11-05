@@ -1,10 +1,9 @@
 import React, {createContext, useEffect, useState} from "react";
 import useSWR from "swr";
 import {useRouter} from "next/router";
+import {fetcher} from "@lib/api";
 
 export const DataProviderContext = createContext();
-
-const fetcher = (url) => fetch(url).then((res) => res.json())
 
 export default function LayoutDataProvider({pwa,setIsLoading, children, ...props}) {
     const router = useRouter()

@@ -1,20 +1,10 @@
 import {useRouter} from 'next/router'
-import ErrorPage from 'next/error'
 import Container from '@components/container'
 import Layout from '@components/layout'
 import Head from 'next/head'
 import {getPwaData} from "@lib/api";
 import {getTheTitle} from "@lib/helpers";
-import Breadcrumbs from "@components/breadcrumbs";
-import PlpList from "@components/templates/plp/plp-list";
 import React, {useEffect, useState} from "react";
-import PlpDescription from "@components/templates/plp/plp-description";
-import PlpFilter from "@components/templates/plp/filter/plp-filter";
-import PlpSubcategotyList from "@components/templates/plp/plp-subcategoty-list";
-import HeaderTitle from "@components/templates/header-title";
-import Popup from "@components/templates/popup";
-import dynamic from "next/dynamic";
-import FilterContainer from "@components/templates/plp/filter/filter-container";
 import useSWR from 'swr'
 import PlpContent from "@components/plp-content";
 

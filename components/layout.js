@@ -5,9 +5,29 @@ import Nav from "@components/header/main-nav/nav";
 
 import React, {useState, useRef, useEffect} from 'react';
 import LayoutDataProvider from "./layout-data-provider";
+import useSWR from "swr";
+import {fetcher} from "@lib/api";
 
 
 export default function Layout({pwa, children}) {
+
+    const [checkedToken, setCheckedToken] = useState(false);
+    const {
+        "data": tokenData,
+        "error": tokenError
+    } = useSWR( !checkedToken?`/api/session/token`:null, fetcher)
+
+    useEffect(() => {
+        if (tokenError) {
+
+        }
+    }, [tokenError])
+
+    useEffect(() => {
+        if (tokenData) {
+            tokenData.success && setCheckedToken(true)
+        }
+    }, [tokenData,pwa])
 
     const [isLoading, setIsLoading] = useState(false);
     const [stickyHeader, setStickyHeader] = useState(false);
@@ -29,45 +49,51 @@ export default function Layout({pwa, children}) {
 
     // add/remove scroll event listener
     useEffect(() => {
-        let header = headerRef.current.getBoundingClientRect();
-        const handleScrollEvent = () => {
-            handleScroll(header.top, header.height)
+        if(checkedToken){
+            let header = headerRef.current.getBoundingClientRect();
+            const handleScrollEvent = () => {
+                handleScroll(header.top, header.height)
+            }
+
+            window.addEventListener('scroll', handleScrollEvent);
+
+            return () => {
+                window.removeEventListener('scroll', handleScrollEvent);
+            };
         }
 
-        window.addEventListener('scroll', handleScrollEvent);
+    }, [checkedToken]);
 
-        return () => {
-            window.removeEventListener('scroll', handleScrollEvent);
-        };
-    }, []);
 
-    useEffect(() => {
-        if (pwa) {
-            console.log("call")
-        }
-    }, [pwa])
     return (
         <>
             <Meta/>
-            <LayoutDataProvider pwa={pwa} setIsLoading={setIsLoading}>
-                <div style={{marginTop: offsetCompensation}}>
-                    <div className={`sticky-wrapper${stickyHeader ? ' stickyHeader' : ''}`} ref={headerRef}>
-                        <Header/>
-                        <Nav/>
-                    </div>
+            {
+                checkedToken ? (
+                    <LayoutDataProvider pwa={pwa} setIsLoading={setIsLoading}>
+                        <div style={{marginTop: offsetCompensation}}>
+                            <div className={`sticky-wrapper${stickyHeader ? ' stickyHeader' : ''}`} ref={headerRef}>
+                                <Header/>
+                                <Nav/>
+                            </div>
 
-                    <div className="">
-                        {
-                            !isLoading ? (
-                                <main>{children}</main>
-                            ):(
-                                <div className={"min-h-min512 flex items-center justify-center"}>Loading</div>
-                            )
-                        }
-                    </div>
-                    <Footer/>
-                </div>
-            </LayoutDataProvider>
+                            <div className="">
+                                {
+                                    !isLoading ? (
+                                        <main>{children}</main>
+                                    ):(
+                                        <div className={"min-h-min512 flex items-center justify-center"}>Loading</div>
+                                    )
+                                }
+                            </div>
+                            <Footer/>
+                        </div>
+                    </LayoutDataProvider>
+                ):(
+                    <div className={"absolute inset-0 flex items-center justify-center"}>Loading...</div>
+                )
+            }
+
         </>
     )
 }

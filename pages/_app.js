@@ -13,7 +13,6 @@ import "@sass/parts/footer.scss";
 import Cookies from 'js-cookie'
 import {REACT_APP_JSESSIONID} from "@lib/constants";
 function MyApp({ Component, pageProps }) {
-  Cookies.set('JSESSIONID', REACT_APP_JSESSIONID, { expires: 7 })
 
   return <Component {...pageProps} />
 }
