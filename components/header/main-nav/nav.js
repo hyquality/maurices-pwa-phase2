@@ -5,13 +5,13 @@ import React, {useContext} from "react";
 import MobileMenuExt from "./mobile-menu-ext";
 import {DataProviderContext} from '../../layout-data-provider';
 import useScreenWidth from "@lib/effects/useScreenWidth";
+import {openMainMenu} from "@lib/helpers";
 
 const onMobileMenuButtonClick = () => {
     openMainMenu(2).then(r => "");
 }
 export default function Nav() {
     const isMobile = useScreenWidth();
-
         const {
         navMenuItems, store, user
     } = useContext(DataProviderContext)
@@ -31,7 +31,7 @@ export default function Nav() {
                                 <Icon icon={["fas", "times"]} className="w-4 block"/>
                             </a>
                         </div>
-                        <NavList data={navMenuItems} className={"nav main-navigation"}/>
+                        <NavList data={navMenuItems} className={"nav main-navigation"} />
                         <div>
                             {
                                 isMobile && (

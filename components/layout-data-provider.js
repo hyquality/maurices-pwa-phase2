@@ -108,6 +108,7 @@ export default function LayoutDataProvider({pwa,setIsLoading, children, ...props
     const loadSearchPage=()=>{
         setIsLoading(true)
         const val = instantSearchState.value
+        setSearchValueCache(instantSearchState.value)
         setInstantSearchState(prevState => {
             return {
                 ...prevState,

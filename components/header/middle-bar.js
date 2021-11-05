@@ -195,7 +195,7 @@ export default function MiddleBar() {
                                         <a href="#" className="flex items-center">
                                             <Icon icon={faUserCircle} className="md:pr-1.5" size={"medium"}/>
                                             <span className="hidden md:inline">
-                                                Hy, {firstName}
+                                                Hi, {firstName}
                                                 {
                                                     isCustomerHovering ? (
                                                         <Icon icon={faChevronUp} className="pl-2.5"/>

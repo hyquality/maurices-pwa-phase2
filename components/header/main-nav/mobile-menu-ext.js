@@ -25,7 +25,7 @@ export default function MobileMenuExt({customer, store}) {
         <div className="md:hidden mt-5">
             <ul className="nav main-navigation">
                 {
-                    customer.nav ? (
+                    customer && (
                         <li className="customer-menu">
                             <a href="#" onClick={onNavRootElementClick} onTouchStart={onNavRootElementClick} >
                                 <span><Icon icon={["fa", "user-circle"]} className="pr-2.5 w-4 ml-0"/></span>
@@ -37,7 +37,7 @@ export default function MobileMenuExt({customer, store}) {
                             </MegaMenuWrapper>
                         </li>
 
-                    ):("")}
+                    )}
                 {
                     store.address ? (
                         <li>

@@ -77,7 +77,7 @@ export default function InstantSearch() {
                           className="absolute left-2.5 top-1/2 transform -translate-y-1/2 "/>
                     <input
                         className="pl-8 py-2.5 text-sm text-gray_4 focus:outline-none w-full block md:hidden border border-gray_border focus:border-gray_2 border-0 rounded-lg"
-                        placeholder="Key"
+                        placeholder="Search"
                         value={searchInputValue}
                         onChange={handleSearchInput}
                     />

@@ -64,7 +64,7 @@ export default function SearchField() {
         })
     };
     const onKeyPress=(e)=>{
-        e.code==="Enter" && loadSearchPage()
+        (e.code==="Enter" || e.code==="NumpadEnter") && loadSearchPage()
     }
     return (
         <div
@@ -85,7 +85,7 @@ export default function SearchField() {
                             onChange={handleSearchInput}
                             onKeyPress={onKeyPress}
                             value={searchInputValue}
-                            placeholder="Key"
+                            placeholder="Search"
                         />
 
                         <Button
@@ -102,7 +102,7 @@ export default function SearchField() {
                 ) : (
                     <a href="#" className="relative border-b border-white">
                         <Icon icon={faSearch} className="absolute top-1/2 transform -translate-y-1/2"/>
-                        <span className="pl-5">Key</span>
+                        <span className="pl-5">Search</span>
                     </a>
                 )
             }

@@ -11,6 +11,8 @@ import {fetcher} from "@lib/api";
 
 export default function Layout({pwa, children}) {
 
+    const [loadingMessage, setLoadingMessage] = useState("Loading...");
+
     const [checkedToken, setCheckedToken] = useState(false);
     const {
         "data": tokenData,
@@ -19,14 +21,15 @@ export default function Layout({pwa, children}) {
 
     useEffect(() => {
         if (tokenError) {
-
+            setLoadingMessage(tokenError)
         }
     }, [tokenError])
 
     useEffect(() => {
         if (tokenData) {
-            tokenData.success && setCheckedToken(true)
+            tokenData.success ? setCheckedToken(true):setLoadingMessage("Token Check Error")
         }
+        setIsLoading(false)
     }, [tokenData,pwa])
 
     const [isLoading, setIsLoading] = useState(false);
@@ -90,7 +93,7 @@ export default function Layout({pwa, children}) {
                         </div>
                     </LayoutDataProvider>
                 ):(
-                    <div className={"absolute inset-0 flex items-center justify-center"}>Loading...</div>
+                    <div className={"absolute inset-0 flex items-center justify-center"}>{loadingMessage}</div>
                 )
             }
 

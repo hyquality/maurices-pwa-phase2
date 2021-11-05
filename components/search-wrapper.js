@@ -46,6 +46,7 @@ export default function SearchWrapper({searchKey}) {
     }, [error])
 
     useEffect(() => {
+
         if (searchKey) {
             setSearchPageKey(searchKey)
             let apiURL = searchPageKey ? `/api/search/${searchPageKey}` : null

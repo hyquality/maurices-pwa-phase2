@@ -3,6 +3,7 @@ import Icon from "@components/templates/icon";
 import React, {useState} from "react";
 import SimpleBanner from "@components/templates/banner/simple-banner";
 import Template from "@components/templates/template";
+import {openMainMenu} from "@lib/helpers";
 
 
 export default function NavList({data, className}) {
@@ -22,7 +23,10 @@ export default function NavList({data, className}) {
             activeElement.className=""
             setActiveElement(false)
         }
+    }
 
+    const onClick =  (event) => {
+        openMainMenu(2).then(r => "");
     }
     return (
         <ul className={className ? className + "" : ""}>
@@ -32,7 +36,7 @@ export default function NavList({data, className}) {
                         <li key={className + "-" + index}>
                             {link.url?(
                                 <Link href={link.url}>
-                                    <a>
+                                    <a onClick={onClick}>
                                         {
                                             link.icon ? (
                                                 <Icon icon={link.icon}/>

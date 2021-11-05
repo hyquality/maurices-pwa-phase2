@@ -11,7 +11,7 @@
     "highlight": false,
     "itemWidth": 0,
     "paddingBottom": true,
-    "paddingTop": false,
+    "paddingTop": true,
     "templates": [
       {
         "height": 500,
