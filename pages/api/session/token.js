@@ -5,6 +5,7 @@ import {objToString} from "@lib/helpers";
 export default async function handler(req, res) {
 
     const apiUrl = `${REACT_APP_API_URL}session/token${parseInt(REACT_APP_MODE) ? "/index.php" : ""}`
+    console.log("tokenCall: Have cookies " + req.cookies);
 
     await axios
         .get(apiUrl, {
@@ -12,7 +13,10 @@ export default async function handler(req, res) {
                 Cookie: objToString(req.cookies)// `JSESSIONID=${req.cookies.JSESSIONID};`
             }
         }).then((response) => {
-            res.setHeader('Set-Cookie', response.headers["set-cookie"]);
+            if ( response.headers["set-cookie"]) {
+                console.log("Setting cookie to " + response.headers["set-cookie"]);
+                res.setHeader('Set-Cookie', response.headers["set-cookie"]);
+            }
             res.status(200).json(response.data)
         })
         .catch(({err}) => {
