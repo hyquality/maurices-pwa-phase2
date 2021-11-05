@@ -69,7 +69,7 @@ export default function PlpFilter(props) {
                                         key={"subcategory-filter-" + categoryId + "-" + index}>
 
                                         <Link href={`/catalog/${categoryId}`}>
-                                            <a>{displayName} <span className={"text-gray_5 ml-1.5"}>({0})</span> </a>
+                                            <a>{displayName} </a>
                                         </Link>
                                     </li>
 

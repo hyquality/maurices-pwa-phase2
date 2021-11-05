@@ -45,7 +45,7 @@ export default function Post({pwa, preview}) {
     useEffect(() => {
         if (error) {
             setCatalogData(false)
-            console.log(error)
+            //console.log(error)
         }
     }, [error])
 
@@ -58,10 +58,10 @@ export default function Post({pwa, preview}) {
         if(names.length>0){
             vars+= "&facet="+names.join("&facet=")
         }
+        vars+= "&timestamp="+Date.now()
 
-        let apiURL = slug ? `/api/catalog/${slug}/${vars}` : null
-
-        setApiUrl(apiURL)
+        const newUrl = slug ? `/api/catalog/${slug}/${vars}` : null
+        setApiUrl(newUrl)
     }
     return (
         <>

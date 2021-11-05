@@ -4,10 +4,9 @@ import {DataProviderContext} from "@components/layout-data-provider";
 
 export default function TopBar({data}) {
     const {
-        headerContent
+        headerContent,loyaltyInfo
     } = useContext(DataProviderContext)
     const {promoInfo} = headerContent.promoInfo || {}
-    const {loyaltyInfo} = headerContent.loyaltyInfo || {}
 
 
     return (

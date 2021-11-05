@@ -25,14 +25,13 @@ import useScreenWidth from "@lib/effects/useScreenWidth";
 
 export default function MiddleBar() {
     const {
-        store, cart,profileInfo,instantSearchState, setInstantSearchState
+        store, cart, profileInfo, instantSearchState, setInstantSearchState
     } = useContext(DataProviderContext)
 
 
+    const {firstName, loggedIn} = profileInfo || {}
 
-    const {firstName,loggedIn} = profileInfo || {}
-
-    const {address,title,phone,time,timeOpening} = store || {}
+    const {address, phone, storeTime, timeOpen} = store || {}
 
     const isMobile = useScreenWidth();
     const [isHovering, setIsHovered] = useState(false);
@@ -67,8 +66,9 @@ export default function MiddleBar() {
 
     const [isMiniCartHovering, setIsMiniCartHovering] = useState(false);
     const onMiniCartMouseEnter = () => {
-        if (!isMobile && cart.cartInfo.items && cart.cartInfo.items.length>0) {
-            bodyOverlay(1).then(r => {})
+        if (!isMobile && cart.cartInfo.items && cart.cartInfo.items.length > 0) {
+            bodyOverlay(1).then(r => {
+            })
             setIsMiniCartHovering(true)
         }
 
@@ -79,14 +79,14 @@ export default function MiddleBar() {
         setIsMiniCartHovering(false)
     }
 
-/*    const [instantSearchState, setInstantSearchState] = useState({
-        value: "",
-        mouseOn: false,
-        error: false,
-        suggestions: false,
-        categories: false,
-        searchResult: false
-    });*/
+    /*    const [instantSearchState, setInstantSearchState] = useState({
+            value: "",
+            mouseOn: false,
+            error: false,
+            suggestions: false,
+            categories: false,
+            searchResult: false
+        });*/
 
     const onMobileMenuButtonClick = () => {
         openMainMenu(1).then(r => "");
@@ -110,7 +110,7 @@ export default function MiddleBar() {
 
                             <span className="hidden md:inline">
 
-                                {title}
+                                {(address && address.address1) && address.address1}
                                 {address ? (
                                     isHovering ? (
                                         <Icon icon={faChevronUp} className="pl-2.5" size={"small"}/>
@@ -120,9 +120,9 @@ export default function MiddleBar() {
                                 ) : null
                                 }
                                 {
-                                    timeOpening ? (
+                                    timeOpen ? (
                                         <time className="time block flex items-center"><span
-                                            className="w-2 h-2 rounded-xl inline-block bg-green box-content text-xs  mr-2.5"/>{timeOpening}
+                                            className="w-2 h-2 rounded-xl inline-block bg-green box-content text-xs  mr-2.5"/>{timeOpen}
                                         </time>
                                     ) : null
                                 }
@@ -135,11 +135,28 @@ export default function MiddleBar() {
                                         isHovering ? (
                                             <div
                                                 className="overlay-fade text-xs absolute border border-gray_border border-solid bg-white w-full min-w-min352 p-5 top-full">
-                                                <h3 className="text-xl text-gray_4 font-bold  pb-2.5">{title}</h3>
+                                                <h3 className="text-xl text-gray_4 font-bold  pb-2.5">
+                                                    {address.address1 && address.address1}
+                                                </h3>
                                                 {
                                                     address ? (
-                                                        <p className="pb-2.5"
-                                                           dangerouslySetInnerHTML={{__html: address}}/>
+                                                        <p className="pb-2.5">
+                                                            {address.address1 && (
+                                                                <span className={"block"}>{address.address1}</span>
+                                                            )}
+                                                            {address.address2 && (
+                                                                <span className={"block"}>{address.address2}</span>
+                                                            )}
+                                                            {address.city && (
+                                                                <span className={"block"}>{address.city}</span>
+                                                            )}
+                                                            {address.postalCode && (
+                                                                <span className={"block"}>{address.postalCode}</span>
+                                                            )}
+                                                            {address.state && (
+                                                                <span className={"block"}>{address.state}</span>
+                                                            )}
+                                                        </p>
                                                     ) : null
                                                 }
 
@@ -151,10 +168,13 @@ export default function MiddleBar() {
                                                 }
 
                                                 {
-                                                    time ? (
-                                                        <time className="pb-2.5"
-                                                              dangerouslySetInnerHTML={{__html: time}}/>
-                                                    ) : null
+                                                    storeTime && (
+                                                        storeTime.map((time,index) => (
+                                                            <time className="pb-2.5 block" key={`store-lpcator-time-${index}`}>
+                                                                {time.days}: {time.time}
+                                                            </time>
+                                                        ))
+                                                    )
                                                 }
                                                 <Button label={"Change Your Store"} size="small"
                                                         className="mt-5 w-full"/>
@@ -170,7 +190,7 @@ export default function MiddleBar() {
                     <div className="logo text-center flex-grow">
                         <Link href="/">
                             <a>
-                                <Image    
+                                <Image
                                     alt=""
                                     src={logo}
                                     width={288}
@@ -211,7 +231,7 @@ export default function MiddleBar() {
 
                                                 <div
                                                     className="overlay-fade absolute left-0 border border-gray_border border-solid bg-white min-w-min352 p-5 top-full">
-                                                    <CustomerMenu />
+                                                    <CustomerMenu/>
                                                 </div>
 
                                             )}

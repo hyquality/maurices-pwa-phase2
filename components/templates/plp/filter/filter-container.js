@@ -127,11 +127,14 @@ export default function FilterContainer({catalogData, loadFilteredCatalog, child
         let tempFilters = selectedFilters
         const modified = tempFilters[name].filter((item) => item.short === value)
         modifiedFilters = tempFilters[name].filter((item) => item.short !== value)
-        modifiedFilters.push({
-            state: !modified[0].state,
-            short: modified[0].short,
-            title: modified[0].title
-        })
+        if(modified!==undefined){
+            modifiedFilters.push({
+                state: !modified[0].state,
+                short: modified[0].short,
+                title: modified[0].title
+            })
+        }
+
         tempFilters[name] = modifiedFilters
         updateSelectedFilters(name, tempFilters[name])
     }

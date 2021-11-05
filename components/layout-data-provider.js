@@ -1,7 +1,7 @@
 import React, {createContext, useEffect, useState} from "react";
 import useSWR from "swr";
 import {useRouter} from "next/router";
-import {fetcher} from "@lib/api";
+import {apiCall, fetcher} from "@lib/api";
 
 export const DataProviderContext = createContext();
 
@@ -98,9 +98,22 @@ export default function LayoutDataProvider({pwa,setIsLoading, children, ...props
 
     useEffect(() => {
         if (storeData) {
-            setStore(storeData.data.storeInfo.store)
+            //console.log(storeData.data.storeInfo)
+            setStore(storeData.data.storeInfo)
         }
     }, [storeData])
+
+    const [loyaltyInfo, setLoyaltyInfo] = useState(false);
+    const {
+        "data": rewardData,
+        "error": rewardError
+    } = useSWR( "/api/reward", fetcher)
+
+    useEffect(() => {
+        if (rewardData) {
+            setLoyaltyInfo(rewardData.data.loyaltyInfo)
+        }
+    }, [rewardData])
 
 
     const {headerContent, navMenuItems, footerContent} = pwa
@@ -127,6 +140,7 @@ export default function LayoutDataProvider({pwa,setIsLoading, children, ...props
                 instantSearchState, setInstantSearchState,
                 searchValueCache, setSearchValueCache,
                 searchInputValue, setSearchInputValue,
+                loyaltyInfo,
                 profileInfo,
                 headerContent,
                 navMenuItems,

@@ -169,7 +169,7 @@ export default function InstantSearch() {
                                             <li className="pb-2.5 text-gray_2"
                                                 key={"search-category-" + link.id}>
 
-                                                <Link href={`catalog/${link.id}`}>
+                                                <Link href={`/catalog/${link.id}`}>
                                                     <a>{link.displayName}</a>
                                                 </Link>
                                             </li>
