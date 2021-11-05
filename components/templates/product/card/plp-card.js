@@ -52,18 +52,19 @@ export default function PlpCard({data, openPopup}) {
                     >
                         {
                             cardImage && (
-                                isHovering ? (
-                                    <>
+                                <>
+                                    <div className={isHovering?"block":"hidden"}>
                                         <a className="absolute w-4 z-10 top-5 right-5">
                                             <Icon icon={["far", "heart"]} size={"medium"}/>
                                         </a>
 
-                                        <Image            
+                                        <Image
                                             src={cardImage.hover}
                                             alt={data.title}
                                             width={286}
                                             height={412}
                                             layout="responsive"
+                                            priority={true}
                                             className="block rounded z-0"
                                         />
 
@@ -71,19 +72,20 @@ export default function PlpCard({data, openPopup}) {
                                                 size="medium"
                                                 className="absolute-x-center bottom-6 w-11/12  z-10"/>
 
-                                    </>
+                                    </div>
+                                    <div className={isHovering?"hidden":"block"}>
+                                        <Image
+                                            src={cardImage.main}
+                                            alt={data.title}
+                                            width={286}
+                                            height={412}
+                                            layout="responsive"
+                                            priority={true}
+                                            className="block"
+                                        />
+                                    </div>
+                                </>
 
-
-                                ) : (
-                                    <Image        
-                                        src={cardImage.main}
-                                        alt={data.title}
-                                        width={286}
-                                        height={412}
-                                        layout="responsive"
-                                        className="block"
-                                    />
-                                )
                             )
 
                         }
