@@ -46,7 +46,7 @@ export default function FilterContainer({catalogData, loadFilteredCatalog, child
     }
 
     useEffect(() => {
-        if (facets) {
+        if (facets && !filters) {
             setFilter(generateFilters(facets))
         }
     }, [facets])

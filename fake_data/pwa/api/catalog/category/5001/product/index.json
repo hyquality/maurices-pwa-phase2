@@ -1,6 +1,4 @@
 {
-  "type": "getProductsResponse",
-  "success": true,
   "breadcrumbs": [
     {
       "categoryId": "cat100",
@@ -16,11 +14,16 @@
       "categoryId": "5001",
       "displayName": "tops",
       "displayOrder": 3
+    },
+    {
+      "categoryId": "500101",
+      "displayName": "Blouses & Shirts",
+      "displayOrder": 4
     }
   ],
-  "categoryDisplayName": "tops",
-  "categoryId": "5001",
-  "categoryLevel": 2,
+  "categoryDisplayName": "Blouses & Shirts",
+  "categoryId": "500101",
+  "categoryLevel": 3,
   "facets": [
     {
       "code": "Size",
@@ -46,10 +49,6 @@
         {
           "code": "4294966692",
           "name": "4"
-        },
-        {
-          "code": "4294963614",
-          "name": "ONE SIZE"
         }
       ]
     },
@@ -59,28 +58,12 @@
       "name": "Style",
       "options": [
         {
-          "code": "4294959653",
-          "name": "blazer"
-        },
-        {
           "code": "4294963619",
           "name": "blouse"
         },
         {
-          "code": "4294963631",
-          "name": "button down shirt"
-        },
-        {
-          "code": "4294960505",
-          "name": "cardigan"
-        },
-        {
           "code": "4294963523",
           "name": "jacket"
-        },
-        {
-          "code": "4294952613",
-          "name": "kimono"
         },
         {
           "code": "4294960669",
@@ -91,20 +74,8 @@
           "name": "peplum"
         },
         {
-          "code": "4294958690",
-          "name": "poncho"
-        },
-        {
           "code": "4294960634",
           "name": "pullover"
-        },
-        {
-          "code": "4294926716",
-          "name": "ruana wrap"
-        },
-        {
-          "code": "4294953310",
-          "name": "scarf wrap"
         },
         {
           "code": "4294960650",
@@ -117,10 +88,6 @@
         {
           "code": "4294962959",
           "name": "tunic"
-        },
-        {
-          "code": "4294960217",
-          "name": "vest"
         }
       ]
     },
@@ -135,19 +102,9 @@
           "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/1"
         },
         {
-          "code": "4294964355",
-          "name": "BLUE",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/2"
-        },
-        {
           "code": "4294964412",
           "name": "BROWN",
           "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/3"
-        },
-        {
-          "code": "4294964351",
-          "name": "DENIM",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/16"
         },
         {
           "code": "4294964413",
@@ -170,16 +127,6 @@
           "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/15"
         },
         {
-          "code": "4294964259",
-          "name": "ORANGE",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/7"
-        },
-        {
-          "code": "4294964258",
-          "name": "PINK",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/8"
-        },
-        {
           "code": "4294964257",
           "name": "PURPLE",
           "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/9"
@@ -193,147 +140,165 @@
           "code": "4294964354",
           "name": "WHITE",
           "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/11"
-        },
-        {
-          "code": "4294964416",
-          "name": "YELLOW",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/12"
-        }
-      ]
-    },
-    {
-      "code": "product.price_range",
-      "displayName": "product.price_range",
-      "name": "Price",
-      "options": [
-        {
-          "code": "13868",
-          "name": "Under $30"
-        },
-        {
-          "code": "13869",
-          "name": "$30 - $50"
-        },
-        {
-          "code": "13870",
-          "name": "$50 - $99"
         }
       ]
     }
   ],
-  "firstRecNum": 32,
-  "lastRecNum": 61,
+  "firstRecNum": 2,
+  "lastRecNum": 31,
   "parentCategory": {
-    "categoryId": "501",
-    "displayName": "PLUS SIZES",
-    "displayOrder": 2
+    "categoryId": "5001",
+    "displayName": "tops",
+    "displayOrder": 3
   },
   "products": [
     {
       "bvNumReviews": 0,
-      "bvRating": 0,
+      "bvRating": 0.0,
       "colors": [
         {
-          "colorId": "C6324",
-          "colorName": "LAVENDER ASH",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28277C3_C6324?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28277C3_C6324_swatch"
+          "colorId": "C1756",
+          "colorName": "BLACK COMBO",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/41832_C1756?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/41832_C1756_swatch"
         }
       ],
-      "defaultColor": "C6324",
-      "description": "Metalic crinkle K",
-      "displayName": "plus size crinkle cami with metallic shimmer",
-      "id": "28277C3",
+      "defaultColor": "C1756",
+      "description": "Shimmer 2fer-K",
+      "displayName": "plus size pullover sweater with chiffon hem and metallic shimmer",
+      "id": "41832",
       "inFavorites": false,
-      "maxListPrice": 22,
-      "maxSalePrice": 18,
-      "minListPrice": 22,
-      "minSalePrice": 18,
-      "newProduct": true,
-      "onSale": true,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C6225",
-          "colorName": "PEARL GRAY",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28277C2_C6225?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28277C2_C6225_swatch"
-        }
-      ],
-      "defaultColor": "C6225",
-      "description": "Metalic crinkle K",
-      "displayName": "plus size crinkle cami with metallic shimmer",
-      "id": "28277C2",
-      "inFavorites": false,
-      "maxListPrice": 22,
-      "maxSalePrice": 18,
-      "minListPrice": 22,
-      "minSalePrice": 18,
-      "newProduct": true,
-      "onSale": true,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C6324",
-          "colorName": "LAVENDER ASH",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28277_C6324?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28277_C6324_swatch"
-        },
-        {
-          "colorId": "C6225",
-          "colorName": "PEARL GRAY",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28277_C6225?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28277_C6225_swatch"
-        }
-      ],
-      "defaultColor": "C6324",
-      "description": "Metalic crinkle K",
-      "displayName": "plus size crinkle cami with metallic shimmer",
-      "id": "28277",
-      "inFavorites": false,
-      "maxListPrice": 22,
-      "maxSalePrice": 18,
-      "minListPrice": 22,
-      "minSalePrice": 18,
-      "newProduct": true,
-      "onSale": true,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C8177",
-          "colorName": "MULBERRY",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/30646_C8177?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/30646_C8177_swatch"
-        }
-      ],
-      "defaultColor": "C8177",
-      "description": "Prem Fleur Dolman",
-      "displayName": "plus size premium graphic dolman tee",
-      "id": "30646",
-      "inFavorites": false,
-      "maxListPrice": 42,
-      "maxSalePrice": 42,
-      "minListPrice": 42,
-      "minSalePrice": 42,
-      "newProduct": false,
+      "maxListPrice": 36.0,
+      "maxSalePrice": 36.0,
+      "minListPrice": 36.0,
+      "minSalePrice": 36.0,
       "onSale": false,
       "onlineExclusive": false
     },
     {
       "bvNumReviews": 0,
-      "bvRating": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C3468",
+          "colorName": "BIKING RED COMBO",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27015_C3468?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27015_C3468_swatch"
+        },
+        {
+          "colorId": "C1524",
+          "colorName": "MULTI",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27015_C1524?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27015_C1524_swatch"
+        }
+      ],
+      "defaultColor": "C3468",
+      "description": "Md Brdr Smck Bdy W",
+      "displayName": "the perfect plus size patterned blouse with smocked yoke",
+      "id": "27015",
+      "inFavorites": false,
+      "maxListPrice": 34.0,
+      "maxSalePrice": 34.0,
+      "minListPrice": 34.0,
+      "minSalePrice": 34.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C4034",
+          "colorName": "ROSY DAWN",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25313_C4034?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25313_C4034_swatch"
+        }
+      ],
+      "defaultColor": "C4034",
+      "description": "diamond stripe foil",
+      "displayName": "the perfect plus size tunic blouse in metallic ethnic print",
+      "id": "25313",
+      "inFavorites": false,
+      "maxListPrice": 39.0,
+      "maxSalePrice": 39.0,
+      "minListPrice": 39.0,
+      "minSalePrice": 39.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C4673",
+          "colorName": "SOFT WHITE",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/41833_C4673?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/41833_C4673_swatch"
+        }
+      ],
+      "defaultColor": "C4673",
+      "description": "Lace Bubble Hem-K",
+      "displayName": "plus size lace top with bubble hem",
+      "id": "41833",
+      "inFavorites": false,
+      "maxListPrice": 36.0,
+      "maxSalePrice": 36.0,
+      "minListPrice": 36.0,
+      "minSalePrice": 36.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C1212",
+          "colorName": "OFF WHITE",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28330_C1212?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28330_C1212_swatch"
+        }
+      ],
+      "defaultColor": "C1212",
+      "description": "Embelished Peasant W",
+      "displayName": "plus size peasant top with embroidery and bell sleeves",
+      "id": "28330",
+      "inFavorites": false,
+      "maxListPrice": 39.0,
+      "maxSalePrice": 39.0,
+      "minListPrice": 39.0,
+      "minSalePrice": 39.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C106",
+          "colorName": "BLACK",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27654_C106?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27654_C106_swatch"
+        }
+      ],
+      "defaultColor": "C106",
+      "description": "embroidered babydoll",
+      "displayName": "plus size babydoll peasant top with embroidery",
+      "id": "27654",
+      "inFavorites": false,
+      "maxListPrice": 39.0,
+      "maxSalePrice": 39.0,
+      "minListPrice": 39.0,
+      "minSalePrice": 39.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
       "colors": [
         {
           "colorId": "C8177",
@@ -347,41 +312,16 @@
       "displayName": "plus size peasant top with embroidery and ruffles",
       "id": "30291",
       "inFavorites": false,
-      "maxListPrice": 39,
-      "maxSalePrice": 39,
-      "minListPrice": 39,
-      "minSalePrice": 39,
-      "newProduct": false,
+      "maxListPrice": 39.0,
+      "maxSalePrice": 39.0,
+      "minListPrice": 39.0,
+      "minSalePrice": 39.0,
       "onSale": false,
       "onlineExclusive": false
     },
     {
       "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C6784",
-          "colorName": "ROSE PETAL",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/29790_C6784?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/29790_C6784_swatch"
-        }
-      ],
-      "defaultColor": "C6784",
-      "description": "Asym Toggle Cardi K",
-      "displayName": "plus size cardigan with toggle closure",
-      "id": "29790",
-      "inFavorites": false,
-      "maxListPrice": 44,
-      "maxSalePrice": 44,
-      "minListPrice": 44,
-      "minSalePrice": 44,
-      "newProduct": false,
-      "onSale": false,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
+      "bvRating": 0.0,
       "colors": [
         {
           "colorId": "C3466",
@@ -401,391 +341,16 @@
       "displayName": "the perfect plus size blouse with shimmering dots",
       "id": "25316",
       "inFavorites": false,
-      "maxListPrice": 39,
-      "maxSalePrice": 39,
-      "minListPrice": 39,
-      "minSalePrice": 39,
-      "newProduct": false,
+      "maxListPrice": 39.0,
+      "maxSalePrice": 39.0,
+      "minListPrice": 39.0,
+      "minSalePrice": 39.0,
       "onSale": false,
       "onlineExclusive": false
     },
     {
       "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C1756",
-          "colorName": "BLACK COMBO",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25284_C1756?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25284_C1756_swatch"
-        }
-      ],
-      "defaultColor": "C1756",
-      "description": "ixd Pattern Pullover",
-      "displayName": "plus size mixed pattern pullover sweater",
-      "id": "25284",
-      "inFavorites": false,
-      "maxListPrice": 44,
-      "maxSalePrice": 44,
-      "minListPrice": 44,
-      "minSalePrice": 44,
-      "newProduct": false,
-      "onSale": false,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C1212",
-          "colorName": "OFF WHITE",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/31297_C1212?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/31297_C1212_swatch"
-        }
-      ],
-      "defaultColor": "C1212",
-      "description": "ShmmrFurTrmmdHoody",
-      "displayName": "plus size pullover sweatshirt with metallic shimmer and faux fur trimmed hood",
-      "id": "31297",
-      "inFavorites": false,
-      "maxListPrice": 44,
-      "maxSalePrice": 44,
-      "minListPrice": 44,
-      "minSalePrice": 44,
-      "newProduct": false,
-      "onSale": false,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C1212",
-          "colorName": "OFF WHITE",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28651_C1212?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28651_C1212_swatch"
-        }
-      ],
-      "defaultColor": "C1212",
-      "description": "Cheers Graphic",
-      "displayName": "plus size goldtone speckled pullover sweatshirt with cheers graphic",
-      "id": "28651",
-      "inFavorites": false,
-      "maxListPrice": 36,
-      "maxSalePrice": 36,
-      "minListPrice": 36,
-      "minSalePrice": 36,
-      "newProduct": false,
-      "onSale": false,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C1524",
-          "colorName": "MULTI",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28014_C1524?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28014_C1524_swatch"
-        }
-      ],
-      "defaultColor": "C1524",
-      "description": "HghNckFlrlTieNck K",
-      "displayName": "plus size knit tank with pleated chiffon front in floral print",
-      "id": "28014",
-      "inFavorites": false,
-      "maxListPrice": 34,
-      "maxSalePrice": 34,
-      "minListPrice": 34,
-      "minSalePrice": 34,
-      "newProduct": false,
-      "onSale": false,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C183",
-          "colorName": "OATMEAL",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25789_C183?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25789_C183_swatch"
-        }
-      ],
-      "defaultColor": "C183",
-      "description": "K Cable Toggle Ponch",
-      "displayName": "patchwork stitched poncho with wooden toggles",
-      "id": "25789",
-      "inFavorites": false,
-      "maxListPrice": 39,
-      "maxSalePrice": 39,
-      "minListPrice": 39,
-      "minSalePrice": 39,
-      "newProduct": false,
-      "onSale": false,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C106",
-          "colorName": "BLACK",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25479_C106?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25479_C106_swatch"
-        },
-        {
-          "colorId": "C3484",
-          "colorName": "CHARCOAL GREEN",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25479_C3484?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25479_C3484_swatch"
-        },
-        {
-          "colorId": "C151",
-          "colorName": "HEATHER GRAY",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25479_C151?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25479_C151_swatch"
-        },
-        {
-          "colorId": "C8177",
-          "colorName": "MULBERRY",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25479_C8177?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25479_C8177_swatch"
-        },
-        {
-          "colorId": "C6784",
-          "colorName": "ROSE PETAL",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25479_C6784?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25479_C6784_swatch"
-        }
-      ],
-      "defaultColor": "C8177",
-      "description": "cowl tunic",
-      "displayName": "plus size cowl neck tunic sweater",
-      "id": "25479",
-      "inFavorites": false,
-      "maxListPrice": 39,
-      "maxSalePrice": 39,
-      "minListPrice": 39,
-      "minSalePrice": 39,
-      "newProduct": false,
-      "onSale": false,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C1481",
-          "colorName": "SANGRIA COMBO",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27256_C1481?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27256_C1481_swatch"
-        }
-      ],
-      "defaultColor": "C1481",
-      "description": "HS Aztec Pattern Car",
-      "displayName": "plus size cardigan in ethnic print",
-      "id": "27256",
-      "inFavorites": false,
-      "maxListPrice": 59,
-      "maxSalePrice": 59,
-      "minListPrice": 59,
-      "minSalePrice": 59,
-      "newProduct": false,
-      "onSale": false,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "alternateImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27906_C6324_Back?$large$",
-          "colorId": "C4400",
-          "colorName": "FOAM GRAY",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27906_C4400?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27906_C4400_swatch"
-        },
-        {
-          "alternateImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27906_C4400?$large$",
-          "colorId": "C6324",
-          "colorName": "LAVENDER ASH",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27906_C6324?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27906_C6324_swatch"
-        }
-      ],
-      "defaultColor": "C6324",
-      "description": "L/S Shmmr Slb w Lc K",
-      "displayName": "plus size shimmer tee with lace",
-      "id": "27906",
-      "inFavorites": false,
-      "maxListPrice": 26,
-      "maxSalePrice": 26,
-      "minListPrice": 26,
-      "minSalePrice": 26,
-      "newProduct": false,
-      "onSale": false,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C4034",
-          "colorName": "ROSY DAWN",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25196_C4034?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25196_C4034_swatch"
-        }
-      ],
-      "defaultColor": "C4034",
-      "description": "Diamond Stitch Cardi",
-      "displayName": "plus size diamond stitched cardigan with metallic shimmer",
-      "id": "25196",
-      "inFavorites": false,
-      "maxListPrice": 49,
-      "maxSalePrice": 49,
-      "minListPrice": 49,
-      "minSalePrice": 49,
-      "newProduct": false,
-      "onSale": false,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C1755",
-          "colorName": "GRAY COMBO",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/30216_C1755?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/30216_C1755_swatch"
-        }
-      ],
-      "defaultColor": "C1755",
-      "description": "Shimmer Bsbll Strp K",
-      "displayName": "plus size baseball tee with shimmering stripes",
-      "id": "30216",
-      "inFavorites": false,
-      "maxListPrice": 26,
-      "maxSalePrice": 26,
-      "minListPrice": 26,
-      "minSalePrice": 26,
-      "newProduct": false,
-      "onSale": false,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C6952",
-          "colorName": "WHISPERING PINE",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/26065_C6952?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/26065_C6952_swatch"
-        }
-      ],
-      "defaultColor": "C6952",
-      "description": "LrxClpDtChffFrnt W",
-      "displayName": "plus size tank with shimmering dot print chiffon front",
-      "id": "26065",
-      "inFavorites": false,
-      "maxListPrice": 29,
-      "maxSalePrice": 29,
-      "minListPrice": 29,
-      "minSalePrice": 29,
-      "newProduct": false,
-      "onSale": false,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C2823",
-          "colorName": "LIGHT HEATHER GRAY COMBO",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25586_C2823?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25586_C2823_swatch"
-        }
-      ],
-      "defaultColor": "C2823",
-      "description": "Pttrn Opn Crd w Lrx",
-      "displayName": "plus size cardigan with ethnic design and metallic stitching",
-      "id": "25586",
-      "inFavorites": false,
-      "maxListPrice": 59,
-      "maxSalePrice": 59,
-      "minListPrice": 59,
-      "minSalePrice": 59,
-      "newProduct": false,
-      "onSale": false,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C106",
-          "colorName": "BLACK",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/29804_C106?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/29804_C106_swatch"
-        },
-        {
-          "colorId": "C3872",
-          "colorName": "DARK FATIGUE",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/29804_C3872?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/29804_C3872_swatch"
-        }
-      ],
-      "defaultColor": "C106",
-      "description": "FurTrimZipFrntPffr-w",
-      "displayName": "plus size puffer vest with faux fur collar",
-      "id": "29804",
-      "inFavorites": false,
-      "maxListPrice": 69,
-      "maxSalePrice": 69,
-      "minListPrice": 69,
-      "minSalePrice": 69,
-      "newProduct": false,
-      "onSale": false,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C1755",
-          "colorName": "GRAY COMBO",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27211_C1755?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27211_C1755_swatch"
-        }
-      ],
-      "defaultColor": "C1755",
-      "description": "Mesh Inset Jacket k",
-      "displayName": "plus size spacedye jacket with mesh inlay",
-      "id": "27211",
-      "inFavorites": false,
-      "maxListPrice": 44,
-      "maxSalePrice": 44,
-      "minListPrice": 44,
-      "minSalePrice": 44,
-      "newProduct": false,
-      "onSale": false,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
+      "bvRating": 0.0,
       "colors": [
         {
           "colorId": "C3466",
@@ -799,247 +364,515 @@
       "displayName": "plus size sleeveless top with lace yoke and goldtone metallic detail",
       "id": "28449",
       "inFavorites": false,
-      "maxListPrice": 32,
-      "maxSalePrice": 32,
-      "minListPrice": 32,
-      "minSalePrice": 32,
-      "newProduct": false,
+      "maxListPrice": 32.0,
+      "maxSalePrice": 32.0,
+      "minListPrice": 32.0,
+      "minSalePrice": 32.0,
       "onSale": false,
       "onlineExclusive": false
     },
     {
       "bvNumReviews": 0,
-      "bvRating": 0,
+      "bvRating": 0.0,
       "colors": [
         {
-          "colorId": "C6784",
-          "colorName": "ROSE PETAL",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27758_C6784?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27758_C6784_swatch"
+          "colorId": "C829",
+          "colorName": "GRAY",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27052_C829?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27052_C829_swatch"
         }
       ],
-      "defaultColor": "C6784",
-      "description": "PlaidLinedHoodRib.K",
-      "displayName": "plus size pullover sweatshirt with plaid lined hood",
-      "id": "27758",
+      "defaultColor": "C829",
+      "description": "Med Twin Print Tnc W",
+      "displayName": "the perfect plus size layered blouse",
+      "id": "27052",
       "inFavorites": false,
-      "maxListPrice": 39,
-      "maxSalePrice": 39,
-      "minListPrice": 39,
-      "minSalePrice": 39,
-      "newProduct": false,
+      "maxListPrice": 39.0,
+      "maxSalePrice": 39.0,
+      "minListPrice": 39.0,
+      "minSalePrice": 39.0,
       "onSale": false,
       "onlineExclusive": false
     },
     {
       "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C6952",
-          "colorName": "WHISPERING PINE",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/30130_C6952?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/30130_C6952_swatch"
-        }
-      ],
-      "defaultColor": "C6952",
-      "description": "Fox Baseball",
-      "displayName": "plus size baseball tee with fox graphic",
-      "id": "30130",
-      "inFavorites": false,
-      "maxListPrice": 29,
-      "maxSalePrice": 29,
-      "minListPrice": 29,
-      "minSalePrice": 29,
-      "newProduct": false,
-      "onSale": false,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C8177",
-          "colorName": "MULBERRY",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/37286_C8177?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/37286_C8177_swatch"
-        },
-        {
-          "colorId": "C6225",
-          "colorName": "PEARL GRAY",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/37286_C6225?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/37286_C6225_swatch"
-        }
-      ],
-      "defaultColor": "C8177",
-      "description": "24/7 XFrontSwingTeeK",
-      "displayName": "the 24/7 plus size tee with strappy neckline",
-      "id": "37286",
-      "inFavorites": false,
-      "maxListPrice": 26,
-      "maxSalePrice": 26,
-      "minListPrice": 26,
-      "minSalePrice": 26,
-      "newProduct": false,
-      "onSale": false,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C6324",
-          "colorName": "LAVENDER ASH",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28947_C6324?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28947_C6324_swatch"
-        }
-      ],
-      "defaultColor": "C6324",
-      "description": "art deco placed sequ",
-      "displayName": "plus size tank with lavender sequins",
-      "id": "28947",
-      "inFavorites": false,
-      "maxListPrice": 26,
-      "maxSalePrice": 26,
-      "minListPrice": 26,
-      "minSalePrice": 26,
-      "newProduct": false,
-      "onSale": false,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C1919",
-          "colorName": "BLUE JASMINE",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/20750_C1919?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/20750_C1919_swatch"
-        },
-        {
-          "colorId": "C7894",
-          "colorName": "SWEET NOTHING",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/20750_C7894?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/20750_C7894_swatch"
-        }
-      ],
-      "defaultColor": "C7894",
-      "description": "Sweater trim Puffer",
-      "displayName": "plus size puffer vest with cable knit yoke in blue",
-      "id": "20750",
-      "inFavorites": false,
-      "maxListPrice": 69,
-      "maxSalePrice": 69,
-      "minListPrice": 69,
-      "minSalePrice": 69,
-      "newProduct": false,
-      "onSale": false,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C2254",
-          "colorName": "MULBERRY COMBO",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25865_C2254?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25865_C2254_swatch"
-        }
-      ],
-      "defaultColor": "C2254",
-      "description": "Bias SdPnl LrxBffl W",
-      "displayName": "plus size button down plaid shirt with metallic shimmer in mulberry",
-      "id": "25865",
-      "inFavorites": false,
-      "maxListPrice": 36,
-      "maxSalePrice": 36,
-      "minListPrice": 36,
-      "minSalePrice": 36,
-      "newProduct": false,
-      "onSale": false,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
-      "colors": [
-        {
-          "colorId": "C106",
-          "colorName": "BLACK",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25715_C106?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25715_C106_swatch"
-        },
-        {
-          "colorId": "C151",
-          "colorName": "HEATHER GRAY",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25715_C151?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25715_C151_swatch"
-        }
-      ],
-      "defaultColor": "C151",
-      "description": "Cocoon Crop Cardigan",
-      "displayName": "plus size cropped cardigan with metallic stitching",
-      "id": "25715",
-      "inFavorites": false,
-      "maxListPrice": 39,
-      "maxSalePrice": 39,
-      "minListPrice": 39,
-      "minSalePrice": 39,
-      "newProduct": false,
-      "onSale": false,
-      "onlineExclusive": false
-    },
-    {
-      "bvNumReviews": 0,
-      "bvRating": 0,
+      "bvRating": 0.0,
       "colors": [
         {
           "colorId": "C3466",
           "colorName": "BIKING RED",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25458_C3466?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25458_C3466_swatch"
-        },
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/30455_C3466?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/30455_C3466_swatch"
+        }
+      ],
+      "defaultColor": "C3466",
+      "description": "CS Jacquard Peplum W",
+      "displayName": "plus size textured pattern peplum top",
+      "id": "30455",
+      "inFavorites": false,
+      "maxListPrice": 36.0,
+      "maxSalePrice": 36.0,
+      "minListPrice": 36.0,
+      "minSalePrice": 36.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C1756",
+          "colorName": "BLACK COMBO",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/36510_C1756?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/36510_C1756_swatch"
+        }
+      ],
+      "defaultColor": "C1756",
+      "description": "Velvet Baseball-K",
+      "displayName": "plus size top with velvety patterned overlay",
+      "id": "36510",
+      "inFavorites": false,
+      "maxListPrice": 39.0,
+      "maxSalePrice": 39.0,
+      "minListPrice": 39.0,
+      "minSalePrice": 39.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
         {
           "colorId": "C106",
           "colorName": "BLACK",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25458_C106?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25458_C106_swatch"
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/36689_C106?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/36689_C106_swatch"
         },
         {
-          "colorId": "C3348",
-          "colorName": "LIGHT HEATHER GRAY",
-          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25458_C3348?$large$",
-          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25458_C3348_swatch"
+          "colorId": "C8177",
+          "colorName": "MULBERRY",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/36689_C8177?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/36689_C8177_swatch"
         }
       ],
       "defaultColor": "C106",
-      "description": "rib waterfall essent",
-      "displayName": "the essential plus size ribbed cardigan",
-      "id": "25458",
+      "description": "Lace Bubble Hem-K",
+      "displayName": "plus size lace top with bubble hem",
+      "id": "36689",
       "inFavorites": false,
-      "maxListPrice": 39,
-      "maxSalePrice": 39,
-      "minListPrice": 39,
-      "minSalePrice": 39,
-      "newProduct": false,
+      "maxListPrice": 39.0,
+      "maxSalePrice": 39.0,
+      "minListPrice": 39.0,
+      "minSalePrice": 39.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C4019",
+          "colorName": "FOAM GRAY COMBO",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/30279_C4019?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/30279_C4019_swatch"
+        }
+      ],
+      "defaultColor": "C4019",
+      "description": "Batik Mixed Henley W",
+      "displayName": "the perfect plus size patterned blouse with button neckline",
+      "id": "30279",
+      "inFavorites": false,
+      "maxListPrice": 34.0,
+      "maxSalePrice": 34.0,
+      "minListPrice": 34.0,
+      "minSalePrice": 34.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C1756",
+          "colorName": "BLACK COMBO",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28678_C1756?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/28678_C1756_swatch"
+        }
+      ],
+      "defaultColor": "C1756",
+      "description": "Embel Chevron Tee K",
+      "displayName": "plus size tee with sequin and metallic stitched chevron stripes",
+      "id": "28678",
+      "inFavorites": false,
+      "maxListPrice": 39.0,
+      "maxSalePrice": 39.0,
+      "minListPrice": 39.0,
+      "minSalePrice": 39.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C2465",
+          "colorName": "LT HEATHER GRAY",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/36477_C2465?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/36477_C2465_swatch"
+        }
+      ],
+      "defaultColor": "C2465",
+      "description": "Peplum w/ Neck Trm-K",
+      "displayName": "plus size spacedye peplum top with beaded neckline",
+      "id": "36477",
+      "inFavorites": false,
+      "maxListPrice": 39.0,
+      "maxSalePrice": 39.0,
+      "minListPrice": 39.0,
+      "minSalePrice": 39.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C8177",
+          "colorName": "MULBERRY",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27201_C8177?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27201_C8177_swatch"
+        }
+      ],
+      "defaultColor": "C8177",
+      "description": "Dmnd Icn Smck w Fl W",
+      "displayName": "the perfect plus size blouse with smocked yoke in metallic print",
+      "id": "27201",
+      "inFavorites": false,
+      "maxListPrice": 34.0,
+      "maxSalePrice": 34.0,
+      "minListPrice": 34.0,
+      "minSalePrice": 34.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C4034",
+          "colorName": "ROSY DAWN",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/29929_C4034?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/29929_C4034_swatch"
+        }
+      ],
+      "defaultColor": "C4034",
+      "description": "Medallion Lrx Hnly W",
+      "displayName": "the perfect plus size patterned blouse with metallic stripes",
+      "id": "29929",
+      "inFavorites": false,
+      "maxListPrice": 34.0,
+      "maxSalePrice": 34.0,
+      "minListPrice": 34.0,
+      "minSalePrice": 34.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C6523",
+          "colorName": "STORM CLOUD",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/24539_C6523?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/24539_C6523_swatch"
+        }
+      ],
+      "defaultColor": "C6523",
+      "description": "Lace X Front Tunic K",
+      "displayName": "plus size lacy tunic top with tie back",
+      "id": "24539",
+      "inFavorites": false,
+      "maxListPrice": 42.0,
+      "maxSalePrice": 42.0,
+      "minListPrice": 42.0,
+      "minSalePrice": 42.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C106",
+          "colorName": "BLACK",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/24334_C106?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/24334_C106_swatch"
+        }
+      ],
+      "defaultColor": "C106",
+      "description": "embroidered tunic",
+      "displayName": "plus size peasant tunic top with ethnic embroidery",
+      "id": "24334",
+      "inFavorites": false,
+      "maxListPrice": 44.0,
+      "maxSalePrice": 44.0,
+      "minListPrice": 44.0,
+      "minSalePrice": 44.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C4034",
+          "colorName": "ROSY DAWN",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27013_C4034?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/27013_C4034_swatch"
+        }
+      ],
+      "defaultColor": "C4034",
+      "description": "Sld Stn Smckd Bdy W",
+      "displayName": "the perfect plus size silky blouse",
+      "id": "27013",
+      "inFavorites": false,
+      "maxListPrice": 34.0,
+      "maxSalePrice": 34.0,
+      "minListPrice": 34.0,
+      "minSalePrice": 34.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C8177",
+          "colorName": "MULBERRY",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/24653_C8177?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/24653_C8177_swatch"
+        }
+      ],
+      "defaultColor": "C8177",
+      "description": "waffle tunic w/cht",
+      "displayName": "plus size waffle knit swing top with crocheted arms",
+      "id": "24653",
+      "inFavorites": false,
+      "maxListPrice": 39.0,
+      "maxSalePrice": 39.0,
+      "minListPrice": 39.0,
+      "minSalePrice": 39.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C3484",
+          "colorName": "CHARCOAL GREEN",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25019_C3484?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25019_C3484_swatch"
+        }
+      ],
+      "defaultColor": "C3484",
+      "description": "Txt 2fr Hghslts K",
+      "displayName": "plus size layered ultra soft pullover with crochet",
+      "id": "25019",
+      "inFavorites": false,
+      "maxListPrice": 42.0,
+      "maxSalePrice": 42.0,
+      "minListPrice": 42.0,
+      "minSalePrice": 42.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C6523",
+          "colorName": "STORM CLOUD",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/23468_C6523?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/23468_C6523_swatch"
+        }
+      ],
+      "defaultColor": "C6523",
+      "description": "Text 2fer Tunic K",
+      "displayName": "plus size pullover with chiffon tank and cutout wrap back",
+      "id": "23468",
+      "inFavorites": false,
+      "maxListPrice": 44.0,
+      "maxSalePrice": 44.0,
+      "minListPrice": 44.0,
+      "minSalePrice": 44.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C7894",
+          "colorName": "SWEET NOTHING",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/24403_C7894?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/24403_C7894_swatch"
+        }
+      ],
+      "defaultColor": "C7894",
+      "description": "foil shimmer lines",
+      "displayName": "the perfect plus size patterned blouse with metallic shimmer",
+      "id": "24403",
+      "inFavorites": false,
+      "maxListPrice": 34.0,
+      "maxSalePrice": 34.0,
+      "minListPrice": 34.0,
+      "minSalePrice": 34.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C3441",
+          "colorName": "PARADISE TEAL",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25154_C3441?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25154_C3441_swatch"
+        }
+      ],
+      "defaultColor": "C3441",
+      "description": "Txt Tnc w Lc Insrt K",
+      "displayName": "plus size cowl neck tunic sweater with lace",
+      "id": "25154",
+      "inFavorites": false,
+      "maxListPrice": 39.0,
+      "maxSalePrice": 39.0,
+      "minListPrice": 39.0,
+      "minSalePrice": 39.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C1524",
+          "colorName": "MULTI",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/26971_C1524?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/26971_C1524_swatch"
+        }
+      ],
+      "defaultColor": "C1524",
+      "description": "Mlt Prnt Bttn Bck K",
+      "displayName": "plus size patterned tee with button down back",
+      "id": "26971",
+      "inFavorites": false,
+      "maxListPrice": 36.0,
+      "maxSalePrice": 36.0,
+      "minListPrice": 36.0,
+      "minSalePrice": 36.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C2475",
+          "colorName": "DEEP BERRY COMBO",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25018_C2475?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/25018_C2475_swatch"
+        }
+      ],
+      "defaultColor": "C2475",
+      "description": "Txt 2Fer Crcht Cff K",
+      "displayName": "plus size pullover with chiffon hem and crochet",
+      "id": "25018",
+      "inFavorites": false,
+      "maxListPrice": 42.0,
+      "maxSalePrice": 42.0,
+      "minListPrice": 42.0,
+      "minSalePrice": 42.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C3441",
+          "colorName": "PARADISE TEAL",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/20124_C3441?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/20124_C3441_swatch"
+        },
+        {
+          "colorId": "C6784",
+          "colorName": "ROSE PETAL",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/20124_C6784?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/20124_C6784_swatch"
+        },
+        {
+          "colorId": "C6523",
+          "colorName": "STORM CLOUD",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/20124_C6523?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/20124_C6523_swatch"
+        }
+      ],
+      "defaultColor": "C6523",
+      "description": "Solid Zip Front W",
+      "displayName": "the perfect plus size blouse with zipper neckline",
+      "id": "20124",
+      "inFavorites": false,
+      "maxListPrice": 36.0,
+      "maxSalePrice": 36.0,
+      "minListPrice": 36.0,
+      "minSalePrice": 36.0,
+      "onSale": false,
+      "onlineExclusive": false
+    },
+    {
+      "bvNumReviews": 0,
+      "bvRating": 0.0,
+      "colors": [
+        {
+          "colorId": "C106",
+          "colorName": "BLACK",
+          "productImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/26976_C106?$large$",
+          "swatchImageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/26976_C106_swatch"
+        }
+      ],
+      "defaultColor": "C106",
+      "description": "Texture Button BackK",
+      "displayName": "plus size textured tee with decorative pocket",
+      "id": "26976",
+      "inFavorites": false,
+      "maxListPrice": 36.0,
+      "maxSalePrice": 36.0,
+      "minListPrice": 36.0,
+      "minSalePrice": 36.0,
       "onSale": false,
       "onlineExclusive": false
     }
   ],
-  "promoSlotB1": {
-    "ctaLinkUrl": "#",
-    "heading": "Our Favorite Cardigans",
-    "imageUrl": "/assets/images/banners/ads/add_banner.jpg"
-  },
-  "promoSlotB4": {
-    "ctaLinkUrl": "#",
-    "heading": "Explore Fall<br>Kiminos",
-    "imageUrl": "/assets/images/banners/ads/add_banner_big.jpg"
-  },
   "selectedFacets": [],
   "sortOptions": [
     {
@@ -1184,5 +1017,7 @@
       "title": "Kimonos"
     }
   ],
-  "totalNumProducts": 365
+  "success": true,
+  "totalNumProducts": 51,
+  "type": "getProductsResponse"
 }

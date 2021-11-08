@@ -2,7 +2,7 @@ import {localApiCall} from "@lib/api";
 
 export default async function handler(req, res) {
 
-    await localApiCall(req.cookies,false,"rewards")
+    await localApiCall(req.cookies,false,"content/header/reward")
         .then(({data}) => {
             res.status(200).json({data})
         })

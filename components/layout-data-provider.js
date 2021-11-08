@@ -94,7 +94,7 @@ export default function LayoutDataProvider({pwa,setIsLoading, children, ...props
     const {
         "data": storeData,
         "error": storeError
-    } = useSWR( "/api/store/1", fetcher)
+    } = useSWR( profileInfo.favoriteStoreId?`/api/store/${profileInfo.favoriteStoreId}`:null, fetcher)
 
     useEffect(() => {
         if (storeData) {

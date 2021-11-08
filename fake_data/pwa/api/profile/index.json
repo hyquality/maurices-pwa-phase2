@@ -7,7 +7,7 @@
         },
         "email": "bb@brianballard.net",
         "favoriteProductsCount": 5,
-        "favoriteStoreId": "string",
+        "favoriteStoreId": 1,
         "firstName": "Brian",
         "homeAddress": {
             "address1": "18 Harrison Avenue",
