@@ -152,8 +152,8 @@ export default function PlpFilter(props) {
                                                                                name={`attribute-filter-value-${slug}-${name}-${valueIndex}`}
                                                                                checked={selectedFilters[name].filter((item) => item.short === short)[0].state}
                                                                                onChange={menageCheckFilters(name, short)}/>
-                                                                        {title} <span
-                                                                        className={"text-gray_5 ml-1"}>({qty})</span>
+                                                                        {title}{/* <span
+                                                                        className={"text-gray_5 ml-1"}>({qty})</span>*/}
                                                                     </label>
                                                                 </li>
                                                             ))

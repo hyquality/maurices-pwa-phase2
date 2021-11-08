@@ -28,9 +28,9 @@ export default function PlpList({openPopup}) {
     return (
         <>
             {
-                productList ? (
+
                     <>
-                        <div className="flex justify-between">
+                        <div className="flex justify-between items-center">
                             <span className="text-sm text-gray_5">{totalNumProducts} results</span>
                             <div className="sort">
                                 <select
@@ -51,30 +51,36 @@ export default function PlpList({openPopup}) {
                             </div>
                         </div>
                         <PlpFilterSelectedList/>
-
-                        <ul className="flex gap-x-2per gap-y-4  flex-wrap border-b border-gray_border py-5 mb-8 ">
-                            {
-                                productList.map((product, index) => (
-                                    <Fragment key={"product-list-" + product.slug + "-" + index}>
-                                        <li className="w-32">
-                                            <PlpCard data={product} openPopup={openPopup}/>
-
-                                        </li>
+                        {
+                            productList ? (
+                                <>
+                                    <ul className="flex gap-x-2per gap-y-4  flex-wrap border-b border-gray_border py-5 mb-8 ">
                                         {
-                                            promos[(index)] && (
-                                                <li className={promos[(index)].type === 1 ? "w-32" : "w-66"}>
-                                                    <SimpleBanner {...promos[(index)]}/>
-                                                </li>
-                                            )
-                                        }
-                                    </Fragment>
-                                ))
-                            }
-                        </ul>
+                                            productList.map((product, index) => (
+                                                <Fragment key={"product-list-" + product.slug + "-" + index}>
+                                                    <li className="w-32">
+                                                        <PlpCard data={product} openPopup={openPopup}/>
 
-                        <Button label={"Load More"} size={"medium"} className={"m-auto px-20"} onClick={loadMore}/>
+                                                    </li>
+                                                    {
+                                                        promos[(index)] && (
+                                                            <li className={promos[(index)].type === 1 ? "w-32" : "w-66"}>
+                                                                <SimpleBanner {...promos[(index)]}/>
+                                                            </li>
+                                                        )
+                                                    }
+                                                </Fragment>
+                                            ))
+                                        }
+                                    </ul>
+                                <Button label={"Load More"} size={"medium"} className={"m-auto px-20"} onClick={loadMore}/>
+                            </>
+                            ) : (
+                                <div className={"min-h-min512 flex items-center justify-center"}>loading...</div>
+                            )
+                        }
                     </>
-                ) : ("")
+
             }
         </>
     )

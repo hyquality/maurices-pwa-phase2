@@ -17,7 +17,7 @@ export default function PlpFilterSelectedList() {
         <>
             {
                 selectedFlat.length>0?(
-                    <ul>
+                    <ul className={"pt-4"}>
                         <li className={"relative text-xs border border-gray_border rounded-full inline-flex  items-center mb-4"}>
                             <a className={"py-3 pl-6 pr-6 cursor-pointer"} onClick={clearAll}>
                                 Clear All

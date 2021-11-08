@@ -10,6 +10,7 @@ import PlpContent from "@components/plp-content";
 
 
 const fetcher = async url => {
+    console.log(url)
     const res = await fetch(url)
 
     // If the status code is not in the range 200-299,
@@ -51,7 +52,7 @@ export default function Post({pwa, preview}) {
 
     const loadFilteredCatalog = (fasets,selectedSort,catalogListIndex) =>  {
 
-        let vars = `startIndex${catalogListIndex.startIndex}&pageSize=${catalogListIndex.pageSize}&sortOption=${selectedSort}`;
+        let vars = `startIndex=${catalogListIndex.startIndex}&pageSize=${catalogListIndex.pageSize}&sortOption=${selectedSort}`;
         const names = fasets.map(function (faset) {
             return faset.short;
         });
@@ -61,6 +62,7 @@ export default function Post({pwa, preview}) {
         vars+= "&timestamp="+Date.now()
 
         const newUrl = slug ? `/api/catalog/${slug}/${vars}` : null
+
         setApiUrl(newUrl)
     }
     return (

@@ -58,11 +58,11 @@ export default function FilterContainer({catalogData, loadFilteredCatalog, child
     }, [filters])
 
     useEffect(() => {
-        setSelectedFlat(selectedFiltersFlat(true))
+        //setSelectedFlat(selectedFiltersFlat(true))
     }, [selectedFacets])
 
     useEffect(() => {
-        setSelectedSort(sortOptions.find(obj => obj.selected === true).code)
+        //setSelectedSort(sortOptions.find(obj => obj.selected === true).code)
     }, [sortOptions])
 
     useEffect(() => {
@@ -176,6 +176,7 @@ export default function FilterContainer({catalogData, loadFilteredCatalog, child
     }
     const sortCatalogList = (code) => {
         setSelectedSort(code)
+        setProductList(false)
         loadFilteredCatalog(selectedFlat, code, catalogListIndex)
     }
 
