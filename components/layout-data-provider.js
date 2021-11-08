@@ -84,7 +84,7 @@ export default function LayoutDataProvider({pwa,setIsLoading, children, ...props
     } = useSWR( "/api/cart", fetcher)
 
     useEffect(() => {
-        if (cartData!==undefined) {
+        if (cartData && cartData.data) {
             setCart(cartData.data)
         }
     }, [cartData])

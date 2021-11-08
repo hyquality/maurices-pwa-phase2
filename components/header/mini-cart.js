@@ -4,6 +4,7 @@ import Icon from "@components/templates/icon";
 import Button from "@components/templates/button";
 import Image from "next/image";
 import {DataProviderContext} from '../layout-data-provider';
+import {getCartItemPrice, parseImageUrl} from "@lib/helpers";
 
 
 export default function MiniCart() {
@@ -26,11 +27,11 @@ export default function MiniCart() {
                                     items.map((item,index) => (
                                         <li className="flex px-5 pb-5 mb-5 border-b border-gray_border last:border-0"
                                             key={"mini-cart-item-" + index}>
-                                            <Link href={item.url}>
+                                            <Link href={`product/${item.pdpUrl}`}>
                                                 <a className="w-20 pr-5 box-content">
                                                     <Image                        
-                                                        alt={item.title}
-                                                        src={item.image}
+                                                        alt={item.productName}
+                                                        src={parseImageUrl(item.imageUrl)}
                                                         width={72}
                                                         height={106}
                                                         quality={100}
@@ -39,16 +40,16 @@ export default function MiniCart() {
                                             </Link>
                                             <div className="flex-grow relative">
                                                 <h4 className="font-extrabold text-gray_4 flex pb-2.5">
-                                                    <span>{item.title}</span>
-                                                    <span className="ml-auto pl-2"> {item.price}</span>
+                                                    <span>{item.productName}</span>
+                                                    <span className="ml-auto pl-2"> {getCartItemPrice(item)}</span>
                                                 </h4>
                                                 <ul className="text-xs">
                                                     {
-                                                        item.options ? (
-                                                            item.options.map((option,optionIndex) => (
+                                                        (item.variants && item.variants.entry) ? (
+                                                            item.variants.entry.map((option,optionIndex) => (
                                                                 <li className="pb-0.5"
                                                                     key={"mini-cart-item-оптион-" + index + "-" + optionIndex}>
-                                                                    <span>{option.name}:</span>
+                                                                    <span>{option.key}:</span>
                                                                     <span
                                                                         className="text-gray_4 pl-2">{option.value}</span>
                                                                 </li>
@@ -57,7 +58,7 @@ export default function MiniCart() {
                                                     }
                                                     <li>
                                                         <span>Quantity:</span>
-                                                        <span className="text-gray_4 pl-2">{item.qty}</span>
+                                                        <span className="text-gray_4 pl-2">{item.quantity}</span>
                                                     </li>
                                                 </ul>
                                                 <a href="#"

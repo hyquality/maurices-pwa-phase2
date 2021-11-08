@@ -1,68 +1,32 @@
 {
-  "type": "getCartResponse",
-  "success": true,
   "cartInfo": {
-    "count": 0,
+    "count": 1,
     "items": [
       {
-        "title": "Kimono Cowl Neck Poncho",
-        "price": "$34.00",
-        "qty": 1,
-        "image": "/assets/images/search/s1.png",
-        "url": "#",
-        "options": [
-          {
-            "id": 0,
-            "name": "Color",
-            "value": "OFF-WHITE"
-          },
-          {
-            "id": 1,
-            "name": "Size",
-            "value": "S/M"
-          }
-        ]
-      },
-      {
-        "title": "Button-down Corduroy Skirt",
-        "price": "$68.00",
-        "qty": 2,
-        "image": "/assets/images/search/s2.png",
-        "url": "#",
-        "options": [
-          {
-            "id": 0,
-            "name": "Color",
-            "value": "Rust"
-          },
-          {
-            "id": 1,
-            "name": "Size",
-            "value": "6"
-          }
-        ]
-      },
-      {
-        "title": "DenimFlex™ Dark Wash Utility Jegging",
-        "price": "$39.00",
-        "qty": 3,
-        "image": "/assets/images/search/s3.png",
-        "url": "#",
-        "options": [
-          {
-            "id": 0,
-            "name": "Color",
-            "value": "Green"
-          },
-          {
-            "id": 1,
-            "name": "Size",
-            "value": "Xl"
-          }
-        ]
+        "commerceItemId": "ci0cc83c021",
+        "imageUrl": "//mauricesprodatg.scene7.com/is/image/mauricesUatATG/33255_C3337",
+        "originalPrice": 44.0,
+        "pdpUrl": "/product/crochet-top-denim-plus-size-vest-with-pockets/33255",
+        "productName": "crochet top denim plus size vest with pockets",
+        "purchasePrice": 39.98,
+        "quantity": 1,
+        "variants": {
+          "entry": [
+            {
+              "key": "color",
+              "value": "MEDIUM SANDBLAST"
+            },
+            {
+              "key": "size",
+              "value": "14"
+            }
+          ]
+        }
       }
     ],
-    "orderId": "OO1f3bd1d2",
-    "subtotal": 0
-  }
+    "orderId": "OO2040ce43",
+    "subtotal": 39.98
+  },
+  "success": true,
+  "type": "getCartResponse"
 }
