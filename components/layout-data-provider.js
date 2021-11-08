@@ -71,7 +71,7 @@ export default function LayoutDataProvider({pwa,setIsLoading, children, ...props
     } = useSWR( "/api/profile", fetcher)
 
     useEffect(() => {
-        if (prfileData!==undefined) {
+        if (prfileData && prfileData.data) {
             setProfileInfo(prfileData.data.profileInfo)
         }
     }, [prfileData])
