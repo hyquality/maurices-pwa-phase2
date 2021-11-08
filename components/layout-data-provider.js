@@ -32,13 +32,13 @@ export default function LayoutDataProvider({pwa,setIsLoading, children, ...props
     } = useSWR(searchInputValue ? `/api/search/typeahead/${searchInputValue}` : null, fetcher)
 
     useEffect(() => {
-        if (typeaheadError) {
+        if (typeaheadError!==undefined) {
 
         }
     }, [typeaheadError])
 
     useEffect(() => {
-        if (typeaheadData) {
+        if (typeaheadData!==undefined) {
             setInstantSearchState(prevState => {
                 return {...prevState, suggestions: typeaheadData.data.productSearches,categories: typeaheadData.data.categories, error: false}
             })
@@ -46,7 +46,7 @@ export default function LayoutDataProvider({pwa,setIsLoading, children, ...props
     }, [typeaheadData])
 
     useEffect(() => {
-        if (searchError) {
+        if (searchError!==undefined) {
             setInstantSearchState(prevState => {
                 return {...prevState, searchResult: false, error: searchError}
             })
@@ -54,7 +54,7 @@ export default function LayoutDataProvider({pwa,setIsLoading, children, ...props
     }, [searchError])
 
     useEffect(() => {
-        if (searchData) {
+        if (searchData!==undefined) {
             setInstantSearchState(prevState => {
                 return {...prevState, searchResult: searchData.data.products, error: false}
             })
@@ -71,7 +71,7 @@ export default function LayoutDataProvider({pwa,setIsLoading, children, ...props
     } = useSWR( "/api/profile", fetcher)
 
     useEffect(() => {
-        if (prfileData) {
+        if (prfileData!==undefined) {
             setProfileInfo(prfileData.data.profileInfo)
         }
     }, [prfileData])
@@ -84,7 +84,7 @@ export default function LayoutDataProvider({pwa,setIsLoading, children, ...props
     } = useSWR( "/api/cart", fetcher)
 
     useEffect(() => {
-        if (cartData) {
+        if (cartData!==undefined) {
             setCart(cartData.data)
         }
     }, [cartData])
@@ -97,7 +97,7 @@ export default function LayoutDataProvider({pwa,setIsLoading, children, ...props
     } = useSWR( profileInfo.favoriteStoreId?`/api/store/${profileInfo.favoriteStoreId}`:null, fetcher)
 
     useEffect(() => {
-        if (storeData) {
+        if (storeData!==undefined) {
             //console.log(storeData.data.storeInfo)
             setStore(storeData.data.storeInfo)
         }
@@ -110,7 +110,7 @@ export default function LayoutDataProvider({pwa,setIsLoading, children, ...props
     } = useSWR( "/api/reward", fetcher)
 
     useEffect(() => {
-        if (rewardData) {
+        if (rewardData!==undefined) {
             setLoyaltyInfo(rewardData.data.loyaltyInfo)
         }
     }, [rewardData])

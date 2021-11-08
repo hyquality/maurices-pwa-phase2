@@ -13,12 +13,12 @@ export default function CustomerMenu() {
     const [navigation, setNavigation] = useState(false);
     const {nav,templates} = customerNav || {}
     useEffect(()=>{
-        console.log(defaultPaymentInfo)
+
         nav.forEach(function(elem, index){
-            if(index===2) nav[index].caption = `${defaultPaymentInfo.cardType} ${defaultPaymentInfo.lastFourDigits}`
-            if(index===3) nav[index].caption = `${homeAddress.address1}`
-            if(index===4) nav[index].caption = `${favoriteProductsCount} items`
-            if(index===5) nav[index].caption = `${loyaltyInfo.points} pts`
+            if(index===2 && defaultPaymentInfo!==undefined) nav[index].caption = `${defaultPaymentInfo.cardType} ${defaultPaymentInfo.lastFourDigits}`
+            if(index===3 && homeAddress!==undefined) nav[index].caption = `${homeAddress.address1}`
+            if(index===4 && favoriteProductsCount!==undefined) nav[index].caption = `${favoriteProductsCount} items`
+            if(index===5 && loyaltyInfo!==undefined) nav[index].caption = `${loyaltyInfo.points} pts`
         });
 
         setNavigation(nav)

@@ -66,7 +66,7 @@ export default function MiddleBar() {
 
     const [isMiniCartHovering, setIsMiniCartHovering] = useState(false);
     const onMiniCartMouseEnter = () => {
-        if (!isMobile && cart.cartInfo.items && cart.cartInfo.items.length > 0) {
+        if (!isMobile && cart!==undefined && cart.cartInfo.items && cart.cartInfo.items.length > 0) {
             bodyOverlay(1).then(r => {
             })
             setIsMiniCartHovering(true)
